@@ -1,0 +1,13 @@
+---
+layout: post
+title: Eliminar ojos rojos con Gimp
+date: '2005-01-17T16:49:00.000-08:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:34.250-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-5843197420522005033
+blogger_orig_url: http://jhernandez.gpltarragona.org/2005/01/eliminar-ojos-rojos-con-gimp.html
+---
+
+Buen <a href="http://www.usuarios.lycos.es/ciberespaciojoven/Ojos_Rojos.htm">artículo</a> con los pasos a seguir para eliminar los ojos rojos de las fotos digitales.<br/>Pero mejor aún el <a href="http://gimpguru.org/download/red-eye.scm">script</a> que contiene al final para automatizar el proceso. <br/><br/>Como dicen en la web, las instrucciones para usarlo es meterlo dentro de tu carpeta de gimp en ~/.gimp-XX/scripts donde XX es la versión de tu Gimp. Por ejemplo, en mi caso:<br/><br/><pre>mv red-eye.scm ~/.gimp-2.0/scripts</pre><br/><br/>Luego dentro de Gimp, en el menú Script-fu -> Selection saldrá Red Eye y Red Eye Desaturate. El segundo es por si no tienes el plugin de "Mezclador de Canales", pero normalmente el Gimp ya lo incorpora.<br/>El funcionamiento del script es tener seleccionado un trozito de ojo rojo, después seleccionar "Red Eye". Las parámetros por defecto deberían de bastar, si no va bien en el artículo ponen para qué es cada cosa.

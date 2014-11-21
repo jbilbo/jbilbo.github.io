@@ -1,0 +1,13 @@
+---
+layout: post
+title: subversion
+date: '2004-04-26T17:19:00.000-07:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:40.181-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-7221528204383065622
+blogger_orig_url: http://jhernandez.gpltarragona.org/2004/04/subversion.html
+---
+
+Ya ha salido la versión 1.01 a estable en el portage en Gentoo del gestor de versiones <a href="http://subversion.tigris.org/">subversion</a>, así que a partir de ahora le podré echar un vistazo (antes había conflictos en el portage con el autoconf, etc... y por eso estaba masked).<br/>A ver si me acaba gustando más que <a href="http://www.cvshome.org/">cvs</a>... :)<br/><br/>Actualización: Al parecer sigue habiendo problemas con el autoconf, subversion necesita las siguientes versiones para funcionar:<br/><br/><pre><br/> >=sys-devel/autoconf-2.59<br/>=sys-devel/autoconf-2.57* <br/></pre><br/><br/>Mientras que el autoconf estable en Gentoo ahora mismo es:<br/><br/><pre><br/>autoconf-2.58-r1<br/></pre><br/><br/>Así que no entiendo porque lo han pasado a estable con esto... la solución más correcta sería actualizar las autoconf a la versión inestable del portage (2.59) para así poder seguir con los "-U" y que no esté el autoconf cambiando de versión en cada actualización.<br/><br/>Actualización2: Nada, ni siquiera actualizado a ">2.59" se deja... así que me he cansado y lo he quitado hasta que solucionen el asunto (tampoco iba a utilizarlo ya). Para el que lo quiera tener aún así es muy fácil, simplemente se emerge (emerge subversion), se actualiza (emerge -UD world) y se inyecta el autoconf viejo (emerge -i ...).

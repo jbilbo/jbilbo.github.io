@@ -1,0 +1,13 @@
+---
+layout: post
+title: MS SQLServer numeric primary key hibernate
+date: '2014-07-11T02:29:00.000-07:00'
+author: jbilbo
+tags:
+- grails hibernate java
+modified_time: '2014-07-11T02:29:35.450-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-7178463785011915668
+blogger_orig_url: http://jhernandez.gpltarragona.org/2014/07/ms-sqlserver-numeric-primary-key.html
+---
+
+Related to this old hibernate problem:&nbsp;<a href="http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html">http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html</a><br /><br /><blockquote class="tr_bq"><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;">By default Gorm/hiberate is generating id columns as the numeric(19,0) on SQLServer.&nbsp; I'd like those to be of type BIGINT instead.</span></blockquote><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;"><br /></span>The solution is to use the correct dialect for hibernate. In Grails, you can configure it like this:<br /><br />grails-app/conf/DataSource.groovy:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; dataSource {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; username = "xxx"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; password = "xxx"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url = "jdbc:sqlserver://host\\instance;databaseName=databaseName"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>dialect = "org.hibernate.dialect.SQLServer2008Dialect"</b><br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /><div><br /></div>

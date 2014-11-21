@@ -1,0 +1,13 @@
+---
+layout: post
+title: Tablas de Mysql corruptas
+date: '2005-03-10T17:52:00.000-08:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:33.096-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-3567773360814569103
+blogger_orig_url: http://jhernandez.gpltarragona.org/2005/03/tablas-de-mysql-corruptas.html
+---
+
+En GPLTarragona nos ha pasado 2 veces con ésta, y es que el disco duro nuestro "rasca" mucho... El error es del tipo:<br/><br/><pre>*fatal error*: No puedo abrir archivo: 'accesslog.MYI'. (Error: 145) <br/>query: INSERT INTO accesslog (url, hostname, uid, timestamp) values('', <br/>'xxxxxxxxxxx', 0, 1110478239) in <br/>*/var/www/gpltarragona.org/htdocs/includes/database.mysql.inc* on line<br/>*97</pre><br/><br/>Se arregla con:<br/><br/><pre>#locate accesslog.MYI<br/>/var/lib/mysql/drupal/accesslog.MYI<br/>#myisamchk -o /var/lib/mysql/drupal/accesslog.MYI<br/>- recovering (with keycache) MyISAM-table '/var/lib/mysql/drupal/accesslog.MYI'<br/>Data records: 10845<br/>Data records: 10842</pre>

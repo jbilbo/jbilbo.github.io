@@ -1,0 +1,13 @@
+---
+layout: post
+title: Imprimir 4 transparencias en 1 hoja con OpenOffice
+date: '2004-10-10T21:35:00.000-07:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:35.889-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-1219080249464792611
+blogger_orig_url: http://jhernandez.gpltarragona.org/2004/10/imprimir-4-transparencias-en-1-hoja-con.html
+---
+
+Hasta hoy no sabía hacerlo.<br/><br/>En el Openoffice -> Archivo -> Imprimir -> Imprimir a archivo.<br/>In english: File -> Print -> Print to file.<br/><br/>Y ahora con las <a href="http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/">pstools</a>:<br/><br/><pre>psnup -l -m40 -4 transparencias.ps > transparencias-finales.ps</pre><br/><br/>Por último lo paso a pdf:<br/><br/><pre>ps2pdf13 transparencias-finales.ps transparencias-finales.pdf</pre><br/><br/>Pero el resultado del pdf es un poco malo, las letras salen distorsionadas... a ver si encuentro alguna otra solución en esto.<br/><br/><b>Actualización:</b> Aunque el resultado por pantalla del pdf sea malo, si lo imprimes sale perfecto. Y lo importante es justamente que lo imprima bien, porque para la visualización por pantalla se utiliza el fichero Openoffice no el pdf dividido en 4. Me queda hacer la prueba en windows, pero en linux con el acrobat propietario sale bien así que supongo que no debe de cambiar. <br/>Me interesan estas cosas para los cursos de GNU/Linux de este año, a ver si podemos poner 4 transparencias/folio en la documentación. Y todo apunta a que sí podremos.<br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/308">Artículo</a> en gpltarragona.

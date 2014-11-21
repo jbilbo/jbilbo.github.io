@@ -1,0 +1,13 @@
+---
+layout: post
+title: Errores en el disco duro
+date: '2007-12-17T12:19:00.000-08:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-21T11:18:51.444-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-6399812297975592673
+blogger_orig_url: http://jhernandez.gpltarragona.org/2007/12/errores-en-el-disco-duro.html
+---
+
+<p>Si has experimentado algún tipo de error en tu disco duro (datos corruptos) o simplemente sospechas que algo puede no ir bien, de vez en cuando un repaso al disco no viene mal. Aunque las distribuciones linux ya de por sí te hacen un fsck de vez en cuando, por lo que en general no hace falta llevar mantenimiento de disco duro por parte del usuario (como debe ser).<br /><br />Aún así, yo utilizo unos comandos cuando quiero/intento arreglar/resucitar un disco duro y que por si a alguien le es de utilidad (no le gusta mirarse el man del fsck o el badblocks) lo voy a poner aquí.</p>Tomamos como premisas lo siguiente:<br /><p>- He arrancado con un LiveCD, hago las operaciones como root en un terminal (y con las particiones de mi disco duro desmontadas)<br /><br />- mi disco duro es /dev/sda<br />- mi sistema de ficheros linux es Ext3<br />- linux esta en la partición /dev/sda3 (todo, sin separar):</p><p>Ahora un repaso al sistema de ficheros y que arregle todos los errores que encuentre automáticamente.</p><pre>fsck.ext3 -f -tt -v -y /dev/sda3</pre><p>Ahora un repaso físico al disco duro en busca de sectores defectuosos. Lo buscaremos en todo el disco duro en vez de sólo en la partición linux. Si sólo quereis mirar los sectores de esa partición en concreto, hay una opción en el fsck para que lo llame por ti.</p><pre>badblocks -s /dev/sda</pre><p><b>Actualización</b>: Sergio me apunta (thx!) a que hacer el badblocks desde fsck.ext3 además actualiza la lista de inodos para guardarte qué sectores estan defectuosos y no utilizarlos. Mucho mejor de esta manera, utilizando el comando badblocks únicamente te los lista pero no hace nada. Entonces sería:</p><pre>fsck.ext3 -f -c -tt -v -y /dev/sda3</pre><p>(Prefiero siempre el modo lectura antes que el escritura no destructiva :P)</p><p>Por último, nunca viene mal intentar optimizar el sistema de ficheros (optimizar suena bien). Fsck tiene una opción para eso (-D):</p><pre>fsck.ext3 -f -tt -v -D -y /dev/sda3</pre>

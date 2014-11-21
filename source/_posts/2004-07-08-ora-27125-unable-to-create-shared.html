@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'ORA-27125: unable to create shared memory segment'
+date: '2004-07-08T09:17:00.000-07:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:38.097-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-6679694957526374390
+blogger_orig_url: http://jhernandez.gpltarragona.org/2004/07/ora-27125-unable-to-create-shared.html
+---
+
+Peazo de título...<br/><br/>Es un error de <b>Oracle Database 10g</b> que me dió al intentar instalarla en <b>SuSE 9.1 Personal Edition</b> con <b>kernel 2.6.5-7.95</b>. Ocurre en el apartado de Asistente de configuración de Bases de Datos, es un apartado opcional pero supongo que la mayoría quiere completarlo.<br/><br/>Solución:<br/><br/><pre>su - root<br/>echo "1" > /proc/sys/vm/disable_cap_mlock</pre><br/><br/>Y volverlo a hacer. Se puede reintentar (retry).<br/><a href="http://forums.oracle.com/forums/thread.jsp?forum=135&thread=233621&message=688804">Más info</a>

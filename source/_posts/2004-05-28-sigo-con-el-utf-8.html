@@ -1,0 +1,13 @@
+---
+layout: post
+title: Sigo con el utf-8
+date: '2004-05-28T10:58:00.000-07:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:38.886-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-6614089470724035756
+blogger_orig_url: http://jhernandez.gpltarragona.org/2004/05/sigo-con-el-utf-8.html
+---
+
+He arreglado el problema completamente (por ahora no encontrado ningún fallo) en la terminal pura. Lo he conseguido con el  programa "unicode_start". Lo he añadido a mi .bash_profile:<br/><br/><pre>#cosas utf-8<br/>export LESSCHARSET="utf-8"<br/>unicode_start &> /dev/null<br/></pre><br/><br/>Le he puesto un "&> /dev/null" porque en el gnome-terminal me da estos errores cada vez que abro una sesión: <br/><br/><pre>KDSKBMODE: OperaciÃ³n no permitida<br/>kbd_mode: error al establecer el modo de teclado<br/>Keymap 0: Permission denied<br/>Keymap 1: Permission denied<br/>Keymap 2: Permission denied<br/>KDSKBENT: Operation not permitted<br/>loadkeys: could not deallocate keymap 3<br/>putfont: KDFONTOP: Operación no permitida<br/></pre><br/><br/>Aunque se activa bien. Así tendremos la terminal (tanto pura como virtuales) a UTF-8, y en el menú de gnome-terminal donde se selecciona se puede ver como se marca automáticamente a UTF-8 con este comando :-)<br/><br/>Por lo menos parece que lo estoy consiguiendo parcialmente. Esto es bueno de cara a una posible migración de los servidores de gpltarragona a UTF-8 después de examenes. Como se tendrá que migrar la base de datos con el upgrade del drupal, es posible que también por concordancia se migre el sistema entero... no lo sé, se tendrá que mirar.<br/>Seguimos investigando. Si al final lo consigo intentaré recopilar todo y hacer una miniguía en <a href="http://www.gpltarragona.org">gpltarragona</a>.<br/><br/>PD: Se me olvidaba, UTF-8 support in Gentoo sucks! :P Ahí queda eso.<br/><br/><b>Actualización</b>: Resolución final sobre utf-8, <a href="http://jhernandez.gpltarragona.org/blog/archives/000089.html">aquí</a> :-)

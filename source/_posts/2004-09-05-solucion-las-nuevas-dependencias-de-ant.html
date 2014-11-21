@@ -1,0 +1,13 @@
+---
+layout: post
+title: Solución a las nuevas dependencias de ant en Gentoo
+date: '2004-09-04T21:29:00.000-07:00'
+author: jbilbo
+tags:
+- Software Libre
+modified_time: '2010-04-19T09:55:36.989-07:00'
+blogger_id: tag:blogger.com,1999:blog-2802132546636710453.post-6579305924865683410
+blogger_orig_url: http://jhernandez.gpltarragona.org/2004/09/solucion-las-nuevas-dependencias-de-ant.html
+---
+
+Ya han resuelto el bug sobre las nuevas dependencias de ant en Gentoo que hablaba el otro día en <a href="http://jhernandez.gpltarragona.org/blog/archives/000171.html">éste</a> post. La solución de los desarrolladores ha sido cambiar el nombre del paquete ant-optional por ant-task (ya que deja de ser opcional) y ha puesto a todas las dependencias de ant-task una USE flag para quitar el soporte si se quiere (como pedíamos la mayoría de usuarios de Gentoo).<br/><br/>Las USE Flags a quitar (si sólo queremos a ant porque un programa como jedit lo necesita) son:<br/><br/><pre>noantlr<br/>nobcel<br/>nobeanutils<br/>nobsh<br/>nocommonsnet<br/>nocommonslogging<br/>nojdepend<br/>nojsch<br/>nojython<br/>nolog4j<br/>nooro<br/>noregexp<br/>norhino<br/>noxalan<br/>noxerces</pre><br/><br/>Y el mensaje cuando quitas el soporte a éstos paquetes es claro...<br/><br/><pre> * You have disabled some of the ant tasks. Be advised that this may<br/> * break building some of the Java packages!!<br/> *<br/> * We can only offer very limited support in cases where dev-java/ant-tasks<br/> * has been build with essential features disabled.</pre><br/><br/>Esta bien poder deshabilitarlo. El mensaje asusta un poco pero es para que no envíen bugs tontos... Lo que menos me gusta es el sistema de USE flags... cada día esta más desordenado y más grande, tendrán que reestructuralo de alguna forma. Sólo hay que mirar todas estas local USE flags (son local porque sólo afectan a éste paquete), estan mezcladas con todas las que empiezan con "noX" de todos los otros paquetes... y aunque <a href="http://packages.gentoo.org/packages/?category=app-portage;name=ufed">ufed</a> ayuda mucho a editar las USE flags, conforme van creciendo es menos intuitivo.
