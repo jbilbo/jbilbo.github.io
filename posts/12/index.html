@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="En Gentoo ha pasado a estable Mozilla Firefox 1.0 y todo el escritorio KDE 3.3.1.Mientras tanto en Ubuntu ya esta disponible en hoary la versión 1.0 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/posts/12">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/18/paquetes-disponibles/">Paquetes Disponibles</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-18T05:46:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">En Gentoo ha pasado a estable Mozilla Firefox 1.0 y todo el escritorio KDE 3.3.1.<br/><br/>Mientras tanto en Ubuntu ya esta disponible en hoary la versión 1.0 de Firefox, así que los que quieran subir de versión pueden probar a cambiar en el repositorio main warty por hoary, y a continuación:<br/><br/><pre>apt-get update<br/>apt-get install mozilla-firefox</pre><br/><br/>Luego acordaos de poner otra vez el repositorio a warty, y hacer apt-get update.<br/><br/><b>Actualización</b>: Al parecer no parece funcionar bien la versión de hoary en warty&#8230; así que si utilizas la versión warty (estable) de Ubuntu y quereis el Firefox 1.0, mirar <a href="http://www.marblestation.com/blog/index.php?p=262">éste post</a> del sergio.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/18/migrar-de-devfs-udev-en-gentoo/">Migrar De Devfs a Udev en Gentoo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-18T04:53:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:53 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Udev es la nueva forma de gestionar el /dev en linux, nacido para sustituir el bastante desastroso devfs. Actualmente <b>es un requisito para Gnome 2.8</b>, ya que lo utiliza para gestionar los dispositivos. <br/>Los usuarios de Gentoo han estado utilizando prácticamente desde que salió la distribución esa gestión a través de Devfs (en en kernel se le reconoce por &#8220;/dev file system support (OBSOLETE)&#8221;), así que ahora toca el cambio.<br/><br/>Existe 2 guías que hablan sobre la migración de devfs a udev:<br/><br/>- <a href="http://www.gentoo.org/doc/en/migration-to-2.6.xml">Guía completa para migrar a un kernel 2.6 en Gentoo</a>. (inglés).<br/>- <a href="http://www.gentoo.org/doc/en/udev-guide.xml">Guía de Udev para Gentoo</a>. (inglés)<br/><br/>Yo voy a resumir los pasos a seguir que he hecho para que funcione, siguiendo estas guías:<br/><br/><a href="http://jhernandez.gpltarragona.org/blog/archives/000245.html">Migramos al nuevo hotplug</a> (Si es que todavía no lo hemos hecho)<br/><br/><pre>emerge --sync<br/>emerge udev</pre><br/><br/>Vamos a nuestro kernel (recomiendo el último gentoo-dev-sources):<br/><br/><pre>cd /usr/src/linux<br/>make menuconfig</pre><br/><br/>Opciones requeridas:<br/><br/><pre>General setup ---><br/>  [*] Support for hot-pluggable devices<br/><br/>File systems ---><br/>  Pseudo filesystems ---><br/>    [*] /proc file system support<br/>    [*] Virtual memory file system support (former shm fs)</pre><br/><br/>Opciones que debemos deshabilitar (la de la dev se puede dejar, pero para qué&#8230;):<br/><br/><pre>File systems ---><br/>  Pseudo Filesystems ---><br/>    [ ] /dev file system support (OBSOLETE)<br/>      [ ]   Automatically mount at boot</pre><br/><br/>Ahora compilamos y modificamos el grub como siempre:<br/><br/><pre>make && make modules_install<br/>cp arch/i386/boot/bzImage /boot/kernel-con-udev<br/>vi /boot/grub/grub.conf</pre><br/><br/>Si utilizamos genkernel, hay una manera para compilar el kernel con las opciones necesarias para udev automáticamente utilizando este comando:<br/><br/><pre>genkernel --udev --menuconfig --bootloader=grub all</pre><br/><br/>La opción &#8211;menuconfig te abrirá el menú del kernel par retocar lo que se quiera antes de empezar a compilar con las opciones que el genkernel pone. También automáticamente te actualizará el grub&#8230; suena muy bien si hace lo que dice, pero no lo he probado :)<br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/321">Artículo</a> en gpltarragona.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/18/actualizacion-del-hotplug-en-gentoo/">Actualización Del Hotplug en Gentoo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-18T04:36:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:36 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Ahora el hotplug de Gentoo se ha dividido en 2 paquetes, el hotplug  (para cargar módulos una vez ha arrancado el ordenador) y coldplug (para que los arranque al inicio). Además de eso ha cambiado alguna localización/nombre de sus directorios y  ficheros de configuración.<br/>Pasos para migrar de uno a otro:<br/><br/><pre>emerge --sync<br/>emerge hotplug coldplug<br/>rc-update add coldplug boot</pre><br/><br/>Borramos el archivo (si es que lo tenemos) isapnp.rc porque esta obsoleto y pasamos nuestro firmware (si tenemos alguno) a la nueva carpeta:<br/><br/><pre>rm -f /etc/hotplug/isapnp.rc<br/>mkdir /lib/firmware<br/>mv /usr/lib/hotplug/firmware/* /lib/firmware/.</pre><br/><br/>Por último actualizamos la configuración:<br/><br/><pre>etc-update</pre><br/><br/>Toda la configuración en /etc/hotplug puede ser sobreescrita con la nueva sin problemas (a no ser que vosotros mismos hayais modificado algo).<br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/320">Artículo</a> en gpltarragona.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/17/configurar-apache2-con-ssl-en-ubuntu/">Configurar Apache2 Con SSL en Ubuntu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-17T04:28:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:28 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Aunque supongo que es igual que con Debian, como siempre.<br/><br/>Instalamos Apache2:<br/><br/><pre>apt-get install apache2</pre><br/><br/>Habilitamos el módulo ssl:<br/><br/><pre>a2enmod ssl</pre><br/><br/>Ejecutamos un script para crear nuestro certificado de seguridad para el servidor (estará autofirmado).<br/><br/><pre>apache2-ssl-certificate</pre><br/><br/>Nos hará una serie de preguntas&#8230;<br/><br/><pre> # apache2-ssl-certificate<br/><br/>creating selfsigned certificate<br/>replace it with one signed by a certification authority (CA)<br/><br/>enter your ServerName at the Common Name prompt<br/><br/>If you want your certificate to expire after x days call this programm<br/>with -days x<br/>Generating a 1024 bit RSA private key<br/>........++++++<br/>....................++++++<br/>writing new private key to '/etc/apache2/ssl/apache.pem'<br/>-----<br/>You are about to be asked to enter information that will be incorporated<br/>into your certificate request.<br/>What you are about to enter is what is called a Distinguished Name or a DN.<br/>There are quite a few fields but you can leave some blank<br/>For some fields there will be a default value,<br/>If you enter '.', the field will be left blank.<br/>-----<br/>Country Name (2 letter code) [GB]:ES<br/>State or Province Name (full name) [Some-State]:Catalunya<br/>Locality Name (eg, city) []:Tarragona<br/>Organization Name (eg, company; recommended) []:jhernandez<br/>Organizational Unit Name (eg, section) []:home<br/>server name (eg. ssl.domain.tld; required!!!) []:jhernandez.gpltarragona.org<br/>Email Address []:admin@jhernandez.gpltarragona.org</pre><br/><br/>Ahora crearemos la configuración de &#8220;el sitio&#8221; para el servidor seguro basándonos en la que lleva por defecto:<br/><br/><pre>cp /etc/apache2/sites-available/default /etc/apache2/sites-available/ssl<br/>ln -s /etc/apache2/sites-available/ssl /etc/apache2/sites-enabled/ssl</pre><br/><br/>/etc/apache2/sites-enabled/ssl tiene que empezar de la siguiente manera:<br/><br/><pre>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/ssl.jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/ssl.jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Tendreis que cambiar lo de directory según el directorio que queráis&#8230;<br/>Ahora, /etc/apache2/sites-enabled/default también hay que configurarlo de la misma forma:<br/><br/><pre>NameVirtualHost *:80<br/>&lt;VirtualHost *:80&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Ahora añade en el fichero /etc/apache2/ports.conf:<br/><br/><pre>Listen 443</pre><br/><br/>Por último, sólo basta añadir dentro del fichero &#8220;/etc/apache2/sites-enabled/ssl&#8221; en cualquier lugar (por ejemplo justo debajo de &#8220;ServerSignature On&#8221;):<br/><br/><pre>SSLEngine On<br/>SSLCertificateFile /etc/apache2/ssl/apache.pem</pre><br/><br/>Reiniciamos apache2:<br/><br/><pre>/etc/init.d/apache2 restart</pre><br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/318">Artículo</a> en gpltarragona.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/16/sustituir-cadenas-en-vim/">Sustituir Cadenas en Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-16T14:53:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Ayer tuve que sustituir en un archivo de 180 Mb abierto con vim lo siguiente:<br/><br/><pre>|<br/>|>From</pre><br/><br/>por<br/><br/><pre>|<br/>|<br/>|From</pre><br/><br/>Incluyendo los espacios en blanco (<b>actualización: he marcado cada línea, para que se vea únicamente, con el carácter &#8220;|&#8221; al principio</b>), que no sabía hasta ahora cómo los trataba vim. El comando de buscar y reemplazar que hice servir fué:<br/><br/><pre>:%s/\n\n>From/\r\rFrom/g</pre><br/><br/>En vim los &#8220;\n&#8221; (para buscar) son los saltos de línea y para poner una línea en blanco cuando reemplazas se utiliza &#8220;\r&#8221;. Si buscamos 2 saltos de línea seguidos equivale a 1 línea en blanco.Y si lo sustituimos por 2 &#8220;\r&#8221; (nuevas líneas) obtenemos 2 nuevas lineas en lugar de 1 (que teníamos antes). Lo demás es simplemente sustituir el &#8220;>From&#8221; por el &#8220;From&#8221;.<br/><br/>El comando buscar/reemplazar normal para que lo haga en todo el texto es:<br/><br/><pre>:%s/texto-para-buscar/texto-para-reemplazarlo/g</pre></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/16/greatest-hits/">Greatest Hits</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-16T01:17:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>1:17 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">No sé si os habréis fijado, pero no veas como se columpian los músicos (o mejor dicho las discográficas) en estas fechas (pre-navideñas)&#8230; Esta de moda sacar &#8220;Lo mejor de&#8221; o lo que es lo mismo: Los Greatest Hits. Así de memoria me acuerdo de los siguientes:<br/><br/>- Britney Spears<br/>- Madonna<br/>- Alejandro Sanz<br/>- Kylie Minogue<br/>- Will Smith<br/>- Jarabe de Palo<br/>- Seal<br/>- Shania Twain<br/><br/>&#8230; y muchos más que me dejo, segurísmo. Estamos en un época en el que nuevos artistas sacan recopilaciones y los Hombres G sacan discos nuevos. Impresionante&#8230;</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/15/resident-evil-apocalipsis/">Resident Evil: Apocalipsis</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-15T20:31:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>8:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Segunda parte de la saga <a href="http://www.sonypictures.com/movies/residentevilapocalypse/">Resident Evil</a> que proviene de los videojuegos. Mientras la primera parte fué una película más que aceptable teniendo en cuenta cómo salen paradas este tipo de películas o conversiones&#8230; esta segunda parte antes de verla pintaba a chasco. Pero después de verla, tengo que decir que nada más lejos de la realidad, es una muy buena película, con un buen argumento, bastante fiel a la saga original Resident Evil en muchos puntos pero también con muchos toques propios, entre ellos la mayoría tienen que ver con la protagonista.<br/><br/><div align="center"><img src="http://www.themoviebox.net/movies/2004/NOPQR/Resident-Evil_Apocalypse/images/reevil00-01.jpg" /></div><br/><br/>Es una película que te gustará si te gustó la primera o este tipo de género. Se puede considerar una película de terror/acción, aunque no es terror ni psicológico ni gore (sólo por el tema zombies) y sí más de sustos o situaciones (es el que me va a mí). Cabe decir que no es menos &#8220;fuerte&#8221; en éste sentido que la primera.<br/>Ahora sólo tocará esperar a la tercera parte, que esta en camino pero&#8230; no sé esta vez de dónde van a sacar el argumento, pero seguramente no tenga ya mucho que ver con el videojuego.<br/><br/><div align="center"><b>Calificación: 8/10</b></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/15/abrir-elinks-desde-mozilla-firefox-con/">Abrir Elinks Desde Mozilla Firefox Con Mldonkey</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-15T15:01:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:01 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Hoy he descubierto el plugin que te permite hacerlo! Hace un tiempo busqué información y no encontré nada pero hoy de casualidad he visto que venía con el mldonkey mismo lo que pasa que una versión vieja.<br/>Para que funcione con mozilla 0.9.3 (la de ubuntu estable), aunque supongo que también irá con mozilla 1.0, basta con bajarse la última versión de su web:<br/><br/><a href="http://www.informatik.uni-oldenburg.de/~dyna/mldonkey/">Mozilla MLdonkey Protocol Handler</a><br/><br/>El elink se transfiere directamente a mldonkey a través de su interfície web, cuando hagamos click a un &#8220;ed2k://&#8221;  nos preguntará el password de nuestro cliente mldonkey (si es que le hemos puesto). Al ponerlo correctamente, saldrá una ventana (pop-up) donde pondrá &#8220;done&#8221;. Accedemos a mldonkey con nuestra interfície favorita y veremos que el elink ya esta puesto para bajar.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/15/sin-correo/">Sin Correo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-15T04:02:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:02 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Con el tema de la migración de Gentoo a Ubuntu, hace un par de días que no tengo correo. Estoy intentando montarlo todo centralizado, pero también quiero integrar con el nuevo sistema todo mi correo antiguo (de 1 año y algo creo&#8230;). Voy mirando el correo por web de algunas cuentas pero no es lo mismo, así que si tardo en responder a algo o no respondo&#8230; es por eso.<br/><br/><b>Actualizado</b>: Ya lo tengo todo montado. Getmail + Procmail + Dovecot + Evolution. También Exim para enviar pero todavía no lo tengo configurado para recibir.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/12/gnome-28-estable-en-gentoo/">Gnome 2.8 Estable en Gentoo!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-12T17:42:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Justamente que hoy hablaba cuando pasaría&#8230; por fin Gnome 2.8 es estable en Gentoo!. Me he dado cuenta viendo el <a href="http://packages.gentoo.org">packages.gentoo.org</a> y he actualizado el portage de mi Gentoo por chroot desde la Ubuntu para ver si era cierto&#8230; y lo es!<br/><br/>Mis predicciones esta vez no fueron del todo desacertadas, de primeras predije que sería estable <a href="http://jhernandez.gpltarragona.org/blog/archives/000185.html">el día 4 de noviembre</a> y más tarde rehice la predicción diciendo <a href="http://jhernandez.gpltarragona.org/blog/archives/000208.html">el 20 de noviembre</a>&#8230; vale, ha sido el día 12 de noviembre&#8230;  pero si hacemos la media aritmética de las 2 predicciones: 4 + 20 / 2 = 12!&#8230; 12 de noviembre! No está mal xD<br/><br/>Pues nada, ya sabéis:<br/><br/><pre>emerge --sync<br/>emerge -auD world</pre><br/><br/>Lo que no sé es que pasa si no usas udev&#8230; supongo que perderás funcionalidades o algo&#8230; mejor <a href="http://forums.gentoo.org/viewtopic.php?t=210428">migrar</a> si utilizas devfsd.</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/13">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/11">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

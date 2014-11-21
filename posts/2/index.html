@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Si has experimentado algún tipo de error en tu disco duro (datos corruptos) o simplemente sospechas que algo puede no ir bien, de vez en cuando un &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/posts/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/17/errores-en-el-disco-duro/">Errores en El Disco Duro</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-12-17T21:19:00+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>9:19 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Si has experimentado algún tipo de error en tu disco duro (datos corruptos) o simplemente sospechas que algo puede no ir bien, de vez en cuando un repaso al disco no viene mal. Aunque las distribuciones linux ya de por sí te hacen un fsck de vez en cuando, por lo que en general no hace falta llevar mantenimiento de disco duro por parte del usuario (como debe ser).<br /><br />Aún así, yo utilizo unos comandos cuando quiero/intento arreglar/resucitar un disco duro y que por si a alguien le es de utilidad (no le gusta mirarse el man del fsck o el badblocks) lo voy a poner aquí.</p>Tomamos como premisas lo siguiente:<br /><p>- He arrancado con un LiveCD, hago las operaciones como root en un terminal (y con las particiones de mi disco duro desmontadas)<br /><br />- mi disco duro es /dev/sda<br />- mi sistema de ficheros linux es Ext3<br />- linux esta en la partición /dev/sda3 (todo, sin separar):</p><p>Ahora un repaso al sistema de ficheros y que arregle todos los errores que encuentre automáticamente.</p><pre>fsck.ext3 -f -tt -v -y /dev/sda3</pre><p>Ahora un repaso físico al disco duro en busca de sectores defectuosos. Lo buscaremos en todo el disco duro en vez de sólo en la partición linux. Si sólo quereis mirar los sectores de esa partición en concreto, hay una opción en el fsck para que lo llame por ti.</p><pre>badblocks -s /dev/sda</pre><p><b>Actualización</b>: Sergio me apunta (thx!) a que hacer el badblocks desde fsck.ext3 además actualiza la lista de inodos para guardarte qué sectores estan defectuosos y no utilizarlos. Mucho mejor de esta manera, utilizando el comando badblocks únicamente te los lista pero no hace nada. Entonces sería:</p><pre>fsck.ext3 -f -c -tt -v -y /dev/sda3</pre><p>(Prefiero siempre el modo lectura antes que el escritura no destructiva :P)</p><p>Por último, nunca viene mal intentar optimizar el sistema de ficheros (optimizar suena bien). Fsck tiene una opción para eso (-D):</p><pre>fsck.ext3 -f -tt -v -D -y /dev/sda3</pre></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/11/22/mis-proximas-lecturas/">Mis Próximas Lecturas</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-11-22T06:33:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2007</span></span> <span class='time'>6:33 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Uno de mis géneros favoritos es la ciencia ficción. La fantasia también pero no he salido del gran J.R.R. Tolkien, las leyendas y las crónicas de DragonLance (si me podeis recomendar alguna otra saga de DragonLance, adelante, porque siempre que las veo en la tienda me pierdo y no sé cuál coger…) y Las leyendas de Terramar de Ursula K. Le Guin, algo más flojas.<br />En este post quiero recoger unos títulos de libros que he recopilado y que poco a poco quiero ir leyendo durante los próximos años. Además de que me sirva a mi de TODO-list también os puede servir a vosotros para que os decidais por alguno de estos, que ya os digo, se trata todo de novela del tipo ciencia ficción (la mayoría de Asimov porque me han gustado los 2 libros que me he leído de él y voy a seguir con toda su colección) salvo una saga de fantasia.<br /><ul><li>Doomsday Book - Connie Willis <b>(leído!)</b></li><li>Saga de “Song of Ice and Fire” (Fantasia) - George R. R. Martin <ul><li>Juego de Tronos <b>(leído!)</b></li><li>Choque de Reyes <b>(leído!)</b></li><li>Tormenta de Espadas  <b>(leído!)</b></li><li>Festín de Cuervos <b>(leído!)</b></li><li>Danza de Dragones <b>(leído!)</b></li></ul></li><li>De Isaac Asimov: <ul><li>El Fin de la Eternidad <b>(en mis manos!)</b></li><li>Los Propios Dioses <b>(en mis manos!)</b></li><li>La Saga de la Fundación (incluye Historia de los Robots, Imperio Galáctico y Ciclo de la Fundación) : <ul><li>Yo, Robot <b>(leído!)</b></li><li>Bóvedas de acero <b>(en mis manos!)</b></li><li>El Sol Desnudo <b>(leído!)</b></li><li>Los Robots del Amanecer <b>(en mis manos!)</b></li><li>Robots e Imperio</li><li>En la Arena Estelar</li><li>Las Corrientes del Espacio.</li><li>Un guijarro en el cielo</li><li>Preludio a la Fundación</li><li>Hacia la Fundación <b>(en mis manos!)</b></li><li>Fundación</li><li>Fundación e Imperio <b>(en mis manos!)</b></li><li>Segunda Fundación</li><li>Límites de la Fundación</li><li>Fundación y Tierra</li></ul></li></ul></li><li>1984 - George Orwell <b>(leído!)</b></li><li>Hyperion - Dan Simmons <b>(en mis manos!)</b></li><li>Solaris - Stanislaw Lem <b>(en mis manos!)</b></li><li>Dune - Frank Herbert <b>(leído!)</b></li><li>Pórtico - Frederick Pohl <b>(leído!)</b></li><li>Las Estrellas de mi destino - Alfred Bester</li><li>Ubik - Philip K. Dick <b>(leído!)</b><b></b></li><li>Los desposeídos - Ursula K. Le Guin</li><li>La guerra interminable - Joe Haldeman <b>(en mis manos!)</b></li><li>Cita con Rama - Arthur C. Clarke</li><li>Fahrenheit 451 - Ray Bradbury <b>(leído!)</b></li>Los últimos de mi lista han sido sacados de “Los fundamentales de Ciencia Ficción” (excluyendo los ya leídos), una votación que se hizo en <a href="http://sedice.com/">Sedice</a>.</ul></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/20/primer-post-desde-wordpress/">Primer Post Desde Wordpress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-20T12:20:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>12:20 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Por fin he migrado a wordpress! Ya he dejado atrás Movable Type, fuera esa espinita clavada de utilizar un blog con licencia privativa&#8230; <br/>En realidad tenía en mente bastante tiempo hacerlo y me he decidido hoy al tener poco sueño, décimas de fiebre y el blog antiguo roto xD<br/><br/>Ahora mismito esta con el theme por defecto y sí, no hay cosa más fea que un blog con el theme por defecto, pero lo cambiaré cuando pueda. Quizás cuando leais ésto ya no estará puesto&#8230; <br/><br/>PD: Le he puesto <a href="http://www.eurielec.etsit.upm.es/~chema/wp-1.5-es/">la traducción al español</a> y también aprovecharé para activar los comentarios (en movable type los quité de código y luego no sabía ponerlos :P) y ponerle el par de plugins que <a href="http://www.marblestation.com/blog/?p=374">comenta sergio</a>.<br/>PD2: Aunque he migrado todos los posts antiguos al nuevo wordpress (y de paso lo tengo ya todo a utf-8), los antiguos posts seguirán estando disponibles como .html que eran.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/13/ubuntu-en-marcha-en-el-nuevo-hard/">Ubuntu en Marcha en El Nuevo Hard</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-13T02:42:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>2:42 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Ya esta instalada la Ubuntu en el nuevo servidor, que al final será un AMD k6 500Mhz con 256Mb RAM y 8GB de disco duro.<br/><br/>La verdad es que la Ubuntu se ha instalado rapidísima y sin ningún problema en su opción &#8220;server&#8221;&#8230; me ha hecho un poco de &#8220;daño&#8221; el pensar las horas que pasé en su día instalando una Gentoo en el otro de al lado&#8230; (pero aprendí, eso ya lo tengo ;-)<br/><br/>Esta fuera de servicio el ftp y el cvs ahora mismo.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/11/comienza-la-migracion-al-nuevo-hardware/">Comienza La Migración Al Nuevo Hardware</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-11T18:45:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>6:45 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">En GPLTarragona tenemos actualmente 2 servidores, el principal que es el que lo hace todo y el secundario que prácticamente no hace nada puesto que es muy poco potente (impotente? xD). <br/>Lo que haremos ahora es pasar a un 600Mhz utilizando el disco duro del secundario y cuando esté lista la instalación y configuración de los servicios que se necesiten pasaremos a la migración del sistema. El servidor estará sin funcionar lo menos tiempo posible&#8230; :-S xD <br/>Hoy empezaré los backups y demás cosas que puedo hacer por ssh desde casa y mañana, seguramente por la tarde, se hará el cambio (tornavís en mano xD).</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/08/angeles-y-demonios/">Ángeles Y Demonios</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-08T05:04:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Me he leído otro libro de Dan Brown, autor de El Código DaVinci (ECD). Se llama Ángeles y Demonios, y creo que se trata del libro que hay después del best-seller ECD.<br/><br/><img src="http://jhernandez.gpltarragona.org/varios/ayd.jpg" alt="Ángeles y Demonios" align="right" /><br/><br/>De hecho, es muy similar al anterior. Si os gustó ECD seguramente os gustará también Ángeles y Demonios, aunque ya no sorprenderá tanto como ECD y los acertijos no son tan profundos&#8230; pero sigue teniendo cierta frescura y engancha en según qué partes del libro también bastante.<br/><br/>Pero lo más interesante del libro es que ahora mismo esta de actualidad. Uno de los temas que toca más es el Vaticano y todo lo relacionado con él y su historia. Habla del Cónclave, del camarlengo, sus funciones&#8230; etc. Todo lo que pasa cuando un Papa muere, porque cuando empieza el libro el Papa acaba de morir hace unos días&#8230; de hecho una anécdota curiosa es que con todo el &#8220;tocho&#8221; de libro que hay&#8230; en realidad sólo es para narrar lo que pasa 1 dia. Bastante frenético, sí :-)<br/><br/>En fin, un libro recomendado para los que les gustó ECD. Si no te gustó ECD, sólo te interesará si te sientes atraído por el tema &#8220;Vaticano&#8221; y no tienes otra cosa que leer :-P. Si no has leído ECD, léetelo, lo considero mejor libro que éste&#8230;<br/>Ángeles y Demonios cumple bien su rol de libro que necesita la gente después de leer ECD y quedarse con más ganas.<br/><br/><div align="center"><b>Calificación: 6/10</b></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/08/mandrake-sera-mandriva/">Mandrake Será Mandriva</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-08T04:46:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">La distribución de GNU/Linux Mandrake adquirió Conectiva hace unos dias y aprovechando ese cambio en la empresa también han cambiado el nombre corporativo, empujados un poco también porque ya existe otra empresa con nombre Mandrake y han tenido algún problema. <br/>A partir de ahora pues, será conocida como <a href="http://www.mandriva.com">Mandriva</a>, de Mandrake + Conectiva.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/08/ubuntu-hoary-en-un-amd64-y-release/">Ubuntu Hoary en Un AMD64 Y Release Final</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-08T04:10:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:10 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Hoy he podido probar a instalar una Ubuntu con el CD de la RC (Release Candidate) y comprobar cómo funciona esta distribución con otra arquitectura diferente a la x86. Una de las cosas que me ha llamado la atención es que el LiveCD de x86 (de la versión anterior de hace 6 meses, la Warty) funciona perfectamente en la arquitectura AMD64, y es que aunque sí sabía que la compatibilidad 32-64 bits existía, como Ubuntu pone en el CD sólo compatible con x86 y los CDs de AMD64 no incluían el LiveCD (sólo instalación)&#8230; pensaba que no había todavía ninguno disponible. Pero claro, hay que pensar en una cosa compatible contra una cosa optimizada o compilada para tu arquitectura que aproveche la capacidad de un procesador de 64bits. Hoary ya tiene versión para AMD64.<br/><br/>En cuanto a la instalación ha ido todo como la seda menos al final, cuando ha tenido que salir el login gráfico. Ahí se ha quedado colgado, tema de la tarjeta gráfica ATI 9250 que llevaba. Se consigue compatibilidad gráfica poniendo en la línea del archivo de configuración de las X: /etc/X11/xorg.conf el driver &#8220;vesa&#8221; en vez del driver &#8220;ati&#8221; que te ponía (el fglrx propietario tampoco iba&#8230;). Por supuesto aceleración 3D no tendrá porque el driver vesa es el genérico, compatible con la mayoría de tarjetas gráficas. Aunque para trabajar en escritorio funciona a la perfección (con el doom 3 ya no tanto :P).<br/><br/><div align="center"><img src="http://www.ubuntulinux.org/header-image4.png" alt="Logo Ubuntu" /></div><br/><br/>Por cierto, oficialmente ya es 8 de abril y <a href="http://www.ubuntu.com/">Ubuntu estrena nueva web</a> (la que ganó el concurso) y oficialmente lanza la versión Final de Hoary!</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/05/wtf/">WTF?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-05T02:52:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>2:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Noticia en <a href="http://barrapunto.com/article.pl?sid=05/03/15/1129227">barrapunto</a> que se me pasó y la he visto hoy en otro artículo de la misma web enlazada:<br/><br/><i>El 14 de marzo se anunció que el principal partido de la oposición en España, el Partido Popular, había presentado una proposición de Ley para eliminar el canon por copia privada de los soportes informáticos.<br/>A la Sociedad de Autores parece que le ha faltado tiempo para calificar esta propuesta de descabellada.<br/>La propuesta del PP pide la eliminación del canon también de otros soportes informáticos, como los propios CDs y DVDs, y curarse en salud ante los insistentes rumores de un posible canon a las líneas ADSL.</i><br/><br/>Comentario en barrapunto:<br/><br/><i>Esta visto que no es cuestión de ser de izquierdas o de derechas, es cuestión de apoyar a la oposición que sea, porque son los únicos que quieren ganarse a la gente.<br/><br/>El PSOE acordando con la SGAE, y el PP proponiendo la eliminación del canon. Dentro de X años, cuando el PP vuelva a estar en el poder, la situación será justamente la contraria.</i><br/><br/>¿Pero ésto qué es? ¿Todos los partidos que llegan al gobierno se venden? No entiendo nada&#8230; O_o</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/04/04/ring-2/">The Ring 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-04-04T04:30:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:30 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">No sorprende ya tanto como lo hizo su primera parte aunque sigue dando cosa la maldita niña de los malos pelos&#8230; por cierto sí, me atreví a ir a verla :-)<br/><br/>Siguen saliendo los mismos protagonistas que la primera parte, el niño sigue siendo raro, la madre sigue teniendo decisiones malas (que levantan algún murmullo en el cine) y la niña (recuerdo el nombre, Samara) en esta parte deja &#8220;en calzoncillos&#8221; a cualquier escalador profesional.<br/><br/>Recuerdo que el tema central de esta saga (importante saberlo antes de ir a verla&#8230;) es que existe una cinta de video que cuando la ves recibes una llamada que te dice que morirás al séptimo dia. Cuando llega ese dia sale una niña despeinada tirando vasos de agua&#8230; y se encarga de que ocurra lo que dijo el del teléfono.<br/>Y digo yo&#8230; no será ésto un complot subliminal de las empresas de electrónica con beneficios en la indústrial del cine para que de una vez por todas se implante el DVD y se descarten los videos VHS. Yo creo que sería el método más eficaz en la película para evitar más muertes:<br/><br/>- Mira esa cinta VHS, ya verás&#8230;<br/>- Tio, yo no tengo video pa ese trasto&#8230; sólo DVD.<br/><br/>Vida salvada.<br/><br/>Luego está el tema de que si ves la película, la única forma de salvarte es haciendo una copia de ella y que la vea otra persona&#8230; es decir, cargarle el muerto (nunca mejor dicho) a otra persona.<br/>¿Ésto qué signfica? ¿Apología del pirateo? Nos esta diciendo que piratear la cinta nos puede salvar la vida&#8230; ¿que pasaría si la cinta se pasara a digital y se compartiera por bittorrent o la red edonkey? Si la ves tienes que compartirla con un rate 1.0 o más&#8230; <br/>¿o al revés? Si aceptas una copia pirateada de otra persona&#8230; ¡puedes morir! En este caso la niña sería simbólicamente la SGAE que a los 7 dias viene a cobrarte el cánon xD<br/>O por ej. si la visionaran en la publicidad de la SuperBowl (~180 millones de personas)&#8230; no iba a tener trabajo la niña. Quedan muchos cabos sueltos que si no lo desvelan en la 3era parte, quizás sí lo hagan en Scary Movie 4 (si alguna vez se estrena&#8230;) xDD<br/><br/>En fin&#8230; que la recomiendo para masocas, escaladores, el Sergio, y gente que les gustó la primera parte o quieran ver una buena peli de terror psicológico.<br/><br/>Nota: Éste artículo no tiene foto expresamente.<br/><br/><div align="center"><b>Calificación 6/10</b></div></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/index.html">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

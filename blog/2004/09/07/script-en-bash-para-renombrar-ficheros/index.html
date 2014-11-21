@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Script en Bash Para Renombrar Ficheros - Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Como gthumb estable en Gentoo (v. 2.2.1) no soporta las extensiones .JPG (la versión inestable 2.4.2 sí las soporta ya), he hecho un pequeño script &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/blog/2004/09/07/script-en-bash-para-renombrar-ficheros">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Script en Bash Para Renombrar Ficheros</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-09-07T06:27:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:27 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Como gthumb estable en Gentoo (v. 2.2.1) no soporta las extensiones .JPG (la versión inestable 2.4.2 sí las soporta ya), he hecho un pequeño script en bash para que me traduciese todo mi álbum de fotos recursivamente de *.JPG a *.jpg, y de paso también que me quite los espacios en blanco en los nombres.<br/><br/>Es un script muy sencillo, puede servir para aprender un poco de bash y es fácilmente retocable para otros propósitos (se podría decir que ésta es la versión estable porque la he probado yo en un superdirectorio con todo mi album y me ha funcionado correctamente&#8230; las demás versiones son experimentales).<br/><br/><pre>#!/bin/bash<br/># Programa en bash que renombra recursivamente todos los ficheros *.JPG<br/># a *.jpg y quita todos los espacios en blanco.<br/>func_renombrar()<br/>    {<br/>    for Fichero in *<br/>    do<br/>        (<br/>        if [ -d "$Fichero" ]; then<br/>            cd "$Fichero"<br/>            pwd<br/>            func_renombrar<br/>        fi<br/>        )<br/>	Extension=`echo $Fichero | gawk -F. '{print $2}'`<br/>	if [ "$Extension" = "JPG" ]; then<br/>		SinEspacios=`echo $Fichero | sed -s 's/\ //g'`;<br/>		NuevoNombre=`echo $Fichero | gawk -F. '{print $1".jpg"}'`<br/>		echo "$Fichero -> $NuevoNombre"<br/>		mv "$Fichero" "$NuevoNombre"<br/>	fi<br/> done<br/> }<br/><br/>func_renombrar</pre><br/><br/><b>Actualización</b>: <a href="http://www.xaolin.com/">Sergi</a> me ha enviado el script retocado con algunas mejoras (no lo he probado todavía, pero se agradece el feedback), y es interesante:<br/><br/><i>-si hay &#8220;.&#8221; en medio del fichero, a parte del que precede a la<br/>extensión, lo trate bien<br/>-sea generico (pasandole la vieja y nueva extension por parametros)<br/>-y alguna cosa más pero que ya son manías mías de programar y que no<br/>tienen nada que ver con el caso :P</i><br/><br/><b>Actualización1.1</b> <a href="http://www.lapeig.com">Edgar</a> me ha avisado de un bug en el script del sergi, te dejaba todas las fotos sin extensión. Simplemente se tenía que cambiar la línea 25 que ponía:<br/><i>mv &#8220;$Fichero&#8221; &#8220;$NuevoNombre&#8221;<br/>por esta:<br/>mv &#8220;$Fichero&#8221; &#8220;$NuevoNombre.$nuevaextension&#8221;</i><br/>Ya esta arreglado para quien se lo descargue ahora.<br/>Descargar/ver <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/renamefiles">renamefiles</a><br/><br/><br/><b>Actualización2</b>: <a href="http://www.marblestation.com">Sergio</a> me apunta a otra posible <a href="http://www.marblestation.com/blog/index.php?p=83">solución</a>.<br/><br/>Algunos links de información:<br/><br/><a href="http://www.iespana.es/pacodebian/bash.html">Bash: Ejemplos</a><br/><a href="http://www-106.ibm.com/developerworks/library/l-bash2.html">Bash by example, part2</a></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jbilbo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2004-09-07T06:27:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:27 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jbilbo.github.io/blog/2004/09/07/script-en-bash-para-renombrar-ficheros/" data-via="jbilbob" data-counturl="http://jbilbo.github.io/blog/2004/09/07/script-en-bash-para-renombrar-ficheros/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/09/05/solucion-las-nuevas-dependencias-de-ant/" title="Previous Post: Solución a las nuevas dependencias de ant en Gentoo">&laquo; Solución a las nuevas dependencias de ant en Gentoo</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/09/08/monoppix-todo-el-proyecto-mono-en-un/" title="Next Post: Monoppix: Todo el proyecto Mono en un LiveCD">Monoppix: Todo el proyecto Mono en un LiveCD &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

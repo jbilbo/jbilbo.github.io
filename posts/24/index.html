@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Peazo de título...Es un error de Oracle Database 10g que me dió al intentar instalarla en SuSE 9.1 Personal Edition con kernel 2.6.5-7.95. Ocurre en &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/posts/24">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/08/ora-27125-unable-to-create-shared/">ORA-27125: Unable to Create Shared Memory Segment</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-08T18:17:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:17 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Peazo de título&#8230;<br/><br/>Es un error de <b>Oracle Database 10g</b> que me dió al intentar instalarla en <b>SuSE 9.1 Personal Edition</b> con <b>kernel 2.6.5-7.95</b>. Ocurre en el apartado de Asistente de configuración de Bases de Datos, es un apartado opcional pero supongo que la mayoría quiere completarlo.<br/><br/>Solución:<br/><br/><pre>su - root<br/>echo "1" > /proc/sys/vm/disable_cap_mlock</pre><br/><br/>Y volverlo a hacer. Se puede reintentar (retry).<br/><a href="http://forums.oracle.com/forums/thread.jsp?forum=135&thread=233621&message=688804">Más info</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/08/evolucionando/">Evolucionando…</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-08T14:11:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Aún recuerdo, tampoco hace tanto, cuando utilizaba habitualmente <a href="http://www.slackware.com/">Slackware</a>. Era otra cosa, utilizabas tu software y la noticia, &#8220;la actualización&#8221;, las nuevas versiones, venían cuando salía una nueva versión de tu distribución. Es cierto que podías hacer chanchullos para ir actualizando tal o cuál paquete, con éste u otro método, pero la actualización real (glibc nuevas&#8230; etc) la hacías cuando subías de versión en la distribución.<br/><br/>Las cosas cambian, proyectos como Debian o FreeBSD con su filosofía de versiones han hecho que el usuario se acostumbré a la noticia de &#8220;nueva versión de [programa]&#8221; en vez de &#8220;nueva versión de [distribución]&#8221;. Gentoo, Debian, Fedora, Mandrake&#8230; todas, aunque siguen sacando CDs de instalación y subiendo de versión, pero ahora ya la mayoría se basan en un sistema de actualización por programas. Y ese es el futuro. Ahora mismo, con SuSE, que es una distribución no preparada para actualización por programas (aunque se puede apt-getear), me doy cuenta que realmente estoy limitado a los rpm que me proporciona la distribución, porque los &#8220;externos&#8221; aunque se puedan instalar no le gustan mucho a <a href="http://www.suse.de/es/private/products/suse_linux/i386/yast.html">YaST</a>&#8230; además que el proceso es manual (sigh xD) total que se &#8220;vive&#8221; con los rpm oficiales, con alguno que otro externo (como para gaim, que me niego a &#8220;aguantar&#8221; con una 0.75) y a base de parches de seguridad. No digo que este tipo de distribuciones no sean adecuados para según que gente&#8230;<br/><br/>Ahora que considero he provado la mayoría de distribuciones GNU/Linux importantes, puedo decir una cosa: <br/>Usuarios de Gentoo, estad tranquilos. Ahora mismo estais con la mejor distribución GNU/Linux del mundo, con sus virtudes y sus defectos. Y sólo tiene 2 años.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/07/gaim-079-con-importante-actualizacion/">Gaim 0.79 Con Importante Actualización Para MSN</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-07T00:02:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>12:02 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Después del soporte de envio de ficheros a través del protocolo de jabber en la versión 0.77, <b>la nueva versión 0.79 soporta la transferencia de archivos por MSN y sus imprescindibles fotitos :-)</b>. Poco a poco este cliente de mensajería se esta conviertendo en el mejor, muy difícil teniendo en cuenta que no se dedica a un protocolo en concreto como <a href="http://amsn.sf.net">amsn</a> o <a href="http://gossip.imendio.org/">gossip</a><br/><br/><a href="http://gaim.sf.net">Web de Gaim</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/05/de-gentoo-suse/">De Gentoo a SuSE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-05T18:16:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:16 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">He decidido cambiar en mi portatil la Gentoo para probar por primera vez la distribución SuSE, en este caso la 9.1 Personal. <br/><br/>Me servirá también para mi PFC, ya que de esta forma podré probar la base de datos Oracle y Compiere en diferentes distribuciones con los cambios que comportaría, además Gentoo no es una distribución oficialmente soportada por Oracle, y en la instalación da algunos problemas.<br/><br/>De primera impresión, decir que jamás he visto un GNU/Linux tan fácil de instalar y con una interface de instalación tan bonita. Realmente impresionante. Por ahora no me ha dado ni 1 sólo problema, ha sido TODO un &#8220;siguiente siguiente&#8221; (incluido el formateo y detección de particiones!), sólo he tenido que elegir el idioma al principio.  Después del primer reboot, el idioma se resetea a inglés (no sé porque, supongo que un fallo o que no estará traducido), pero la configuración sigue siendo tan fácil como la instalación.<br/><br/>Estoy haciendo una instalación por defecto, así que me pondrá KDE de un principio, veremos si aguanto&#8230; xD</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/04/frases-de-mi-primo-ii/">Frases De Mi Primo II</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-04T05:53:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:53 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Segundo post dedicado por completo a las frases de mi primo, he aquí mi última remesa:<br/><br/><pre>Oh no! I what!</pre><br/><br/><pre>vamos a hacer una pelea de ostias, o que?</pre><br/><br/><pre>mama, eres la única que lo ha hecho peor.</pre><br/><br/><pre>Yo: Ayer comí pizza...<br/>MiPrimo: Si quieres me lo restriegas por la boca!</pre><br/><br/><pre>Espera, que te da uno el boli.</pre></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/04/timeline/">TimeLine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-04T05:50:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:50 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">DVD. Ni fu ni fa, no es mala pero tampoco es una obra de arte, de esas películas entretenidas que a veces te molestan en alguna que otra escena pesada pero que en lineas generales te deja indeferente&#8230; Ah, va sobre viajes en el tiempo a través de un gusano (forat de cuc)&#8230; y una máquina rara, bastante surrealista. <br/><br/><div align="center"><b>Calificación: 5/10</b></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/03/cuentan-las-leyendas-de-la-urv/">Cuentan Las Leyendas De La URV…</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-03T19:22:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>7:22 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Que había un chaval que hizo la práctica de SOP en una semana (pero el Domingo descansó&#8230;). Y cuenta otra leyenda que el mismo migró Drupal de ISO-15 a UTF-8 en poco más de 5 minutos&#8230; ¿será verdad?<br/><br/><pre>(17:05:10) Marble: estoy haciendo un volcado de la BD a fichero en el primary<br/>(17:13:01) Marble: listo<br/>(17:13:06) Marble: ahora esta todo en UTF-8</pre><br/><br/>Leyendas urbanas&#8230; ;-)</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/03/shrek-2/">Shrek 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-03T17:42:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>5:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Que pechá reir&#8230; no veas&#8230; xDDD Muy muy buena, la mejor película de animación de&#8230; muy buena :D no quiero explicar nada de nada, seguramente Antena 3 ya os habrá destripado la mitad de la peli, así que simplemente id a verla.<br/>Ah, y el gato con botas cumple _perfectamente_ con la expectativa, así que me gustaría que esta película estrenara la primera calificación de 10. ¿Quién dijo que segundas partes siempre fueron malas? <br/><br/><div align="center"><b>Calificación: 10/10</b></div><br/><br/>Por otra banda, se confirmó que saldría Shrek 3 y 4 (a ver si cumplen, lo tienen difícil con ésta parte), y el &#8220;Gato con Botas&#8221;, poniendo la voz Antonio Banderas (genial!) ha tenido tanto éxito que DreamWorks planea hacer una peli donde el protagonista será él.<br/><br/>And now&#8230; Spiderman 2, que ha tenido buenísimas críticas en USA (raro, raro&#8230;).</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/03/im-so-happy/">I’m So Happy!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-03T14:53:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>2:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Me han aceptado los dos (<a href="http://bugs.gentoo.org/show_bug.cgi?id=55272">1</a> y <a href="http://bugs.gentoo.org/show_bug.cgi?id=53724">2</a>) parches del k3b :-)<br/><br/>Esta puesto en el ebuild &#8220;k3b-0.11.12.ebuild&#8221;, que ahora mismo es la versión inestable, así que si hacemos un:<br/><br/><pre>emergetest -p k3b</pre><br/><br/>Se instalará con ese ebuild. Changelog:<br/><br/><pre>*k3b-0.11.12-r1 (03 Jul 2004)<br/>  03 Jul 2004; Heinrich Wendel [lanius-arroba-gentoo.org] k3b-0.11.11.ebuild,<br/>  k3b-0.11.12-r1.ebuild, k3b-0.11.12.ebuild, k3b-0.11.6.ebuild,<br/>  k3b-0.11.9.ebuild:<br/>  add icon for gnome, bug #55272, remove old versions, add arts useflag</pre><br/><br/><b>actualización 13:39</b>: También me han aceptado <a href="http://bugs.gentoo.org/show_bug.cgi?id=55131">el parche</a> de knock!</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/07/02/flame-en-la-lista-de-correo-de/">Flame en La Lista De Correo De Monodevelop…</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-07-02T21:02:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>9:02 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">El lunes hubo un flame en la lista de correo de Monodevelop: Resumiendo, un tio <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000881.html">presenta un proyecto</a> que dice ser &#8220;hermano de Monodevelop&#8221;, es un IDE escrito en C# sólo para windows inspirado en VS.NET, Eclipse (y alguno más? ya veremos&#8230;). Es dual license (licencia dual). Es GPL para proyectos GPL y tienes que comprar licencia para utilizarlo con fines comerciales (como las QT, vaya).<br/><br/>Igual obviaba un dato&#8230; en la lista de Monodevelop estan TODOS los desarrolladores de #Develop&#8230; que es el IDE libre por excelencia en la plataforma windows (Monodevelop es un port de éste). Cuando éstos ven la web, screenshots, etc&#8230; ya se lo huelen&#8230; <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000881.html">y avisan</a>. Ejem&#8230; se parece mucho al nuestro&#8230; lo miraremos _muy de cerca_.  Tan de cerca lo miraron que dieron en el clavo&#8230; Trozos de código <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000887.html">copiados directamente</a> de #develop sin pedir permiso. Ahí se montó la gorda&#8230; no habría ningún problema si el IDE ese fuera GPL simplemente&#8230; pero para tener licencia dual se necesita la autorización de todos los que han escrito ese código&#8230; y la de los programadores de #Develop no la tenían, ni la tendrán:<br/><br/><pre>I've chatted with Fatih and he DID NOT give you PERMISSION to use his <br/>GPL'ed code in a non GPL'ed program.</pre><br/><br/>Entonces viene cuando surgen los trolls (en éste caso sólo uno, pero incluso <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000903.html">compara</a> a los de #Develop con Microsoft&#8230; xD) que no tienen <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000891.html">ni idea</a> de lo que <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000896.html">hablan</a> y se meten en <a href="http://lists.ximian.com/archives/public/monodevelop-list/2004-June/000908.html">todo</a>.<br/><br/>Total, yo me quedaría con ésta respuesta al que yo llamo troll:<br/><br/><pre>> And don't <br/>> kid yourself man.  Unix and Linux people hate Microsoft.  If you argue <br/>> with that, you are an idiot.<br/><br/>OK, like the one you are answering i'm an idiot :D<br/><br/>I have read they hate Microsoft,<br/>they are Unix and Linux people,<br/>so all Unix and Linux people hate MSFT.<br/><br/>Dogs are mortal,<br/>socrate is mortal,<br/>so socrate is a dog.</pre></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/25">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/23">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

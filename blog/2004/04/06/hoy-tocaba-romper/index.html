@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hoy Tocaba Romper - Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Me he puesto a solucionar un problema con el ALSA de mi ordenador de sobremesa y de paso también decidido a pasar al kernel 2.6.5. Y es que mi &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/blog/2004/04/06/hoy-tocaba-romper">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hoy Tocaba Romper</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-04-06T04:36:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:36 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Me he puesto a solucionar un problema con el ALSA de mi ordenador de sobremesa y de paso también decidido a pasar al kernel 2.6.5. Y es que mi hardware es un poco conflictivo: chip de placa base basada en SiS (chip, tarjeta de sonido, ethernet, agp&#8230;). <br/><br/>El caso es que ALSA no me funciona no sé porqué. Lo tenía funcionando hace unos meses pero un día dejó de oirse&#8230; (estas cosas no las soporto, arg :P) y como solución rápida puse mi gran amigo el módulo OSS. Hoy me he puesto con ésto y me he vuelto a fijar (en su día también lo vi) que no puedo subir el volumen (con alsamixer) del PCM. Estoy seguro de que por ahí van los tiros&#8230; pero de ahí a arreglarlo&#8230; :P<br/><br/>Estuve probándolo con el Alsa del kernel 2.6.5, después lo deshabilité y jugué con el Alsa del portage&#8230; y nada, todo igual, imposible subir el volumen del PCM. Sigo sin Alsa :( , menos mal que el módulo OSS me funciona sin problemas.<br/><br/>Después de ésto, y de poner FrameBuffer con el 2.6.5 (recordad que el &#8220;vesa&#8221; del 2.4 en los 2.6 se llama &#8220;vesafb&#8221; :P) me dí cuenta de que no podía arrancar las X :O (también sin causa aparente, argg xD)<br/><br/>He estado toda la tarde mirando, probando&#8230;. que si el driver propietario de la ATI (fglrx), que si el libre (radeon)&#8230; que si el estandar (vga)&#8230; nada. Por el camino me he econtrado con fallos, he ido aprendiendo algunas cosas del kernel 2.6 y la ATI&#8230; he vuelto al kernel 2.4 para ver si era la causa (no lo era)&#8230; hasta que al final me he dado cuenta que no era problema de las X, sinó el Gnome!!! Los logs, que eran mínimos&#8230; solian dar referencias a problemas con las X&#8230; pero ahora entiendo que eran &#8220;cosméticos&#8221; y que el hecho de no dar pistas en los logs era porque realmente las X arrancaban bien. No me he dado cuenta en principio que era fallo de Gnome porque no tardaba mucho en &#8220;petar&#8221;&#8230; qué fallo por mi parte no cerciorarme!<br/>Como tengo el KDE para pruebas, lo he probado y sí&#8230; sin problemas. Y ahora&#8230; qué leches le ha pasado al Gnome! Seguro que se ha confabulado con el Alsa :)<br/><br/><b>Actualización</b>: Era verdad, se habian confabulado! :-) El hecho de quitar alsa repercute en recompilar los paquetes que tienen actualmente soporte (y gnome-session, lo primero que se ejecuta para arrancar gnome, casualmente es uno de ellos).<br/><br/>Algunos recursos que he encontrado en mi aventura:<br/><a href="http://www.rage3d.com/board/showthread.php?s=6676f99a92d070b585bd04ae26596fe4&threadid=33736241">Vesa Framebuffer y ATI, problema con mtrr</a><br/><a href="http://kerneltrap.org/node/view/2199">Problemas con 2.6 input drivers</a><br/><a href="http://odin.prohosting.com/wedge01/gentoo-radeon-faq.html">Gentoo ATI Radeon FAQ</a></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jbilbo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2004-04-06T04:36:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:36 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jbilbo.github.io/blog/2004/04/06/hoy-tocaba-romper/" data-via="jbilbob" data-counturl="http://jbilbo.github.io/blog/2004/04/06/hoy-tocaba-romper/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/04/05/seguimiento-gnome-26/" title="Previous Post: Seguimiento Gnome 2.6">&laquo; Seguimiento Gnome 2.6</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/04/06/agenda-de-actividades/" title="Next Post: Agenda de Actividades">Agenda de Actividades &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

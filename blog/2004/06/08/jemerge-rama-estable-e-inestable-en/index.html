@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jemerge: Rama Estable E Inestable en Gentoo - Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Gentoo te permite estar en la rama estable y en la inestable a vez. Es decir, puedes tener la última versión del gaim y el amule pero estar usando un &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/blog/2004/06/08/jemerge-rama-estable-e-inestable-en">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Jemerge: Rama Estable E Inestable en Gentoo</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-08T05:49:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:49 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Gentoo te permite estar en la rama estable y en la inestable a vez. Es decir, puedes tener la última versión del gaim y el amule pero estar usando un sistema estable con sus glibc, gcc y demás de la rama estable.<br/>Para emerger un paquete en su últimísima versión (rama inestable), ya he hablado del <a href="http://jhernandez.gpltarragona.org/blog/archives/000091.html">emergetest</a>.<br/><br/>El problema radica cuando, a parte de emerger un paquete (por ejemplo &#8220;mono&#8221;) de la rama inestable, también lo haces con una dependencia de ese paquete de la rama inestable (por ejemplo &#8220;gtk-sharp&#8221;).<br/><br/>El portage en ese caso todavía no trabaja bien cuando intentamos actualizar todo el sistema, por sus (buenas) razones, que no explicaré aquí, pero que al fin y al cabo no nos va bien. Normalmente actualizamos con un &#8220;emerge -pUD world&#8221; para quedarnos con los últimos paquetes &#8220;-U&#8221; y que no nos bajen la versión&#8230; el caso es que con éste problema mencionado el -U peta, sólo queda el -u. Y pasan cosas como ésta:<br/><br/><pre>valinor ~ # emerge -puD world<br/> <br/>These are the packages that I would merge, in order:<br/> <br/>Calculating world dependencies ...done!<br/>[ebuild     UD] sys-libs/zlib-1.1.4-r2 [1.2.1-r2] -debug  0 kB<br/>[ebuild     U ] app-crypt/hashalot-0.2.0 [0.1.0]  0 kB<br/>[ebuild     UD] x11-base/opengl-update-1.5 [1.7]  [empty/missing/bad digest]<br/>[ebuild     U ] sys-apps/baselayout-1.9.4-r2 [1.9.4-r1] -bootstrap -build -livecd -(selinux) -static  0 kB<br/>[ebuild  N    ] x11-base/xfree-4.3.0-r5  -debug  16,984 kB<br/>[ebuild  N    ] media-video/ati-drivers-3.2.8-r1  +gnome -kde -qt  0 kB<br/>[ebuild     UD] media-libs/sdl-mixer-1.2.5-r1 [1.2.5-r2] +mikmod +mpeg +oggvorbis  0 kB<br/>[ebuild     UD] x11-libs/wxGTK-2.4.1-r1 [2.4.2] +gtk2 +nls +odbc +opengl  0 kB<br/>[ebuild     UD] dev-python/wxPython-2.4.1.2 [2.4.2.4] +gtk2 +jpeg +opengl +png +tiff  0 kB<br/>[ebuild     UD] media-video/camserv-0.5.0 [0.5.1-r2]  0 kB<br/>[ebuild     UD] media-fonts/sharefonts-0.10-r1 [0.10-r3]  0 kB<br/>[ebuild  N    ] dev-libs/libgpg-error-0.6  +nls  0 kB<br/>[ebuild     U ] dev-libs/libgcrypt-1.1.94 [1.1.12] -doc +nls  827 kB<br/>[ebuild     UD] app-text/gtranslator-0.43 [1.0] +nls  0 kB<br/>[ebuild     UD] dev-libs/icu-2.6 [2.8]  0 kB<br/>[ebuild     UD] net-p2p/amule-1.1.0 [2.0.0_rc3]  0 kB<br/>[ebuild     UD] media-sound/rhythmbox-0.6.1-r1 [0.8.3] -faad -flac +mad +oggvorbis -xine  0 kB<br/>[ebuild     U ] dev-util/glade-2.0.1 [2.0.0-r1] +gnome -gnomedb  1,867 kB<br/>[ebuild     UD] dev-dotnet/mono-0.28 [0.95]  0 kB<br/>[ebuild     UD] net-im/amsn-0.90 [0.92] +gnome -imagemagick +imlib -kde +xmms  0 kB<br/>[ebuild     UD] net-www/netscape-flash-6.0.81 [7.0.25] +gtk  0 kB<br/>[ebuild     U ] app-cdr/k3b-0.11.10 [0.11.9] -debug -dvdr +encode -flac -kde +mad -monkey +oggvorbis  3,543 kB<br/> <br/>Total size of downloads: 23,222 kB<br/> <br/>valinor ~ #</pre><br/><br/>De todos éstos, sólo me interesa actualizar 6. ¿Qué hago? La única forma es hacerlo uno a uno, copiando-pegando y luego &#8220;emerge paquete1 paquete2&#8230;&#8221; no-óptimo xD.<br/><br/>El caso es que pululaba por el <a href="http://forums.gentoo.org/viewtopic.php?t=45827">foro</a> de Gentoo un par de scripts, el &#8220;femerge&#8221; y el &#8220;pfilter&#8221; y he retocado el primero para que me solucione ese problema en concreto. Tal y como estaba no me lo hacía bien, pero ahora funciona a la perfección&#8230;<br/><br/>Como el script ha cambiado bastante, le he puesto <b>jemerge</b>. Y <b>basta con ejecutarlo en modo root sin ningún parámetro para que funcione. Tiene como dependencia el pfilter.</b><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/img/jemerge1.jpg" alt="jemerge" /></div><br/><br/><b>Descarga</b>: <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/jemerge">jemerge</a> - <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/pfilter">pfilter</a><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/img/jemerge2.gif" alt="jemerge" /></div><br/><br/><b>Instalación</b>: Meter jemerge y pfilter en /usr/bin (por ej.), o en donde querais si sabeis lo que haceis&#8230; mientras esté en el path, ya vale.<br/><b>Uso</b>: Ejecutar &#8220;jemerge&#8221;. Saldrá una pantalla para seleccionar (en ncurses) los paquetes a instalar (o bajarse únicamente).</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jbilbo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2004-06-08T05:49:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:49 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jbilbo.github.io/blog/2004/06/08/jemerge-rama-estable-e-inestable-en/" data-via="jbilbob" data-counturl="http://jbilbo.github.io/blog/2004/06/08/jemerge-rama-estable-e-inestable-en/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/06/05/migration-man/" title="Previous Post: Migration man">&laquo; Migration man</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/06/08/salgo-en-la-gwn/" title="Next Post: Salgo en la GWN!">Salgo en la GWN! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Configurar Apache2 Con SSL en Ubuntu - Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Aunque supongo que es igual que con Debian, como siempre.Instalamos Apache2:apt-get install apache2Habilitamos el módulo ssl:a2enmod sslEjecutamos un &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/blog/2004/11/17/configurar-apache2-con-ssl-en-ubuntu">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Configurar Apache2 Con SSL en Ubuntu</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-17T04:28:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:28 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Aunque supongo que es igual que con Debian, como siempre.<br/><br/>Instalamos Apache2:<br/><br/><pre>apt-get install apache2</pre><br/><br/>Habilitamos el módulo ssl:<br/><br/><pre>a2enmod ssl</pre><br/><br/>Ejecutamos un script para crear nuestro certificado de seguridad para el servidor (estará autofirmado).<br/><br/><pre>apache2-ssl-certificate</pre><br/><br/>Nos hará una serie de preguntas&#8230;<br/><br/><pre> # apache2-ssl-certificate<br/><br/>creating selfsigned certificate<br/>replace it with one signed by a certification authority (CA)<br/><br/>enter your ServerName at the Common Name prompt<br/><br/>If you want your certificate to expire after x days call this programm<br/>with -days x<br/>Generating a 1024 bit RSA private key<br/>........++++++<br/>....................++++++<br/>writing new private key to '/etc/apache2/ssl/apache.pem'<br/>-----<br/>You are about to be asked to enter information that will be incorporated<br/>into your certificate request.<br/>What you are about to enter is what is called a Distinguished Name or a DN.<br/>There are quite a few fields but you can leave some blank<br/>For some fields there will be a default value,<br/>If you enter '.', the field will be left blank.<br/>-----<br/>Country Name (2 letter code) [GB]:ES<br/>State or Province Name (full name) [Some-State]:Catalunya<br/>Locality Name (eg, city) []:Tarragona<br/>Organization Name (eg, company; recommended) []:jhernandez<br/>Organizational Unit Name (eg, section) []:home<br/>server name (eg. ssl.domain.tld; required!!!) []:jhernandez.gpltarragona.org<br/>Email Address []:admin@jhernandez.gpltarragona.org</pre><br/><br/>Ahora crearemos la configuración de &#8220;el sitio&#8221; para el servidor seguro basándonos en la que lleva por defecto:<br/><br/><pre>cp /etc/apache2/sites-available/default /etc/apache2/sites-available/ssl<br/>ln -s /etc/apache2/sites-available/ssl /etc/apache2/sites-enabled/ssl</pre><br/><br/>/etc/apache2/sites-enabled/ssl tiene que empezar de la siguiente manera:<br/><br/><pre>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/ssl.jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/ssl.jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Tendreis que cambiar lo de directory según el directorio que queráis&#8230;<br/>Ahora, /etc/apache2/sites-enabled/default también hay que configurarlo de la misma forma:<br/><br/><pre>NameVirtualHost *:80<br/>&lt;VirtualHost *:80&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Ahora añade en el fichero /etc/apache2/ports.conf:<br/><br/><pre>Listen 443</pre><br/><br/>Por último, sólo basta añadir dentro del fichero &#8220;/etc/apache2/sites-enabled/ssl&#8221; en cualquier lugar (por ejemplo justo debajo de &#8220;ServerSignature On&#8221;):<br/><br/><pre>SSLEngine On<br/>SSLCertificateFile /etc/apache2/ssl/apache.pem</pre><br/><br/>Reiniciamos apache2:<br/><br/><pre>/etc/init.d/apache2 restart</pre><br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/318">Artículo</a> en gpltarragona.</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jbilbo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2004-11-17T04:28:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>4:28 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jbilbo.github.io/blog/2004/11/17/configurar-apache2-con-ssl-en-ubuntu/" data-via="jbilbob" data-counturl="http://jbilbo.github.io/blog/2004/11/17/configurar-apache2-con-ssl-en-ubuntu/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/11/16/sustituir-cadenas-en-vim/" title="Previous Post: Sustituir cadenas en vim">&laquo; Sustituir cadenas en vim</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/11/18/actualizacion-del-hotplug-en-gentoo/" title="Next Post: Actualización del hotplug en Gentoo">Actualización del hotplug en Gentoo &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

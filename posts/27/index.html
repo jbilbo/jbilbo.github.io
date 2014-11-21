@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Anda, que sorpresa! xD La GWN es la Gentoo Weekly Newsletter, el boletín semanal de Gentoo. Se puede encontrar desde ésta dirección.No sale mi nombre &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/posts/27">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/08/salgo-en-la-gwn/">Salgo en La GWN!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-08T15:41:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Anda, que sorpresa! xD La GWN es la Gentoo Weekly Newsletter, el boletín semanal de Gentoo. Se puede encontrar desde <a href="http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml">ésta</a> dirección.<br/><br/>No sale mi nombre ni mi foto ni nada, pero salgo referenciado en el apartado de <a href="http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml#doc_chap7">Tips and Tricks</a>:<br/><br/><i>I saw a user post this in a bug comment, and thought it was a good idea. In your .bashrc file, add the line:</i><br/><br/>El user soy yo :) y el bug comment es <a href="http://bugs.gentoo.org/show_bug.cgi?id=52829#c1">éste</a>. Me hubiera gustado que pusiese &#8220;emergetest&#8221; en vez de &#8220;akmrg&#8221; que es un poco ful de istambul, pero bueno.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/08/jemerge-rama-estable-e-inestable-en/">Jemerge: Rama Estable E Inestable en Gentoo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-08T05:49:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:49 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Gentoo te permite estar en la rama estable y en la inestable a vez. Es decir, puedes tener la última versión del gaim y el amule pero estar usando un sistema estable con sus glibc, gcc y demás de la rama estable.<br/>Para emerger un paquete en su últimísima versión (rama inestable), ya he hablado del <a href="http://jhernandez.gpltarragona.org/blog/archives/000091.html">emergetest</a>.<br/><br/>El problema radica cuando, a parte de emerger un paquete (por ejemplo &#8220;mono&#8221;) de la rama inestable, también lo haces con una dependencia de ese paquete de la rama inestable (por ejemplo &#8220;gtk-sharp&#8221;).<br/><br/>El portage en ese caso todavía no trabaja bien cuando intentamos actualizar todo el sistema, por sus (buenas) razones, que no explicaré aquí, pero que al fin y al cabo no nos va bien. Normalmente actualizamos con un &#8220;emerge -pUD world&#8221; para quedarnos con los últimos paquetes &#8220;-U&#8221; y que no nos bajen la versión&#8230; el caso es que con éste problema mencionado el -U peta, sólo queda el -u. Y pasan cosas como ésta:<br/><br/><pre>valinor ~ # emerge -puD world<br/> <br/>These are the packages that I would merge, in order:<br/> <br/>Calculating world dependencies ...done!<br/>[ebuild     UD] sys-libs/zlib-1.1.4-r2 [1.2.1-r2] -debug  0 kB<br/>[ebuild     U ] app-crypt/hashalot-0.2.0 [0.1.0]  0 kB<br/>[ebuild     UD] x11-base/opengl-update-1.5 [1.7]  [empty/missing/bad digest]<br/>[ebuild     U ] sys-apps/baselayout-1.9.4-r2 [1.9.4-r1] -bootstrap -build -livecd -(selinux) -static  0 kB<br/>[ebuild  N    ] x11-base/xfree-4.3.0-r5  -debug  16,984 kB<br/>[ebuild  N    ] media-video/ati-drivers-3.2.8-r1  +gnome -kde -qt  0 kB<br/>[ebuild     UD] media-libs/sdl-mixer-1.2.5-r1 [1.2.5-r2] +mikmod +mpeg +oggvorbis  0 kB<br/>[ebuild     UD] x11-libs/wxGTK-2.4.1-r1 [2.4.2] +gtk2 +nls +odbc +opengl  0 kB<br/>[ebuild     UD] dev-python/wxPython-2.4.1.2 [2.4.2.4] +gtk2 +jpeg +opengl +png +tiff  0 kB<br/>[ebuild     UD] media-video/camserv-0.5.0 [0.5.1-r2]  0 kB<br/>[ebuild     UD] media-fonts/sharefonts-0.10-r1 [0.10-r3]  0 kB<br/>[ebuild  N    ] dev-libs/libgpg-error-0.6  +nls  0 kB<br/>[ebuild     U ] dev-libs/libgcrypt-1.1.94 [1.1.12] -doc +nls  827 kB<br/>[ebuild     UD] app-text/gtranslator-0.43 [1.0] +nls  0 kB<br/>[ebuild     UD] dev-libs/icu-2.6 [2.8]  0 kB<br/>[ebuild     UD] net-p2p/amule-1.1.0 [2.0.0_rc3]  0 kB<br/>[ebuild     UD] media-sound/rhythmbox-0.6.1-r1 [0.8.3] -faad -flac +mad +oggvorbis -xine  0 kB<br/>[ebuild     U ] dev-util/glade-2.0.1 [2.0.0-r1] +gnome -gnomedb  1,867 kB<br/>[ebuild     UD] dev-dotnet/mono-0.28 [0.95]  0 kB<br/>[ebuild     UD] net-im/amsn-0.90 [0.92] +gnome -imagemagick +imlib -kde +xmms  0 kB<br/>[ebuild     UD] net-www/netscape-flash-6.0.81 [7.0.25] +gtk  0 kB<br/>[ebuild     U ] app-cdr/k3b-0.11.10 [0.11.9] -debug -dvdr +encode -flac -kde +mad -monkey +oggvorbis  3,543 kB<br/> <br/>Total size of downloads: 23,222 kB<br/> <br/>valinor ~ #</pre><br/><br/>De todos éstos, sólo me interesa actualizar 6. ¿Qué hago? La única forma es hacerlo uno a uno, copiando-pegando y luego &#8220;emerge paquete1 paquete2&#8230;&#8221; no-óptimo xD.<br/><br/>El caso es que pululaba por el <a href="http://forums.gentoo.org/viewtopic.php?t=45827">foro</a> de Gentoo un par de scripts, el &#8220;femerge&#8221; y el &#8220;pfilter&#8221; y he retocado el primero para que me solucione ese problema en concreto. Tal y como estaba no me lo hacía bien, pero ahora funciona a la perfección&#8230;<br/><br/>Como el script ha cambiado bastante, le he puesto <b>jemerge</b>. Y <b>basta con ejecutarlo en modo root sin ningún parámetro para que funcione. Tiene como dependencia el pfilter.</b><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/img/jemerge1.jpg" alt="jemerge" /></div><br/><br/><b>Descarga</b>: <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/jemerge">jemerge</a> - <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/pfilter">pfilter</a><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/img/jemerge2.gif" alt="jemerge" /></div><br/><br/><b>Instalación</b>: Meter jemerge y pfilter en /usr/bin (por ej.), o en donde querais si sabeis lo que haceis&#8230; mientras esté en el path, ya vale.<br/><b>Uso</b>: Ejecutar &#8220;jemerge&#8221;. Saldrá una pantalla para seleccionar (en ncurses) los paquetes a instalar (o bajarse únicamente).</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/05/migration-man/">Migration Man</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-05T06:02:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:02 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Últimamente me siento muy satisfecho con mi GNU/Linux, y es que pensando pensando&#8230; en estos últimos meses he migrado satisfactoriamente en 4 puntos en los que, en mi opinión, todo linuxero tendrá que migrar tarde o temprano&#8230; <br/><br/>Estos puntos son:<br/><br/>- Pasar de drivers OSS a drivers de sonido ALSA.<br/> *Algo que mucha gente ya tiene tachada en su lista de TODO. A mi me <a href="http://jhernandez.gpltarragona.org/blog/archives/000023.html">dió problemas</a>&#8230; <br/>- Pasar de rama de kernel 2.4 a 2.6.<br/> *Al principio siempre <a href="http://jhernandez.gpltarragona.org/blog/archives/000025.html">falla algo</a>, pero se va puliendo puliendo&#8230;<br/>- Pasar de codificación &#8220;ISO-1 o 15&#8221; a UTF-8.<br/> *No es que haya tenido <a href="http://forums.gentoo.org/viewtopic.php?t=178679&sid=7127e257701074f463c6492373387e5e">mucha ayuda</a>&#8230; pero lo <a href="http://jhernandez.gpltarragona.org/blog/archives/000089.html">he conseguido</a> :)<br/>- Pasar de XFree86 a X.org.<br/> *Bastante <a href="http://www.gpltarragona.org/node/view/249">sencillo</a>, no me lo esperaba.<br/><br/><b>De estrenos de cine</b><br/><br/>Dos noticias interesantes, la primera es que <b>Spiderman 2</b> se estrenará el <b>16 de julio</b> finalmente, y la segunda es que la fecha definitiva de <b>Kill Bill Volumen 2</b> es a la semana siguiente de Spiderman 2, el <b>23 de julio</b> (se tenía prevista para el 2 de julio, pero se ha retrasado).</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/03/emergetest/">Emergetest</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-03T20:21:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>8:21 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Como siempre voy poniendo por aquí y por allá &#8220;emergetest&#8221; y como este comando sólo existe en mi ordenador (y en el del <a href="http://www.marblestation.com">sergio</a> xD), no se entera la gente. Voy a dedicar un post a ésto y así referenciaré aquí cada vez que ponga el comando. <br/><br/>Explicación:<br/><br/>emergetest es un alias que he puesto en mi fichero <b>$HOME/.bash_profile</b>, de ésta forma:<br/><br/><pre>alias "emergetest"="ACCEPT_KEYWORDS="~x86" emerge"</pre><br/><br/>Es decir, es lo mismo escribir:<br/><br/><pre>emergetest</pre> <br/><br/>que escribir:<br/><br/><pre>ACCEPT_KEYWORDS="~x86" emerge</pre><br/><br/>Así, con el alias emergetest puedo acceder a la parte inestable (últimas versiones) del portage de Gentoo de forma muy fácil.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/03/mono-beta2-en-gentoo/">Mono Beta2 en Gentoo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-03T06:04:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>6:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre>valinor ~ # emergetest -p monodevelop<br/> <br/>These are the packages that I would merge, in order:<br/> <br/>Calculating dependencies ...done!<br/>[ebuild     U ] dev-dotnet/mono-0.95 [0.91] +nptl  17,079 kB<br/>[ebuild     U ] x11-libs/gtk-sharp-0.93 [0.91.1] +gnome -gnomedb +gtkhtml -libgda  1,324 kB<br/>[ebuild     U ] dev-dotnet/gecko-sharp-0.4 [0.3]  103 kB<br/>[ebuild     U ] dev-util/monodoc-0.16 [0.15]  4,079 kB<br/>[ebuild     U ] dev-dotnet/gtksourceview-sharp-0.3 [0.2]  335 kB<br/>[ebuild     U ] dev-util/monodevelop-0.4 [0.3-r1] +nptl  2,592 kB<br/> <br/>Total size of downloads: 25,516 kB</pre><br/><br/>Han sido rapidísimos :-)<br/><br/>*Nota: comando <a href="http://jhernandez.gpltarragona.org/blog/archives/000091.html">emergetest</a>.<br/><br/><b>eurito 0.01a</b><br/><br/>Nueva release de eurito!! xDD de la 0.01 a la <a href="http://jhernandez.gpltarragona.org/aplicaciones/eurito/eurito-0.01a.tar.bz2">0.01a</a>. La lista de cambios es enorme&#8230; así que no la pongo aquí porque no cabría :P<br/>Eurito es un euroconversor que hice para aprender gtk# sobre mono&#8230; así que va muy bien como ejemplo de aplicación simple con C# + GTK#.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/03/instalacion-de-xorg-en-gentoo/">Instalación De x.org en Gentoo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-03T04:22:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2004</span></span> <span class='time'>4:22 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">He puesto un artículo en gpltarragona sobre la instalación de X.org en Gentoo:<br/><br/><a href="http://www.gpltarragona.org/node/view/249">Instalar X.org en Gentoo</a><br/><br/><div align="center"><img src="http://freedesktop.org/XOrg/fdx-logo.png" border="0" /></div><br/><br/>Lo único que he notado diferente al arrancar son las fuentes. Tengo que mirar a ver si puedo dejarlas como antes&#8230; que aunque ahora se ve todo correcto y es totalmente usable, prefiero el look anterior. Sobretodo en el mozilla, en la web de gpltarragona se ve la letra de los lados demasiado pequeña-pansida&#8230; xDD<br/><br/>Ahora tengo que mirar si he perdido funcionalidad en alguna cosa más&#8230; acelración gráfica quizás? Ya investigaremos. También tengo que hablar del soporte utf-8 ;-)<br/><br/><b>Actualización</b>: La aceleración gráfica va perfecta, las fuentes igual de bien que con XFree (esta actualizado en el artículo de gpltarragona), y gracias a X.org he solucionado TODOS los problemas que tenía con UTF-8. Si puedo, dentro de unos dias (quizás después de examenes) prepararé un artículo para pasar a UTF-8 en Gentoo.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/02/mono-beta-2-disponible/">Mono Beta 2 Disponible</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-02T17:27:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>5:27 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">La última beta de <a href="http://www.go-mono.com">mono</a> antes de la versión final ya esta disponible.<br/><br/><div align="center"><a href="http://www.go-mono.com/archive/beta2/beta2.html"><img src="http://www.go-mono.com/images/beta2.gif" border="0" alt="Mono Beta 2" /></a></div><br/><br/>Podeis bajárlo desde la sección de <a href="http://www.go-mono.com/download.html">descargas</a>. En Gentoo los ebuilds estaran listos entre hoy y mañana, según un desarrollador.<br/><br/>Ah, y esta release ya incluye oficialmente Monodevelop, en este caso la versión 0.4 que incorpora<a href="http://www.monodevelop.com/release_notes/0.4.html">estas</a> novedades, entre las que destaco:<br/><br/>- Reescritura del código de autocompletado (muy mejorado)<br/>- Integración con Nautilus (drag and drop)<br/>- Traducción al castellano</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/01/nautilus-26-vs-24/">Nautilus 2.6 vs 2.4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-01T19:00:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2004</span></span> <span class='time'>7:00 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Esta claro que el nautilus ha mejorado muchísimo en la versión 2.6 de Gnome (mucho más rápido, ftp/sftp transparente), pero a parte de eso hay gente que prefiere el modo clásico de Nautilus (el de Gnome 2.4) y no le gusta que en Gnome 2.6 se hay puesto por defecto eso de que se abra una nueva ventana cada vez que abrimos una carpeta. Un truquillo para pasar del modo nuevo al modo clásico y viceversa:<br/><br/>Poner modo clásico (Cada vez que abrimos una carpeta no se abre ventana nueva):<br/><pre>$ gconftool-2 --set --type bool /apps/nautilus/preferences/always_use_browser true</pre><br/><br/>Poner modo nuevo:<br/><pre>$ gconftool-2 --set --type bool /apps/nautilus/preferences/always_use_browser false</pre></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/06/01/gentoo-es-raaaaaapida-mi-tesssoro/">Gentoo Es Ráaaaaapida… Mi Tesssoro</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-06-01T02:28:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2004</span></span> <span class='time'>2:28 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div align="center"><img src="http://tira.escomposlinux.org/ecol-161.png" /></div><br/><br/>Para eso está openoffice-bin :P<br/><br/><pre>(00:30:53) snuez: sobra el comentario del final<br/>(00:31:18) snuez: porque podía haber puesto cualquier paquete donde dice oppen-office</pre><br/><br/>Es cierto, ¿y a quien usuario de Gentoo no le ha pasado ésto de la tira alguna vez (con otro paquete)? xDDD <br/>Y es que no existe <a href="http://www.marblestation.com/blog/index.php?p=44">la distribución perfecta</a> (no, no es Debian :P). Por otra parte, la mejor baza de Gentoo no es la adaptación a tu CPU, sinó su sistema de paquetes (portage-emerge) y su filosofía en cuanto a nuevas versiones (rama estable-inestable, y pronto rama seguridad que sólo actualiza fallos de seguridad).<br/><br/>PD: Para que no se note la bajada de rendimiento mientras se compila algo, mejor usar un kernel con los parches que Gentoo recopila (gentoo-sources o gentoo-dev-sources), lleva preemptive y no va como el caballo del malo xDD<br/><br/><b>Actualización</b>: Sergio me comenta que hay otra posibilidad. Existe la opción &#8220;PORTAGE_NICENESS&#8221; en el fichero /etc/make.conf que lo que hace es bajar la prioridad del portage directamente contra más alto es el valor.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/05/31/nueva-generacion-de-consolas-portatiles/">Nueva Generación De Consolas Portátiles a La Vista</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-05-31T18:28:00+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2004</span></span> <span class='time'>6:28 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Se acerca una nueva generación de portátiles, que al contrario que con las consolas de sobremesa, seguramente conviviran con las actuales <a href="http://www.gameboy.com">Game Boy Advance SP</a> y <a href="http://www.n-gage.com">Nokia N-Gage QD</a>. Como me gusta hacer predicciones (aunque falle&#8230;), voy a hacerlo con el mercado de las portátiles.<br/><br/>Ahora estan a la venta al Game Boy Advance SP y la N-Gage (ahora ha salido la N-Gage QD, versión mejorada). Bien, pues la Game Boy Advance SP tiene futuro, así que si la teneis o quereis compraros una, no os quedareis sin juegos. Ni se os ocurra comprar una N-Gage, morirá lentamente (igual que le pasó a Dreamcast), Nokia tendrá que hacer una nueva portátil si quiere seguir en el mercado.<br/><br/>Ahora sale <a href="http://www.gp32spain.com/">GP32</a>, una consola con una empresa pequeña detrás pero que es famosa porque se le pueden meter emuladores y ROMs (a través de USB) desde internet, lo que la hace muy atractiva para un público adolescente-adulto (no para niños, claro). Esta consola morirá oficialmente (catálogo de juegos poco extenso, apoyo casi nulo) pero puede tener más vida extra-oficial que muchas de la próxima generación por tener una comunidad virtual en internet que la apoya y contínua el desarrollo y soporte de su software, tanto de juegos amateurs como Software de todo tipo y adaptaciones de todo tipos de emuladores&#8230; Si te interesa buscarte la vida con tu portátil (vía internet), adelante. Si no, ni lo dudes, ésta no es tu consola.<br/><br/><div align="center"><img src="http://www.meristation.com/EPORTAL_IMGS/GENERAL/articulos/IMG2-143791/med_psp_inactionmeri.jpg" border="0" /></div><br/><br/>Nueva generación: PSP y <a href="http://www.nintendo.co.jp/n10/e3/index.html">Nintendo DS</a>, las pijas. El futuro.<br/>PSP la mejor pantalla, las mejores prestaciones, la más bonita. Perfecta.<br/>Nintendo DS la innovadora, con 2 pantallas, nueva experiencia.<br/><br/>Evidentemente las 2 tienen un futuro prometedor, pero como Nintendo DS no tiene un diseño final todavía, sólo he puesto la foto de PSP, que pinta muy bien (también falta ver si aguantan las baterías esa peazo pantalla).<br/><br/>Buen <a href="http://www.meristation.com/v3/des_articulo.php?pic=GEN&id=5334&idj=&tipo=art&c=1&pos=0">artículo</a> de comparativa de consolas portátiles.</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/28">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/26">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

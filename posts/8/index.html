@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="ProblemasÚltimamente tengo algunos problemas en mi sistema. El primero de ellos se trata del rhythmbox, que no sé porque se queda congelado cada vez &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/posts/8">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/20/ubuntu-problemas-y-criticas/">Ubuntu: Problemas Y Críticas</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-20T17:26:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><b>Problemas</b><br/><br/>Últimamente tengo algunos problemas en mi sistema. El primero de ellos se trata del rhythmbox, que no sé porque se queda congelado cada vez que lo ejecuto y le doy a reproducir una canción, no es aleatorio siempre pasa. No he localizado la fuente del error, incluso ejecutándolo en modo debug no detecto el fallo&#8230; quizá esté fuera, lo más seguro que con el driver de sonido.<br/><br/><b>Actualización</b>: El problema era que no tenía el paquete gstreamer-mad, y el rhythmbox aunque lo necesita no lo tiene como dependencia.<br/><br/>Otro también tiene que ver con el sonido, y es que incomprensiblemente a veces se queda &#8220;mudo&#8221; el ordenador, vamos que el nivel de sonido interno de alsa se pone a zero&#8230; Es muy parecido a algo que <a href="http://jhernandez.gpltarragona.org/blog/archives/000049.html">me pasó en Gentoo</a>. Es fácil de solucionar, con ésto reinicializas los controles de volumen a su valor normal:<br/><br/><pre>/etc/init.d/alsa stop<br/>rm -f /var/lib/alsa/asound.state<br/>/etc/init.d/alsa start</pre><br/><br/>Por lo demás estoy muy contento con Ubuntu, sobretodo porque no me quita tiempo de administración. En Gentoo me pasaba demasiado tiempo pendiente de las actualizaciones/compilaciones y demás administración del sistema. Ahora no, te despreocupas y sólo te centras en lo importante, tú trabajo (o lo que estés haciendo xD).<br/><br/><b>Críticas</b><br/><br/>También quería hacer una crítica al estricto sistema de releases de 6 meses de Ubuntu. Me parece bien que cada 6 meses se pase a una nueva rama (Debian style), y que mientras tanto se resuelvan los fallos de seguridad de los paquetes estables. Pero hay un problema&#8230; ¿qué pasa con los paquetes con bugs? Warty es estable, pero el software tiene bugs lógicamente&#8230; <br/><br/>La respuesta es sencilla. Los bugs se solucionan&#8230; <a href="https://bugzilla.ubuntu.com/show_bug.cgi?id=3374">para la siguiente release</a> (ejemplo puesto al azar), que se traduce en &#8220;a esperar 0<X<6 meses". Me parece una solución bastante mala la verdad... tener 3-4 meses un bug en un programa que usas a diario es inaguantable.<br/>Otra solución sería instalar el paquete de Hoary (la versión inestable de Ubuntu). No la considero opción válida porque se quiere una distribución fácil de usar, apta para todos y tener medio sistema en hoary y con librerías de warty y&#8230; etc es a parte de peligroso sólo apto para gente con algo de experiencia.<br/>Migrar por completo a Hoary es fácil, pero estareis de acuerdo conmigo que no sería la solución idónea&#8230; estaríamos ante el mismo problema que tiene Debian. Unos pocos usan su versión estable.<br/><br/>Yo creo que el sistema de releases esta bien. 6 meses con el mismo software es un período razonable. No me quejo de eso. Lo que sí me gustaría, es una política de actualización por bug según la dificultad que tendría añadir la corrección a warty, una estructura al fin y al cabo más flexible. No hay que ser tan estricto, si se descubre un bug en evolution o gaim, o cualquier aplicación, que es molesto o que puede afectar al rendimiento de los usuarios y corregirlo no comporte actualización de librerías masiva, ni nada por el estilo, se podría corregir.<br/><br/>Otra tontería es: &#8220;Uix&#8230; por 2 dias no ha entrado <a href="http://www.go-mono.com">Mono</a> en Warty&#8221;. Pues que lo metan 1 semana más tarde!, o cuando esté listo y testeado. ¿Por qué no? ¿No es serio? Yo lo veo más práctico y más útil por ejemplo que añadir paquetes de fotos de modelos cada mes como fondo de escritorio. No lo veo mal que se añadan esos, pero igualmente se podrían añadir otros que tengan listos o tenían intención de meter pero no dió tiempo.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/20/camara-digital-y-dvd-designed-for/">Cámara Digital Y DVD Designed for GNU/LinuXP</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-20T17:15:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:15 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Desde navidad ya tengo cámara digital. Lo comenté, pero no dije cuál. Fué una Sony P150, y la verdad es que por ahora estoy muy contento con ella. Todavía estoy aprendiendo a utilizarla por eso&#8230;<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/camara.jpg" alt="Sony P150"></div><br/><br/>Lo guay es que Ubuntu me la autodetecte automáticamente y me salga un diálogo (importar o cancelar) para importar las fotos. Si le doy a importar, me sale mi álbum de fotos en el gthumb, desde donde puedo fácilmente copiarlas al PC. Las capturas de rigor:<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/ubuntu-p150.png" alt="Diálogo que sale automático al enchufar la cámara"><br><i>Diálogo que sale automático al enchufar la cámara.</i><br/></div><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/gthumb-p150.png" alt="Gthumb en acción"><br><i>Gthumb en acción, sale cuando le das a &#8220;importar&#8221;</i><br/></div><br/><br/>También me regalaron una grabadora de DVD, este modelo (GSA-4163B):<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/dvd.jpg" alt="LG GSA-4163B"></div><br/><br/>Funciona perfectamente con <a href="http://www.k3b.org/">K3B</a> (mi grabador favorito en Linux), la verdad es que creo que funcionan mejor los DVD Regrabables que los CDs :-) Yo pensaba que era al revés xD<br/><br/>Así que todo el hardware por ahora me funciona en Linux, no he tenido que hacer devoluciones ;-)</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/20/buenafuente-ha-vuelto/">Buenafuente Ha Vuelto!!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-20T04:08:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:08 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Sí si si, el programa de hoy miércoles ya me suena, el de ayer fué muy bueno también. La primera semana el primer programa estuvo aceptable, los 2 siguientes bajaron un poco el nivel pero esta semana es diferente. Es difícil que hoy en día me haga reír un programa de televisión (reir != sonreir tímidamente), sólo lo consiguien (ahora mismo) Los Simpsons y ahora <a href="http://www.antena3.com/buenafuente">Buenafuente</a> (y pensando&#8230; hacía tiempo que no me reía como hoy con un programa&#8230;).<br/><br/><div align="center"><img src="http://www.elterrat.com/img/backoffice/img01/id01img0584.jpg" alt="Buenafuente" /></div><br/><br/>Por cierto, que le han puesto una <a href="http://www.antena3.com/buenafuente">web en antena3</a> bastante chula, ponen videos de extractos del programa. Lo primero que me llamó la antención es que ponen los monólogos (la parte que a mi siempre me ha gustado más) pero según he podido ver no lo ponen completo, sólo la primera parte (buen trozo pero no entero, lástima!). Como apunte, se me ve perfecto con Linux + Firefox + <a href="http://mplayerplug-in.sourceforge.net/">mozilla-mplayer</a> (tendrían que hacer un monumento a los que hicieron este plugin xD lo utilizo un montón, pondré un icono suyo en mi web principal&#8230; no es mucho ya lo sé :D).<br/><br/>Me alegro de ver a Andreu por la tele (cuando hablo de él, me refiero también a su &#8220;tropa&#8221;, por ejemplo hoy Palomino de lo mejor y eso que ha salido 3 minutos!), ya sea en TV3 o en A3&#8230; y si sigue haciendo programas tan buenos como el de hoy quizás proponga para una futura quedada de GPLTarragona una excursión al plató del programa en Barcelona! :-D</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/19/tipos-de-archivo-en-gnome/">Tipos De Archivo en Gnome</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-19T06:19:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>6:19 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">No soporto este mensaje, lejos de ayudarme me molesta&#8230;<br/><br/>Ocurre al ejecutar un video con mplayer en Gnome (2.8 de Ubuntu). Te avisa de que, por ejemplo, un video con extensión wmv es en realidad un asf (Oh!!!!!!!)&#8230;. pues el jodío no te lo deja abrir&#8230; o lo abres por consola o lo renombras. Lo curioso es que a veces no sale, no sé porque.<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/nosepuedeabrir.png" alt="No se puede... tira payá!" /></div><br/><br/>Todavía no sé cómo se desactivan, si alguien lo sabe que me lo diga por mail. Tiene que haber una entrada para esto en el registro de Gnome&#8230; ya lo miraré.<br/><br/><b>Actualizado</b>: En realidad esto es un bug, y <a href="http://bugzilla.gnome.org/show_bug.cgi?id=145086">esta notificado</a> (con un parche que lo soluciona) en el bugzilla de Gnome.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/19/test-coeficiente-intelectual/">Test Coeficiente Intelectual</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-19T06:07:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>6:07 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">De este <a href="http://www.marblestation.com/blog/index.php?p=326">post</a> del Sergio, he decidido hacer el <a href="http://www.iqtest.dk/main.swf">test de coeficiente intelectual</a>&#8230; y resulta que me ha salido igual que a él O_O &#8230; me esperaba más (es broma xDD)<br/><br/>Por cierto, en la web te pone: &#8220;Tu IQ se calculó de ser&#8221;&#8230; Traducción curiosa.<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/coeficiente.jpg" /></div><br/><br/>Para los de GPLTarragona: Se recomienda hacer el test en buen estado, que luego veis más figuritas de las que hay xDDD</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/18/eliminar-ojos-rojos-con-gimp/">Eliminar Ojos Rojos Con Gimp</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-18T01:49:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>1:49 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Buen <a href="http://www.usuarios.lycos.es/ciberespaciojoven/Ojos_Rojos.htm">artículo</a> con los pasos a seguir para eliminar los ojos rojos de las fotos digitales.<br/>Pero mejor aún el <a href="http://gimpguru.org/download/red-eye.scm">script</a> que contiene al final para automatizar el proceso. <br/><br/>Como dicen en la web, las instrucciones para usarlo es meterlo dentro de tu carpeta de gimp en ~/.gimp-XX/scripts donde XX es la versión de tu Gimp. Por ejemplo, en mi caso:<br/><br/><pre>mv red-eye.scm ~/.gimp-2.0/scripts</pre><br/><br/>Luego dentro de Gimp, en el menú Script-fu -> Selection saldrá Red Eye y Red Eye Desaturate. El segundo es por si no tienes el plugin de &#8220;Mezclador de Canales&#8221;, pero normalmente el Gimp ya lo incorpora.<br/>El funcionamiento del script es tener seleccionado un trozito de ojo rojo, después seleccionar &#8220;Red Eye&#8221;. Las parámetros por defecto deberían de bastar, si no va bien en el artículo ponen para qué es cada cosa.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/16/volare-oh-oh/">Volare… Oh Oh…</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-16T18:41:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>6:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/volare-oh-oh.jpg" alt="CasiMate xD" /></div></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/11/buenafuente/">Buenafuente</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-11T20:26:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>8:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Del <a href="http://www.elterrat.com/">terrat</a>: <i>&#8220;Andreu Buenafuente dirige y presenta a partir de esta noche (pero noche, noche&#8230;) buenafuente, el late show televisivo para los martes, miércoles y jueves de las semanas normales (de las otras, ya veremos). Le acompañan, en directo desde Barcelona, colaboradores como Santi Millán, Jose Corbacho, Fermí Fernandes, Edu Soto, Mònica Pérez, David Fernandez, Yolanda Ramos, Raúl Cimas y Palomino. Monólogo, gags, música en directo, &#8220;La casa de tu prima&#8221;&#8230; incluso invitados, sorpresa y sabidos. Entre los sabidos está el de este primer programa: Antonio Gala.&#8221;</i><br/><img src="http://www.cuervoblanco.com/CROCODILE/buenafuente.gif" alt="buenafuente" align="right" /> <br/>Uno de mis humoristas preferidos cambia de canal (e idioma por consecuencia). Es la última apuesta de <a href="http://www.andreubuenafuente.com">Andreu Buenafuente</a> (tiene <a href="http://www.andreubuenafuente.com/v1/weblog.inc.php">blog</a> en su web!)&#8230; y mira que sé que todos los programas que hace van a tener éxito, es un crack, pero es que esta vez se lo pone difícil difícil:<br/><br/>- Antena3: Los programas que no tienen audiencia las primeras semanas (o dias), despararecen misteriosamente xD Muchos han caído antes&#8230; La más sonada quizás Máximo Pradera (programa horrible) y el de Escuela de Actores (junto a todo el equipo y los pobres concursantes).<br/>- Castellano: Andreu en castellano! mmmm&#8230; chungo. Son un gran seguidor de sus monólogos y en general su trabajo&#8230; en catalán. Ser &#8220;natural&#8221; con tu idioma no natal no es fácil, pero si puede hacerlo tan bien como en catalan triumfará sin duda&#8230; además le ayudan muchos (Palomino, Santi&#8230;)<br/>- vs Cronicas: Todos lo que han tratado de vencerla han perecido, sin excepción. Es indestructible&#8230; pero no se derrite el hielo con más hielo&#8230; la línea de programa de Andreu Buenafuente siempre ha dejado de lado la &#8220;tele-basura&#8221; (no saldran a tirarse los trastos la chonchi de Gran Hermano 15 contra el Pepiño de Operación Triunfo 7 para entendernos) y por lo demás será bastante diferente a crónicas, por lo que lo más probable es que atraiga a otro &#8220;share&#8221; y crónicas se ve poco afectada.<br/><br/>Sea como fuere, si hace algo que se le parezca a &#8220;La Cosa Nostra&#8221;, me atrevo a decir que el mejor &#8220;show&#8221; que se ha hecho por aquí, segurísimo que tiene éxito. Pero en Antena3 nunca se sabe&#8230;.<br/><br/>PD: Por cierto, el programa empieza a las 00:30.<br/><br/><b>Actualización</b>: El programa estuvo a la altura! Hoy más :-)</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/11/videos-de-las-jornadas-badopi/">Videos De Las Jornadas Badopi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-11T17:27:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:27 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Los de badopi han puesto un post dedicado a ir poniendo torrents de los videos de las jornadas Badopi. Al principio pusieron un tracker casero pero requería más ancho de banda así que los de Ubuntu se ofrecieron a hacer de host y ahora los estan subiendo poco a poco a sus servidores<br/><br/><a href="http://www.badopi.org/videos">Videos</a><br/><br/>Por ahora sólo hay 1, pero en los próximos días irá creciendo la lista. <br/>Por cierto, me estoy bajando el primero y me va al máximo de velocidad (+100kb/s), impresionante :) Jo ayudaré haciendo de seed cuando empiece la avalancha de descargas.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/01/10/acelerar-la-carga-de-webs-en-firefox/">Acelerar La Carga De Webs en Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-10T16:17:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:17 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Yo sólo he probado la de desabilitar el ipv6:<br/><br/>Abrimos Firefox, ponemos about:config en la zona donde se ponen las direcciones web para acceder a la configuración interna del Firefox. Hay una zona para buscar opciones (Filter), allí ponemos ipv6 y nos saldrá esto:<br/><br/><pre>network.dns.disableIPv6</pre><br/><br/>3er botón del ratón, Modify, y cambiamos el valor a &#8220;true&#8221;.<br/><br/>A parte de esto, también podemos modificar los siguientes valores para acelerar el Firefox, estan explicados en <a href="http://www.polinux.upv.es/node/303">esta página</a> de poLinux y recomendado sólo a los usuarios de ADSL/Cable.</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/9">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/7">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

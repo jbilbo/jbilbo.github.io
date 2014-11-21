@@ -1,1 +1,482 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="Related to this old hibernate problem:&nbsp;http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.htmlBy default &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-11T11:29:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:29 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Related to this old hibernate problem:&nbsp;<a href="http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html">http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html</a><br /><br /><blockquote class="tr_bq"><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;">By default Gorm/hiberate is generating id columns as the numeric(19,0) on SQLServer.&nbsp; I&#8217;d like those to be of type BIGINT instead.</span></blockquote><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;"><br /></span>The solution is to use the correct dialect for hibernate. In Grails, you can configure it like this:<br /><br />grails-app/conf/DataSource.groovy:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; dataSource {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; driverClassName = &#8220;com.microsoft.sqlserver.jdbc.SQLServerDriver&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; username = &#8220;xxx&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; password = &#8220;xxx&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dbCreate = &#8220;create-drop&#8221; // one of &#8216;create&#8217;, &#8216;create-drop&#8217;, &#8216;update&#8217;, &#8216;validate&#8217;, &#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url = &#8220;jdbc:sqlserver://host&#92;instance;databaseName=databaseName&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>dialect = &#8220;org.hibernate.dialect.SQLServer2008Dialect&#8221;</b><br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /><div><br /></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-10-07T09:57:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>9:57 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>Nota: A raíz de la muerte de Steve Jobs, no me gusta nada cómo se frivoliza por parte de algunos blogs/comentarios la aportación de Apple al mundo de la tecnología. Cabe decir que yo jamás he comprado para mi NADA de Apple, y además soy desarrollador de Android.</em></p>
+
+<p>Quizás la crítica más frecuente a Apple tiene que ver con el fenómeno fanboy. En relación al fanboyismo o elitismo, es un problema que podemos encontrar en cualquier ámbito: Los videojuegos, (entre marcas como Nintendo, Sega, Sony o plataformas como Consolas vs PC), marcas de coche (Ferrari, Porsche&hellip;), deportes y un largo etc. Esta parte de Apple no me interesa nada, así que ni voy a entrar.</p>
+
+<p>Lo importante: ¿Qué ha hecho Apple bien? Es muy sencillo y a la vez complicado, pero que se resume en: <strong>Impulsar mercados</strong></p>
+
+<p>Los smartphones empezaron después del iPhone. Por supuesto antes del iPhone habían smartphones pero el producto de apple fué el que impulsó el mercado de los smartphones. Con los mp3 y el iPod pasó igual pero me interesa más el mercado de los smartphones y las tablet (iPad, también lo mismo).
+Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha generado una época dorada para el programador (sobretodo el indie, tanto de juegos como de aplicaciones de cualquier tipo), y que ha supuesto muchísimos puestos de trabajo.</p>
+
+<p>Y qué ha hecho Steve Jobs en concreto:</p>
+
+<p>Pues de todo esto él tiene mucha culpa, pero quizás lo que fascina a mucha gente de su figura es la capacidad de echarse a las espaldas a una empresa a punto de morir y ponerla en la número 1 mundial (<a href="http://www.elpais.com/articulo/economia/Apple/supera/Exxon/empresa/valiosa/mundo/elpepueco/20110809elpepueco_10/Tes">la jodida número 1</a> del todo el planeta, que es muy fácil decirlo, por encima de: Microsoft, Google (en tecnología) y por encima incluso de petroleras que eran las número 1 indiscutibles hasta el momento).</p>
+
+<p>¿Steve Jobs es un cabrón? He oído de gente que lo afirma. No lo sé, pero es un tema que puedo ni podré entrar a valorar porque no he trabajado con él. Lo que sí creo es que es un genio, en su campo de trabajo: Sabe lo que quiere la gente, sabe poner precio a las cosas sin perder dinero, sabe perfilar los detalles, sabe presentar las cosas, sabe hablar en público como pocos, un carisma inmenso, este tío SABE de su trabajo. No tiene porqué ser talentoso en todo lo que hace, a lo mejor sabe rodearse de otros que saben lo que hacen. En cualquier caso, la finalidad es conseguir el objetivo que te propones. Y eso, se le ha dado muy bien. ¿Las maneras? Sólo unos pocos las conocen. Quizás no sean éticas, no lo sé, eso es algo que jamás podré valorar y por tanto no entraré.</p>
+
+<p>Desde la propia Google (por nombrar a su mayor competencia) también se le admira, por ej. mirad este post de Vic Gundotra (Senior vicepres. de Google), 25 de agosto:&nbsp;<a href="https://plus.google.com/107117483540235115863/posts/gcSStkKxXTw" style="color: #1155cc;" target="_blank"><a href="https://plus.google.com/107117483540235115863/posts/gcSStkKxXTw">https://plus.google.com/107117483540235115863/posts/gcSStkKxXTw</a></a>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-06-21T23:27:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>11:27 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Mi último proyecto (o subproyecto dentro del GRAN proyecto <a href="http://woices.com/">Woices</a>) es la aplicación de esta plataforma para el sistema operativo libre de Google: <a href="http://www.android.com/">Android</a>. <br /><br />Hay una <a href="http://en.wikipedia.org/wiki/List_of_Android_devices">gran lista</a> de dispositivos que usan Android, sobretodo teléfonos móviles, algunos de los más populares son los HTC <a href="http://www.htc.com/es/product/magic/overview.html">Magic</a>, <a href="http://www.htc.com/es/product/hero/overview.html">Hero</a>, <a href="http://www.htc.com/es/product/desire/overview.html">Desire</a>, Evo 4G, <a href="http://www.google.com/phone/">Nexus One</a>&#8230; o el Motorola <a href="http://www.motorola.com/Consumers/ES-ES/Consumer-Products-and-Services/Mobile-Phones/Motorola-MILESTONE-ES-ES">Droid/Milestone</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://woices.com/android" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_Nv1OUwX9fDo/TB-pUzz50pI/AAAAAAAAADQ/u6OEv2FQR9M/s320/droid-with-woices.png" /></a></div><br />Después de estar más de 2 meses empapándome de documentación, APIs, conferencias, código fuente de ejemplo y búsquedas en google, google groups, stackoverflow y en mis notas de Tomboy y papeles con dibujitos o esquemas en Google Docs&#8230; por fin ha salido a la luz la primera versión de <a href="http://woices.com/android">woices para android</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://woices.com/android" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/_Nv1OUwX9fDo/TB_YJXvGquI/AAAAAAAAADg/vlGp4eIhwQI/s400/woices-guia-patrocinada.png" width="237" /></a></div><br />La idea es que lleves la aplicación &#8220;a cuestas&#8221; y puedas beneficiarte in-situ de la información (audioguías) que los usuarios dejan en los diferentes puntos del planeta en forma de audio. Puedes encontrate <a href="http://woices.com/help#echo1">ecos</a>, <a href="http://woices.com/help#walk1">rutas</a> o <a href="http://woices.com/guides">guías patrocinadas </a>según el sitio donde estés. También esta disponible la función de búsqueda (por título, lugar, ciudad o <a href="http://woices.com/help#mobile2">e-code</a>).<br /><br />Si tienes un teléfono Android <a href="http://woices.com/android">pruébala</a> y dime qué te parece. Mientras, sigo trabajando en la siguiente versión.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-05-05T18:46:00+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>6:46 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Mañana son las II Jornadas de GPLTarragona:<br /><br /><i>Per celebrar el 7e aniversari de l’associació GPL Tarragona i continuar demostrant el compromís per promocionar les tecnologies de la informació i el programari lliure a la província de Tarragona, el dijous 6 de maig de 2010 tindran lloc les II Jornades GPL Tarragona a la Sala de Graus del campus Sescelades (ETSE – Universitat Rovira i Virgili).<br /><br />Les jornades són completament gratuïtes i es troben destinades a professionals, aficionats, professors i estudiants en general.<br /><br />Xerrades:<br /><br />16:00 – Desevolupament amb iPhone – Oleguer Huguet de <a href="http://woices.com">Woices</a><br />16:45 – La Singularitat: una perspectiva OpenSource – Joan Baz de Adaptiva<br />Sistemas<br />17:30 – KISS IT – Joan Puig<br />18:15 – Auditories de Sistemes, l’inici d’una carrera professional apassionant – <a href="http://marblestation.com">Sergi Blanco Cuaresma</a><br />19:00 – Clausura<br /><br />Les xerrades tindran una duració de 30 min. + 15 min. per preguntes/debat. No es necessari fer reserva, és un esdeveniment obert i gratuït. Es pot assistir a aquelles xerrades que més interessin lliurement.</i><br /><br /><a href="http://www.gpltarragona.org/wp-content/uploads/2010/05/II-Jornades-GPL-Tarragona-Programa.pdf">Programa Completo</a> (PDF)<br /><br /><img src="http://www.gpltarragona.org/wp-content/themes/producer/images/gpltarragona-normal.gif" /></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-29T21:57:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>9:57 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Ya esta disponible la última versión de Ubuntu, 10.04 llamada Lucid Lynx desde la misma <a href="http://www.ubuntu.com/">web de Ubuntu</a> o desde vuestro &#8220;Gestor de actualizaciones&#8221;.<br />Esta vez no he tenido que cambiar el mirror, el español iba a tope:<br /><br /><img style="margin: 0px auto 10px; display: block; text-align: center; width: 400px; height: 303px;" src="http://1.bp.blogspot.com/_Nv1OUwX9fDo/S9nlXJMZ4GI/AAAAAAAAABg/BSj9GWSNMyw/s400/actualizando-a-lucid.png" alt="" id="BLOGGER_PHOTO_ID_5465651808558506082" border="0" /></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/29/nexus-one-datos-3g-movistartelefonica/">Nexus One Datos 3G Movistar/Telefonica</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-29T17:54:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>5:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Tengo unos datos que funcionan para conectarte al 3G de Movistar (Telefónica) en España con el Nexus One de Google (supongo que funcionarían en cualquier teléfono Android).<br /><br />Los que no tienen valor dejarlo vacío o por defecto.<br /><br />Nombre: Movistar 3G<br />APN: movistar.es<br />Proxy:<br />Puerto:<br />Nombre de usuario: MOVISTAR<br />Contraseña: MOVISTAR<br />Servidor: 194.179.1.100<br />MMSC:<br />Proxy MMS:<br />Puerto MMS:<br />MCC: 214<br />MNC: 07<br />Tipo de APN:<br /><br />Lo que no he encontrado son los datos del MMS, pero bueno tampoco lo uso.<br /><br />PD: No pongais datos de 3G a no ser que tengais un plan de datos con vuestra operadora, sinó luego la factura se resentirá&#8230;</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/19/de-vuelta-en-blogger/">De Vuelta&#8230; En Blogger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-19T19:54:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>7:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Después de varios días off i&#8217;m back. El blog anterior estaba alojado en el servidor de GPLTarragona, que le dió por petar el disco duro (no entiendo por qué, era de estos nuevos IDE de 8Gb&#8230;.. oh wait). Nada que hacer, fallo de hardware con ruido muy feo.<br />De GPLTarragona no hay problema porque hacíamos 1 backup diario al día, pero de mi pobre blog&#8230; bueno&#8230; como que no lo cuidaba mucho y me despreocupé de él&#8230; y resulta que no tenía ningún backup por ahí. Bueno tenía un backup por ahí del 2005 y el resto es como un puzzle :D Pero no hay problema, ya iré reestableciendo los posts poco a poco&#8230; que me da pena (ahora) perderlos, por ahora sólo estan hasta el 2005 (quedan unos cuantos :P).<br /><br />Ahora como veis he migrado a blogger, básicamente para tener dominio propio en un blog y no preocuparme por su mantenimiento. Mirando sobre cómo migrar de Wordpress a Blogger me he encontrado con un par de recursos útiles:<br /><br /><a href="http://technosailor.com/2006/07/05/wordpress-to-wordpress-import/">Exportar Xml de todo el blog en Wordpress</a><br /><a href="http://wordpress2blogger.appspot.com/">Convertir Xml de Wordpress en Xml de Blogger</a><br /><a href="http://blogandweb.com/blogger/importar-y-exportar-contenido-en-blogger/">Importar desde Blogger un Xml</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/11/articulo-random-en-rails/">Articulo Random en Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-03-11T21:45:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:45 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Queremos obtener un registro aleatorio de la BD en Rails:<br /><br />def random<br />  @articulo = Articulo.find(:first, :order => &#8216;RAND()&#8217;)<br />end</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/10/cuando-llevas-mal-las-criticas/">Cuando Llevas Mal Las Críticas</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-03-10T21:19:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:19 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Mamones de mierda, lo vais a pagar, habláis mucho pero sois unos lamecojones, nos follaremos a vuestras madres mientras lloráis como niñas, y cuando lleguemos a Hollywood y encontremos a los capullos que hacen la película, se van a comer nuestra mierda y cuando la paguen volverán a comerse su mierda hecha de nuestra mierda y que ya se comieron, y luego os tocará a vosotros, cabrones.<br />Con cariño, Jay y Bob el silencioso.<br />Jay escribiendo un post en un foro en<br />Jay y Bob el silencioso contraatacan (película, 2001)</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/09/actualizar-ruby-on-rails/">Actualizar Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-03-09T21:11:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Antes de actualizar Ruby on Rails es conveniente actualizar también gems y asegurarnos que funciona bien con la versión de Ruby que tenemos instalada.<br />Después de esto:<br /><br />gem install rails &#8211;include-dependencies<br /><br />Para actualizar nuestros proyectos de Rails con las mejoras del nuevo rails, hacemos un:<br /><br />cd /directorio/de/nuestro/proyecto<br />rake rails:update<br /><br />Esto nos actualizará las funciones javascript, los scripts/ i archivos internos del framework como por ejemplo config/boot.rb.</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

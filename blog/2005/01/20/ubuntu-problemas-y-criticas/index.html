@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu: Problemas Y Críticas - Jonathan Hernandez</title>
+  <meta name="author" content="Jonathan Hernandez">
+
+  
+  <meta name="description" content="ProblemasÚltimamente tengo algunos problemas en mi sistema. El primero de ellos se trata del rhythmbox, que no sé porque se queda congelado cada vez &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jbilbo.github.io/blog/2005/01/20/ubuntu-problemas-y-criticas">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jonathan Hernandez" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jonathan Hernandez</a></h1>
+  
+    <h2>Cofounder of Woices and Rails developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jbilbo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu: Problemas Y Críticas</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-01-20T17:26:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><b>Problemas</b><br/><br/>Últimamente tengo algunos problemas en mi sistema. El primero de ellos se trata del rhythmbox, que no sé porque se queda congelado cada vez que lo ejecuto y le doy a reproducir una canción, no es aleatorio siempre pasa. No he localizado la fuente del error, incluso ejecutándolo en modo debug no detecto el fallo&#8230; quizá esté fuera, lo más seguro que con el driver de sonido.<br/><br/><b>Actualización</b>: El problema era que no tenía el paquete gstreamer-mad, y el rhythmbox aunque lo necesita no lo tiene como dependencia.<br/><br/>Otro también tiene que ver con el sonido, y es que incomprensiblemente a veces se queda &#8220;mudo&#8221; el ordenador, vamos que el nivel de sonido interno de alsa se pone a zero&#8230; Es muy parecido a algo que <a href="http://jhernandez.gpltarragona.org/blog/archives/000049.html">me pasó en Gentoo</a>. Es fácil de solucionar, con ésto reinicializas los controles de volumen a su valor normal:<br/><br/><pre>/etc/init.d/alsa stop<br/>rm -f /var/lib/alsa/asound.state<br/>/etc/init.d/alsa start</pre><br/><br/>Por lo demás estoy muy contento con Ubuntu, sobretodo porque no me quita tiempo de administración. En Gentoo me pasaba demasiado tiempo pendiente de las actualizaciones/compilaciones y demás administración del sistema. Ahora no, te despreocupas y sólo te centras en lo importante, tú trabajo (o lo que estés haciendo xD).<br/><br/><b>Críticas</b><br/><br/>También quería hacer una crítica al estricto sistema de releases de 6 meses de Ubuntu. Me parece bien que cada 6 meses se pase a una nueva rama (Debian style), y que mientras tanto se resuelvan los fallos de seguridad de los paquetes estables. Pero hay un problema&#8230; ¿qué pasa con los paquetes con bugs? Warty es estable, pero el software tiene bugs lógicamente&#8230; <br/><br/>La respuesta es sencilla. Los bugs se solucionan&#8230; <a href="https://bugzilla.ubuntu.com/show_bug.cgi?id=3374">para la siguiente release</a> (ejemplo puesto al azar), que se traduce en &#8220;a esperar 0<X<6 meses". Me parece una solución bastante mala la verdad... tener 3-4 meses un bug en un programa que usas a diario es inaguantable.<br/>Otra solución sería instalar el paquete de Hoary (la versión inestable de Ubuntu). No la considero opción válida porque se quiere una distribución fácil de usar, apta para todos y tener medio sistema en hoary y con librerías de warty y&#8230; etc es a parte de peligroso sólo apto para gente con algo de experiencia.<br/>Migrar por completo a Hoary es fácil, pero estareis de acuerdo conmigo que no sería la solución idónea&#8230; estaríamos ante el mismo problema que tiene Debian. Unos pocos usan su versión estable.<br/><br/>Yo creo que el sistema de releases esta bien. 6 meses con el mismo software es un período razonable. No me quejo de eso. Lo que sí me gustaría, es una política de actualización por bug según la dificultad que tendría añadir la corrección a warty, una estructura al fin y al cabo más flexible. No hay que ser tan estricto, si se descubre un bug en evolution o gaim, o cualquier aplicación, que es molesto o que puede afectar al rendimiento de los usuarios y corregirlo no comporte actualización de librerías masiva, ni nada por el estilo, se podría corregir.<br/><br/>Otra tontería es: &#8220;Uix&#8230; por 2 dias no ha entrado <a href="http://www.go-mono.com">Mono</a> en Warty&#8221;. Pues que lo metan 1 semana más tarde!, o cuando esté listo y testeado. ¿Por qué no? ¿No es serio? Yo lo veo más práctico y más útil por ejemplo que añadir paquetes de fotos de modelos cada mes como fondo de escritorio. No lo veo mal que se añadan esos, pero igualmente se podrían añadir otros que tengan listos o tenían intención de meter pero no dió tiempo.</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jbilbo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2005-01-20T17:26:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:26 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jbilbo.github.io/blog/2005/01/20/ubuntu-problemas-y-criticas/" data-via="jbilbob" data-counturl="http://jbilbo.github.io/blog/2005/01/20/ubuntu-problemas-y-criticas/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2005/01/20/camara-digital-y-dvd-designed-for/" title="Previous Post: Cámara Digital y DVD designed for GNU/LinuXP">&laquo; Cámara Digital y DVD designed for GNU/LinuXP</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2005/01/21/lo-que-nos-llega-al-cine/" title="Next Post: Lo que nos llega al cine">Lo que nos llega al cine &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/11/ms-sqlserver-numeric-primary-key/">MS SQLServer Numeric Primary Key Hibernate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/">Que Yo Tenga Que Defender a Steve Jobs Y Apple&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/21/woices-para-android/">Woices Para Android</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/05/ii-jornadas-de-gpltarragona/">II Jornadas De GPLTarragona</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/">Actualizando a Ubuntu 10.04 Lucid Lynx</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jbilbo">@jbilbo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jbilbo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jonathan Hernandez -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jbilbo';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
