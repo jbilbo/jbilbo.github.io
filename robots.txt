@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 
-Sitemap: http://jbilbo.github.io/sitemap.xml 
+Sitemap: http://jbilbo.com/sitemap.xml
