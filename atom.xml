@@ -4,7 +4,7 @@
   <title><![CDATA[Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2014-11-24T19:25:52+01:00</updated>
+  <updated>2014-12-18T20:41:23+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Relanzando El Blog]]></title>
+    <link href="http://jbilbo.com/blog/2014/12/18/relanzando-el-blog/"/>
+    <updated>2014-12-18T20:04:49+01:00</updated>
+    <id>http://jbilbo.com/blog/2014/12/18/relanzando-el-blog</id>
+    <content type="html"><![CDATA[<p>En estos últimos 3 años no he escrito casi nada, creo que <a href="http://twitter.com/jbilbob">Twitter</a> tiene gran parte de culpa. El hecho de ir poniendo por ahí comentarios cortos como que me hizo perder las ganas de invertir en más de 140 caracteres, quizás también pensando que la gente ya no invierte tanto tiempo en leer artículos como antes. No es nuevo que hemos ido hacia el consumo rápido, tiene lógica teniendo en cuenta la cantidad enorme de información a la que tenemos acceso diariamente. Un formato como Twitter, el formato &ldquo;titular&rdquo;, es más óptimo para el consumidor, que adquiere multitud de pequeñas gotas de información de las cuales unas pocas que filtrará las expandirá un poco más accediendo al enlace.</p>
+
+<p>Mientras Twitter sigue siendo una opción muy válida, creo que seguir poniendo pensamientos, tutoriales y demás en un blog es algo enriquecedor para el autor, y en ocasiones útil para el lector. Puede que nadie lo lea, o muy pocos, pero el propósito del músico no es que su canción tenga éxito (aunque eso está muy bien), sinó componer, tocar o cantar.</p>
+
+<p>Una de las cosas que quiero también aprovechar con el blog para mejorar es mi escritura del inglés. Creo que los artículos técnicos es una buena manera de hacerlo, es un tipo de artículo que puede servir a nivel global y la audiencia a la que va dirigida es muy probable que entienda el inglés, como mínimo el escrito.</p>
+
+<p>Pues eso es todo, por ahora el único cambio importante en el blog es la migración que he hecho de <a href="http://blogger.com">Blogger</a> a <a href="http://github.com/jbilbo">Github</a> usando <a href="http://jekyllrb.com">Jekyll</a> y <a href="http://octopress.org">Octopress</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MS SQLServer Numeric Primary Key Hibernate]]></title>
@@ -179,14 +194,6 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
     <updated>2005-04-05T02:52:00+02:00</updated>
     <id>http://jbilbo.com/blog/2005/04/05/wtf</id>
     <content type="html"><![CDATA[Noticia en <a href="http://barrapunto.com/article.pl?sid=05/03/15/1129227">barrapunto</a> que se me pasó y la he visto hoy en otro artículo de la misma web enlazada:<br/><br/><i>El 14 de marzo se anunció que el principal partido de la oposición en España, el Partido Popular, había presentado una proposición de Ley para eliminar el canon por copia privada de los soportes informáticos.<br/>A la Sociedad de Autores parece que le ha faltado tiempo para calificar esta propuesta de descabellada.<br/>La propuesta del PP pide la eliminación del canon también de otros soportes informáticos, como los propios CDs y DVDs, y curarse en salud ante los insistentes rumores de un posible canon a las líneas ADSL.</i><br/><br/>Comentario en barrapunto:<br/><br/><i>Esta visto que no es cuestión de ser de izquierdas o de derechas, es cuestión de apoyar a la oposición que sea, porque son los únicos que quieren ganarse a la gente.<br/><br/>El PSOE acordando con la SGAE, y el PP proponiendo la eliminación del canon. Dentro de X años, cuando el PP vuelva a estar en el poder, la situación será justamente la contraria.</i><br/><br/>¿Pero ésto qué es? ¿Todos los partidos que llegan al gobierno se venden? No entiendo nada&#8230; O_o]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Ring 2]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/04/ring-2/"/>
-    <updated>2005-04-04T04:30:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/04/ring-2</id>
-    <content type="html"><![CDATA[No sorprende ya tanto como lo hizo su primera parte aunque sigue dando cosa la maldita niña de los malos pelos... por cierto sí, me atreví a ir a verla :-)<br/><br/>Siguen saliendo los mismos protagonistas que la primera parte, el niño sigue siendo raro, la madre sigue teniendo decisiones malas (que levantan algún murmullo en el cine) y la niña (recuerdo el nombre, Samara) en esta parte deja &#8220;en calzoncillos&#8221; a cualquier escalador profesional.<br/><br/>Recuerdo que el tema central de esta saga (importante saberlo antes de ir a verla&#8230;) es que existe una cinta de video que cuando la ves recibes una llamada que te dice que morirás al séptimo dia. Cuando llega ese dia sale una niña despeinada tirando vasos de agua&#8230; y se encarga de que ocurra lo que dijo el del teléfono.<br/>Y digo yo&#8230; no será ésto un complot subliminal de las empresas de electrónica con beneficios en la indústrial del cine para que de una vez por todas se implante el DVD y se descarten los videos VHS. Yo creo que sería el método más eficaz en la película para evitar más muertes:<br/><br/>- Mira esa cinta VHS, ya verás&#8230;<br/>- Tio, yo no tengo video pa ese trasto&#8230; sólo DVD.<br/><br/>Vida salvada.<br/><br/>Luego está el tema de que si ves la película, la única forma de salvarte es haciendo una copia de ella y que la vea otra persona&#8230; es decir, cargarle el muerto (nunca mejor dicho) a otra persona.<br/>¿Ésto qué signfica? ¿Apología del pirateo? Nos esta diciendo que piratear la cinta nos puede salvar la vida&#8230; ¿que pasaría si la cinta se pasara a digital y se compartiera por bittorrent o la red edonkey? Si la ves tienes que compartirla con un rate 1.0 o más&#8230; <br/>¿o al revés? Si aceptas una copia pirateada de otra persona&#8230; ¡puedes morir! En este caso la niña sería simbólicamente la SGAE que a los 7 dias viene a cobrarte el cánon xD<br/>O por ej. si la visionaran en la publicidad de la SuperBowl (~180 millones de personas)&#8230; no iba a tener trabajo la niña. Quedan muchos cabos sueltos que si no lo desvelan en la 3era parte, quizás sí lo hagan en Scary Movie 4 (si alguna vez se estrena&#8230;) xDD<br/><br/>En fin&#8230; que la recomiendo para masocas, escaladores, el Sergio, y gente que les gustó la primera parte o quieran ver una buena peli de terror psicológico.<br/><br/>Nota: Éste artículo no tiene foto expresamente.<br/><br/><div align="center"><b>Calificación 6/10</b></div>]]></content>
   </entry>
   
 </feed>

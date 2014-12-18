@@ -9,7 +9,7 @@
   <meta name="author" content="Jonathan Hernandez">
 
   
-  <meta name="description" content="Como dije, voy a intentar comentar las pelis que voy viendo que valen la pena y las que valen la pena comentar para que no las vea nadie xD. En este &hellip;">
+  <meta name="description" content="El proyecto mono acaba de anunciar la primera beta de sus 2 planeadas antes de sacar la esperada versión 1.0.Y Todd Berman anuncia en la lista y en &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -40,7 +40,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">Jonathan Hernandez</a></h1>
   
-    <h2>Cofounder of Woices and Rails developer</h2>
+    <h2>Rails developer. Free (as in freedom) software enthusiast. Gamer.</h2>
   
 </hgroup>
 
@@ -82,6 +82,37 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/05/05/lanzamiento-de-monos/">Lanzamiento De Monos</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-05-05T15:14:00+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:14 pm</span></time>
+        
+         | <a href="/blog/2004/05/05/lanzamiento-de-monos/#disqus_thread">Comments</a>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">El <a href="http://www.go-mono.com">proyecto mono</a> acaba de anunciar la <a href="http://www.go-mono.com/archive/beta1/beta1.html">primera beta</a> de sus 2 <a href="http://www.go-mono.com/road-to-1.0.html">planeadas</a> antes de sacar la esperada versión 1.0.<br/><br/><div align="center"><br/><a href="http://www.go-mono.com/archive/beta1/beta1.html"><img src="http://www.go-mono.com/images/beta1-anim.gif" alt="Mono Beta 1" border="0" /></a><br/></div><br/><br/>Y <a href="http://codeblogs.ximian.com/blogs/tberman/">Todd Berman</a> anuncia en la lista y en la web de <a href="http://www.monodevelop.com">Monodevelop</a> la <a href="http://www.monodevelop.com/release_notes/0.3.html">versión 0.3</a> de uno de los proyectos de software libre más importantes en la actualidad (a mi parecer, claro :)<br/><br/>Actualización: En el portage de Gentoo ya tenemos todos los paquetes disponibles:<br/><br/><pre><br/>Calculating dependencies ...done!<br/>[ebuild     U ] dev-dotnet/mono-0.91 [0.31] +nptl  16,918 kB<br/>[ebuild     U ] x11-libs/gtk-sharp-0.91.1 [0.18] +gnome -gnomedb +gtkhtml -libgda  1,314 kB<br/>[ebuild     U ] dev-util/monodoc-0.15 [0.13]  3,977 kB<br/>[ebuild     U ] dev-dotnet/gtksourceview-sharp-0.2 [0.1.0]  335 kB<br/>[ebuild     U ] dev-dotnet/gecko-sharp-0.2 [0.1]  108 kB<br/>[ebuild     U ] dev-util/monodevelop-0.3 [0.2] +nptl  2,489 kB<br/></pre></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -356,37 +387,6 @@
 
 
   <div class="entry-content">He pasado al kernel &#8220;gentoo-dev-sources&#8221;, es el kernel de la rama 2.6.x que mantiene la gente de Gentoo (lleva parches como el bootsplash o el supermount). A parte también noto una mejora de rendimiento mientras compilo paquetes, con mi anterior kernel (development-sources, 2.6.x oficial de kernel.org sin parches) notaba que al compilar se me ralentizaba todo el sistema.<br/><br/>El cambio de kernel lo quería también para probar supermount en mi sistema: supermount te permite acceder a los discos extraibles (CDs, diskettes, DVDs&#8230;) de forma automática sin tener que montar/desmontar el dispositivo: Cuando metes el CD, se monta automáticamente y puedes acceder de forma directa (a lo windolin user), y cuando apretas &#8220;eject&#8221; el CD se desmonta también de forma automática.<br/><br/>He aquí el cambio de línea del /etc/fstab que sufre, por ej., mi grabadora:<br/><br/>Sin supermount:<br/><br/><pre><br/>/dev/cdrom	/mnt/cdrom	auto	ro,noauto,user,exec	0 0<br/></pre><br/><br/>Con supermount:<br/><br/><pre><br/>none	/mnt/cdrom	supermount	fs=auto,dev=/dev/cdrom,--,users	0 0<br/></pre></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2004/04/28/wireless-en-la-biblioteca-de-la-urv/">Wireless en La Biblioteca De La URV</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2004-04-28T23:19:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>11:19 pm</span></time>
-        
-         | <a href="/blog/2004/04/28/wireless-en-la-biblioteca-de-la-urv/#disqus_thread">Comments</a>
-        
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">Quería comentar que por fin parece que han abierto la red wireless de la biblioteca, la iniciativa tiene el nombre de &#8220;Xarxa Oberta&#8221;. Lo malo es que, aparte de que va a ser privada (en contradicción con lo de &#8220;Oberta&#8221;), la configuración no va a ser como con la mayoría de redes wireless (por ej. configuración por dhcpd con autentificación por MAC&#8230; etc), no. Se hará a través de una <a href="http://www.gplurv.org/node/view/203">Red Privada Virtual</a>, y como la configuración no es trivial han puesto en la <a href="http://www.urv.es/la_urv/10_serveis/ritic/xarxa_oberta/">web dedicada al asunto</a> unos pdfs informativos sobre cómo configurarlo&#8230; <b>para Windows95/98/ME/2000/XP únicamente!!!</b>.<br/><br/>No es que me guste criticar la universidad, pero es que siempre pasa lo mismo&#8230; ¿Los usuarios de Linux (da igual el nivel que tengan) siempre se tienen que buscar la vida? <br/>El caso es que en la <a href="http://www.urv.es/la_urv/10_serveis/ritic/xarxa_oberta/">web</a> hay una dirección (suport.xarxaoberta arroba estudiants.urv.es) donde preguntaré sobre el soporte de documentación para los usuarios de Linux. Animo a todos los interesados a hacer lo mismo. [<b>Actualización</b>: Ya hay una <a href="http://jhernandez.gplurv.org/blog/archives/000047.html">respuesta</a>]<br/>Otra iniciativa positiva sería que alguien hiciese un how-to en la web de gplurv sobre &#8220;configuración de Linux&#8221; y nos enlazaran desde la web de xarxa &#8220;oberta&#8221;.<br/><br/>Por último, también me gustaría nombrar un post de sergio en su blog que habla sobre los últimos movimientos de la urv en ciertos aspectos (incluyendo éste de la xarxa) con el que comparto el 100% y que recomiendo leer. El enlace <a href="http://www.marblestation.com/blog/index.php?p=87">aquí</a>.</div>
   
   
 
