@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2015-05-19T01:42:29+01:00</updated>
+  <updated>2015-05-19T01:46:41+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Testing CORS Headers With RSpec in Rails With Rack]]></title>
+    <title type="html"><![CDATA[Testing CORS Headers With RSpec and Rack in Rails]]></title>
     <link href="http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec/"/>
     <updated>2015-05-19T01:16:17+01:00</updated>
     <id>http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec</id>
