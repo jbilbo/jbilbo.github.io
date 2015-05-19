@@ -9,7 +9,7 @@
   <meta name="author" content="Jonathan Hernandez">
 
   
-  <meta name="description" content="En el segundo curso de GNU/Linux:- Curs Avançat de GNU/Linuxal final se utilizará como distribución predeterminada a Ubuntu. En principio se iba a &hellip;">
+  <meta name="description" content="Cuando creamos un proceso en una terminal, éste queda ligado a la terminal como "hijo". Si la terminal muere, también lo hace el proceso. Para evitar &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,37 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2004/11/02/desligar-un-proceso-de-una-terminal/">Desligar Un Proceso De Una Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-11-02T11:07:00-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>11:07 am</span></time>
+        
+         | <a href="/blog/2004/11/02/desligar-un-proceso-de-una-terminal/#disqus_thread">Comments</a>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Cuando creamos un proceso en una terminal, éste queda ligado a la terminal como &#8220;hijo&#8221;. Si la terminal muere, también lo hace el proceso. Para evitar ésto, si estamos en una terminal de escritorio (que es donde más se utiliza) podemos cerrar la terminal con el comando:<br/><br/><pre>exit</pre><br/><br/>y no cerrando la ventana. Ésta es una de las formas que conozco, no sé si pasa lo mismo en las otras terminales que no sean gnome-terminal.<br/><br/>La otra forma, que es la &#8220;forma Unix&#8221; es con el comando:<br/><br/><pre>disown</pre><br/><br/>Si no le pasamos parámetros, cogerá el último proceso creado. También podemos pasarle como parámetro el PID del proceso si tenemos muchos. O pasarle estas opciones:<br/><br/>Desliga a todos los procesos ejecutados desde la terminal<br/><pre>disown -a</pre><br/><br/>Desliga a todos los procesos ejecutados desde la terminal que esten en marcha (Running).<br/><pre>disown -r</pre><br/><br/>Si os fijais, ejecutando el comando &#8220;jobs&#8221; vereis en todo momento los procesos que han sido ejecutados en la terminal. Si desligais un proceso desaparece del listado de &#8220;jobs&#8221;. Para que el proceso se desligue de la terminal pero no se elimine de la lista de jobs podemos pasarle el parámetro -h al disown:<br/><br/><pre>disown -h</pre><br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/315">Artículo</a> en gpltarragona.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2004/11/02/ubuntu-en-el-segundo-curso-de-linux/">Ubuntu en El Segundo Curso De Linux</a></h1>
     
     
@@ -97,7 +128,7 @@
 
 
 
-<time class='entry-date' datetime='2004-11-02T16:52:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>4:52 pm</span></time>
+<time class='entry-date' datetime='2004-11-02T07:52:00-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>7:52 am</span></time>
         
          | <a href="/blog/2004/11/02/ubuntu-en-el-segundo-curso-de-linux/#disqus_thread">Comments</a>
         
@@ -119,7 +150,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/11/02/mas-falsas-apariencias/">Más Falsas Apariencias</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/11/01/mas-falsas-apariencias/">Más Falsas Apariencias</a></h1>
     
     
       <p class="meta">
@@ -128,9 +159,9 @@
 
 
 
-<time class='entry-date' datetime='2004-11-02T02:35:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2004</span></span> <span class='time'>2:35 am</span></time>
+<time class='entry-date' datetime='2004-11-01T17:35:00-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2004</span></span> <span class='time'>5:35 pm</span></time>
         
-         | <a href="/blog/2004/11/02/mas-falsas-apariencias/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/11/01/mas-falsas-apariencias/#disqus_thread">Comments</a>
         
         
       </p>
@@ -159,7 +190,7 @@
 
 
 
-<time class='entry-date' datetime='2004-10-29T19:55:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>7:55 pm</span></time>
+<time class='entry-date' datetime='2004-10-29T10:55:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>10:55 am</span></time>
         
          | <a href="/blog/2004/10/29/sobre-el-linksys-wag54g/#disqus_thread">Comments</a>
         
@@ -190,7 +221,7 @@
 
 
 
-<time class='entry-date' datetime='2004-10-29T17:09:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:09 pm</span></time>
+<time class='entry-date' datetime='2004-10-29T08:09:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>8:09 am</span></time>
         
          | <a href="/blog/2004/10/29/tomboy-ya-en-el-portage/#disqus_thread">Comments</a>
         
@@ -221,7 +252,7 @@
 
 
 
-<time class='entry-date' datetime='2004-10-28T14:54:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:54 pm</span></time>
+<time class='entry-date' datetime='2004-10-28T05:54:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:54 am</span></time>
         
          | <a href="/blog/2004/10/28/los-hobbits-existieron/#disqus_thread">Comments</a>
         
@@ -252,7 +283,7 @@
 
 
 
-<time class='entry-date' datetime='2004-10-28T14:20:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:20 pm</span></time>
+<time class='entry-date' datetime='2004-10-28T05:20:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:20 am</span></time>
         
          | <a href="/blog/2004/10/28/grow-up-mmm/#disqus_thread">Comments</a>
         
@@ -274,7 +305,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/10/28/esta-noche-eclipse-total-de-luna/">Esta Noche Eclipse Total De Luna!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/10/27/esta-noche-eclipse-total-de-luna/">Esta Noche Eclipse Total De Luna!</a></h1>
     
     
       <p class="meta">
@@ -283,9 +314,9 @@
 
 
 
-<time class='entry-date' datetime='2004-10-28T02:41:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:41 am</span></time>
+<time class='entry-date' datetime='2004-10-27T17:41:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:41 pm</span></time>
         
-         | <a href="/blog/2004/10/28/esta-noche-eclipse-total-de-luna/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/10/27/esta-noche-eclipse-total-de-luna/#disqus_thread">Comments</a>
         
         
       </p>
@@ -314,7 +345,7 @@
 
 
 
-<time class='entry-date' datetime='2004-10-27T18:22:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:22 pm</span></time>
+<time class='entry-date' datetime='2004-10-27T09:22:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>9:22 am</span></time>
         
          | <a href="/blog/2004/10/27/status-now/#disqus_thread">Comments</a>
         
@@ -336,7 +367,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/10/27/pyeximon-en-gentoo/">Pyeximon en Gentoo</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/10/26/pyeximon-en-gentoo/">Pyeximon en Gentoo</a></h1>
     
     
       <p class="meta">
@@ -345,9 +376,9 @@
 
 
 
-<time class='entry-date' datetime='2004-10-27T02:54:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:54 am</span></time>
+<time class='entry-date' datetime='2004-10-26T17:54:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:54 pm</span></time>
         
-         | <a href="/blog/2004/10/27/pyeximon-en-gentoo/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/10/26/pyeximon-en-gentoo/#disqus_thread">Comments</a>
         
         
       </p>
@@ -356,37 +387,6 @@
 
 
   <div class="entry-content"><a href="http://pyeximon.sf.net">pyeximon</a> es una interfaz gráfica para Gnome al servidor de correo <a href="http://www.exim.org/">exim</a>, hace un tiempo lo comentó sergio en su <a href="http://www.marblestation.com/blog/index.php?p=216">blog</a> pero yo ya lo conocía gracias a <a href="http://www.ubuntulinux.org">Ubuntu</a>, ya que estan relacionados. La empresa detrás de Ubuntu es <a href="http://www.canonical.com/">Canonical</a>, que esta impulsada económicamente por <a href="tp://www.markshuttleworth.com/">Mark Shuttleworth</a>, que tiene unos <a href="http://www.markshuttleworth.com/bounty.html">bounties</a> (recompensas de dinero por hacer software libre) en su web y uno de ellos es un &#8220;Gnome Exim Monitor&#8221; (que ya se ha realizado y es el pyeximon). De hecho ya hable de estas bounties <a href="http://jhernandez.gpltarragona.org/blog/archives/000205.html">anteriormente</a>.<br/><br/>El caso es que he puesto en el bugzilla de Gentoo una <a href="http://bugs.gentoo.org/show_bug.cgi?id=68905">petición</a> para que se incluya un ebuild en el portage de este software y parece que hay gente que se ha interesado por el tema. A ver si podemos hacer un emerge pyeximon en breve.<br/><br/><b>Actualización</b> 27-oct-2004 - 01:15: Parece increíble&#8230; pero ya esta disponible el ebuild en el CVS!! que rápidos! :-) genial!<br/>Ahora mismo todavía no esta sincronizado, pero cuando leáis esto seguro que ya sí. Como estará masked durante el tiempo de testeo, para probarlo deberéis hacer:<br/><br/><pre>emerge --sync<br/>echo "dev-python/rtgraph ~x86" >> /etc/portage/package.keywords<br/>echo "net-mail/pyeximon ~amd64" >> /etc/portage/package.keywords<br/>emerge pyeximon</pre><br/><br/>*Atención. Por ahora <a href="http://packages.gentoo.org/packages/?category=net-mail;name=pyeximon">sólo esta</a> para arquitectura amd64 (le acabo de decir que si puede añadir la x86 porque funciona perfectamente), mientras tanto como chapucilla he puesto arriba que meta en el package.keywords la ~amd64 como podeis ver, cuando esté para ~x86 se cambia ~amd64 por ~x86 en el fichero y listos.</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2004/10/26/frases-de-mi-primo-v/">Frases De Mi Primo V</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2004-10-26T22:03:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>10:03 pm</span></time>
-        
-         | <a href="/blog/2004/10/26/frases-de-mi-primo-v/#disqus_thread">Comments</a>
-        
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">Hace tiempo de la última entrega y tenía recopiladas unas cuantas, así que aquí va otra:<br/><br/><pre>el único músculo que tengo más fuerte es el dedo.</pre><br/><br/><pre>tengo que matarme a 50 gente!</pre><br/><br/><pre>como se cague ahí, vamo a tener gracia.</pre><br/><br/><pre>hoy tengo un daño de dolores</pre><br/><br/><pre>Estoy llorando, pero no es de lágrimas, es de verdad.</pre><br/><br/><pre>ya es hora de que el perro se saque solo.</pre></div>
   
   
 
@@ -412,7 +412,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jonathan Hernandez -
+  Copyright &copy; 2015 - Jonathan Hernandez -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/jbilbo/whitespace">Whitespace</a></span>
 </p>
 

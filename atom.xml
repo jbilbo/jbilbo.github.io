@@ -4,7 +4,7 @@
   <title><![CDATA[Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2014-12-18T20:41:23+01:00</updated>
+  <updated>2015-05-19T01:26:54+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -14,9 +14,127 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Testing CORS Headers With RSpec in Rails With Rack]]></title>
+    <link href="http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec/"/>
+    <updated>2015-05-19T01:16:17+01:00</updated>
+    <id>http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve not found any blog post or article about how to easily test CORS support implemented in a <a href="http://rack.github.io/">Rack</a> middleware (e.g. using the <a href="https://github.com/cyu/rack-cors">rack-cors</a> gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.</p>
+
+<p>I assume you have a fairly updated Rails app, I tested it with Rails 4.2.x, with <code>RSpec</code> tests support, and you want to add support for <code>CORS</code> headers.</p>
+
+<h2>Install rack-cors gem</h2>
+
+<p>it&rsquo;s better to follow the gem instructions (you&rsquo;ll find the most updated instructions there) than a blog post, but anyway here&rsquo;s is how I did it:</p>
+
+<p>Add this to your <code>Gemfile</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem <span class="s1">&#39;rack-cors&#39;</span>, :require <span class="o">=</span>&gt; <span class="s1">&#39;rack/cors&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Add this to your <code>config/application.rb</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">insert_before</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Rack::Cors&quot;</span><span class="p">,</span> <span class="ss">logger</span><span class="p">:</span> <span class="p">(</span><span class="o">-&gt;</span> <span class="p">{</span> <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span> <span class="p">}))</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">allow</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">origins</span> <span class="s1">&#39;*&#39;</span>
+</span><span class='line'>    <span class="n">resource</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="ss">headers</span><span class="p">:</span> <span class="ss">:any</span><span class="p">,</span> <span class="nb">methods</span><span class="p">:</span> <span class="o">[</span><span class="ss">:get</span><span class="p">,</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">:patch</span><span class="p">,</span> <span class="ss">:options</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is just standard options, tune it to your needs. Here we&rsquo;re allowing requests from any domain for the <code>get</code>, <code>post</code>, <code>patch</code> and <code>options</code> methods. <code>options</code> is special method used for <a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">preflight</a> requests.</p>
+
+<p>That&rsquo;s it. <code>CORS</code> is now active in this Rails app. Every time we send a request with the <code>CORS</code> headers, we&rsquo;ll receive the <code>CORS</code> response headers.</p>
+
+<h2>How to test it with cURL</h2>
+
+<p>With <a href="http://curl.haxx.se/">cURL</a>, it&rsquo;s easy to test <code>CORS</code>. Let&rsquo;s see the most common scenarios:</p>
+
+<h4>Sending the <code>Origin</code> header:</h4>
+
+<p><code>-H</code>: Header to include in the request.
+<code>-I</code>: Fetch the <code>HTTP</code> header only.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>curl -H <span class="s2">&quot;Origin:*&quot;</span> -I http://localhost:3000/people/1234
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We should receive: <code>Access-Control-Allow-Origin: *</code>.</p>
+
+<h4>Sending the preflight options method:</h4>
+
+<p>Send a options request with <code>Origin: *</code>, <code>Access-Control-Request-Method: get</code> and <code>Access-Control-Request-Headers: test</code>.
+<code>-X</code>: Specifies a custom request method</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>curl -X OPTIONS -I http://localhost:3000 -H <span class="s1">&#39;Origin: *&#39;</span> -H <span class="s1">&#39;Access-Control-Request-Method: GET&#39;</span> -H <span class="s1">&#39;Access-Control-Request-Headers: test&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We should receive <code>Access-Control-Allow-Origin: *</code>, <code>Access-Control-Allow-Methods: get, post, patch, options</code>, and <code>Access-Control-Allow-Headers: test</code>.</p>
+
+<h2>How to test it with <code>RSpec</code></h2>
+
+<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:
+* Convert to upper case.
+* Replace <code>-</code> with <code>_</code>
+* Prepend <code>HTTP_</code>.</p>
+
+<p>Because we don&rsquo;t have the server to do it for us, we must do it manually. So e.g. the <code>Origin</code> becomes <code>HTTP_ORIGIN</code> and <code>Http-Access-Control-Request-Method</code> becomes <code>HTTP_ACCESS_CONTROL_REQUEST_METHOD</code>. Let&rsquo;s see some example tests:</p>
+
+<h4>Sending the Origin header:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">scenario</span> <span class="s1">&#39;Returns the response CORS headers&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/people/1234&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Sending the preflight options method:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">scenario</span> <span class="s1">&#39;Send the CORS preflight OPTIONS request&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">options</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_METHOD&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_HEADERS&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;GET, POST, PATCH, OPTIONS&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_key</span><span class="p">(</span><span class="s1">&#39;Access-Control-Max-Age&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s pretty much it!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Relanzando El Blog]]></title>
     <link href="http://jbilbo.com/blog/2014/12/18/relanzando-el-blog/"/>
-    <updated>2014-12-18T20:04:49+01:00</updated>
+    <updated>2014-12-18T19:04:49+00:00</updated>
     <id>http://jbilbo.com/blog/2014/12/18/relanzando-el-blog</id>
     <content type="html"><![CDATA[<p>En estos últimos 3 años no he escrito casi nada, creo que <a href="http://twitter.com/jbilbob">Twitter</a> tiene gran parte de culpa. El hecho de ir poniendo por ahí comentarios cortos como que me hizo perder las ganas de invertir en más de 140 caracteres, quizás también pensando que la gente ya no invierte tanto tiempo en leer artículos como antes. No es nuevo que hemos ido hacia el consumo rápido, tiene lógica teniendo en cuenta la cantidad enorme de información a la que tenemos acceso diariamente. Un formato como Twitter, el formato &ldquo;titular&rdquo;, es más óptimo para el consumidor, que adquiere multitud de pequeñas gotas de información de las cuales unas pocas que filtrará las expandirá un poco más accediendo al enlace.</p>
 
@@ -31,7 +149,7 @@
   <entry>
     <title type="html"><![CDATA[MS SQLServer Numeric Primary Key Hibernate]]></title>
     <link href="http://jbilbo.com/blog/2014/07/11/ms-sqlserver-numeric-primary-key/"/>
-    <updated>2014-07-11T11:29:00+02:00</updated>
+    <updated>2014-07-11T02:29:00-07:00</updated>
     <id>http://jbilbo.com/blog/2014/07/11/ms-sqlserver-numeric-primary-key</id>
     <content type="html"><![CDATA[Related to this old hibernate problem:&nbsp;<a href="http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html">http://grails.1312388.n4.nabble.com/MS-SQLServer-numeric-primary-key-hibernate-td3565392.html</a><br /><br /><blockquote class="tr_bq"><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;">By default Gorm/hiberate is generating id columns as the numeric(19,0) on SQLServer.&nbsp; I&#8217;d like those to be of type BIGINT instead.</span></blockquote><span style="background-color: white; font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 13px;"><br /></span>The solution is to use the correct dialect for hibernate. In Grails, you can configure it like this:<br /><br />grails-app/conf/DataSource.groovy:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; dataSource {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; driverClassName = &#8220;com.microsoft.sqlserver.jdbc.SQLServerDriver&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; username = &#8220;xxx&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; password = &#8220;xxx&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dbCreate = &#8220;create-drop&#8221; // one of &#8216;create&#8217;, &#8216;create-drop&#8217;, &#8216;update&#8217;, &#8216;validate&#8217;, &#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url = &#8220;jdbc:sqlserver://host&#92;instance;databaseName=databaseName&#8221;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>dialect = &#8220;org.hibernate.dialect.SQLServer2008Dialect&#8221;</b><br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /><div><br /></div>]]></content>
   </entry>
@@ -39,7 +157,7 @@
   <entry>
     <title type="html"><![CDATA[Que Yo Tenga Que Defender a Steve Jobs Y Apple...]]></title>
     <link href="http://jbilbo.com/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y/"/>
-    <updated>2011-10-07T09:57:00+02:00</updated>
+    <updated>2011-10-07T00:57:00-07:00</updated>
     <id>http://jbilbo.com/blog/2011/10/07/que-yo-tenga-que-defender-steve-jobs-y</id>
     <content type="html"><![CDATA[<p><em>Nota: A raíz de la muerte de Steve Jobs, no me gusta nada cómo se frivoliza por parte de algunos blogs/comentarios la aportación de Apple al mundo de la tecnología. Cabe decir que yo jamás he comprado para mi NADA de Apple, y además soy desarrollador de Android.</em></p>
 
@@ -63,7 +181,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Woices Para Android]]></title>
     <link href="http://jbilbo.com/blog/2010/06/21/woices-para-android/"/>
-    <updated>2010-06-21T23:27:00+02:00</updated>
+    <updated>2010-06-21T14:27:00-07:00</updated>
     <id>http://jbilbo.com/blog/2010/06/21/woices-para-android</id>
     <content type="html"><![CDATA[Mi último proyecto (o subproyecto dentro del GRAN proyecto <a href="http://woices.com/">Woices</a>) es la aplicación de esta plataforma para el sistema operativo libre de Google: <a href="http://www.android.com/">Android</a>. <br /><br />Hay una <a href="http://en.wikipedia.org/wiki/List_of_Android_devices">gran lista</a> de dispositivos que usan Android, sobretodo teléfonos móviles, algunos de los más populares son los HTC <a href="http://www.htc.com/es/product/magic/overview.html">Magic</a>, <a href="http://www.htc.com/es/product/hero/overview.html">Hero</a>, <a href="http://www.htc.com/es/product/desire/overview.html">Desire</a>, Evo 4G, <a href="http://www.google.com/phone/">Nexus One</a>&#8230; o el Motorola <a href="http://www.motorola.com/Consumers/ES-ES/Consumer-Products-and-Services/Mobile-Phones/Motorola-MILESTONE-ES-ES">Droid/Milestone</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://woices.com/android" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_Nv1OUwX9fDo/TB-pUzz50pI/AAAAAAAAADQ/u6OEv2FQR9M/s320/droid-with-woices.png" /></a></div><br />Después de estar más de 2 meses empapándome de documentación, APIs, conferencias, código fuente de ejemplo y búsquedas en google, google groups, stackoverflow y en mis notas de Tomboy y papeles con dibujitos o esquemas en Google Docs&#8230; por fin ha salido a la luz la primera versión de <a href="http://woices.com/android">woices para android</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://woices.com/android" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/_Nv1OUwX9fDo/TB_YJXvGquI/AAAAAAAAADg/vlGp4eIhwQI/s400/woices-guia-patrocinada.png" width="237" /></a></div><br />La idea es que lleves la aplicación &#8220;a cuestas&#8221; y puedas beneficiarte in-situ de la información (audioguías) que los usuarios dejan en los diferentes puntos del planeta en forma de audio. Puedes encontrate <a href="http://woices.com/help#echo1">ecos</a>, <a href="http://woices.com/help#walk1">rutas</a> o <a href="http://woices.com/guides">guías patrocinadas </a>según el sitio donde estés. También esta disponible la función de búsqueda (por título, lugar, ciudad o <a href="http://woices.com/help#mobile2">e-code</a>).<br /><br />Si tienes un teléfono Android <a href="http://woices.com/android">pruébala</a> y dime qué te parece. Mientras, sigo trabajando en la siguiente versión.]]></content>
   </entry>
@@ -71,7 +189,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[II Jornadas De GPLTarragona]]></title>
     <link href="http://jbilbo.com/blog/2010/05/05/ii-jornadas-de-gpltarragona/"/>
-    <updated>2010-05-05T18:46:00+02:00</updated>
+    <updated>2010-05-05T09:46:00-07:00</updated>
     <id>http://jbilbo.com/blog/2010/05/05/ii-jornadas-de-gpltarragona</id>
     <content type="html"><![CDATA[Mañana son las II Jornadas de GPLTarragona:<br /><br /><i>Per celebrar el 7e aniversari de l’associació GPL Tarragona i continuar demostrant el compromís per promocionar les tecnologies de la informació i el programari lliure a la província de Tarragona, el dijous 6 de maig de 2010 tindran lloc les II Jornades GPL Tarragona a la Sala de Graus del campus Sescelades (ETSE – Universitat Rovira i Virgili).<br /><br />Les jornades són completament gratuïtes i es troben destinades a professionals, aficionats, professors i estudiants en general.<br /><br />Xerrades:<br /><br />16:00 – Desevolupament amb iPhone – Oleguer Huguet de <a href="http://woices.com">Woices</a><br />16:45 – La Singularitat: una perspectiva OpenSource – Joan Baz de Adaptiva<br />Sistemas<br />17:30 – KISS IT – Joan Puig<br />18:15 – Auditories de Sistemes, l’inici d’una carrera professional apassionant – <a href="http://marblestation.com">Sergi Blanco Cuaresma</a><br />19:00 – Clausura<br /><br />Les xerrades tindran una duració de 30 min. + 15 min. per preguntes/debat. No es necessari fer reserva, és un esdeveniment obert i gratuït. Es pot assistir a aquelles xerrades que més interessin lliurement.</i><br /><br /><a href="http://www.gpltarragona.org/wp-content/uploads/2010/05/II-Jornades-GPL-Tarragona-Programa.pdf">Programa Completo</a> (PDF)<br /><br /><img src="http://www.gpltarragona.org/wp-content/themes/producer/images/gpltarragona-normal.gif" />]]></content>
   </entry>
@@ -79,7 +197,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Actualizando a Ubuntu 10.04 Lucid Lynx]]></title>
     <link href="http://jbilbo.com/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx/"/>
-    <updated>2010-04-29T21:57:00+02:00</updated>
+    <updated>2010-04-29T12:57:00-07:00</updated>
     <id>http://jbilbo.com/blog/2010/04/29/actualizando-ubuntu-1004-lucid-lynx</id>
     <content type="html"><![CDATA[Ya esta disponible la última versión de Ubuntu, 10.04 llamada Lucid Lynx desde la misma <a href="http://www.ubuntu.com/">web de Ubuntu</a> o desde vuestro &#8220;Gestor de actualizaciones&#8221;.<br />Esta vez no he tenido que cambiar el mirror, el español iba a tope:<br /><br /><img style="margin: 0px auto 10px; display: block; text-align: center; width: 400px; height: 303px;" src="http://1.bp.blogspot.com/_Nv1OUwX9fDo/S9nlXJMZ4GI/AAAAAAAAABg/BSj9GWSNMyw/s400/actualizando-a-lucid.png" alt="" id="BLOGGER_PHOTO_ID_5465651808558506082" border="0" />]]></content>
   </entry>
@@ -87,7 +205,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Nexus One Datos 3G Movistar/Telefonica]]></title>
     <link href="http://jbilbo.com/blog/2010/04/29/nexus-one-datos-3g-movistartelefonica/"/>
-    <updated>2010-04-29T17:54:00+02:00</updated>
+    <updated>2010-04-29T08:54:00-07:00</updated>
     <id>http://jbilbo.com/blog/2010/04/29/nexus-one-datos-3g-movistartelefonica</id>
     <content type="html"><![CDATA[Tengo unos datos que funcionan para conectarte al 3G de Movistar (Telefónica) en España con el Nexus One de Google (supongo que funcionarían en cualquier teléfono Android).<br /><br />Los que no tienen valor dejarlo vacío o por defecto.<br /><br />Nombre: Movistar 3G<br />APN: movistar.es<br />Proxy:<br />Puerto:<br />Nombre de usuario: MOVISTAR<br />Contraseña: MOVISTAR<br />Servidor: 194.179.1.100<br />MMSC:<br />Proxy MMS:<br />Puerto MMS:<br />MCC: 214<br />MNC: 07<br />Tipo de APN:<br /><br />Lo que no he encontrado son los datos del MMS, pero bueno tampoco lo uso.<br /><br />PD: No pongais datos de 3G a no ser que tengais un plan de datos con vuestra operadora, sinó luego la factura se resentirá&#8230;]]></content>
   </entry>
@@ -95,7 +213,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[De Vuelta... En Blogger]]></title>
     <link href="http://jbilbo.com/blog/2010/04/19/de-vuelta-en-blogger/"/>
-    <updated>2010-04-19T19:54:00+02:00</updated>
+    <updated>2010-04-19T10:54:00-07:00</updated>
     <id>http://jbilbo.com/blog/2010/04/19/de-vuelta-en-blogger</id>
     <content type="html"><![CDATA[Después de varios días off i'm back. El blog anterior estaba alojado en el servidor de GPLTarragona, que le dió por petar el disco duro (no entiendo por qué, era de estos nuevos IDE de 8Gb..... oh wait). Nada que hacer, fallo de hardware con ruido muy feo.<br />De GPLTarragona no hay problema porque hacíamos 1 backup diario al día, pero de mi pobre blog&#8230; bueno&#8230; como que no lo cuidaba mucho y me despreocupé de él&#8230; y resulta que no tenía ningún backup por ahí. Bueno tenía un backup por ahí del 2005 y el resto es como un puzzle :D Pero no hay problema, ya iré reestableciendo los posts poco a poco&#8230; que me da pena (ahora) perderlos, por ahora sólo estan hasta el 2005 (quedan unos cuantos :P).<br /><br />Ahora como veis he migrado a blogger, básicamente para tener dominio propio en un blog y no preocuparme por su mantenimiento. Mirando sobre cómo migrar de Wordpress a Blogger me he encontrado con un par de recursos útiles:<br /><br /><a href="http://technosailor.com/2006/07/05/wordpress-to-wordpress-import/">Exportar Xml de todo el blog en Wordpress</a><br /><a href="http://wordpress2blogger.appspot.com/">Convertir Xml de Wordpress en Xml de Blogger</a><br /><a href="http://blogandweb.com/blogger/importar-y-exportar-contenido-en-blogger/">Importar desde Blogger un Xml</a>]]></content>
   </entry>
@@ -103,7 +221,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Articulo Random en Rails]]></title>
     <link href="http://jbilbo.com/blog/2009/03/11/articulo-random-en-rails/"/>
-    <updated>2009-03-11T21:45:00+01:00</updated>
+    <updated>2009-03-11T13:45:00-07:00</updated>
     <id>http://jbilbo.com/blog/2009/03/11/articulo-random-en-rails</id>
     <content type="html"><![CDATA[Queremos obtener un registro aleatorio de la BD en Rails:<br /><br />def random<br />  @articulo = Articulo.find(:first, :order => &#8216;RAND()&#8217;)<br />end]]></content>
   </entry>
@@ -111,7 +229,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Cuando Llevas Mal Las Críticas]]></title>
     <link href="http://jbilbo.com/blog/2009/03/10/cuando-llevas-mal-las-criticas/"/>
-    <updated>2009-03-10T21:19:00+01:00</updated>
+    <updated>2009-03-10T13:19:00-07:00</updated>
     <id>http://jbilbo.com/blog/2009/03/10/cuando-llevas-mal-las-criticas</id>
     <content type="html"><![CDATA[Mamones de mierda, lo vais a pagar, habláis mucho pero sois unos lamecojones, nos follaremos a vuestras madres mientras lloráis como niñas, y cuando lleguemos a Hollywood y encontremos a los capullos que hacen la película, se van a comer nuestra mierda y cuando la paguen volverán a comerse su mierda hecha de nuestra mierda y que ya se comieron, y luego os tocará a vosotros, cabrones.<br />Con cariño, Jay y Bob el silencioso.<br />Jay escribiendo un post en un foro en<br />Jay y Bob el silencioso contraatacan (película, 2001)]]></content>
   </entry>
@@ -119,7 +237,7 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Actualizar Ruby on Rails]]></title>
     <link href="http://jbilbo.com/blog/2009/03/09/actualizar-ruby-on-rails/"/>
-    <updated>2009-03-09T21:11:00+01:00</updated>
+    <updated>2009-03-09T13:11:00-07:00</updated>
     <id>http://jbilbo.com/blog/2009/03/09/actualizar-ruby-on-rails</id>
     <content type="html"><![CDATA[Antes de actualizar Ruby on Rails es conveniente actualizar también gems y asegurarnos que funciona bien con la versión de Ruby que tenemos instalada.<br />Después de esto:<br /><br />gem install rails &#8211;include-dependencies<br /><br />Para actualizar nuestros proyectos de Rails con las mejoras del nuevo rails, hacemos un:<br /><br />cd /directorio/de/nuestro/proyecto<br />rake rails:update<br /><br />Esto nos actualizará las funciones javascript, los scripts/ i archivos internos del framework como por ejemplo config/boot.rb.]]></content>
   </entry>
@@ -127,73 +245,65 @@ Pero mi impulso de mercado preferido fué el de las apps, lo que considero ha ge
   <entry>
     <title type="html"><![CDATA[Errores en El Disco Duro]]></title>
     <link href="http://jbilbo.com/blog/2007/12/17/errores-en-el-disco-duro/"/>
-    <updated>2007-12-17T21:19:00+01:00</updated>
+    <updated>2007-12-17T12:19:00-08:00</updated>
     <id>http://jbilbo.com/blog/2007/12/17/errores-en-el-disco-duro</id>
     <content type="html"><![CDATA[<p>Si has experimentado algún tipo de error en tu disco duro (datos corruptos) o simplemente sospechas que algo puede no ir bien, de vez en cuando un repaso al disco no viene mal. Aunque las distribuciones linux ya de por sí te hacen un fsck de vez en cuando, por lo que en general no hace falta llevar mantenimiento de disco duro por parte del usuario (como debe ser).<br /><br />Aún así, yo utilizo unos comandos cuando quiero/intento arreglar/resucitar un disco duro y que por si a alguien le es de utilidad (no le gusta mirarse el man del fsck o el badblocks) lo voy a poner aquí.</p>Tomamos como premisas lo siguiente:<br /><p>- He arrancado con un LiveCD, hago las operaciones como root en un terminal (y con las particiones de mi disco duro desmontadas)<br /><br />- mi disco duro es /dev/sda<br />- mi sistema de ficheros linux es Ext3<br />- linux esta en la partición /dev/sda3 (todo, sin separar):</p><p>Ahora un repaso al sistema de ficheros y que arregle todos los errores que encuentre automáticamente.</p><pre>fsck.ext3 -f -tt -v -y /dev/sda3</pre><p>Ahora un repaso físico al disco duro en busca de sectores defectuosos. Lo buscaremos en todo el disco duro en vez de sólo en la partición linux. Si sólo quereis mirar los sectores de esa partición en concreto, hay una opción en el fsck para que lo llame por ti.</p><pre>badblocks -s /dev/sda</pre><p><b>Actualización</b>: Sergio me apunta (thx!) a que hacer el badblocks desde fsck.ext3 además actualiza la lista de inodos para guardarte qué sectores estan defectuosos y no utilizarlos. Mucho mejor de esta manera, utilizando el comando badblocks únicamente te los lista pero no hace nada. Entonces sería:</p><pre>fsck.ext3 -f -c -tt -v -y /dev/sda3</pre><p>(Prefiero siempre el modo lectura antes que el escritura no destructiva :P)</p><p>Por último, nunca viene mal intentar optimizar el sistema de ficheros (optimizar suena bien). Fsck tiene una opción para eso (-D):</p><pre>fsck.ext3 -f -tt -v -D -y /dev/sda3</pre>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Mis Próximas Lecturas]]></title>
-    <link href="http://jbilbo.com/blog/2007/11/22/mis-proximas-lecturas/"/>
-    <updated>2007-11-22T06:33:00+01:00</updated>
-    <id>http://jbilbo.com/blog/2007/11/22/mis-proximas-lecturas</id>
+    <link href="http://jbilbo.com/blog/2007/11/21/mis-proximas-lecturas/"/>
+    <updated>2007-11-21T21:33:00-08:00</updated>
+    <id>http://jbilbo.com/blog/2007/11/21/mis-proximas-lecturas</id>
     <content type="html"><![CDATA[Uno de mis géneros favoritos es la ciencia ficción. La fantasia también pero no he salido del gran J.R.R. Tolkien, las leyendas y las crónicas de DragonLance (si me podeis recomendar alguna otra saga de DragonLance, adelante, porque siempre que las veo en la tienda me pierdo y no sé cuál coger…) y Las leyendas de Terramar de Ursula K. Le Guin, algo más flojas.<br />En este post quiero recoger unos títulos de libros que he recopilado y que poco a poco quiero ir leyendo durante los próximos años. Además de que me sirva a mi de TODO-list también os puede servir a vosotros para que os decidais por alguno de estos, que ya os digo, se trata todo de novela del tipo ciencia ficción (la mayoría de Asimov porque me han gustado los 2 libros que me he leído de él y voy a seguir con toda su colección) salvo una saga de fantasia.<br /><ul><li>Doomsday Book - Connie Willis <b>(leído!)</b></li><li>Saga de “Song of Ice and Fire” (Fantasia) - George R. R. Martin <ul><li>Juego de Tronos <b>(leído!)</b></li><li>Choque de Reyes <b>(leído!)</b></li><li>Tormenta de Espadas  <b>(leído!)</b></li><li>Festín de Cuervos <b>(leído!)</b></li><li>Danza de Dragones <b>(leído!)</b></li></ul></li><li>De Isaac Asimov: <ul><li>El Fin de la Eternidad <b>(en mis manos!)</b></li><li>Los Propios Dioses <b>(en mis manos!)</b></li><li>La Saga de la Fundación (incluye Historia de los Robots, Imperio Galáctico y Ciclo de la Fundación) : <ul><li>Yo, Robot <b>(leído!)</b></li><li>Bóvedas de acero <b>(en mis manos!)</b></li><li>El Sol Desnudo <b>(leído!)</b></li><li>Los Robots del Amanecer <b>(en mis manos!)</b></li><li>Robots e Imperio</li><li>En la Arena Estelar</li><li>Las Corrientes del Espacio.</li><li>Un guijarro en el cielo</li><li>Preludio a la Fundación</li><li>Hacia la Fundación <b>(en mis manos!)</b></li><li>Fundación</li><li>Fundación e Imperio <b>(en mis manos!)</b></li><li>Segunda Fundación</li><li>Límites de la Fundación</li><li>Fundación y Tierra</li></ul></li></ul></li><li>1984 - George Orwell <b>(leído!)</b></li><li>Hyperion - Dan Simmons <b>(en mis manos!)</b></li><li>Solaris - Stanislaw Lem <b>(en mis manos!)</b></li><li>Dune - Frank Herbert <b>(leído!)</b></li><li>Pórtico - Frederick Pohl <b>(leído!)</b></li><li>Las Estrellas de mi destino - Alfred Bester</li><li>Ubik - Philip K. Dick <b>(leído!)</b><b></b></li><li>Los desposeídos - Ursula K. Le Guin</li><li>La guerra interminable - Joe Haldeman <b>(en mis manos!)</b></li><li>Cita con Rama - Arthur C. Clarke</li><li>Fahrenheit 451 - Ray Bradbury <b>(leído!)</b></li>Los últimos de mi lista han sido sacados de “Los fundamentales de Ciencia Ficción” (excluyendo los ya leídos), una votación que se hizo en <a href="http://sedice.com/">Sedice</a>.</ul>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Primer Post Desde Wordpress]]></title>
     <link href="http://jbilbo.com/blog/2005/04/20/primer-post-desde-wordpress/"/>
-    <updated>2005-04-20T12:20:00+02:00</updated>
+    <updated>2005-04-20T03:20:00-07:00</updated>
     <id>http://jbilbo.com/blog/2005/04/20/primer-post-desde-wordpress</id>
     <content type="html"><![CDATA[Por fin he migrado a wordpress! Ya he dejado atrás Movable Type, fuera esa espinita clavada de utilizar un blog con licencia privativa... <br/>En realidad tenía en mente bastante tiempo hacerlo y me he decidido hoy al tener poco sueño, décimas de fiebre y el blog antiguo roto xD<br/><br/>Ahora mismito esta con el theme por defecto y sí, no hay cosa más fea que un blog con el theme por defecto, pero lo cambiaré cuando pueda. Quizás cuando leais ésto ya no estará puesto&#8230; <br/><br/>PD: Le he puesto <a href="http://www.eurielec.etsit.upm.es/~chema/wp-1.5-es/">la traducción al español</a> y también aprovecharé para activar los comentarios (en movable type los quité de código y luego no sabía ponerlos :P) y ponerle el par de plugins que <a href="http://www.marblestation.com/blog/?p=374">comenta sergio</a>.<br/>PD2: Aunque he migrado todos los posts antiguos al nuevo wordpress (y de paso lo tengo ya todo a utf-8), los antiguos posts seguirán estando disponibles como .html que eran.]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu en Marcha en El Nuevo Hard]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/13/ubuntu-en-marcha-en-el-nuevo-hard/"/>
-    <updated>2005-04-13T02:42:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/13/ubuntu-en-marcha-en-el-nuevo-hard</id>
+    <link href="http://jbilbo.com/blog/2005/04/12/ubuntu-en-marcha-en-el-nuevo-hard/"/>
+    <updated>2005-04-12T17:42:00-07:00</updated>
+    <id>http://jbilbo.com/blog/2005/04/12/ubuntu-en-marcha-en-el-nuevo-hard</id>
     <content type="html"><![CDATA[Ya esta instalada la Ubuntu en el nuevo servidor, que al final será un AMD k6 500Mhz con 256Mb RAM y 8GB de disco duro.<br/><br/>La verdad es que la Ubuntu se ha instalado rapidísima y sin ningún problema en su opción &#8220;server&#8221;&#8230; me ha hecho un poco de &#8220;daño&#8221; el pensar las horas que pasé en su día instalando una Gentoo en el otro de al lado&#8230; (pero aprendí, eso ya lo tengo ;-)<br/><br/>Esta fuera de servicio el ftp y el cvs ahora mismo.]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Comienza La Migración Al Nuevo Hardware]]></title>
     <link href="http://jbilbo.com/blog/2005/04/11/comienza-la-migracion-al-nuevo-hardware/"/>
-    <updated>2005-04-11T18:45:00+02:00</updated>
+    <updated>2005-04-11T09:45:00-07:00</updated>
     <id>http://jbilbo.com/blog/2005/04/11/comienza-la-migracion-al-nuevo-hardware</id>
     <content type="html"><![CDATA[En GPLTarragona tenemos actualmente 2 servidores, el principal que es el que lo hace todo y el secundario que prácticamente no hace nada puesto que es muy poco potente (impotente? xD). <br/>Lo que haremos ahora es pasar a un 600Mhz utilizando el disco duro del secundario y cuando esté lista la instalación y configuración de los servicios que se necesiten pasaremos a la migración del sistema. El servidor estará sin funcionar lo menos tiempo posible&#8230; :-S xD <br/>Hoy empezaré los backups y demás cosas que puedo hacer por ssh desde casa y mañana, seguramente por la tarde, se hará el cambio (tornavís en mano xD).]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ángeles Y Demonios]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/08/angeles-y-demonios/"/>
-    <updated>2005-04-08T05:04:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/08/angeles-y-demonios</id>
+    <link href="http://jbilbo.com/blog/2005/04/07/angeles-y-demonios/"/>
+    <updated>2005-04-07T20:04:00-07:00</updated>
+    <id>http://jbilbo.com/blog/2005/04/07/angeles-y-demonios</id>
     <content type="html"><![CDATA[Me he leído otro libro de Dan Brown, autor de El Código DaVinci (ECD). Se llama Ángeles y Demonios, y creo que se trata del libro que hay después del best-seller ECD.<br/><br/><img src="http://jhernandez.gpltarragona.org/varios/ayd.jpg" alt="Ángeles y Demonios" align="right" /><br/><br/>De hecho, es muy similar al anterior. Si os gustó ECD seguramente os gustará también Ángeles y Demonios, aunque ya no sorprenderá tanto como ECD y los acertijos no son tan profundos&#8230; pero sigue teniendo cierta frescura y engancha en según qué partes del libro también bastante.<br/><br/>Pero lo más interesante del libro es que ahora mismo esta de actualidad. Uno de los temas que toca más es el Vaticano y todo lo relacionado con él y su historia. Habla del Cónclave, del camarlengo, sus funciones&#8230; etc. Todo lo que pasa cuando un Papa muere, porque cuando empieza el libro el Papa acaba de morir hace unos días&#8230; de hecho una anécdota curiosa es que con todo el &#8220;tocho&#8221; de libro que hay&#8230; en realidad sólo es para narrar lo que pasa 1 dia. Bastante frenético, sí :-)<br/><br/>En fin, un libro recomendado para los que les gustó ECD. Si no te gustó ECD, sólo te interesará si te sientes atraído por el tema &#8220;Vaticano&#8221; y no tienes otra cosa que leer :-P. Si no has leído ECD, léetelo, lo considero mejor libro que éste&#8230;<br/>Ángeles y Demonios cumple bien su rol de libro que necesita la gente después de leer ECD y quedarse con más ganas.<br/><br/><div align="center"><b>Calificación: 6/10</b></div>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Mandrake Será Mandriva]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/08/mandrake-sera-mandriva/"/>
-    <updated>2005-04-08T04:46:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/08/mandrake-sera-mandriva</id>
+    <link href="http://jbilbo.com/blog/2005/04/07/mandrake-sera-mandriva/"/>
+    <updated>2005-04-07T19:46:00-07:00</updated>
+    <id>http://jbilbo.com/blog/2005/04/07/mandrake-sera-mandriva</id>
     <content type="html"><![CDATA[La distribución de GNU/Linux Mandrake adquirió Conectiva hace unos dias y aprovechando ese cambio en la empresa también han cambiado el nombre corporativo, empujados un poco también porque ya existe otra empresa con nombre Mandrake y han tenido algún problema. <br/>A partir de ahora pues, será conocida como <a href="http://www.mandriva.com">Mandriva</a>, de Mandrake + Conectiva.]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu Hoary en Un AMD64 Y Release Final]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/08/ubuntu-hoary-en-un-amd64-y-release/"/>
-    <updated>2005-04-08T04:10:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/08/ubuntu-hoary-en-un-amd64-y-release</id>
+    <link href="http://jbilbo.com/blog/2005/04/07/ubuntu-hoary-en-un-amd64-y-release/"/>
+    <updated>2005-04-07T19:10:00-07:00</updated>
+    <id>http://jbilbo.com/blog/2005/04/07/ubuntu-hoary-en-un-amd64-y-release</id>
     <content type="html"><![CDATA[Hoy he podido probar a instalar una Ubuntu con el CD de la RC (Release Candidate) y comprobar cómo funciona esta distribución con otra arquitectura diferente a la x86. Una de las cosas que me ha llamado la atención es que el LiveCD de x86 (de la versión anterior de hace 6 meses, la Warty) funciona perfectamente en la arquitectura AMD64, y es que aunque sí sabía que la compatibilidad 32-64 bits existía, como Ubuntu pone en el CD sólo compatible con x86 y los CDs de AMD64 no incluían el LiveCD (sólo instalación)... pensaba que no había todavía ninguno disponible. Pero claro, hay que pensar en una cosa compatible contra una cosa optimizada o compilada para tu arquitectura que aproveche la capacidad de un procesador de 64bits. Hoary ya tiene versión para AMD64.<br/><br/>En cuanto a la instalación ha ido todo como la seda menos al final, cuando ha tenido que salir el login gráfico. Ahí se ha quedado colgado, tema de la tarjeta gráfica ATI 9250 que llevaba. Se consigue compatibilidad gráfica poniendo en la línea del archivo de configuración de las X: /etc/X11/xorg.conf el driver &#8220;vesa&#8221; en vez del driver &#8220;ati&#8221; que te ponía (el fglrx propietario tampoco iba&#8230;). Por supuesto aceleración 3D no tendrá porque el driver vesa es el genérico, compatible con la mayoría de tarjetas gráficas. Aunque para trabajar en escritorio funciona a la perfección (con el doom 3 ya no tanto :P).<br/><br/><div align="center"><img src="http://www.ubuntulinux.org/header-image4.png" alt="Logo Ubuntu" /></div><br/><br/>Por cierto, oficialmente ya es 8 de abril y <a href="http://www.ubuntu.com/">Ubuntu estrena nueva web</a> (la que ganó el concurso) y oficialmente lanza la versión Final de Hoary!]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[WTF?]]></title>
-    <link href="http://jbilbo.com/blog/2005/04/05/wtf/"/>
-    <updated>2005-04-05T02:52:00+02:00</updated>
-    <id>http://jbilbo.com/blog/2005/04/05/wtf</id>
-    <content type="html"><![CDATA[Noticia en <a href="http://barrapunto.com/article.pl?sid=05/03/15/1129227">barrapunto</a> que se me pasó y la he visto hoy en otro artículo de la misma web enlazada:<br/><br/><i>El 14 de marzo se anunció que el principal partido de la oposición en España, el Partido Popular, había presentado una proposición de Ley para eliminar el canon por copia privada de los soportes informáticos.<br/>A la Sociedad de Autores parece que le ha faltado tiempo para calificar esta propuesta de descabellada.<br/>La propuesta del PP pide la eliminación del canon también de otros soportes informáticos, como los propios CDs y DVDs, y curarse en salud ante los insistentes rumores de un posible canon a las líneas ADSL.</i><br/><br/>Comentario en barrapunto:<br/><br/><i>Esta visto que no es cuestión de ser de izquierdas o de derechas, es cuestión de apoyar a la oposición que sea, porque son los únicos que quieren ganarse a la gente.<br/><br/>El PSOE acordando con la SGAE, y el PP proponiendo la eliminación del canon. Dentro de X años, cuando el PP vuelva a estar en el poder, la situación será justamente la contraria.</i><br/><br/>¿Pero ésto qué es? ¿Todos los partidos que llegan al gobierno se venden? No entiendo nada&#8230; O_o]]></content>
   </entry>
   
 </feed>

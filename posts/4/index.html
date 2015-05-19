@@ -9,7 +9,7 @@
   <meta name="author" content="Jonathan Hernandez">
 
   
-  <meta name="description" content="Ya que estamos de encuestas... me he permitido evaluar el nivel de "maldad" / "bondad" de este blog:PD: El título del post es un gac de El Señor de &hellip;">
+  <meta name="description" content="Ya he actualizado 2 equipos de warty a hoary (ninguno de ellos el mio de casa... por ahora :P), y el resultado en los 2 (un servidor+escritorio y un &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,7 +88,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2005/03/24/el-amo-es-bueeeeno-no-es-malo-no-nos/">El Amo Es Bueeeeno. No! Es Malo.. No Nos Quiere…</a></h1>
+      <h1 class="entry-title"><a href="/blog/2005/03/28/actualizacion-ubuntu-hoary/">Actualización a Ubuntu Hoary</a></h1>
     
     
       <p class="meta">
@@ -97,9 +97,40 @@
 
 
 
-<time class='entry-date' datetime='2005-03-24T03:02:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>3:02 am</span></time>
+<time class='entry-date' datetime='2005-03-28T12:35:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>12:35 pm</span></time>
         
-         | <a href="/blog/2005/03/24/el-amo-es-bueeeeno-no-es-malo-no-nos/#disqus_thread">Comments</a>
+         | <a href="/blog/2005/03/28/actualizacion-ubuntu-hoary/#disqus_thread">Comments</a>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Ya he actualizado 2 equipos de warty a hoary (ninguno de ellos el mio de casa&#8230; por ahora :P), y el resultado en los 2 (un servidor+escritorio y un escritorio) ha sido bueno.<br/><br/>Sólo me he encontrado con 1 problema, que los menus me salían medio castellano medio inglés (también lo vi en otro media catalan medio inglés). La solución es sencilla, Ubuntu tiene paquetes para los lenguajes por separado y sólo hay que instalarlos. Para castellano:<br/><br/><pre>apt-get install language-pack-es</pre><br/><br/>Para catalan:<br/><br/><pre>apt-get install language-pack-ca</pre><br/><br/>Ambos tienen como dependencia language-pack-base-xx donde xx es el código del país.<br/><br/>También para el firefox existe el paquete a parte: mozilla-firefox-locale-xx.<br/><b>Actualización 20:55</b>: Para instalar soporte en tu idioma de estas aplicaciones (mozilla, Openoffice, diccionarios&#8230;) sin preocuparte, existe el metapaquete language-support-xx. Así:<br/><br/><pre>apt-get install language-support-es</pre><br/><br/>Instalará esos paquetes en español. En este caso hay un bug (en catalan no), te baja el mozilla-firefox-locale-es-ar en vez del mozilla-firefox-locale-es-es que creo sería el adecuado, pero no creo que haya mucha diferencia.<br/><b>Actualización 01:14</b>: De hecho, instala tanto el es-ar como el es-es para que elijas el que prefieras. Así que no es ningún bug, &#8230; como no ocupan casi nada no es problema.<br/><br/>En cuanto al paso a UTF-8 no es automático como pensaba, cuando inicias en el GDM puedes elegir o Spanish o Spanish (UTF-8). Si eliges éste último y le dices que te lo ponga por defecto tu sistema pasará a ser UTF-8. <br/>Ni dpkg-reconfigure locales ni nada&#8230;<br/><b>Actualización 23:56</b>: Al final he pasado a hoary en mi casa también :-D y al parecer sí que cambia automáticamente a UTF-8 según he visto al principio de la actualización:<br/><br/><pre>(...)<br/>Preconfiguring packages ...<br/>Automatically selecting es_ES.UTF-8 locale in addition to es_ES.<br/>(...)<br/>Configurando locales (2.3.2.ds1-20ubuntu13) ...<br/>Automatically selecting es_ES.UTF-8 locale in addition to es_ES.<br/>Generating locales...<br/>  es_ES.ISO-8859-1... done<br/>  es_ES.UTF-8... done<br/>Generation complete.<br/></pre><br/><br/>Pero igualmente he tenido que seleccionarlo en el GDM (Inicio de sesión) para que se me hiciera efectivo (es_ES.UTF-8), sinó tenía sólo es_ES.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2005/03/23/el-amo-es-bueeeeno-no-es-malo-no-nos/">El Amo Es Bueeeeno. No! Es Malo.. No Nos Quiere…</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2005-03-23T18:02:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2005</span></span> <span class='time'>6:02 pm</span></time>
+        
+         | <a href="/blog/2005/03/23/el-amo-es-bueeeeno-no-es-malo-no-nos/#disqus_thread">Comments</a>
         
         
       </p>
@@ -119,7 +150,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2005/03/24/religiones-por-aqui-religiones-por-alla/">Religiones Por Aquí, Religiones Por Allá…</a></h1>
+      <h1 class="entry-title"><a href="/blog/2005/03/23/religiones-por-aqui-religiones-por-alla/">Religiones Por Aquí, Religiones Por Allá…</a></h1>
     
     
       <p class="meta">
@@ -128,9 +159,9 @@
 
 
 
-<time class='entry-date' datetime='2005-03-24T02:47:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>2:47 am</span></time>
+<time class='entry-date' datetime='2005-03-23T17:47:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2005</span></span> <span class='time'>5:47 pm</span></time>
         
-         | <a href="/blog/2005/03/24/religiones-por-aqui-religiones-por-alla/#disqus_thread">Comments</a>
+         | <a href="/blog/2005/03/23/religiones-por-aqui-religiones-por-alla/#disqus_thread">Comments</a>
         
         
       </p>
@@ -159,7 +190,7 @@
 
 
 
-<time class='entry-date' datetime='2005-03-22T09:55:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2005</span></span> <span class='time'>9:55 am</span></time>
+<time class='entry-date' datetime='2005-03-22T00:55:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2005</span></span> <span class='time'>12:55 am</span></time>
         
          | <a href="/blog/2005/03/22/hitch/#disqus_thread">Comments</a>
         
@@ -181,7 +212,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2005/03/18/este-finde-la-reus-lan-party/">Este Finde a La Reus Lan Party</a></h1>
+      <h1 class="entry-title"><a href="/blog/2005/03/17/este-finde-la-reus-lan-party/">Este Finde a La Reus Lan Party</a></h1>
     
     
       <p class="meta">
@@ -190,9 +221,9 @@
 
 
 
-<time class='entry-date' datetime='2005-03-18T01:56:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>1:56 am</span></time>
+<time class='entry-date' datetime='2005-03-17T16:56:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:56 pm</span></time>
         
-         | <a href="/blog/2005/03/18/este-finde-la-reus-lan-party/#disqus_thread">Comments</a>
+         | <a href="/blog/2005/03/17/este-finde-la-reus-lan-party/#disqus_thread">Comments</a>
         
         
       </p>
@@ -221,7 +252,7 @@
 
 
 
-<time class='entry-date' datetime='2005-03-17T20:42:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>8:42 pm</span></time>
+<time class='entry-date' datetime='2005-03-17T11:42:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>11:42 am</span></time>
         
          | <a href="/blog/2005/03/17/uptime-del-server-gpltarragona/#disqus_thread">Comments</a>
         
@@ -252,7 +283,7 @@
 
 
 
-<time class='entry-date' datetime='2005-03-16T17:51:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:51 pm</span></time>
+<time class='entry-date' datetime='2005-03-16T08:51:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>8:51 am</span></time>
         
          | <a href="/blog/2005/03/16/europa-y-republica-bananera/#disqus_thread">Comments</a>
         
@@ -274,7 +305,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2005/03/16/blade-trinity/">Blade: Trinity</a></h1>
+      <h1 class="entry-title"><a href="/blog/2005/03/15/blade-trinity/">Blade: Trinity</a></h1>
     
     
       <p class="meta">
@@ -283,9 +314,9 @@
 
 
 
-<time class='entry-date' datetime='2005-03-16T04:07:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>4:07 am</span></time>
+<time class='entry-date' datetime='2005-03-15T19:07:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>7:07 pm</span></time>
         
-         | <a href="/blog/2005/03/16/blade-trinity/#disqus_thread">Comments</a>
+         | <a href="/blog/2005/03/15/blade-trinity/#disqus_thread">Comments</a>
         
         
       </p>
@@ -305,7 +336,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2005/03/11/tablas-de-mysql-corruptas/">Tablas De Mysql Corruptas</a></h1>
+      <h1 class="entry-title"><a href="/blog/2005/03/10/tablas-de-mysql-corruptas/">Tablas De Mysql Corruptas</a></h1>
     
     
       <p class="meta">
@@ -314,9 +345,9 @@
 
 
 
-<time class='entry-date' datetime='2005-03-11T02:52:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>2:52 am</span></time>
+<time class='entry-date' datetime='2005-03-10T17:52:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>5:52 pm</span></time>
         
-         | <a href="/blog/2005/03/11/tablas-de-mysql-corruptas/#disqus_thread">Comments</a>
+         | <a href="/blog/2005/03/10/tablas-de-mysql-corruptas/#disqus_thread">Comments</a>
         
         
       </p>
@@ -345,7 +376,7 @@
 
 
 
-<time class='entry-date' datetime='2005-03-10T19:03:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>7:03 pm</span></time>
+<time class='entry-date' datetime='2005-03-10T10:03:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>10:03 am</span></time>
         
          | <a href="/blog/2005/03/10/ubuntu-504-hoary-hedgehog-preview/#disqus_thread">Comments</a>
         
@@ -356,37 +387,6 @@
 
 
   <div class="entry-content">¡Ya ha salido la preview de la nueva versión de Ubuntu!<br/><br/>Recordemos que muchos de nosotros la primera vez que instalamos Ubuntu fué con una preview&#8230; y no estuvo nada mal. Incluyo muchísimas mejoras, entre ellas os pego las más importantes (en inglés), aunque el plato fuerte es sin duda el ayer salido escritorio Gnome 2.10:<br/><br/><i> * GNOME 2.10 &#8211; Very fresh&#8230; Released yesterday!<br/> * X.org 6.8.2<br/> * Kickstart compatibility for automatic installations<br/> * Several new desktop package-management tools to make it even <br/>   easier to stay up to date<br/> * An ultra-fast boot process, with optimized init process and<br/>   special optimizations for the hotplug system<br/> * Improved hardware support on a range of platforms &#8211; laptops in<br/>   particular gain improved suspend/hibernation support and processor <br/>   frequency scaling<br/> * Unified and improved hardware detection between the install and<br/>   live CDs, which gives us live CDs on powerpc and amd64 too<br/> * A range of improvements related to internationalization,<br/>   translations, and different keyboard layouts, including a<br/>   new smart keyboard selector that guesses your keyboard based<br/>   on keypresses<br/> * A load of new Ubuntu-specific documentation, thanks to the<br/>   hard work of our community documentation team<br/> * Instant messaging, desktop publishing, office productivity,<br/>   with vorbis playback and Python 2.4 ready out of the box<br/> * Enhancements to the hardware abstraction layer to provide you with<br/>   BIOS, CPU, memory and LSB data (infrastructure for the upcoming<br/>   hardware database)<br/> * Enhanced proactive security due to privilege minimization of many <br/>   processes which previously ran as root. This work reduces the impact<br/>   of many potential security vulnerabilities.<br/> * The very best of the 100% FREE / LIBRE application software world.<br/> * Much, much more!</i><br/><br/>Como siempre se puede bajar tanto <a href="http://releases.ubuntu.com/hoary/">LiveCD como InstallCD para x86, amd64 y ppc</a>.</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2005/03/10/gnome-210/">Gnome 2.10</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2005-03-10T01:57:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>1:57 am</span></time>
-        
-         | <a href="/blog/2005/03/10/gnome-210/#disqus_thread">Comments</a>
-        
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div align="center"><a href="http://www.gnome.org"><img src="http://www.gnome.org/img/flash/two-ten-folder.jpg" alt="Gnome 2.10" border="0" /></a></div><br/><br/><a href="http://gnome.org/start/2.10/notes/rnwhatsnew.html">¿Qué es nuevo?</a></div>
   
   
 
@@ -412,7 +412,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jonathan Hernandez -
+  Copyright &copy; 2015 - Jonathan Hernandez -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/jbilbo/whitespace">Whitespace</a></span>
 </p>
 

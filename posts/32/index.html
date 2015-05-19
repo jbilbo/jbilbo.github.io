@@ -9,7 +9,7 @@
   <meta name="author" content="Jonathan Hernandez">
 
   
-  <meta name="description" content="Quería comentar que por fin parece que han abierto la red wireless de la biblioteca, la iniciativa tiene el nombre de "Xarxa Oberta". Lo malo es que &hellip;">
+  <meta name="description" content="He pasado al kernel "gentoo-dev-sources", es el kernel de la rama 2.6.x que mantiene la gente de Gentoo (lleva parches como el bootsplash o el &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,37 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2004/04/28/cambios-en-mi-sistema/">Cambios en Mi Sistema</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2004-04-28T18:22:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:22 pm</span></time>
+        
+         | <a href="/blog/2004/04/28/cambios-en-mi-sistema/#disqus_thread">Comments</a>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">He pasado al kernel &#8220;gentoo-dev-sources&#8221;, es el kernel de la rama 2.6.x que mantiene la gente de Gentoo (lleva parches como el bootsplash o el supermount). A parte también noto una mejora de rendimiento mientras compilo paquetes, con mi anterior kernel (development-sources, 2.6.x oficial de kernel.org sin parches) notaba que al compilar se me ralentizaba todo el sistema.<br/><br/>El cambio de kernel lo quería también para probar supermount en mi sistema: supermount te permite acceder a los discos extraibles (CDs, diskettes, DVDs&#8230;) de forma automática sin tener que montar/desmontar el dispositivo: Cuando metes el CD, se monta automáticamente y puedes acceder de forma directa (a lo windolin user), y cuando apretas &#8220;eject&#8221; el CD se desmonta también de forma automática.<br/><br/>He aquí el cambio de línea del /etc/fstab que sufre, por ej., mi grabadora:<br/><br/>Sin supermount:<br/><br/><pre><br/>/dev/cdrom	/mnt/cdrom	auto	ro,noauto,user,exec	0 0<br/></pre><br/><br/>Con supermount:<br/><br/><pre><br/>none	/mnt/cdrom	supermount	fs=auto,dev=/dev/cdrom,--,users	0 0<br/></pre></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2004/04/28/wireless-en-la-biblioteca-de-la-urv/">Wireless en La Biblioteca De La URV</a></h1>
     
     
@@ -97,7 +128,7 @@
 
 
 
-<time class='entry-date' datetime='2004-04-28T23:19:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>11:19 pm</span></time>
+<time class='entry-date' datetime='2004-04-28T14:19:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:19 pm</span></time>
         
          | <a href="/blog/2004/04/28/wireless-en-la-biblioteca-de-la-urv/#disqus_thread">Comments</a>
         
@@ -128,7 +159,7 @@
 
 
 
-<time class='entry-date' datetime='2004-04-27T18:19:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:19 pm</span></time>
+<time class='entry-date' datetime='2004-04-27T09:19:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>9:19 am</span></time>
         
          | <a href="/blog/2004/04/27/fin-del-curso-de-software-libre/#disqus_thread">Comments</a>
         
@@ -150,7 +181,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/04/27/subversion/">Subversion</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/04/26/subversion/">Subversion</a></h1>
     
     
       <p class="meta">
@@ -159,9 +190,9 @@
 
 
 
-<time class='entry-date' datetime='2004-04-27T02:19:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:19 am</span></time>
+<time class='entry-date' datetime='2004-04-26T17:19:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>5:19 pm</span></time>
         
-         | <a href="/blog/2004/04/27/subversion/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/04/26/subversion/#disqus_thread">Comments</a>
         
         
       </p>
@@ -181,7 +212,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/04/20/el-codigo-davinci/">El Código DaVinci</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/04/19/el-codigo-davinci/">El Código DaVinci</a></h1>
     
     
       <p class="meta">
@@ -190,9 +221,9 @@
 
 
 
-<time class='entry-date' datetime='2004-04-20T03:48:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:48 am</span></time>
+<time class='entry-date' datetime='2004-04-19T18:48:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:48 pm</span></time>
         
-         | <a href="/blog/2004/04/20/el-codigo-davinci/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/04/19/el-codigo-davinci/#disqus_thread">Comments</a>
         
         
       </p>
@@ -212,7 +243,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/04/20/el-juego-de-kill-bill/">El Juego De Kill Bill</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/04/19/el-juego-de-kill-bill/">El Juego De Kill Bill</a></h1>
     
     
       <p class="meta">
@@ -221,9 +252,9 @@
 
 
 
-<time class='entry-date' datetime='2004-04-20T03:31:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:31 am</span></time>
+<time class='entry-date' datetime='2004-04-19T18:31:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:31 pm</span></time>
         
-         | <a href="/blog/2004/04/20/el-juego-de-kill-bill/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/04/19/el-juego-de-kill-bill/#disqus_thread">Comments</a>
         
         
       </p>
@@ -252,7 +283,7 @@
 
 
 
-<time class='entry-date' datetime='2004-04-17T23:53:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>11:53 pm</span></time>
+<time class='entry-date' datetime='2004-04-17T14:53:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>2:53 pm</span></time>
         
          | <a href="/blog/2004/04/17/web-de-arte/#disqus_thread">Comments</a>
         
@@ -283,7 +314,7 @@
 
 
 
-<time class='entry-date' datetime='2004-04-17T22:32:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>10:32 pm</span></time>
+<time class='entry-date' datetime='2004-04-17T13:32:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>1:32 pm</span></time>
         
          | <a href="/blog/2004/04/17/starsky-hutch/#disqus_thread">Comments</a>
         
@@ -305,7 +336,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/04/16/eurito-aplicacion-gtk/">Eurito: Aplicación Gtk#</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/04/15/eurito-aplicacion-gtk/">Eurito: Aplicación Gtk#</a></h1>
     
     
       <p class="meta">
@@ -314,9 +345,9 @@
 
 
 
-<time class='entry-date' datetime='2004-04-16T06:45:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:45 am</span></time>
+<time class='entry-date' datetime='2004-04-15T21:45:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>9:45 pm</span></time>
         
-         | <a href="/blog/2004/04/16/eurito-aplicacion-gtk/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/04/15/eurito-aplicacion-gtk/#disqus_thread">Comments</a>
         
         
       </p>
@@ -336,7 +367,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2004/04/16/remodelacion-de-mi-pag-web/">Remodelación De Mi Pag. Web</a></h1>
+      <h1 class="entry-title"><a href="/blog/2004/04/15/remodelacion-de-mi-pag-web/">Remodelación De Mi Pag. Web</a></h1>
     
     
       <p class="meta">
@@ -345,9 +376,9 @@
 
 
 
-<time class='entry-date' datetime='2004-04-16T06:33:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>6:33 am</span></time>
+<time class='entry-date' datetime='2004-04-15T21:33:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>9:33 pm</span></time>
         
-         | <a href="/blog/2004/04/16/remodelacion-de-mi-pag-web/#disqus_thread">Comments</a>
+         | <a href="/blog/2004/04/15/remodelacion-de-mi-pag-web/#disqus_thread">Comments</a>
         
         
       </p>
@@ -356,37 +387,6 @@
 
 
   <div class="entry-content">Por fin le he dedicado unas horillas a cambiar el aspecto de <a href="http://jhernandez.gplurv.org">mi web</a> y hacerla un poco más digna :). La he integrado con el blog y he retocado el css de las 2.<br/>No es el diseño final, seguramente cambiaran colores y alguna cosilla más, pero almenos ya he hecho el &#8220;trabajo sucio&#8221; :)</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2004/04/13/camara-digital-y-resident-evil-4/">Camara Digital Y Resident Evil 4</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2004-04-13T15:31:00+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2004</span></span> <span class='time'>3:31 pm</span></time>
-        
-         | <a href="/blog/2004/04/13/camara-digital-y-resident-evil-4/#disqus_thread">Comments</a>
-        
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">Un articulo en meristation interesante: <a href="http://www.meristation.com/sc/articulos/articulo.asp?c=HARD&cr=5065">&#8220;Cómo elegir cámara digital y no morir en el intento&#8221;</a>, para los que esten detrás de una.<br/><br/>Y un bonus ;), <a href="http://www.capcom.co.jp/bio4/movie/bh4_movie.zip">trailer</a> del nuevo Resident Evil 4, el primero que muestra imágenes del juego. Aún queda para que salga&#8230; principios del año que viene creo, para GameCube.</div>
   
   
 
@@ -412,7 +412,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jonathan Hernandez -
+  Copyright &copy; 2015 - Jonathan Hernandez -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/jbilbo/whitespace">Whitespace</a></span>
 </p>
 
