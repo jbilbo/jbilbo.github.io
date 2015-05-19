@@ -115,14 +115,14 @@
 
 <p>it&rsquo;s better to follow the gem instructions (you&rsquo;ll find the most updated instructions there) than a blog post, but anyway here&rsquo;s is how I did it:</p>
 
-<p>Add this to your <code>Gemfile</code></p>
+<p>Add this to your <code>Gemfile</code>:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem <span class="s1">&#39;rack-cors&#39;</span>, :require <span class="o">=</span>&gt; <span class="s1">&#39;rack/cors&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Add this to your <code>config/application.rb</code></p>
+<p>Add this to your <code>config/application.rb</code>:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -149,8 +149,11 @@
 
 <h4>Sending the <code>Origin</code> header:</h4>
 
-<p><code>-H</code>: Header to include in the request.
-<code>-I</code>: Fetch the <code>HTTP</code> header only.</p>
+<ul>
+<li><code>-H</code>: Header to include in the request.</li>
+<li><code>-I</code>: Fetch the <code>HTTP</code> header only.</li>
+</ul>
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>curl -H <span class="s2">&quot;Origin:*&quot;</span> -I http://localhost:3000/people/1234
@@ -162,7 +165,7 @@
 <h4>Sending the preflight options method:</h4>
 
 <p>Send a options request with <code>Origin: *</code>, <code>Access-Control-Request-Method: get</code> and <code>Access-Control-Request-Headers: test</code>.
-<code>-X</code>: Specifies a custom request method</p>
+* <code>-X</code>: Specifies a custom request method</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>curl -X OPTIONS -I http://localhost:3000 -H <span class="s1">&#39;Origin: *&#39;</span> -H <span class="s1">&#39;Access-Control-Request-Method: GET&#39;</span> -H <span class="s1">&#39;Access-Control-Request-Headers: test&#39;</span>
@@ -173,10 +176,14 @@
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:
-* Convert to upper case.
-* Replace <code>-</code> with <code>_</code>
-* Prepend <code>HTTP_</code>.</p>
+<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+
+<ul>
+<li>Convert to upper case.</li>
+<li>Replace <code>-</code> with <code>_</code></li>
+<li>Prepend <code>HTTP_</code>.</li>
+</ul>
+
 
 <p>Because we don&rsquo;t have the server to do it for us, we must do it manually. So e.g. the <code>Origin</code> becomes <code>HTTP_ORIGIN</code> and <code>Http-Access-Control-Request-Method</code> becomes <code>HTTP_ACCESS_CONTROL_REQUEST_METHOD</code>. Let&rsquo;s see some example tests:</p>
 

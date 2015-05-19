@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2015-05-19T01:26:54+01:00</updated>
+  <updated>2015-05-19T01:42:29+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -26,12 +26,12 @@
 
 <p>it&rsquo;s better to follow the gem instructions (you&rsquo;ll find the most updated instructions there) than a blog post, but anyway here&rsquo;s is how I did it:</p>
 
-<p>Add this to your <code>Gemfile</code>
+<p>Add this to your <code>Gemfile</code>:
 <code>sh
 gem 'rack-cors', :require =&gt; 'rack/cors'
 </code></p>
 
-<p>Add this to your <code>config/application.rb</code>
+<p>Add this to your <code>config/application.rb</code>:
 <code>ruby
 config.middleware.insert_before(0, "Rack::Cors", logger: (-&gt; { Rails.logger })) do
   allow do
@@ -50,17 +50,21 @@ This is just standard options, tune it to your needs. Here we&rsquo;re allowing 
 
 <h4>Sending the <code>Origin</code> header:</h4>
 
-<p><code>-H</code>: Header to include in the request.
-<code>-I</code>: Fetch the <code>HTTP</code> header only.
-<code>sh
-curl -H "Origin:*" -I http://localhost:3000/people/1234
-</code>
-We should receive: <code>Access-Control-Allow-Origin: *</code>.</p>
+<ul>
+<li><code>-H</code>: Header to include in the request.</li>
+<li><code>-I</code>: Fetch the <code>HTTP</code> header only.</li>
+</ul>
+
+
+<pre><code class="sh">curl -H "Origin:*" -I http://localhost:3000/people/1234
+</code></pre>
+
+<p>We should receive: <code>Access-Control-Allow-Origin: *</code>.</p>
 
 <h4>Sending the preflight options method:</h4>
 
 <p>Send a options request with <code>Origin: *</code>, <code>Access-Control-Request-Method: get</code> and <code>Access-Control-Request-Headers: test</code>.
-<code>-X</code>: Specifies a custom request method
+* <code>-X</code>: Specifies a custom request method
 <code>sh
 curl -X OPTIONS -I http://localhost:3000 -H 'Origin: *' -H 'Access-Control-Request-Method: GET' -H 'Access-Control-Request-Headers: test'
 </code>
@@ -68,10 +72,14 @@ We should receive <code>Access-Control-Allow-Origin: *</code>, <code>Access-Cont
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:
-* Convert to upper case.
-* Replace <code>-</code> with <code>_</code>
-* Prepend <code>HTTP_</code>.</p>
+<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+
+<ul>
+<li>Convert to upper case.</li>
+<li>Replace <code>-</code> with <code>_</code></li>
+<li>Prepend <code>HTTP_</code>.</li>
+</ul>
+
 
 <p>Because we don&rsquo;t have the server to do it for us, we must do it manually. So e.g. the <code>Origin</code> becomes <code>HTTP_ORIGIN</code> and <code>Http-Access-Control-Request-Method</code> becomes <code>HTTP_ACCESS_CONTROL_REQUEST_METHOD</code>. Let&rsquo;s see some example tests:</p>
 
