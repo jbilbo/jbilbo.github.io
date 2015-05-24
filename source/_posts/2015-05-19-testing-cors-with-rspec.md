@@ -13,7 +13,7 @@ I assume you have a fairly updated Rails app, I tested it with Rails 4.2.x, with
 
 ##Install rack-cors gem
 
-it's better to follow the gem instructions (you'll find the most updated instructions there) than a blog post, but anyway here's is how I did it:
+it's better to follow the gem instructions (you'll find the most updated instructions there) than a blog post, but anyway here's how I did it:
 
 Add this to your `Gemfile`:
 ```sh
@@ -29,7 +29,7 @@ config.middleware.insert_before(0, "Rack::Cors", logger: (-> { Rails.logger })) 
   end
 end
 ```
-This is just standard options, tune it to your needs. Here we're allowing requests from any domain for the `get`, `post`, `patch` and `options` methods. `options` is special method used for [preflight](http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/) requests.
+These are the common options, tune it to your needs. Here we're allowing requests from any domain for the `get`, `post`, `patch` and `options` methods. `options` is a special method used for [preflight](http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/) requests.
 
 That's it. `CORS` is now active in this Rails app. Every time we send a request with the `CORS` headers, we'll receive the `CORS` response headers.
 
@@ -58,13 +58,14 @@ We should receive `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Method
 
 ##How to test it with `RSpec`
 
-It's a little tricky to test with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This is usually not a problem but it does affect in this particular case, and this [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
+It's a little tricky to test it with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This is usually not a problem but it does affect in this particular case, and this [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
 
 * Convert to upper case.
 * Replace `-` with `_`
 * Prepend `HTTP_`.
 
-Because we don't have the server to do it for us, we must do it manually. So e.g. the `Origin` becomes `HTTP_ORIGIN` and `Http-Access-Control-Request-Method` becomes `HTTP_ACCESS_CONTROL_REQUEST_METHOD`. Let's see some example tests:
+Because we don't have the server to do it for us, we must do it manually. For example, the `Origin` becomes `HTTP_ORIGIN` and `Http-Access-Control-Request-Method` becomes `HTTP_ACCESS_CONTROL_REQUEST_METHOD`.
+Let's see some example tests:
 
 ####Sending the Origin header:
 
@@ -87,4 +88,4 @@ scenario 'Send the CORS preflight OPTIONS request' do
 end
 ```
 
-That's pretty much it!
+Don't forget to uppercase, replace `-` and prepend `HTTP_` to all your custom HTTP headers when testing.
