@@ -112,7 +112,7 @@
 
 <h2>Install rack-cors gem</h2>
 
-<p>it&rsquo;s better to follow the gem instructions (you&rsquo;ll find the most updated instructions there) than a blog post, but anyway here&rsquo;s is how I did it:</p>
+<p>it&rsquo;s better to follow the gem instructions (you&rsquo;ll find the most updated instructions there) than a blog post, but anyway here&rsquo;s how I did it:</p>
 
 <p>Add this to your <code>Gemfile</code>:</p>
 
@@ -138,7 +138,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>This is just standard options, tune it to your needs. Here we&rsquo;re allowing requests from any domain for the <code>get</code>, <code>post</code>, <code>patch</code> and <code>options</code> methods. <code>options</code> is special method used for <a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">preflight</a> requests.</p>
+<p>These are the common options, tune it to your needs. Here we&rsquo;re allowing requests from any domain for the <code>get</code>, <code>post</code>, <code>patch</code> and <code>options</code> methods. <code>options</code> is a special method used for <a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">preflight</a> requests.</p>
 
 <p>That&rsquo;s it. <code>CORS</code> is now active in this Rails app. Every time we send a request with the <code>CORS</code> headers, we&rsquo;ll receive the <code>CORS</code> response headers.</p>
 
@@ -175,7 +175,7 @@
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a little tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+<p>It&rsquo;s a little tricky to test it with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
 
 <ul>
 <li>Convert to upper case.</li>
@@ -184,7 +184,8 @@
 </ul>
 
 
-<p>Because we don&rsquo;t have the server to do it for us, we must do it manually. So e.g. the <code>Origin</code> becomes <code>HTTP_ORIGIN</code> and <code>Http-Access-Control-Request-Method</code> becomes <code>HTTP_ACCESS_CONTROL_REQUEST_METHOD</code>. Let&rsquo;s see some example tests:</p>
+<p>Because we don&rsquo;t have the server to do it for us, we must do it manually. For example, the <code>Origin</code> becomes <code>HTTP_ORIGIN</code> and <code>Http-Access-Control-Request-Method</code> becomes <code>HTTP_ACCESS_CONTROL_REQUEST_METHOD</code>.
+Let&rsquo;s see some example tests:</p>
 
 <h4>Sending the Origin header:</h4>
 
@@ -222,7 +223,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>That&rsquo;s pretty much it!</p>
+<p>Don&rsquo;t forget to uppercase, replace <code>-</code> and prepend <code>HTTP_</code> to all your custom HTTP headers when testing.</p>
 </div>
 
 
