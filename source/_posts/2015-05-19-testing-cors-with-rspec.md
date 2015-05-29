@@ -58,7 +58,7 @@ We should receive `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Method
 
 ##How to test it with `RSpec`
 
-It's a little tricky to test it with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This is usually not a problem but it does affect in this particular case, and this [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
+It's a bit tricky to test it with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This usually is not a problem but it does affect in this particular case, and the [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
 
 * Convert to upper case.
 * Replace `-` with `_`
@@ -87,5 +87,6 @@ scenario 'Send the CORS preflight OPTIONS request' do
   expect(last_response.headers).to have_key('Access-Control-Max-Age')
 end
 ```
+Note: You must use integration tests to be able the test through `rack`. A controller test doesn't trigger `rack`, it's like an unit test for the controller.
 
-Don't forget to uppercase, replace `-` and prepend `HTTP_` to all your custom HTTP headers when testing.
+Don't forget to uppercase, replace `-` and prepend `HTTP_` to all your custom HTTP headers when testing!
