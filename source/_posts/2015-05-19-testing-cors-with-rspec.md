@@ -7,7 +7,7 @@ categories: git
 published: true
 ---
 
-I've not found any blog post or article about how to easily test CORS support implemented in a [Rack](http://rack.github.io/) middleware (e.g. using the [rack-cors](https://github.com/cyu/rack-cors) gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.
+I've not found any blog post or article about how to easily test [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support implemented in a [Rack](http://rack.github.io/) middleware (e.g. using the [rack-cors](https://github.com/cyu/rack-cors) gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.
 
 I assume you have a fairly updated Rails app, I tested it with Rails 4.2.x, with `RSpec` tests support, and you want to add support for `CORS` headers.
 
@@ -58,7 +58,7 @@ We should receive `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Method
 
 ##How to test it with `RSpec`
 
-It's a bit tricky to test it with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This usually is not a problem but it does affect in this particular case, and the [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
+Support CORS is a bit tricky to test with `RSpec`, because we don't have a real server (like [Webrick](https://github.com/nahi/webrick), [Unicorn](http://unicorn.bogomips.org/) or [Puma](https://github.com/puma/puma)) between the code and the client. This usually is not a problem but it does affect in this particular case, and the [rfc3875](https://tools.ietf.org/html/rfc3875#section-4.1.18) explains why. The server translate the custom `HTTP` request headers in this way:
 
 * Convert to upper case.
 * Replace `-` with `_`
@@ -70,21 +70,25 @@ Let's see some example tests:
 ####Sending the Origin header:
 
 ```ruby
-scenario 'Returns the response CORS headers' do
-  get '/people/1234', nil, 'HTTP_ORIGIN' => '*'
+RSpec.feature "the requests support CORS headers", type: :feature do
+  scenario 'Returns the response CORS headers' do
+    get '/people/1234', nil, 'HTTP_ORIGIN' => '*'
 
-  expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+    expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+  end
 end
 ```
 ####Sending the preflight options method:
 ```ruby
-scenario 'Send the CORS preflight OPTIONS request' do
-  options '/', nil, 'HTTP_ORIGIN' => '*', 'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET', 'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'test'
+RSpec.feature "the requests support CORS headers", type: :feature do
+  scenario 'Send the CORS preflight OPTIONS request' do
+    options '/', nil, 'HTTP_ORIGIN' => '*', 'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET', 'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'test'
 
-  expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
-  expect(last_response.headers['Access-Control-Allow-Methods']).to eq('GET, POST, PATCH, OPTIONS')
-  expect(last_response.headers['Access-Control-Allow-Headers']).to eq('test')
-  expect(last_response.headers).to have_key('Access-Control-Max-Age')
+    expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+    expect(last_response.headers['Access-Control-Allow-Methods']).to eq('GET, POST, PATCH, OPTIONS')
+    expect(last_response.headers['Access-Control-Allow-Headers']).to eq('test')
+    expect(last_response.headers).to have_key('Access-Control-Max-Age')
+  end
 end
 ```
 Note: You must use integration tests to be able the test through `rack`. A controller test doesn't trigger `rack`, it's like an unit test for the controller.
