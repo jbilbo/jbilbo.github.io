@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2015-05-29T16:44:10+01:00</updated>
+  <updated>2015-05-29T17:27:29+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec/"/>
     <updated>2015-05-19T01:16:17+01:00</updated>
     <id>http://jbilbo.com/blog/2015/05/19/testing-cors-with-rspec</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve not found any blog post or article about how to easily test CORS support implemented in a <a href="http://rack.github.io/">Rack</a> middleware (e.g. using the <a href="https://github.com/cyu/rack-cors">rack-cors</a> gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;ve not found any blog post or article about how to easily test <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> support implemented in a <a href="http://rack.github.io/">Rack</a> middleware (e.g. using the <a href="https://github.com/cyu/rack-cors">rack-cors</a> gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.</p>
 
 <p>I assume you have a fairly updated Rails app, I tested it with Rails 4.2.x, with <code>RSpec</code> tests support, and you want to add support for <code>CORS</code> headers.</p>
 
@@ -72,7 +72,7 @@ We should receive <code>Access-Control-Allow-Origin: *</code>, <code>Access-Cont
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a bit tricky to test it with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This usually is not a problem but it does affect in this particular case, and the <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+<p>Support CORS is a bit tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This usually is not a problem but it does affect in this particular case, and the <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
 
 <ul>
 <li>Convert to upper case.</li>
@@ -86,22 +86,26 @@ Let&rsquo;s see some example tests:</p>
 
 <h4>Sending the Origin header:</h4>
 
-<pre><code class="ruby">scenario 'Returns the response CORS headers' do
-  get '/people/1234', nil, 'HTTP_ORIGIN' =&gt; '*'
+<pre><code class="ruby">RSpec.feature "the requests support CORS headers", type: :feature do
+  scenario 'Returns the response CORS headers' do
+    get '/people/1234', nil, 'HTTP_ORIGIN' =&gt; '*'
 
-  expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+    expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+  end
 end
 </code></pre>
 
 <h4>Sending the preflight options method:</h4>
 
-<pre><code class="ruby">scenario 'Send the CORS preflight OPTIONS request' do
-  options '/', nil, 'HTTP_ORIGIN' =&gt; '*', 'HTTP_ACCESS_CONTROL_REQUEST_METHOD' =&gt; 'GET', 'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' =&gt; 'test'
+<pre><code class="ruby">RSpec.feature "the requests support CORS headers", type: :feature do
+  scenario 'Send the CORS preflight OPTIONS request' do
+    options '/', nil, 'HTTP_ORIGIN' =&gt; '*', 'HTTP_ACCESS_CONTROL_REQUEST_METHOD' =&gt; 'GET', 'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' =&gt; 'test'
 
-  expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
-  expect(last_response.headers['Access-Control-Allow-Methods']).to eq('GET, POST, PATCH, OPTIONS')
-  expect(last_response.headers['Access-Control-Allow-Headers']).to eq('test')
-  expect(last_response.headers).to have_key('Access-Control-Max-Age')
+    expect(last_response.headers['Access-Control-Allow-Origin']).to eq('*')
+    expect(last_response.headers['Access-Control-Allow-Methods']).to eq('GET, POST, PATCH, OPTIONS')
+    expect(last_response.headers['Access-Control-Allow-Headers']).to eq('test')
+    expect(last_response.headers).to have_key('Access-Control-Max-Age')
+  end
 end
 </code></pre>
 

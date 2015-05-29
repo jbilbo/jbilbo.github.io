@@ -106,7 +106,7 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;ve not found any blog post or article about how to easily test CORS support implemented in a <a href="http://rack.github.io/">Rack</a> middleware (e.g. using the <a href="https://github.com/cyu/rack-cors">rack-cors</a> gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.</p>
+<div class="entry-content"><p>I&rsquo;ve not found any blog post or article about how to easily test <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> support implemented in a <a href="http://rack.github.io/">Rack</a> middleware (e.g. using the <a href="https://github.com/cyu/rack-cors">rack-cors</a> gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.</p>
 
 <p>I assume you have a fairly updated Rails app, I tested it with Rails 4.2.x, with <code>RSpec</code> tests support, and you want to add support for <code>CORS</code> headers.</p>
 
@@ -175,7 +175,7 @@
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a bit tricky to test it with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This usually is not a problem but it does affect in this particular case, and the <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+<p>Support CORS is a bit tricky to test with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This usually is not a problem but it does affect in this particular case, and the <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
 
 <ul>
 <li>Convert to upper case.</li>
@@ -194,10 +194,14 @@ Let&rsquo;s see some example tests:</p>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">scenario</span> <span class="s1">&#39;Returns the response CORS headers&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/people/1234&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">feature</span> <span class="s2">&quot;the requests support CORS headers&quot;</span><span class="p">,</span> <span class="ss">type</span><span class="p">:</span> <span class="ss">:feature</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">scenario</span> <span class="s1">&#39;Returns the response CORS headers&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">get</span> <span class="s1">&#39;/people/1234&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -212,13 +216,17 @@ Let&rsquo;s see some example tests:</p>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">scenario</span> <span class="s1">&#39;Send the CORS preflight OPTIONS request&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">options</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_METHOD&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_HEADERS&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">feature</span> <span class="s2">&quot;the requests support CORS headers&quot;</span><span class="p">,</span> <span class="ss">type</span><span class="p">:</span> <span class="ss">:feature</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">scenario</span> <span class="s1">&#39;Send the CORS preflight OPTIONS request&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">options</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;HTTP_ORIGIN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_METHOD&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP_ACCESS_CONTROL_REQUEST_HEADERS&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;GET, POST, PATCH, OPTIONS&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_key</span><span class="p">(</span><span class="s1">&#39;Access-Control-Max-Age&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;GET, POST, PATCH, OPTIONS&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">last_response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_key</span><span class="p">(</span><span class="s1">&#39;Access-Control-Max-Age&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
