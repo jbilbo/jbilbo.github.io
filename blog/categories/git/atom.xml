@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Jonathan Hernandez]]></title>
   <link href="http://jbilbo.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://jbilbo.com/"/>
-  <updated>2015-05-24T21:25:04+01:00</updated>
+  <updated>2015-05-29T16:44:10+01:00</updated>
   <id>http://jbilbo.com/</id>
   <author>
     <name><![CDATA[Jonathan Hernandez]]></name>
@@ -72,7 +72,7 @@ We should receive <code>Access-Control-Allow-Origin: *</code>, <code>Access-Cont
 
 <h2>How to test it with <code>RSpec</code></h2>
 
-<p>It&rsquo;s a little tricky to test it with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This is usually not a problem but it does affect in this particular case, and this <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
+<p>It&rsquo;s a bit tricky to test it with <code>RSpec</code>, because we don&rsquo;t have a real server (like <a href="https://github.com/nahi/webrick">Webrick</a>, <a href="http://unicorn.bogomips.org/">Unicorn</a> or <a href="https://github.com/puma/puma">Puma</a>) between the code and the client. This usually is not a problem but it does affect in this particular case, and the <a href="https://tools.ietf.org/html/rfc3875#section-4.1.18">rfc3875</a> explains why. The server translate the custom <code>HTTP</code> request headers in this way:</p>
 
 <ul>
 <li>Convert to upper case.</li>
@@ -105,7 +105,9 @@ end
 end
 </code></pre>
 
-<p>Don&rsquo;t forget to uppercase, replace <code>-</code> and prepend <code>HTTP_</code> to all your custom HTTP headers when testing.</p>
+<p>Note: You must use integration tests to be able the test through <code>rack</code>. A controller test doesn&rsquo;t trigger <code>rack</code>, it&rsquo;s like an unit test for the controller.</p>
+
+<p>Don&rsquo;t forget to uppercase, replace <code>-</code> and prepend <code>HTTP_</code> to all your custom HTTP headers when testing!</p>
 ]]></content>
   </entry>
   
