@@ -8,11 +8,18 @@ theme = 'PaperMod'
 pagerSize = 10
 
 # Enable emoji support
-enableEmoji = false
+enableEmoji = true
+enableRobotsTXT = true
 
 # Output formats (including JSON for search)
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON", "robots"]
+
+[outputFormats]
+[outputFormats.robots]
+baseName = "robots"
+isPlainText = true
+mediaType = "text/plain"
 
 [params]
 author = "Jonathan Hernandez"
