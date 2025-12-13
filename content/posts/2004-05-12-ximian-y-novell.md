@@ -1,0 +1,8 @@
+---
+title: Ximian y Novell
+date: '2004-05-11T19:34:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Últimamente <a href="http://www.novell.com/">Novell</a> sólo hace que darnos buenas noticas. Primero con la <a href="http://barrapunto.com/article.pl?sid=04/03/20/0813238&mode=thread">liberación</a> bajo licencia GNU GPL de <a href="http://www.suse.com/latam/products/suse_linux/i386/yast.html">YAST</a>, la genial herramienta de administración de la distribución <a href="">SUSE</a>, y ahora con la <a href="http://barrapunto.com/article.pl?sid=04/05/11/2026253&mode=thread">liberación</a> bajo la misma licencia de <a href="http://www.novell.com/products/connector/">Ximian Connector</a>, un plugin que permite conectarse a los servidores Exchange.<br/>El <a href="http://www.novell.com/news/press/archive/2004/05/pr04034.html">anuncio oficial</a>.<br/><br/><div align="center"><br/><img src="http://www.novell.com/products/connector/img/n_xconnect.jpg" alt="Ximian Connector" border="0" /><br/></div><br/><br/>Por cierto, también comenta que saldrá <a href="http://www.novell.com/products/evolution/">Evolution 2.0</a> entre Julio y Septiembre de este año (y llevará integrado el Connector).

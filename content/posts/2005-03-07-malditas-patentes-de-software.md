@@ -1,0 +1,8 @@
+---
+title: Malditas patentes de software!
+date: '2005-03-07T10:45:00.000-08:00'
+tags:
+- Software Libre
+---
+
+No veais que susto da un titular como <a href="http://barrapunto.com/ciberderechos/05/03/07/1217215.shtml">éste</a> un lunes por la tarde.<br/><br/><i>"la presidencia del Consejo Europeo ha adoptado la directiva de patentes de software, en violación de las reglas de procedimiento y a pesar de la evidente falta de mayoría cualificada de estados miembros y de la petición de varios estados para que se reabran las negociaciones". Al parecer, Polonia, Dinamarca y Portugal pidieron que se pasara la propuesta como "B-item" (punto a discutir), pero la presidencia luxemburguesa lo rechazó (violando la normativa). Dinamarca se quejó, pero aceptó que se mantuviese como "A-item", y todo el "paquete" A fue aceptado. Triste día para la democracia"</i><br/><br/>Respondo pegando un comentario de barrapunto también:<br/><br/><i>"Qué? Cómo? Sin tener competencia hace lo que le da la gana? Como sia mí me diera por empezar a poner multas sin ser policía? Y cómo se han tragado eso los demás? Es que es muy grande el presidente de Luxemburgo? No había seguratas para detenerle por amenazar? Qué clase de circo/payasada ha sido ésta?"</i><br/><br/>Al parecer el único país <a href="http://www.laflecha.net/canales/softlibre/noticias/200503071/">que se opuso</a> fué España (bien por nuestros ministros).<br/><br/>Manda webs. Según barrapunto, ahora se remitirá al Parlamento Europeo para su segunda lectura.<br/><br/>PD: Sí. Las patentes de software son <a href="http://davidcg.sytes.net/?p=40">el cáncer</a> de las pequeñas y medianas empresas que se dedican al desarrollo de software.

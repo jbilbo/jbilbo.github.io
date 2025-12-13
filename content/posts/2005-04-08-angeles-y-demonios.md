@@ -1,0 +1,8 @@
+---
+title: Ángeles y Demonios
+date: '2005-04-07T20:04:00.000-07:00'
+tags:
+- Libros
+---
+
+Me he leído otro libro de Dan Brown, autor de El Código DaVinci (ECD). Se llama Ángeles y Demonios, y creo que se trata del libro que hay después del best-seller ECD.<br/><br/><img src="http://jhernandez.gpltarragona.org/varios/ayd.jpg" alt="Ángeles y Demonios" align="right" /><br/><br/>De hecho, es muy similar al anterior. Si os gustó ECD seguramente os gustará también Ángeles y Demonios, aunque ya no sorprenderá tanto como ECD y los acertijos no son tan profundos... pero sigue teniendo cierta frescura y engancha en según qué partes del libro también bastante.<br/><br/>Pero lo más interesante del libro es que ahora mismo esta de actualidad. Uno de los temas que toca más es el Vaticano y todo lo relacionado con él y su historia. Habla del Cónclave, del camarlengo, sus funciones... etc. Todo lo que pasa cuando un Papa muere, porque cuando empieza el libro el Papa acaba de morir hace unos días... de hecho una anécdota curiosa es que con todo el "tocho" de libro que hay... en realidad sólo es para narrar lo que pasa 1 dia. Bastante frenético, sí :-)<br/><br/>En fin, un libro recomendado para los que les gustó ECD. Si no te gustó ECD, sólo te interesará si te sientes atraído por el tema "Vaticano" y no tienes otra cosa que leer :-P. Si no has leído ECD, léetelo, lo considero mejor libro que éste...<br/>Ángeles y Demonios cumple bien su rol de libro que necesita la gente después de leer ECD y quedarse con más ganas.<br/><br/><div align="center"><b>Calificación: 6/10</b></div>

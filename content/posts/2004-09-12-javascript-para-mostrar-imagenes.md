@@ -1,0 +1,8 @@
+---
+title: Javascript para mostrar imágenes aleatorias
+date: '2004-09-11T20:27:00.000-07:00'
+tags:
+- Tonteridas Mias
+---
+
+Tienes un numero determinado de imagenes: por ejemplo 7, que estan guardadas en la carpeta img. Y quieres mostrar una cada vez que entras en una página web concreta. <br/>Así, cada vez que entras ves una diferente (o no, si da la casulidad de que sale la misma, porque es aleatorio).<br/><br/>Este script sencillo cubre esa necesidad de una forma muy simple, pudiendo adaptar el numero de imágenes fácilmente, con sólo añadir otra línea "this". Un ejemplo de uso lo podeis ver en mi <a href="http://jhernandez.gpltarragona.org">página principal</a>.<br/><br/><pre><br/>&lt;script language="javascript"&gt;<br/>function VecImagenes()<br/>{<br/>  n=0;<br/>  this[n++]="img/friends.jpg";<br/>  this[n++]="img/friends2.jpg";<br/>  this[n++]="img/yo.jpg";<br/>  this[n++]="img/conmigueldeicaza.jpg";<br/>  this[n++]="img/decumple.jpg";<br/>  this[n++]="img/grupito.jpg";<br/>  this[n++]="img/enhispalinux.jpg";<br/>  this.N=n;<br/>}<br/>var Imagenes=new VecImagenes();<br/>src= Imagenes[ Math.floor(Math.random() * Imagenes.N) ] ;<br/>document.write("&lt;img src="+src+" align=right&gt;");<br/>&lt;/script&gt;<br/></pre><br/><br/>Por otra parte, hace unos días añadí categorías a mi blog para diferenciar los diferentes temas que suelo tratar. Actualmente estan así las cosas:<br/><br/>Cine (25)<br/>Libros (4)<br/>Software Libre (104)<br/>Tonteridas Mias (44)<br/>Videojuegos (6)

@@ -1,0 +1,8 @@
+---
+title: Planet GPLURV
+date: '2004-03-17T17:55:00.000-08:00'
+tags:
+- Software Libre
+---
+
+He tocado el css de <a href="http://planet.gplurv.org">planet gplurv</a> para hacerlo más tipo <a href="http://planet.gnome.org">planet gnome</a>, que es según mi opinión el planet que mejor css tiene.<br/><br/>Falta depurar un poco la página y ponerle algo de contenido como links a otros planetariums y mejorar quizás también el color en según que zonas (suaviar el pie de pag. y las fechas del pie de cada blog) y mejorar a lo mejor un poco el título (que tiquismiquis xDD).<br/>Lo que sí que hay que mejorar son las fotos de cada uno... son bastante feas todas si las comparamos con los de gnome (unos genios del gimp :D). Pero nada, tiempo al tiempo y poco a poco se irá mejorando.<br/><br/>Ah, también estaría bien más subscripciones ;-)<br/><br/>EDIT: Ya esta puesto el css a lo planet-gnome del que hablo.

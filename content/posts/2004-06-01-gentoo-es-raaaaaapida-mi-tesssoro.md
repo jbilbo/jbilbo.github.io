@@ -1,0 +1,8 @@
+---
+title: Gentoo es ráaaaaapida… mi tesssoro
+date: '2004-05-31T17:28:00.000-07:00'
+tags:
+- Software Libre
+---
+
+<div align="center"><img src="http://tira.escomposlinux.org/ecol-161.png" /></div><br/><br/>Para eso está openoffice-bin :P<br/><br/><pre>(00:30:53) snuez: sobra el comentario del final<br/>(00:31:18) snuez: porque podía haber puesto cualquier paquete donde dice oppen-office</pre><br/><br/>Es cierto, ¿y a quien usuario de Gentoo no le ha pasado ésto de la tira alguna vez (con otro paquete)? xDDD <br/>Y es que no existe <a href="http://www.marblestation.com/blog/index.php?p=44">la distribución perfecta</a> (no, no es Debian :P). Por otra parte, la mejor baza de Gentoo no es la adaptación a tu CPU, sinó su sistema de paquetes (portage-emerge) y su filosofía en cuanto a nuevas versiones (rama estable-inestable, y pronto rama seguridad que sólo actualiza fallos de seguridad).<br/><br/>PD: Para que no se note la bajada de rendimiento mientras se compila algo, mejor usar un kernel con los parches que Gentoo recopila (gentoo-sources o gentoo-dev-sources), lleva preemptive y no va como el caballo del malo xDD<br/><br/><b>Actualización</b>: Sergio me comenta que hay otra posibilidad. Existe la opción "PORTAGE_NICENESS" en el fichero /etc/make.conf que lo que hace es bajar la prioridad del portage directamente contra más alto es el valor.

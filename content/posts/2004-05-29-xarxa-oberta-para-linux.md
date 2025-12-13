@@ -1,0 +1,8 @@
+---
+title: Xarxa oberta para Linux
+date: '2004-05-28T21:08:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Ya esta disponible la documentación para Linux de la puesta en funcionamiento del servicio de Xarxa oberta de la URV (acceso a internet desde la biblioteca). Lo comento todo en un <a href="http://www.gpltarragona.org/node/view/248">artículo</a> en gpltarragona.

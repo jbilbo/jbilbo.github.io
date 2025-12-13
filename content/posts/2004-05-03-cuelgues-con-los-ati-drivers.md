@@ -1,0 +1,8 @@
+---
+title: Cuelgues con los ati-drivers
+date: '2004-05-02T20:42:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Tenía la versión estable de los drivers de ati propietarios que hay actualmente en el portage (media-video/ati-drivers-3.2.8-r1). Los drivers libres no se llevan muy bien con mi tarjeta todavía (<a href="http://dri.sourceforge.net/cgi-bin/moin.cgi/ATIRadeon?action=highlight&value=CategoryHardware#head-465a5bcb4ff2a8459736c469bfac6c242de7f3c1">ATI Radeon 9200</a>), y eso que esta <a href="http://dri.sourceforge.net/cgi-bin/moin.cgi/ATI?action=highlight&value=CategoryHardware">teóricamente soportada</a>.<br/><br/>No me daban ningún problema con lo básico: Las X y los juegos 2D. Pero hoy, me ha dado por probarlo durante unos 15 minutos con el juego Unreal Tournament 2004 demo (emerge ut2004-demo) y se me ha producido un cuelgue parcial del equipo (el kernel respondía, pero cuando mataba el juego el kernel también moría).<br/>Lo probé un par de veces más y pasaba al rato, así que no era casual, era un bug.<br/><br/>Algunos errores:<br/><br/><pre><br/>[fglrx:firegl_addmap] *ERROR* cannot create different map at same offset 0xe1a22000<br/>[fglrx:firegl_alloc_bufs] *ERROR* Unable to add buffer mapping -> inconsistent kernel data!!<br/></pre><br/><br/>Hice varias pruebas, pero al final lo he arreglado instalando la última versión del driver que hay actualmente en el portage (media-video/ati-drivers-3.7.6-r1).

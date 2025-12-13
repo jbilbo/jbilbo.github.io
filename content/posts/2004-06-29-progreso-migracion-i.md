@@ -1,0 +1,8 @@
+---
+title: Progreso migración I
+date: '2004-06-28T18:44:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Se ha puesto en funcionamiento Apache2 y Mysql4, se ha pasado la base de datos de Drupal de 4.2 a 4.4.1 satisfactoriamente pero tenemos un problema con el interface de themes, en concreto el formulario de elección. El error es consecuencia de que hicimos la actualización con el theme gplito2, cuando éste es incompatible con las versiones 4.4x de drupal. Si sigue sin funcionar tendremos que rehacer ese paso poniendo el tema por defecto antes.<br/><br/>También ha habido algún problema con la compilación del mod_php (solucionado), y con los acentos. Actualmente hay todavía problemas con los acentos. El planet se ve perfecto poniendo como codificación por defecto del Apache a UTF-8 (AddDefaultCharset UTF-8, en commonapache2.conf). Pero en cambio mi blog y el de sergio y demás páginas no utf-8 se ven todas mal. No entiendo porque el navegador no coge la meta-cabecera que tienen todas las paginas html que indica que esta codificada en ISO-X (o lo que sea) y lo interpreta... cosa del apache2?? O_o<br/>En el navegador poniendo su codificación se ve perfecto, claro, pero tendría que hacerlo automático. Ésto se tiene que mirar.<br/><br/>Ahora estoy actualizando el gplito2 para que soporte drupal 4.4x. Los cambios del interface de themes de la version 4.3 a la 4.4 es enorme, se reestructuró todo por lo que la migración del theme tardará un par o tres de dias.

@@ -1,0 +1,8 @@
+---
+title: Bug de Mono en sistemas con soporte NTPL
+date: '2004-08-18T18:03:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Hay un bug grave en <a href="http://www.mono-project.com">mono</a> cuando se tiene un sistema con soporte NTPL (Native Thread POSIX Library). Este tipo de implementación de threads, que ha reemplazado a la anterior, se utiliza en los kernels 2.6.x y únicamente en los 2.4 si estan parcheados (como los de redhat).<br/><img src="http://jhernandez.gpltarragona.org/img/mono_40.png" align="right" /><br/>Las glibc se pueden compilar con soporte para este tipo de threads, y Gentoo al ser una distribución desde de código fuente es de las primera en tener un gran número de usuarios con soporte total NTPL en todo el sistema, sin soporte del antiguo (la mayoría soportan ambos o el antiguo). Mono, específicamente el GC (Garbage Colector), recolector de basura, a partir de la Beta1 tiene un bug que hace que algunas aplicaciones que utilizan threads tengan problemas. Ha sido con la aplicación "muine" que se han dado cuenta del bug.<br/><br/>El caso es que Novell/Ximian/La comunidad mono no esta muy por la labor de arreglar el bug en breve (llevan 2 meses ya), porque al parecer sistemas con soporte ntpl total no hay muchos todavía (sorpresa la mía). Creo que este bug es lo suficientemente grave como para que se centren en solucionarlo, porque teniendo en cuenta que es una 1.0.x, la estabilidad de la plataforma queda en entredicho.<br/><br/><a href="http://bugs.gentoo.org/show_bug.cgi?id=54603">bug en Gentoo</a><br/><a href="http://bugzilla.ximian.com/show_bug.cgi?id=60576">bug en Ximian</a>

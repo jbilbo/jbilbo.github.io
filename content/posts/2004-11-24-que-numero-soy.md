@@ -1,0 +1,8 @@
+---
+title: Qué número soy…
+date: '2004-11-24T05:50:00.000-08:00'
+tags:
+- Tonteridas Mias
+---
+
+<table width=300 align=center border=1 bordercolor=black cellspacing=0 cellpadding=2><br/><tr><td bgcolor=#66CCFF align=center><br/><font face="Georgia, Times New Roman, Times, serif" style='color:black; font-size: 14pt;'><br/><b>You Are the Enthusiast</b></font></td></tr><br/><tr><td align=center bgcolor=#FFFFFF><br/><center><br/>  <font color="#0000CC" size="+6"><br/>  7<br/>  </font><br/></center><br/><br/><font color="#000000"><br/>You are outgoing and playful - always seeing the happy side to life.<br/><br/>You're enthusiastic and excitable. You love anything new.<br/><br/>Multi-talented, you do many things well... and find success easy.<br/><br/>You prefer to keep things light with others. Opening up is hard for you.<br/></font></td></tr></table><br/><br/><div align="center"><br/><a href="http://www.blogthings.com/numberquiz.html">What number are you?</a><br/></div>

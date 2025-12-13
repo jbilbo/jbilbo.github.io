@@ -1,0 +1,8 @@
+---
+title: El Código DaVinci
+date: '2004-04-19T18:48:00.000-07:00'
+tags:
+- Libros
+---
+
+He leído el libro (BestSeller) el Código DaVinci,  es bastante interesante. Aunque hay mucha ficción, al fin y al cabo es una novela, te engancha hasta el final y no es muy largo.<br/><br/>Actualización: Voy a explicar un poco de qué va en un pequeño resumen que no os estropeará el libro: <br/>Se trata de un hombre que deja un extraño escrito antes de morir en un gran museo. Ese escrito junto a demás símbolos y guiños que se veran después, parece tener que ver con la dinastía de los templarios, antingua asociación secreta dedicada a esconder y salvaguardar el Santo Grial. El protagonista es un historiador experto en simbología que se verá metido en la trama sin elegirlo.<br/><br/>Lo que también me ha resultado interesante es la suma de acertijos que hay que descifrar en su <a href="http://www.elcodigodavinci.com">web</a>, aunque para resolver algunos puntos hay que leerse el libro.<br/><div align="center"><img src="http://images.barnesandnoble.com/images/6990000/6991136.gif"></div><br/><br/>Actualización: Aunque hay mucha gente que llega aquí en busca de la respuesta de los acertijos al juego del Código DaVinci, decir que no voy a "Spoilear" el juego porque sinó no tiene gracia. Si me lo piden por mail porque ven que es imposible adiviniarlo... pues aún. Pero que sepáis que por google seguro que lo encontrais todo (o sinó siempre podeis apretar al botón de "pista").

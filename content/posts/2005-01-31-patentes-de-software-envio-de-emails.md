@@ -1,0 +1,8 @@
+---
+title: Patentes de Software - Envio de emails a los representantes
+date: '2005-01-31T08:58:00.000-08:00'
+tags:
+- Software Libre
+---
+
+Los que estais metidos en el software libre sabréis lo perjudiciales que son las patenets de software para el avance de nuestra sociedad y el libre conocimiento.<br/>En europa, por ahora, no existen las patentes de software al contrario que en Estados Unidos, donde las empresas grandes se reparten el poder por medio de la extorsión a la PYME.<br/><br/>Para que sigan sin existir las patentes de software, Carlos, un compañero de la URV, ha puesto un artículo en gpltarragona <a href="http://www.gpltarragona.org/node/view/337">explicando</a> la situación y ha alojado una <a href="http://www.tinet.org/~com.ea/">carta abierta en su web</a> para enviar a nuestros representantes en Europa:<br/><br/>- Sr. Antonio Masip Hidalgo: amasipeuropa arroba yahoo.es<br/>- Sr. Antonio López-Istúriz White: alopezisturiz arroba europarl.eu.int<br/><br/>No cuesta nada enviar un mail a nuestros representantes en el parlamento con el texto del link anterior, así sabran cuán importante es para el pueblo que no siga para adelante el texto actual de la directiva.<br/>Cuando lo envieis, sería genial que pusiérais un comentario (como anónimos si quereis) en el <a href="http://www.gpltarragona.org/node/view/337">artículo</a> de gpltarragona diciendo que lo habéis enviado.

@@ -1,0 +1,76 @@
+baseURL = 'https://jbilbo.com/'
+languageCode = 'es'
+title = 'Jonathan Hernandez'
+theme = 'PaperMod'
+
+# Pagination
+[pagination]
+pagerSize = 10
+
+# Enable emoji support
+enableEmoji = false
+
+# Output formats (including JSON for search)
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+author = "Jonathan Hernandez"
+description = "Padre, marido, hermano, hijo, videojuerguista, programador, jugador de pádel, intensito de la IA, el software libre y las finanzas. Con poco tiempo libre."
+defaultTheme = "auto"
+showShareButtons = false
+showReadingTime = true
+showPostNavLinks = true
+showBreadCrumbs = true
+showCodeCopyButtons = true
+disableSpecial1stPost = true
+
+[params.homeInfoParams]
+Title = "Jonathan Hernandez"
+Content = "Padre, marido, hermano, hijo, videojuerguista, programador, jugador de pádel, intensito de la IA, el software libre y las finanzas. Con poco tiempo libre."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/jbilbo"
+
+[[params.socialIcons]]
+name = "bluesky"
+url = "https://bsky.app/profile/jbilbo.bsky.social"
+
+[[params.socialIcons]]
+name = "rss"
+url = "/index.xml"
+
+[menu]
+[[menu.main]]
+identifier = "posts"
+name = "Blog"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 40
+
+# Markup settings
+[markup]
+[markup.highlight]
+style = "dracula"
+lineNos = false
+
+[markup.goldmark.renderer]
+unsafe = true

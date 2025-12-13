@@ -1,0 +1,8 @@
+---
+title: Buenafuente ha vuelto!!
+date: '2005-01-19T19:08:00.000-08:00'
+tags:
+- Tonteridas Mias
+---
+
+Sí si si, el programa de hoy miércoles ya me suena, el de ayer fué muy bueno también. La primera semana el primer programa estuvo aceptable, los 2 siguientes bajaron un poco el nivel pero esta semana es diferente. Es difícil que hoy en día me haga reír un programa de televisión (reir != sonreir tímidamente), sólo lo consiguien (ahora mismo) Los Simpsons y ahora <a href="http://www.antena3.com/buenafuente">Buenafuente</a> (y pensando... hacía tiempo que no me reía como hoy con un programa...).<br/><br/><div align="center"><img src="http://www.elterrat.com/img/backoffice/img01/id01img0584.jpg" alt="Buenafuente" /></div><br/><br/>Por cierto, que le han puesto una <a href="http://www.antena3.com/buenafuente">web en antena3</a> bastante chula, ponen videos de extractos del programa. Lo primero que me llamó la antención es que ponen los monólogos (la parte que a mi siempre me ha gustado más) pero según he podido ver no lo ponen completo, sólo la primera parte (buen trozo pero no entero, lástima!). Como apunte, se me ve perfecto con Linux + Firefox + <a href="http://mplayerplug-in.sourceforge.net/">mozilla-mplayer</a> (tendrían que hacer un monumento a los que hicieron este plugin xD lo utilizo un montón, pondré un icono suyo en mi web principal... no es mucho ya lo sé :D).<br/><br/>Me alegro de ver a Andreu por la tele (cuando hablo de él, me refiero también a su "tropa", por ejemplo hoy Palomino de lo mejor y eso que ha salido 3 minutos!), ya sea en TV3 o en A3... y si sigue haciendo programas tan buenos como el de hoy quizás proponga para una futura quedada de GPLTarragona una excursión al plató del programa en Barcelona! :-D

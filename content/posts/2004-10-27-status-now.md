@@ -1,0 +1,8 @@
+---
+title: Status now
+date: '2004-10-27T09:22:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Me he decidido a pasar unos cuantos posts mios del blog a gpltarragona que pueden ser interesantes para más gente (recordad que ahora salimos en el <a href="http://planet.badopi.org">Planet LUG</a>) y gpltarragona ahora mismo no tiene mucha actividad (o podría tener más :). <a href="http://www.gpltarragona.org/queue">Cola para votaciones</a> (tienes que estar logueado)<br/><br/>Por otro lado estoy mirando de ayudar un poco en los <a href="http://bugs.gentoo.org/show_bug.cgi?id=66864">bugs</a> de Gentoo sobre Gnome 2.8 a ver si sale ya a estable (Gnome 2.8.1 <a href="http://barrapunto.com/article.pl?sid=04/10/27/0952250&mode=thread">ha salido</a> ya).<br/><br/>Los <a href="http://cursos.gpltarragona.org">cursos de Linux</a> marchan bien, <a href="http://cursos.gpltarragona.org/material.html">el material</a> esta todo completado y disponible libremente, pero tenemos problemas con lo de poner 2 imágenes a la vez en las aulas... y hasta ahora no hemos podido utilizar Gentoo. A ver si para mañana la tenemos lista sinó quizás tenga que retrasar el temario de Gentoo y adelantar al tema de conceptos unix.<br/>Por otro lado miramos de reojo ya las cosas del siguiente curso.<br/><br/>He actualizado el <a href="http://jhernandez.gpltarragona.org/blog/archives/000216.html">post de tomboy en Gentoo</a>, por un cambio en el portage.

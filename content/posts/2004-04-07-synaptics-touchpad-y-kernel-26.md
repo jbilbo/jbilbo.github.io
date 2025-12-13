@@ -1,0 +1,8 @@
+---
+title: Synaptics Touchpad y kernel 2.6
+date: '2004-04-06T18:48:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Parece que ser que el touchpad de mi portatil da problemas con el kernel 2.6. El caso es que no puedo hacer click ni scroll con el propio touchpad, tocando los botones de abajo sí funciona pero claro lo que más se utiliza es lo que no funciona (o almenos yo casi ni utilizo los botones de abajo).<br/><br/>Lo he solucionado instalando el driver synaptics (esta masked en Gentoo pero funciona bien).<br/>Se configura el /etc/X11/XF86Config añadiendo ésto:<br/><br/><pre><br/>#sección para el touchpad<br/>Section "InputDevice"<br/>        Identifier "TouchPad"<br/>        Driver "synaptics"<br/>        Option "Device" "/dev/psaux"<br/>        Option "SHMConfig" "on"<br/>        Option "auto-dev"<br/>        Option  "Emulate3Buttons" "yes"<br/>EndSection<br/></pre><br/><br/><pre><br/>#sección para el ratón óptico normal<br/>Section "InputDevice"<br/>        Identifier  "Raton"<br/>        Driver      "mouse"<br/>        Option      "Protocol" "IMPS/2"<br/>        Option      "ZAxisMapping" "4 5"<br/>        Option      "Device" "/dev/mouse"<br/>EndSection<br/></pre><br/><br/>Y luego en la última sección:<br/><br/><pre><br/>Section "ServerLayout"<br/>        Identifier  "Server Layout"<br/>        Screen "Screen0"<br/>        InputDevice "Raton" "CorePointer"<br/>        InputDevice "TouchPad" "SendCoreEvents"<br/>        InputDevice "Keyboard0" "CoreKeyboard"<br/>EndSection<br/></pre><br/><br/>Y listos... por ahora todo funcionado correctamente... (no testeado profundamente, esperaremos a que pasen los días... xD).

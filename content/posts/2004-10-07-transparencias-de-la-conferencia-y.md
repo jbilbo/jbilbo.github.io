@@ -1,0 +1,8 @@
+---
+title: Transparencias de la Conferencia y Ubuntu
+date: '2004-10-06T18:21:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Reitero las gracias de <a href="http://www.marblestation.com/blog/index.php?p=207">sergio</a> a los asistentes de la conferencia del otro dia, sobretodo a los colegas de gpltarragona :)<br/><br/>A continuación pongo las transparencias que hicimos servir por si a alguien le interesa.<br/><br/><a href="http://jhernandez.gpltarragona.org/estudios/Software_Libre__2_edicion.sxi">Transparencias Conferencia Software Libre 2a Edición</a>.<br/><br/>Al final de la conferencia comentamos sobre Ubuntu, y que esta subvencionada por el millonario Mark Shuttleworth. Aquí va más info:<br/><br/><a href="http://www.canonical.com/">Organización que desarrolla Ubuntu, entre otras cosas</a><br/><a href="http://www.ubuntulinux.org/">Ubuntu</a><br/><a href="http://www.hispamp3.com/noticias/noticia.php?noticia=20040916094100">La explicación</a><br/><a href="http://www.markshuttleworth.com/">El millonario que apuesta por el software libre</a><br/><a href="http://www.markshuttleworth.com/bounty.html">Recompensas monetarias (bountys) de Mark por proyectos de software libre</a><br/><br/>PD2: El link a hispamp3 lo saqué del blog de NeiL, pero ahora esta caído. Podeis ver el post todavía en el <a href="http://planet.gpltarragona.org">planet</a> de gpltarragona.

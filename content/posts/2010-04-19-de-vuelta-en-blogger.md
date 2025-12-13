@@ -1,0 +1,8 @@
+---
+title: De vuelta... en blogger
+date: '2010-04-19T10:54:00.000-07:00'
+tags:
+- Tonteridas Mias
+---
+
+Después de varios días off i'm back. El blog anterior estaba alojado en el servidor de GPLTarragona, que le dió por petar el disco duro (no entiendo por qué, era de estos nuevos IDE de 8Gb..... oh wait). Nada que hacer, fallo de hardware con ruido muy feo.<br />De GPLTarragona no hay problema porque hacíamos 1 backup diario al día, pero de mi pobre blog... bueno... como que no lo cuidaba mucho y me despreocupé de él... y resulta que no tenía ningún backup por ahí. Bueno tenía un backup por ahí del 2005 y el resto es como un puzzle :D Pero no hay problema, ya iré reestableciendo los posts poco a poco... que me da pena (ahora) perderlos, por ahora sólo estan hasta el 2005 (quedan unos cuantos :P).<br /><br />Ahora como veis he migrado a blogger, básicamente para tener dominio propio en un blog y no preocuparme por su mantenimiento. Mirando sobre cómo migrar de Wordpress a Blogger me he encontrado con un par de recursos útiles:<br /><br /><a href="http://technosailor.com/2006/07/05/wordpress-to-wordpress-import/">Exportar Xml de todo el blog en Wordpress</a><br /><a href="http://wordpress2blogger.appspot.com/">Convertir Xml de Wordpress en Xml de Blogger</a><br /><a href="http://blogandweb.com/blogger/importar-y-exportar-contenido-en-blogger/">Importar desde Blogger un Xml</a>

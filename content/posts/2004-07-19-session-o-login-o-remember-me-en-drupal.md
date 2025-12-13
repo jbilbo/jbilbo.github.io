@@ -1,0 +1,8 @@
+---
+title: session o login o remember me en drupal, con apache2
+date: '2004-07-19T12:54:00.000-07:00'
+tags:
+- Software Libre
+---
+
+Hasta ahora en gpltarragona.org, se tenía que hacer login cada vez que se cerraba el navegador. No aguantaba la sesión, y era muy molesto.<br/>Al parecer he dado con la solución, y estaba delante mio todo el rato.<br/><br/>Vamos a la raiz (root) de nuestro directorio de drupal:<br/><br/><pre><br/>vi .htaccess<br/></pre><br/><br/>Vamos a la siguiente linea:<br/><br/><pre>&#60;IfModule mod_php4.c><br/>   # If you are using Apache 2, you have to use &#60;IfModule sapi_apache2.c><br/>   # instead of &#60;IfModule mod_php4.c>.</pre><br/><br/>Lo dice muy claro en inglés, hay que cambiar el IfModule por:<br/><br/><pre>&#60;IfModule sapi_apache2.c><br/></pre><br/><br/>Y ahora todo funciona bien.

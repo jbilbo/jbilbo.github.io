@@ -1,0 +1,8 @@
+---
+title: Lanzamiento de monos
+date: '2004-05-05T06:14:00.000-07:00'
+tags:
+- Software Libre
+---
+
+El <a href="http://www.go-mono.com">proyecto mono</a> acaba de anunciar la <a href="http://www.go-mono.com/archive/beta1/beta1.html">primera beta</a> de sus 2 <a href="http://www.go-mono.com/road-to-1.0.html">planeadas</a> antes de sacar la esperada versión 1.0.<br/><br/><div align="center"><br/><a href="http://www.go-mono.com/archive/beta1/beta1.html"><img src="http://www.go-mono.com/images/beta1-anim.gif" alt="Mono Beta 1" border="0" /></a><br/></div><br/><br/>Y <a href="http://codeblogs.ximian.com/blogs/tberman/">Todd Berman</a> anuncia en la lista y en la web de <a href="http://www.monodevelop.com">Monodevelop</a> la <a href="http://www.monodevelop.com/release_notes/0.3.html">versión 0.3</a> de uno de los proyectos de software libre más importantes en la actualidad (a mi parecer, claro :)<br/><br/>Actualización: En el portage de Gentoo ya tenemos todos los paquetes disponibles:<br/><br/><pre><br/>Calculating dependencies ...done!<br/>[ebuild     U ] dev-dotnet/mono-0.91 [0.31] +nptl  16,918 kB<br/>[ebuild     U ] x11-libs/gtk-sharp-0.91.1 [0.18] +gnome -gnomedb +gtkhtml -libgda  1,314 kB<br/>[ebuild     U ] dev-util/monodoc-0.15 [0.13]  3,977 kB<br/>[ebuild     U ] dev-dotnet/gtksourceview-sharp-0.2 [0.1.0]  335 kB<br/>[ebuild     U ] dev-dotnet/gecko-sharp-0.2 [0.1]  108 kB<br/>[ebuild     U ] dev-util/monodevelop-0.3 [0.2] +nptl  2,489 kB<br/></pre>

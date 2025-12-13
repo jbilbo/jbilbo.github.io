@@ -1,0 +1,8 @@
+---
+title: Mono Beta2 en Gentoo
+date: '2004-06-02T21:04:00.000-07:00'
+tags:
+- Software Libre
+---
+
+<pre>valinor ~ # emergetest -p monodevelop<br/> <br/>These are the packages that I would merge, in order:<br/> <br/>Calculating dependencies ...done!<br/>[ebuild     U ] dev-dotnet/mono-0.95 [0.91] +nptl  17,079 kB<br/>[ebuild     U ] x11-libs/gtk-sharp-0.93 [0.91.1] +gnome -gnomedb +gtkhtml -libgda  1,324 kB<br/>[ebuild     U ] dev-dotnet/gecko-sharp-0.4 [0.3]  103 kB<br/>[ebuild     U ] dev-util/monodoc-0.16 [0.15]  4,079 kB<br/>[ebuild     U ] dev-dotnet/gtksourceview-sharp-0.3 [0.2]  335 kB<br/>[ebuild     U ] dev-util/monodevelop-0.4 [0.3-r1] +nptl  2,592 kB<br/> <br/>Total size of downloads: 25,516 kB</pre><br/><br/>Han sido rapidísimos :-)<br/><br/>*Nota: comando <a href="http://jhernandez.gpltarragona.org/blog/archives/000091.html">emergetest</a>.<br/><br/><b>eurito 0.01a</b><br/><br/>Nueva release de eurito!! xDD de la 0.01 a la <a href="http://jhernandez.gpltarragona.org/aplicaciones/eurito/eurito-0.01a.tar.bz2">0.01a</a>. La lista de cambios es enorme... así que no la pongo aquí porque no cabría :P<br/>Eurito es un euroconversor que hice para aprender gtk# sobre mono... así que va muy bien como ejemplo de aplicación simple con C# + GTK#.
