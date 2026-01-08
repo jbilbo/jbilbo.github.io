@@ -5,4 +5,57 @@ tags:
 - Tonteridas Mias
 ---
 
-Se le esta subiendo a la cabeza la fama... pero en fin, una nueva entrega:<br/><br/>En la piscina... <br/><br/><pre>[yo] Báñate con nosotros<br/>[mi-primo] No, que me ahogo y pierdo.</pre><br/><br/>Después de jugar a basket:<br/><br/><pre>sí, porque si no os ducháis, se van a ir los muebles solos.</pre><br/><br/>Jugando él solo a la play2.<br/><br/><pre>hahaha, vas a morir todo.</pre><br/><br/>Jugando a Los Sims...<br/><br/><pre>Qué casa más pequeña, no sabes ahorrar.</pre><br/><br/><pre>Tu casa como sea asín te vas a la ruina pero al pique.</pre><br/><br/>Y en otras ocasiones...<br/><br/><pre>uy qué miedo, estoy descojonado</pre><br/><br/><pre>le voy a quedar sin juegos ahora.</pre><br/><br/><pre>[yo] jugamos una partida?<br/>[mi-primo] si quieres que te gane, perfectamente.</pre><br/><br/><pre>[yo] Si las miradas matasen...<br/>[mi-primo] Yo estaría cojo.</pre><br/><br/><pre>Anda vete al peo y tírate de la cadena.</pre>
+Se le esta subiendo a la cabeza la fama... pero en fin, una nueva entrega:
+
+En la piscina...
+
+```
+[yo] Báñate con nosotros
+[mi-primo] No, que me ahogo y pierdo.
+```
+
+Después de jugar a basket:
+
+```
+sí, porque si no os ducháis, se van a ir los muebles solos.
+```
+
+Jugando él solo a la play2.
+
+```
+hahaha, vas a morir todo.
+```
+
+Jugando a Los Sims...
+
+```
+Qué casa más pequeña, no sabes ahorrar.
+```
+
+```
+Tu casa como sea asín te vas a la ruina pero al pique.
+```
+
+Y en otras ocasiones...
+
+```
+uy qué miedo, estoy descojonado
+```
+
+```
+le voy a quedar sin juegos ahora.
+```
+
+```
+[yo] jugamos una partida?
+[mi-primo] si quieres que te gane, perfectamente.
+```
+
+```
+[yo] Si las miradas matasen...
+[mi-primo] Yo estaría cojo.
+```
+
+```
+Anda vete al peo y tírate de la cadena.
+```

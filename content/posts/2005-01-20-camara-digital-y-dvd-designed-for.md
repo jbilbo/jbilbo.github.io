@@ -5,4 +5,22 @@ tags:
 - Software Libre
 ---
 
-Desde navidad ya tengo cámara digital. Lo comenté, pero no dije cuál. Fué una Sony P150, y la verdad es que por ahora estoy muy contento con ella. Todavía estoy aprendiendo a utilizarla por eso...<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/camara.jpg" alt="Sony P150"></div><br/><br/>Lo guay es que Ubuntu me la autodetecte automáticamente y me salga un diálogo (importar o cancelar) para importar las fotos. Si le doy a importar, me sale mi álbum de fotos en el gthumb, desde donde puedo fácilmente copiarlas al PC. Las capturas de rigor:<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/ubuntu-p150.png" alt="Diálogo que sale automático al enchufar la cámara"><br><i>Diálogo que sale automático al enchufar la cámara.</i><br/></div><br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/gthumb-p150.png" alt="Gthumb en acción"><br><i>Gthumb en acción, sale cuando le das a "importar"</i><br/></div><br/><br/>También me regalaron una grabadora de DVD, este modelo (GSA-4163B):<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/dvd.jpg" alt="LG GSA-4163B"></div><br/><br/>Funciona perfectamente con <a href="http://www.k3b.org/">K3B</a> (mi grabador favorito en Linux), la verdad es que creo que funcionan mejor los DVD Regrabables que los CDs :-) Yo pensaba que era al revés xD<br/><br/>Así que todo el hardware por ahora me funciona en Linux, no he tenido que hacer devoluciones ;-)
+Desde navidad ya tengo cámara digital. Lo comenté, pero no dije cuál. Fue una Sony P150, y la verdad es que por ahora estoy muy contento con ella. Todavía estoy aprendiendo a utilizarla por eso...
+
+![Sony P150](/images/posts/camara.jpg)
+
+Lo guay es que Ubuntu me la autodetecte automáticamente y me salga un diálogo (importar o cancelar) para importar las fotos. Si le doy a importar, me sale mi álbum de fotos en el gthumb, desde donde puedo fácilmente copiarlas al PC. Las capturas de rigor:
+
+![Diálogo que sale automático al enchufar la cámara](/images/posts/ubuntu-p150.png)
+*Diálogo que sale automático al enchufar la cámara.*
+
+![Gthumb en acción](/images/posts/gthumb-p150.png)
+*Gthumb en acción, sale cuando le das a "importar"*
+
+También me regalaron una grabadora de DVD, este modelo (GSA-4163B):
+
+![LG GSA-4163B](/images/posts/dvd.jpg)
+
+Funciona perfectamente con [K3B](http://www.k3b.org/) (mi grabador favorito en Linux), la verdad es que creo que funcionan mejor los DVD Regrabables que los CDs :-) Yo pensaba que era al revés xD
+
+Así que todo el hardware por ahora me funciona en Linux, no he tenido que hacer devoluciones ;-)

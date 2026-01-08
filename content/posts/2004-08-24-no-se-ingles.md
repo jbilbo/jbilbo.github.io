@@ -5,4 +5,30 @@ tags:
 - Tonteridas Mias
 ---
 
-<i>Aquest és el centre del problema. Jo vull que aquesta si sigui una opció.</i><br/><br/>Y yo quiero que llueva café en el campo... pero es que no se trata de eso, mis deseeos de que llueva café en el campo siguen estando ahí mientras firmo esa petición. Después haré una petición para que llueva café en el campo.<br/><br/><i>¿Quién habla aquí de comunidad?<br/>Jo.</i><br/><br/>Ese es el problema, eres el único. Hablar de comunidad esta bien cuando toca pero aquí no hay ninguna comunidad, es una empresa.<br/><br/><i>Tu parles de funcionalitat, jo de llibertat.</i><br/><br/>Sí, libertad. Es muy fácil llenarse la boca con las palabras libertad y comunidad cada 2 párrafos. Que tengan sentido es otra historia, claro.<br/><br/><i>Jo també penso que en comptes de fer un driver nou és millor continuar amb un pre-existent, i dona la casualitat que hi ha un driver lliure que funciona sobre totes les arquitectures, i amb el qual Ati ha colaborat.</i><br/><br/>Ya te estas metiendo otra vez en casa ajena. Este driver no tiene nada que ver con la petición, seguirá desarrollándose y mejorándose paralelamente y conviviendo con éste, como hasta ahora. Yo mismo he hecho un artículo de ese driver. <br/>Lo malo, es que ese driver no funciona en ninguna tarjeta de última generación, que son la mayoría que llevan todos los ordenadores vendidos de ahora hasta hace 1 año. Dile a una persona que se acaba de comprar un ordenador con una ATI 9800 que ponga en driver vesa mientras el libre soporta su tarjeta (que pueden pasar años).<br/><br/><i>Tu dius que és acceptable i desitjable que hi hagin drivers propietaris per tal de facilitar als nous usuaris l'ús del sistema gnu/linux</i><br/><br/>¿Y porqué sólo a los nuevos? ¿Los demás no utilizan las 3D para nada? Y los diseñadores gráficos, todos los Gamers linuxeros, los que quieran jugar al Doom 3 con su ATI... <br/><br/><i>moralment no puc signar ... perque parlen de que volen que millorin un driver propietari</i><br/><br/>Entiendo, es tu opinión y la respeto. Que puede contribuir a expandir GNU/Linux al escritorio para ti es secundario. De acuerdo, pues para mi no. Entiendo lo importantísimo que es un driver libre, pero también entiendo lo importante que es quedarse sin una funcionalidad mientras esperas un driver libre. Y yo quiero vivir, como la mayoría. Y mientras espero mi driver libre, ejecuto el quake3 (propietario) con mi driver propietario, en mi sistema operativo preferido (Gentoo GNU/Linux) con sus plugins de flash propietarios y máquina virtual java propietaria. Porque otras cosas seré, pero hipócrata no.<br/><br/>Y ahora envio este post desde mi movable type propietario, ala.
+*Aquest és el centre del problema. Jo vull que aquesta si sigui una opció.*
+
+Y yo quiero que llueva café en el campo... pero es que no se trata de eso, mis deseeos de que llueva café en el campo siguen estando ahí mientras firmo esa petición. Después haré una petición para que llueva café en el campo.
+
+*¿Quién habla aquí de comunidad?
+Jo.*
+
+Ese es el problema, eres el único. Hablar de comunidad esta bien cuando toca pero aquí no hay ninguna comunidad, es una empresa.
+
+*Tu parles de funcionalitat, jo de llibertat.*
+
+Sí, libertad. Es muy fácil llenarse la boca con las palabras libertad y comunidad cada 2 párrafos. Que tengan sentido es otra historia, claro.
+
+*Jo també penso que en comptes de fer un driver nou és millor continuar amb un pre-existent, i dona la casualitat que hi ha un driver lliure que funciona sobre totes les arquitectures, i amb el qual Ati ha colaborat.*
+
+Ya te estas metiendo otra vez en casa ajena. Este driver no tiene nada que ver con la petición, seguirá desarrollándose y mejorándose paralelamente y conviviendo con este, como hasta ahora. Yo mismo he hecho un artículo de ese driver.
+Lo malo, es que ese driver no funciona en ninguna tarjeta de última generación, que son la mayoría que llevan todos los ordenadores vendidos de ahora hasta hace 1 año. Dile a una persona que se acaba de comprar un ordenador con una ATI 9800 que ponga en driver vesa mientras el libre soporta su tarjeta (que pueden pasar años).
+
+*Tu dius que és acceptable i desitjable que hi hagin drivers propietaris per tal de facilitar als nous usuaris l'ús del sistema gnu/linux*
+
+¿Y porqué sólo a los nuevos? ¿Los demás no utilizan las 3D para nada? Y los diseñadores gráficos, todos los Gamers linuxeros, los que quieran jugar al Doom 3 con su ATI...
+
+*moralment no puc signar ... perque parlen de que volen que millorin un driver propietari*
+
+Entiendo, es tu opinión y la respeto. Que puede contribuir a expandir GNU/Linux al escritorio para ti es secundario. De acuerdo, pues para mi no. Entiendo lo importantísimo que es un driver libre, pero también entiendo lo importante que es quedarse sin una funcionalidad mientras esperas un driver libre. Y yo quiero vivir, como la mayoría. Y mientras espero mi driver libre, ejecuto el quake3 (propietario) con mi driver propietario, en mi sistema operativo preferido (Gentoo GNU/Linux) con sus plugins de flash propietarios y máquina virtual java propietaria. Porque otras cosas seré, pero hipócrata no.
+
+Y ahora envio este post desde mi movable type propietario, ala.

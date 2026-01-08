@@ -1,0 +1,30 @@
+#!/bin/bash
+# Programa en bash que renombra recursivamente todos los ficheros *.extension
+# a *.nuevaextension y quita todos los espacios en blanco.
+func_renombrar()
+{
+	if [ $# -eq 2 ];then
+		extension=$1
+		nuevaextension=$2
+	else
+		echo "Funcionamiento: renamefiles <viejaextension> <nuevaextension>"
+		exit -1
+	fi
+
+	for Fichero in *; do
+		if [ -d "$Fichero" ]; then
+			cd "$Fichero"
+			pwd
+			func_renombrar $extension $nuevaextension
+		fi
+		ACambiar=$(echo $Fichero | grep .$extension$)
+		if [ "$ACambiar" ]; then
+			SinEspacios=$(echo $Fichero | tr -d " ")
+			NuevoNombre=$(echo $Fichero | sed -e s/".$extension$"/""/)
+			echo "$Fichero -> $NuevoNombre.$nuevaextension"
+			mv "$Fichero" "$NuevoNombre.$nuevaextension"
+		fi
+	done
+}
+
+func_renombrar $@

@@ -5,4 +5,6 @@ tags:
 - Software Libre
 ---
 
-Una pag. con fondos para el Bootloader <a href="http://www.gnu.org/software/grub/">Grub</a>.<br/><br/><a href="http://schragehome.de/splash">Fondos para el Grub</a>
+Una pag. con fondos para el Bootloader [Grub](http://www.gnu.org/software/grub/).
+
+[Fondos para el Grub](http://schragehome.de/splash)

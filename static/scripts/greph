@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+  echo "Se necesita un parametro para buscar entre los ficheros (p.e. greph foo)"
+else
+  exec grep -r "$1" `find \( ! -regex '.*/\..*' \) -type f`
+fi

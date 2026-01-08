@@ -5,4 +5,6 @@ tags:
 - Software Libre
 ---
 
-No lo he probado, pero es curioso (si alguien lo prueba que lo comente por la <a href="https://listas.hispalinux.es/mailman/listinfo/gplurv">lista</a>). Funciona en cualquier escritorio, ya sea Gnome, KDE...<br/><br/><a href="http://xdesktopwaves.sourceforge.net/">xdesktopwaves</a>
+No lo he probado, pero es curioso (si alguien lo prueba que lo comente por la [lista](https://listas.hispalinux.es/mailman/listinfo/gpltarragona)). Funciona en cualquier escritorio, ya sea Gnome, KDE...
+
+[xdesktopwaves](http://xdesktopwaves.sourceforge.net/)

@@ -5,4 +5,16 @@ tags:
 - Software Libre
 ---
 
-He encontrado un <a href="http://cipherfunk.org/diary/archives/monthly/2005-02.html#e2005-02-28T22_21_07.htm">post</a> interesante en el <a href="http://planet.gnome.org">planet Gnome</a> sobre un respositorio con paquetes multimedia actualizados para <a href="http://www.ubuntulinux.org/wiki/WartyWarthog">warty</a> (la versión estable de Ubuntu).<br/><br/>Según el post, los paquetes estan testeados en unas 120 Ubuntus desde hace más de 1 mes: Incluye todo el set de Gstreamer y Totem actualizado para poder visualizar cualquier DVD/XviD/Ogg/MP3, "Theoradificar" un DVD... etc.<br/><br/><pre>URI: ftp://cipherfunk.org/pub/packages/ubuntu/<br/>Distribution: warty<br/>Section(s): main</pre><br/><br/>Por otro lado, últimamente estaba pensando en pasarme a <a href="http://www.ubuntulinux.org/wiki/HoaryHedgehog">Hoary</a> (la versión de desarrollo que pasará a ser estable el 4 de Abril) para poder tener todos los programas actualizados y un Gnome 2.9.x (casi 2.10 xD)... pero al final he decidido a esperarme a que este completa la <a href="http://www.ubuntulinux.org/wiki/UTFEightMigrationTool">herramienta user-friendly</a> para la actualización de codificación ISO* (que es la que usa warty por defecto) a UTF-8 (que es la que se utilizará a partir de hoary). Es una idea genial esa herramienta, ya que te pasará todos tus archivos de la vieja codificación a la UTF-8 de forma fácil (según dicen).<br/><br/>Y hablando de migraciones, estamos esperando a ver si recibimos algo nuevo de hardware porque con el actual vamos justitos pero tanto si se recibe algo como sinó, la migración de Gentoo a Ubuntu ya esta decidida. ¿Cuando? Si llega nuevo hardware se hará en el momento y sinó seguramente pasado un tiempo después de Hoary.
+He encontrado un [post](http://cipherfunk.org/diary/archives/monthly/2005-02.html#e2005-02-28T22_21_07.htm) interesante en el [planet Gnome](http://planet.gnome.org) sobre un respositorio con paquetes multimedia actualizados para [warty](http://www.ubuntulinux.org/wiki/WartyWarthog) (la versión estable de Ubuntu).
+
+Según el post, los paquetes estan testeados en unas 120 Ubuntus desde hace más de 1 mes: Incluye todo el set de Gstreamer y Totem actualizado para poder visualizar cualquier DVD/XviD/Ogg/MP3, "Theoradificar" un DVD... etc.
+
+```
+URI: ftp://cipherfunk.org/pub/packages/ubuntu/
+Distribution: warty
+Section(s): main
+```
+
+Por otro lado, últimamente estaba pensando en pasarme a [Hoary](http://www.ubuntulinux.org/wiki/HoaryHedgehog) (la versión de desarrollo que pasará a ser estable el 4 de Abril) para poder tener todos los programas actualizados y un Gnome 2.9.x (casi 2.10 xD)... pero al final he decidido a esperarme a que este completa la [herramienta user-friendly](http://www.ubuntulinux.org/wiki/UTFEightMigrationTool) para la actualización de codificación ISO* (que es la que usa warty por defecto) a UTF-8 (que es la que se utilizará a partir de hoary). Es una idea genial esa herramienta, ya que te pasará todos tus archivos de la vieja codificación a la UTF-8 de forma fácil (según dicen).
+
+Y hablando de migraciones, estamos esperando a ver si recibimos algo nuevo de hardware porque con el actual vamos justitos pero tanto si se recibe algo como sino, la migración de Gentoo a Ubuntu ya esta decidida. ¿Cuando? Si llega nuevo hardware se hará en el momento y sino seguramente pasado un tiempo después de Hoary.

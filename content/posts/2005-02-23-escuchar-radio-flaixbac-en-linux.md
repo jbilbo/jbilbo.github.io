@@ -5,4 +5,8 @@ tags:
 - Software Libre
 ---
 
-Con mplayer:<br/><br/><pre>mplayer -cache 512 http://srbs.zonepro.com:8024</pre>
+Con mplayer:
+
+```
+mplayer -cache 512 http://srbs.zonepro.com:8024
+```

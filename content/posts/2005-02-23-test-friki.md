@@ -5,4 +5,6 @@ tags:
 - Tonteridas Mias
 ---
 
-¿Cuánto de friki tienes? Haz <a href="http://club.telepolis.com/docz/frikitest.htm">el test</a> y lo sabrás. Cuidadín que es largo...<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/friki.png" alt="Puntuación friki" /></div>
+¿Cuánto de friki tienes? Haz [el test](http://club.telepolis.com/docz/frikitest.htm) y lo sabrás. Cuidadín que es largo...
+
+![Puntuación friki](/images/posts/friki.png)

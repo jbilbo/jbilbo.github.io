@@ -5,4 +5,6 @@ tags:
 - Software Libre
 ---
 
-Apunta a tu LUG en la siguiente web, donde hay una lista de todos los LUGs europeos que se muestran en contra de las patentes de software:<br/><br/><a href="http://kwiki.ffii.org/index.cgi?EuroLugsListEn">http://kwiki.ffii.org/index.cgi?EuroLugsListEn</a>
+Apunta a tu LUG en la siguiente web, donde hay una lista de todos los LUGs europeos que se muestran en contra de las patentes de software:
+
+[http://kwiki.ffii.org/index.cgi?EuroLugsListEn](http://kwiki.ffii.org/index.cgi?EuroLugsListEn)

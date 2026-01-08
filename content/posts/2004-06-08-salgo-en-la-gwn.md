@@ -5,4 +5,10 @@ tags:
 - Software Libre
 ---
 
-Anda, que sorpresa! xD La GWN es la Gentoo Weekly Newsletter, el boletín semanal de Gentoo. Se puede encontrar desde <a href="http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml">ésta</a> dirección.<br/><br/>No sale mi nombre ni mi foto ni nada, pero salgo referenciado en el apartado de <a href="http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml#doc_chap7">Tips and Tricks</a>:<br/><br/><i>I saw a user post this in a bug comment, and thought it was a good idea. In your .bashrc file, add the line:</i><br/><br/>El user soy yo :) y el bug comment es <a href="http://bugs.gentoo.org/show_bug.cgi?id=52829#c1">éste</a>. Me hubiera gustado que pusiese "emergetest" en vez de "akmrg" que es un poco ful de istambul, pero bueno.
+Anda, que sorpresa! xD La GWN es la Gentoo Weekly Newsletter, el boletín semanal de Gentoo. Se puede encontrar desde [esta](http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml) dirección.
+
+No sale mi nombre ni mi foto ni nada, pero salgo referenciado en el apartado de [Tips and Tricks](http://www.gentoo.org/news/en/gwn/20040607-newsletter.xml#doc_chap7):
+
+*I saw a user post this in a bug comment, and thought it was a good idea. In your .bashrc file, add the line:*
+
+El user soy yo :) y el bug comment es [este](http://bugs.gentoo.org/show_bug.cgi?id=52829#c1). Me hubiera gustado que pusiese "emergetest" en vez de "akmrg" que es un poco ful de istambul, pero bueno.

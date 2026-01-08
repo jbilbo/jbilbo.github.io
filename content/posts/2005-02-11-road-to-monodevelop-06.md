@@ -5,4 +5,12 @@ tags:
 - Software Libre
 ---
 
-Todd Berman esta apunto de sacar la versión 0.6 de <a href="http://www.monodevelop.org/">Monodevelop</a> que incluirá muchísimas novedades, yo sólo me acuerdo de éstas: Llimpieza de código, nuevo sistema de plugins, primera integración usable con debugger... cuando salga el Changelog oficial a ver si acierto alguna :-)<br/><br/>Mientras tanto estoy liado con la actualización de la traducción al español para que esté apunto para les releases candidates (0.5.99, etc..) que dijo que distribuiría antes de la oficial. A ver si me da tiempo...<br/><br/>Por cierto, si quereis bajaros la versión svn en la web esta mal, es así:<br/><br/><pre>svn co svn://svn.myrealbox.com/monodevelop/trunk/MonoDevelop</pre>
+Todd Berman esta apunto de sacar la versión 0.6 de [Monodevelop](http://www.monodevelop.org/) que incluirá muchísimas novedades, yo sólo me acuerdo de estas: Llimpieza de código, nuevo sistema de plugins, primera integración usable con debugger... cuando salga el Changelog oficial a ver si acierto alguna :-)
+
+Mientras tanto estoy liado con la actualización de la traducción al español para que esté apunto para les releases candidates (0.5.99, etc..) que dijo que distribuiría antes de la oficial. A ver si me da tiempo...
+
+Por cierto, si quereis bajaros la versión svn en la web esta mal, es así:
+
+```
+svn co svn://svn.myrealbox.com/monodevelop/trunk/MonoDevelop
+```

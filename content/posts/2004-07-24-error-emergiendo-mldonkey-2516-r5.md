@@ -5,4 +5,21 @@ tags:
 - Software Libre
 ---
 
-<pre>The files /usr/lib/ocaml/pervasives.cmi and /usr/lib/ocaml/lablgtk/gPack.cmi<br/>make inconsistent assumptions over interface Pervasives<br/>make: *** [src/gtk/configwin/configwin_types.cmx] Error 2<br/>make: *** Waiting for unfinished jobs....<br/> <br/>!!! ERROR: net-p2p/mldonkey-2.5.16-r5 failed.<br/>!!! Function src_compile, Line 50, Exitcode 2<br/>!!! (no error message)</pre><br/><br/>Se soluciona:<br/><br/><pre>emerge --oneshot lablgl<br/>emerge --oneshot lablgtk<br/>emerge net-p2p/mldonkey</pre>
+```
+The files /usr/lib/ocaml/pervasives.cmi and /usr/lib/ocaml/lablgtk/gPack.cmi
+make inconsistent assumptions over interface Pervasives
+make: *** [src/gtk/configwin/configwin_types.cmx] Error 2
+make: *** Waiting for unfinished jobs....
+
+!!! ERROR: net-p2p/mldonkey-2.5.16-r5 failed.
+!!! Function src_compile, Line 50, Exitcode 2
+!!! (no error message)
+```
+
+Se soluciona:
+
+```
+emerge --oneshot lablgl
+emerge --oneshot lablgtk
+emerge net-p2p/mldonkey
+```

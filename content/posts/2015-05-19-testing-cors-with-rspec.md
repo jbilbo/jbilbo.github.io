@@ -1,8 +1,8 @@
 ---
 title: Testing CORS headers with RSpec and Rack in Rails
-date: '2015-05-19 01:16:17 +0100'
+date: '2015-05-19'
 tags:
-- git
+- Developer
 ---
 
 I've not found any blog post or article about how to easily test [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support implemented in a [Rack](http://rack.github.io/) middleware (e.g. using the [rack-cors](https://github.com/cyu/rack-cors) gem) with RSpec in Rails. So, after figured out I decided to write some small tips I learned from it.

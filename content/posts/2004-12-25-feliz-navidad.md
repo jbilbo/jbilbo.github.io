@@ -5,4 +5,6 @@ tags:
 - Tonteridas Mias
 ---
 
-Bones festes i bon any nou a tots!!<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/dragonball-navidad.jpg" alt="Dragon Ball Navidad :P" /></div>
+Bones festes i bon any nou a tots!!
+
+![Dragon Ball Navidad :P](/images/posts/dragonball-navidad.jpg)

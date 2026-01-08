@@ -5,4 +5,23 @@ tags:
 - Software Libre
 ---
 
-En GPLTarragona nos ha pasado 2 veces con ésta, y es que el disco duro nuestro "rasca" mucho... El error es del tipo:<br/><br/><pre>*fatal error*: No puedo abrir archivo: 'accesslog.MYI'. (Error: 145) <br/>query: INSERT INTO accesslog (url, hostname, uid, timestamp) values('', <br/>'xxxxxxxxxxx', 0, 1110478239) in <br/>*/var/www/gpltarragona.org/htdocs/includes/database.mysql.inc* on line<br/>*97</pre><br/><br/>Se arregla con:<br/><br/><pre>#locate accesslog.MYI<br/>/var/lib/mysql/drupal/accesslog.MYI<br/>#myisamchk -o /var/lib/mysql/drupal/accesslog.MYI<br/>- recovering (with keycache) MyISAM-table '/var/lib/mysql/drupal/accesslog.MYI'<br/>Data records: 10845<br/>Data records: 10842</pre>
+En GPLTarragona nos ha pasado 2 veces con esta, y es que el disco duro nuestro "rasca" mucho... El error es del tipo:
+
+```
+*fatal error*: No puedo abrir archivo: 'accesslog.MYI'. (Error: 145)
+query: INSERT INTO accesslog (url, hostname, uid, timestamp) values('',
+'xxxxxxxxxxx', 0, 1110478239) in
+*/var/www/gpltarragona.org/htdocs/includes/database.mysql.inc* on line
+*97
+```
+
+Se arregla con:
+
+```
+#locate accesslog.MYI
+/var/lib/mysql/drupal/accesslog.MYI
+#myisamchk -o /var/lib/mysql/drupal/accesslog.MYI
+- recovering (with keycache) MyISAM-table '/var/lib/mysql/drupal/accesslog.MYI'
+Data records: 10845
+Data records: 10842
+```

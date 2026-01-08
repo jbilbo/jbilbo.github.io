@@ -6,4 +6,28 @@ tags:
 - Software Libre
 ---
 
-El otro día sergi me avisaba de que Lluís le avisaba de que en el anuncio del nuevo Volkswagen Polo en el que "un chaval intenta doblar una cuchara y el coche se mueve"... transcurre en un restaurante en el que estuvimos el año pasado... El de la Universidad Rey Juan Carlos, donde se celebró el hispalinux 2003! xD<br/><br/>Comprobadlo vosotros mismos, fijaos en el entorno cuando el chaval esta intentando doblar la cuchara y mirad esta foto:<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/hispalinux-polo.jpg" alt="expedition to hispalinux 2003" /></div><br/><br/><b>Fundació URV</b><br/><br/>La <a href="http://www.fundacio.urv.es">Fundació URV</a> esta enviando por correo (no sé si a toda la URV o qué) el catálogo del año lectivo siguiente de los cursos que se dan. Lo interesante esta en que los cursos que el sergio y yo damos estan en la pag. 37 :)<br/><br/><b>jemerge</b><br/><br/>He añadido nuevas funcionalidades al script:<br/><br/>- Añadida opción --last por parámetro. Si se interrumpe un emerge, se puede restaurar. Uso: <br/><br/><pre>jemerge --last</pre><br/><br/>- Añadida opción para emerger con nohup.<br/><br/>Descarga: <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/jemerge">jemerge</a> - <a href="http://jhernandez.gpltarragona.org/aplicaciones/scripts/pfilter">pfilter</a><br/><br/><a href="http://jhernandez.gpltarragona.org/blog/archives/000093.html">Presentación de jemerge</a>
+El otro día sergi me avisaba de que Lluís le avisaba de que en el anuncio del nuevo Volkswagen Polo en el que "un chaval intenta doblar una cuchara y el coche se mueve"... transcurre en un restaurante en el que estuvimos el año pasado... El de la Universidad Rey Juan Carlos, donde se celebró el hispalinux 2003! xD
+
+Comprobadlo vosotros mismos, fijaos en el entorno cuando el chaval esta intentando doblar la cuchara y mirad esta foto:
+
+![expedition to hispalinux 2003](/images/posts/hispalinux-polo.jpg)
+
+**Fundació URV**
+
+La [Fundació URV](http://www.fundacio.urv.es) esta enviando por correo (no sé si a toda la URV o qué) el catálogo del año lectivo siguiente de los cursos que se dan. Lo interesante esta en que los cursos que el sergio y yo damos estan en la pag. 37 :)
+
+**jemerge**
+
+He añadido nuevas funcionalidades al script:
+
+- Añadida opción --last por parámetro. Si se interrumpe un emerge, se puede restaurar. Uso:
+
+```
+jemerge --last
+```
+
+- Añadida opción para emerger con nohup.
+
+Descarga: [jemerge](/files/jemerge) - [pfilter](/files/pfilter)
+
+[Presentación de jemerge](/posts/2004-06-08-jemerge-rama-estable-e-inestable-en/)

@@ -5,4 +5,14 @@ tags:
 - Tonteridas Mias
 ---
 
-<a href="http://www.meristation.com/sc/noticias/noticia.asp?c=GEN&n=14507">Microsoft quiere comprar Nintendo</a>.<br/><br/>Siempre he sido seguidor de Nintendo... Cuando me compré una Master System II defendía a Sonic frente al gordito fontanero, pero la Super Nintendo, llamada Super NES en Japón (NES significa Nintendo Entertainment System), me abrió los ojos. Esa consola no tenía rival, y sigue sin tenerlo... una consola se mide por sus juegos, eso es sabido por todo consolero veterano. Y la mejor compañía de juegos es Nintendo.<br/><br/>Lo que pasa es que ahora mismo Playstation 2 arrasa, las third parties se portan muy bien con la consola de Sony y alimentan de maravilla la vida de la consola (como hicieron con la primera). Nintendo no tiene tanto soporte de terceras compañias, pero cada juego que saca suyo (siempre exclusivo para su consola) se queda en el top de favoritos de la mayoría de encuestas de popuralidad y crítica.<br/><br/>Ahora Microsoft pretende unirse con Nintendo para desbancar a Sony... Nintendo tiene mucho poder en el mercado japonés, Microsoft lo tiene en el americano. ¿Y los europeos? Pues por aquí estamos... como siempre :-)<br/><br/>¿Tendrá Microsoft suficiente dinero para comprar Nintendo? Yo, no lo creo. Nintendo vale una trillonada... ¿Se dejará Nintendo?  Tampoco lo creo... no le hace falta ninguna, GameCube esta en mejor situación que XBox.<br/><br/>De todas formas, pronto lo sabremos. Mientras... voy a jugar a mi Play 2 :P
+[Microsoft quiere comprar Nintendo](http://www.meristation.com/sc/noticias/noticia.asp?c=GEN&n=14507).
+
+Siempre he sido seguidor de Nintendo... Cuando me compré una Master System II defendía a Sonic frente al gordito fontanero, pero la Super Nintendo, llamada Super NES en Japón (NES significa Nintendo Entertainment System), me abrió los ojos. Esa consola no tenía rival, y sigue sin tenerlo... una consola se mide por sus juegos, eso es sabido por todo consolero veterano. Y la mejor compañía de juegos es Nintendo.
+
+Lo que pasa es que ahora mismo Playstation 2 arrasa, las third parties se portan muy bien con la consola de Sony y alimentan de maravilla la vida de la consola (como hicieron con la primera). Nintendo no tiene tanto soporte de terceras compañias, pero cada juego que saca suyo (siempre exclusivo para su consola) se queda en el top de favoritos de la mayoría de encuestas de popuralidad y crítica.
+
+Ahora Microsoft pretende unirse con Nintendo para desbancar a Sony... Nintendo tiene mucho poder en el mercado japonés, Microsoft lo tiene en el americano. ¿Y los europeos? Pues por aquí estamos... como siempre :-)
+
+¿Tendrá Microsoft suficiente dinero para comprar Nintendo? Yo, no lo creo. Nintendo vale una trillonada... ¿Se dejará Nintendo?  Tampoco lo creo... no le hace falta ninguna, GameCube esta en mejor situación que XBox.
+
+De todas formas, pronto lo sabremos. Mientras... voy a jugar a mi Play 2 :P

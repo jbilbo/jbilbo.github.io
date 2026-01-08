@@ -5,4 +5,4 @@ tags:
 - Tonteridas Mias
 ---
 
-<p><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/volare-oh-oh.jpg" alt="CasiMate xD" /></div></p>
+![CasiMate xD](/images/posts/volare-oh-oh.jpg)

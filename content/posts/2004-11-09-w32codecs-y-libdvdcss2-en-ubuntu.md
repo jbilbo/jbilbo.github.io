@@ -5,4 +5,39 @@ tags:
 - Software Libre
 ---
 
-Hoy me he dado cuenta de que estos 2 paquetes tan problemáticos como necesarios no estan dentro del repositorio multiverse de Ubuntu todavía. No sé si es que no los pondran o que todavía no les ha dado tiempo, pero para poder instalarlos actualmente se necesita el respositorio de marillat:<br/><br/><pre>URI:            ftp://ftp.nerim.net/debian-marillat/<br/>Distribution:   stable<br/>Section(s):     main</pre><br/><br/>Podeis encontrar toda la info en el <a href="https://www.ubuntulinux.org/wiki/RestrictedFormats">wiki de Ubuntu</a>.<br/><br/>Instrucciones rápidas (en modo root):<br/><br/><pre>vi /etc/apt/sources.list</pre><br/><br/>Añadimos el repositorio:<br/><br/><pre>deb ftp://ftp.nerim.net/debian-marillat/ stable main</pre><br/><br/>Actualizamos la lista de paquetes e instalamos:<br/><br/><pre>apt-get update<br/>apt-get install w32codecs libdvdcss2</pre><br/><br/>Ahora quitamos el repositorio que hemos añadido (ya no lo necesitamos) de /etc/apt/sources.lst y actualizamos la lista con los repositorios de antes únicamente.<br/><br/><pre>apt-get update</pre><br/><br/>Ya podemos abrir el 80% de los videos.
+Hoy me he dado cuenta de que estos 2 paquetes tan problemáticos como necesarios no estan dentro del repositorio multiverse de Ubuntu todavía. No sé si es que no los pondran o que todavía no les ha dado tiempo, pero para poder instalarlos actualmente se necesita el respositorio de marillat:
+
+```
+URI:            ftp://ftp.nerim.net/debian-marillat/
+Distribution:   stable
+Section(s):     main
+```
+
+Podeis encontrar toda la info en el [wiki de Ubuntu](https://www.ubuntulinux.org/wiki/RestrictedFormats).
+
+Instrucciones rápidas (en modo root):
+
+```
+vi /etc/apt/sources.list
+```
+
+Añadimos el repositorio:
+
+```
+deb ftp://ftp.nerim.net/debian-marillat/ stable main
+```
+
+Actualizamos la lista de paquetes e instalamos:
+
+```
+apt-get update
+apt-get install w32codecs libdvdcss2
+```
+
+Ahora quitamos el repositorio que hemos añadido (ya no lo necesitamos) de /etc/apt/sources.lst y actualizamos la lista con los repositorios de antes únicamente.
+
+```
+apt-get update
+```
+
+Ya podemos abrir el 80% de los videos.

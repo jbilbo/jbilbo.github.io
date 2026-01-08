@@ -5,4 +5,15 @@ tags:
 - Software Libre
 ---
 
-Justamente que hoy hablaba cuando pasaría... por fin Gnome 2.8 es estable en Gentoo!. Me he dado cuenta viendo el <a href="http://packages.gentoo.org">packages.gentoo.org</a> y he actualizado el portage de mi Gentoo por chroot desde la Ubuntu para ver si era cierto... y lo es!<br/><br/>Mis predicciones esta vez no fueron del todo desacertadas, de primeras predije que sería estable <a href="http://jhernandez.gpltarragona.org/blog/archives/000185.html">el día 4 de noviembre</a> y más tarde rehice la predicción diciendo <a href="http://jhernandez.gpltarragona.org/blog/archives/000208.html">el 20 de noviembre</a>... vale, ha sido el día 12 de noviembre...  pero si hacemos la media aritmética de las 2 predicciones: 4 + 20 / 2 = 12!... 12 de noviembre! No está mal xD<br/><br/>Pues nada, ya sabéis:<br/><br/><pre>emerge --sync<br/>emerge -auD world</pre><br/><br/>Lo que no sé es que pasa si no usas udev... supongo que perderás funcionalidades o algo... mejor <a href="http://forums.gentoo.org/viewtopic.php?t=210428">migrar</a> si utilizas devfsd.
+Justamente que hoy hablaba cuando pasaría... por fin Gnome 2.8 es estable en Gentoo!. Me he dado cuenta viendo el [packages.gentoo.org](http://packages.gentoo.org) y he actualizado el portage de mi Gentoo por chroot desde la Ubuntu para ver si era cierto... y lo es!
+
+Mis predicciones esta vez no fueron del todo desacertadas, de primeras predije que sería estable [el día 4 de noviembre](/posts/2004-09-16-gnome-28/) y más tarde rehice la predicción diciendo [el 20 de noviembre](/posts/2004-10-09-gnome-28-inestable-en-gentoo/)... vale, ha sido el día 12 de noviembre...  pero si hacemos la media aritmética de las 2 predicciones: 4 + 20 / 2 = 12!... 12 de noviembre! No está mal xD
+
+Pues nada, ya sabéis:
+
+```
+emerge --sync
+emerge -auD world
+```
+
+Lo que no sé es que pasa si no usas udev... supongo que perderás funcionalidades o algo... mejor [migrar](http://forums.gentoo.org/viewtopic.php?t=210428) si utilizas devfsd.

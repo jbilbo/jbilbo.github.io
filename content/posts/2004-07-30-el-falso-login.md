@@ -5,4 +5,4 @@ tags:
 - Tonteridas Mias
 ---
 
-Un buen <a href="http://usuarios.vtr.net/~grosas/aviso/aviso.htm">ejemplo</a> de esta práctica para recolectar contraseñas.
+Un buen [ejemplo](http://usuarios.vtr.net/~grosas/aviso/aviso.htm) de esta práctica para recolectar contraseñas.

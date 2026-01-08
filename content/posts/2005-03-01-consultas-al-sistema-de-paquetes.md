@@ -5,4 +5,35 @@ tags:
 - Software Libre
 ---
 
-Se puede hacer todo tipo de consultas, pero especificando una: Quiero saber a qué paquete pertenece un archivo de mi sistema. <br/><br/>En Gentoo había 2 formas de hacerlo (que yo supiera):<br/><br/>Con el programa equery, que esta dentro del paquete gentoolkit:<br/><br/><pre>equery b ruta-a-archivo</pre><br/><br/>Con el programa epm (pretende ser un clon de rpm pero para ebuilds):<br/><br/><pre>epm -qf ruta-a-archivo</pre><br/><br/>Para Ubuntu y Debian, esta consulta se puede hacer con dpkg:<br/><br/><pre>dpkg -S ruta-a-archivo</pre><br/><br/>Por ejemplo:<br/><br/><pre>$ dpkg -S /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll<br/>libgtk-cil: /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll</pre><br/><br/>Significa que el archivo /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll pertenece al paquete libgtk-cil.<br/><br/><b>Actualización</b>: <a href="http://www.gentoo-es.org/blog/18">YosWink</a> me ha avisado de que qpkg (el que hacía servir yo para eso en Gentoo) ha quedado <a href="http://bugs.gentoo.org/show_bug.cgi?id=75802">obsoleto</a> y por lo tanto se desaconseja su utilización porque desaparecerá del Gentoolkit dentro de poco. En su lugar se utiliza equery, que también pertenece al Gentoolkit. Gracias por el aviso ;-)
+Se puede hacer todo tipo de consultas, pero especificando una: Quiero saber a qué paquete pertenece un archivo de mi sistema.
+
+En Gentoo había 2 formas de hacerlo (que yo supiera):
+
+Con el programa equery, que esta dentro del paquete gentoolkit:
+
+```
+equery b ruta-a-archivo
+```
+
+Con el programa epm (pretende ser un clon de rpm pero para ebuilds):
+
+```
+epm -qf ruta-a-archivo
+```
+
+Para Ubuntu y Debian, esta consulta se puede hacer con dpkg:
+
+```
+dpkg -S ruta-a-archivo
+```
+
+Por ejemplo:
+
+```
+$ dpkg -S /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll
+libgtk-cil: /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll
+```
+
+Significa que el archivo /usr/share/dotnet/mono/gtk-sharp/gtk-sharp.dll pertenece al paquete libgtk-cil.
+
+**Actualización**: [YosWink](http://www.gentoo-es.org/blog/18) me ha avisado de que qpkg (el que hacía servir yo para eso en Gentoo) ha quedado [obsoleto](http://bugs.gentoo.org/show_bug.cgi?id=75802) y por lo tanto se desaconseja su utilización porque desaparecerá del Gentoolkit dentro de poco. En su lugar se utiliza equery, que también pertenece al Gentoolkit. Gracias por el aviso ;-)

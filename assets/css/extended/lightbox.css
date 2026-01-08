@@ -1,0 +1,49 @@
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  color: #ccc;
+}
+
+/* Make clickable images show pointer cursor */
+a[data-lightbox] img,
+.post-content a[href$=".jpg"] img,
+.post-content a[href$=".jpeg"] img,
+.post-content a[href$=".png"] img,
+.post-content a[href$=".gif"] img {
+  cursor: zoom-in;
+}

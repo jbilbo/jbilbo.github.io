@@ -1,0 +1,187 @@
+#!/bin/bash
+
+# jemerge - Permite seleccionar los paquetes en un emerge -puD world
+# Copyright (C) 2004  Jonathan Hernández Velasco
+# web: http://jhernandez.gpltarragona.org
+# email: jbilbo (arroba/at) ya.com
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+# jemerge esta basado en femerge 1.0:
+# femerge 1.0 by Martin Aspeli <optilude@gmx.net>
+
+# Uso i requerimientos
+# --------------------
+# Este script necesita pfilter.
+# Se utiliza ejecutandolo así: jemerge
+# Su uso posterior es muy intuitivo.
+# Si interrumpimos el emerge, restauramos con jemerge --last
+
+# CHANGELOG
+# -----------------------------------------------------------------------------
+# 2004-06-07
+# - Initial Release
+# 2004-06-08
+# - Añadida opción --last por parámetro. Si se interrumpe un emerge,
+#   se puede restaurar. Uso: jemerge --last
+# - Añadida opción para emerger con nohup
+# -----------------------------------------------------------------------------
+
+source /sbin/functions.sh
+
+trap "error 'interrupted'" SIGINT SIGHUP SIGINT
+
+###############################################################################
+# Edit these if necessary (e.g. set final_emerge_cmd to semerge to use semerge)
+
+emerge_cmd="emerge"       # command used to get emerge -p output.
+final_emerge_cmd="emerge" # command used to actually emerge the packages
+pfilter_cmd="pfilter"     # command used to filter the packages
+###############################################################################
+# Do not edit anything below this line
+
+emerge_packages=""        # initial list of packages/profile to emerge
+oneshot=1              # set to 1 to not touch world file
+
+# print a message and exit
+cancelled () {
+  ewarn "Cancelado."
+  echo
+  exit 0
+}
+
+# print an error message and exit
+error () {
+  eend 1 "Error: ${1}"
+  exit 1
+}
+
+# apply pfilter to the emerge-ouput passed as $1
+filter_packages () {
+  echo "${1}" | ${pfilter_cmd}
+}
+ 
+# do an emerge pretend with non-final options
+preview_emerge () {
+  ${emerge_cmd} -pvuD world || \
+   error "${emerge_cmd} -p ${@} failed."
+}
+
+preview_emerge2 () {
+  ${emerge_cmd} -pv ${@} || \
+   error "${emerge_cmd} -p ${@} failed."
+}
+
+#$emerge_packages (what's being emerged)
+get_options () {
+
+  local goahead=0
+  # Get options
+  while true ; do
+
+  test "${1}" != "" && emerge_packages="${emerge_packages} ${1}"
+
+   shift || break
+  done
+
+  return ${goahead}
+}
+
+# Main:
+
+if [ "$1" = "--last" ]; then
+  einfo "ejecutando última instrucción: "
+  if [ ! -r /tmp/.jemerge.last ]; then
+    ewarn "no hay o no se puede leer última instrucción"
+    exit -1
+  fi
+  `cat /tmp/.jemerge.last`
+  echo
+  rm -f /tmp/.jemerge.last
+  exit 0
+fi
+
+# Get emerge command line options and packages/profile to emerge
+if ! get_options ${@} ; then
+  ewarn "Falling back on ${final_emerge_cmd}"
+  ${final_emerge_cmd} ${@}
+  exit ${?}
+fi
+
+einfo "Calculando dependencias..."
+emerge_output=$(preview_emerge ${emerge_packages})
+packages=""
+
+# loop until exit by abort or emerge
+while true ; do
+ 
+  # Filter the packages we have so far"
+  packages=$(filter_packages "${emerge_output}")
+  test "${packages}" = "" && cancelled
+ 
+  # Preview the emerge
+  einfo "Calculating dependencies..."
+  emerge_output=$(preview_emerge2 ${packages})
+  echo "${emerge_output}"
+  echo
+ 
+  # Ask for action
+  choice=""
+  until test "${choice}" = "e" -o "${choice}" = "E" -o \
+          "${choice}" = "b" -o "${choice}" = "B" -o \
+          "${choice}" = "n" -o "${choice}" = "N" -o \
+          "${choice}" = "f" -o "${choice}" = "F" -o \
+          "${choice}" = "a" -o "${choice}" = "A" ; do
+ 
+   einfon "Apreta (e) para emerger, (n) para emerger con nohup, (b) sólo descargar los paquetes, (f) elegir paquetes nuevamente, (a) quitar: "
+   read choice
+
+   #echo
+   
+   case "${choice}" in
+     a|A)
+      cancelled
+      ;;
+     f|F)
+      # do nothing - allow next filtering
+      ;;
+     b|B)
+      ebegin "Ejecutando el emerge -f..."
+      echo "emerge -f ${packages}" > /tmp/.jemerge.last
+      emerge -f ${packages}
+      echo
+      rm -f /tmp/.jemerge.last
+      exit 0
+      ;;
+     n|N)
+      ebegin "Ejecutando emerge con nohup..."
+      nohup emerge --oneshot ${packages} &
+      echo
+      exit 0
+      ;;
+     e|E)
+      ebegin "Ejecutando ${final_emerge_cmd}..."
+      echo "${final_emerge_cmd} --oneshot ${packages}" > /tmp/.jemerge.last
+      ${final_emerge_cmd} --oneshot ${packages}
+      echo
+      rm -f /tmp/.jemerge.last
+      exit 0
+      ;;
+     *)
+      eerror "Invalid input."
+      ;;
+   esac
+  done
+done 

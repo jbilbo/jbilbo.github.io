@@ -5,4 +5,4 @@ tags:
 - Software Libre
 ---
 
-Ya esta disponible la documentación para Linux de la puesta en funcionamiento del servicio de Xarxa oberta de la URV (acceso a internet desde la biblioteca). Lo comento todo en un <a href="http://www.gpltarragona.org/node/view/248">artículo</a> en gpltarragona.
+Ya está disponible la documentación para Linux de la puesta en funcionamiento del servicio de Xarxa oberta de la URV (acceso a internet desde la biblioteca). Lo comento todo en un [artículo](http://www.gpltarragona.org/node/view/248) en gpltarragona.

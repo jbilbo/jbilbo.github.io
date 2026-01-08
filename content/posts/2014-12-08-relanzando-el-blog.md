@@ -1,6 +1,8 @@
 ---
 title: Relanzando el blog
-date: '2014-12-18 20:04:49 +0100'
+date: '2014-12-18'
+tags:
+- Tonteridas Mias
 ---
 
 En estos últimos 3 años no he escrito casi nada, creo que [Twitter](http://twitter.com/jbilbob) tiene gran parte de culpa. El hecho de ir poniendo por ahí comentarios cortos como que me hizo perder las ganas de invertir en más de 140 caracteres, quizás también pensando que la gente ya no invierte tanto tiempo en leer artículos como antes. No es nuevo que hemos ido hacia el consumo rápido, tiene lógica teniendo en cuenta la cantidad enorme de información a la que tenemos acceso diariamente. Un formato como Twitter, el formato "titular", es más óptimo para el consumidor, que adquiere multitud de pequeñas gotas de información de las cuales unas pocas que filtrará las expandirá un poco más accediendo al enlace.

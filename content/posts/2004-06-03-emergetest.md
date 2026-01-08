@@ -5,4 +5,26 @@ tags:
 - Software Libre
 ---
 
-Como siempre voy poniendo por aquí y por allá "emergetest" y como este comando sólo existe en mi ordenador (y en el del <a href="http://www.marblestation.com">sergio</a> xD), no se entera la gente. Voy a dedicar un post a ésto y así referenciaré aquí cada vez que ponga el comando. <br/><br/>Explicación:<br/><br/>emergetest es un alias que he puesto en mi fichero <b>$HOME/.bash_profile</b>, de ésta forma:<br/><br/><pre>alias "emergetest"="ACCEPT_KEYWORDS="~x86" emerge"</pre><br/><br/>Es decir, es lo mismo escribir:<br/><br/><pre>emergetest</pre> <br/><br/>que escribir:<br/><br/><pre>ACCEPT_KEYWORDS="~x86" emerge</pre><br/><br/>Así, con el alias emergetest puedo acceder a la parte inestable (últimas versiones) del portage de Gentoo de forma muy fácil.
+Como siempre voy poniendo por aquí y por allá "emergetest" y como este comando sólo existe en mi ordenador (y en el del [sergio](http://www.marblestation.com) xD), no se entera la gente. Voy a dedicar un post a esto y así referenciaré aquí cada vez que ponga el comando.
+
+Explicación:
+
+emergetest es un alias que he puesto en mi fichero **$HOME/.bash_profile**, de esta forma:
+
+```
+alias "emergetest"="ACCEPT_KEYWORDS="~x86" emerge"
+```
+
+Es decir, es lo mismo escribir:
+
+```
+emergetest
+```
+
+que escribir:
+
+```
+ACCEPT_KEYWORDS="~x86" emerge
+```
+
+Así, con el alias emergetest puedo acceder a la parte inestable (últimas versiones) del portage de Gentoo de forma muy fácil.

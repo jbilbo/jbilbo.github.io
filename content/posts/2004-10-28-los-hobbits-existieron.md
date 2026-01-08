@@ -5,4 +5,6 @@ tags:
 - Tonteridas Mias
 ---
 
-Y nadie me creía...<br/><div align="center"><a href="http://www.cni.tv/tecnociencias/?guid=%7B647A65E4-ECE9-46E6-BA46-2B47A5DC3AF8%7D"><img src="http://www.swordofdarkness.it/images/hobbit.jpg"></a></div>
+Y nadie me creía...
+
+[Enlace a la noticia](http://www.cni.tv/tecnociencias/?guid=%7B647A65E4-ECE9-46E6-BA46-2B47A5DC3AF8%7D)

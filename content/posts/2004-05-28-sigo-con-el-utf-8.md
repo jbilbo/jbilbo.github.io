@@ -5,4 +5,33 @@ tags:
 - Software Libre
 ---
 
-He arreglado el problema completamente (por ahora no encontrado ningún fallo) en la terminal pura. Lo he conseguido con el  programa "unicode_start". Lo he añadido a mi .bash_profile:<br/><br/><pre>#cosas utf-8<br/>export LESSCHARSET="utf-8"<br/>unicode_start &> /dev/null<br/></pre><br/><br/>Le he puesto un "&> /dev/null" porque en el gnome-terminal me da estos errores cada vez que abro una sesión: <br/><br/><pre>KDSKBMODE: OperaciÃ³n no permitida<br/>kbd_mode: error al establecer el modo de teclado<br/>Keymap 0: Permission denied<br/>Keymap 1: Permission denied<br/>Keymap 2: Permission denied<br/>KDSKBENT: Operation not permitted<br/>loadkeys: could not deallocate keymap 3<br/>putfont: KDFONTOP: Operación no permitida<br/></pre><br/><br/>Aunque se activa bien. Así tendremos la terminal (tanto pura como virtuales) a UTF-8, y en el menú de gnome-terminal donde se selecciona se puede ver como se marca automáticamente a UTF-8 con este comando :-)<br/><br/>Por lo menos parece que lo estoy consiguiendo parcialmente. Esto es bueno de cara a una posible migración de los servidores de gpltarragona a UTF-8 después de examenes. Como se tendrá que migrar la base de datos con el upgrade del drupal, es posible que también por concordancia se migre el sistema entero... no lo sé, se tendrá que mirar.<br/>Seguimos investigando. Si al final lo consigo intentaré recopilar todo y hacer una miniguía en <a href="http://www.gpltarragona.org">gpltarragona</a>.<br/><br/>PD: Se me olvidaba, UTF-8 support in Gentoo sucks! :P Ahí queda eso.<br/><br/><b>Actualización</b>: Resolución final sobre utf-8, <a href="http://jhernandez.gpltarragona.org/blog/archives/000089.html">aquí</a> :-)
+He arreglado el problema completamente (por ahora no encontrado ningún fallo) en la terminal pura. Lo he conseguido con el programa "unicode_start". Lo he añadido a mi .bash_profile:
+
+```
+#cosas utf-8
+export LESSCHARSET="utf-8"
+unicode_start &> /dev/null
+```
+
+Le he puesto un "&> /dev/null" porque en el gnome-terminal me da estos errores cada vez que abro una sesión:
+
+```
+KDSKBMODE: Operación no permitida
+kbd_mode: error al establecer el modo de teclado
+Keymap 0: Permission denied
+Keymap 1: Permission denied
+Keymap 2: Permission denied
+KDSKBENT: Operation not permitted
+loadkeys: could not deallocate keymap 3
+putfont: KDFONTOP: Operación no permitida
+```
+
+Aunque se activa bien. Así tendremos la terminal (tanto pura como virtuales) a UTF-8, y en el menú de gnome-terminal donde se selecciona se puede ver como se marca automáticamente a UTF-8 con este comando :-)
+
+Por lo menos parece que lo estoy consiguiendo parcialmente. Esto es bueno de cara a una posible migración de los servidores de gpltarragona a UTF-8 después de exámenes. Como se tendrá que migrar la base de datos con el upgrade del drupal, es posible que también por concordancia se migre el sistema entero... no lo sé, se tendrá que mirar.
+
+Seguimos investigando. Si al final lo consigo intentaré recopilar todo y hacer una miniguía en [gpltarragona](http://www.gpltarragona.org).
+
+PD: Se me olvidaba, UTF-8 support in Gentoo sucks! :P Ahí queda eso.
+
+**Actualización**: Resolución final sobre utf-8, [aquí](/posts/2004-06-30-gplito2-y-acentos/) :-)

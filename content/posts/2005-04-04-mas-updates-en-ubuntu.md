@@ -5,4 +5,10 @@ tags:
 - Software Libre
 ---
 
-Para qué nos vamos a engañar... éstos updates son los que más me gustan :-)<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/update-notifier-icon.png" alt="Icono Update Notifier" /></div><br/><br/>El cambio es en el icono del update-notifier, se puede ver el anterior en el <a href="http://jhernandez.gpltarragona.org/blog/archives/000336.html">otro post</a> que puse hace un par de dias.<br/>El artwork de Ubuntu es uno de los más cuidados que hay en el mundo del software libre.
+Para qué nos vamos a engañar... estos updates son los que más me gustan :-)
+
+![Icono Update Notifier](/images/posts/update-notifier-icon.png)
+
+El cambio es en el icono del update-notifier, se puede ver el anterior en el [otro post](/posts/2005-03-31-sale-ubuntu-504-release-candidate/) que puse hace un par de dias.
+
+El artwork de Ubuntu es uno de los más cuidados que hay en el mundo del software libre.

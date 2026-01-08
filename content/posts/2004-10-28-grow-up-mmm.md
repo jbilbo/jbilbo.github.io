@@ -5,4 +5,26 @@ tags:
 - Tonteridas Mias
 ---
 
-Unos cuestionarios para saber cosas según tu personalidad. Lo malo es que esta en inglés.<br/><br/>Mi extensión, según mi personalidad:<br/><br/><div align="center"><a href="http://www.bbspot.com/News/2004/10/extension_quiz.php"><img src="http://www.bbspot.com/Images/News_Features/2004/10/file_extensions/swf.jpg" width="300" height="90" border="0" alt="You are .swf<br/>You are flashy, but lack substance.  You like playing, but often you are annoying. Grow up."><br>Which File Extension are You?</a></div><br/><br/>Mi sistema operativo:<br/><br/><div align="center"><a href="http://bbspot.com/News/2003/01/os_quiz.php"><img<br/>src="http://www.bbspot.com/Images/News_Features/2003/01/os_quiz/os2_warp.jpg" width="300" height="90"<br/>border="0" alt="You are OS2-Warp. You're plagued by feelings of abandonment and disgust for your backstabbing step-brother.  Oh, what might have been."><br>Which OS are You?</a></div><br/><br/>El tipo de spammer nigeriano que yo sería:<br/><br/><div align="center"><a href="http://bbspot.com/News/2004/04/nigerian_quiz.php"><img<br/>src="http://www.bbspot.com/Images/News_Features/2004/04/scammer/lawrence_obi.jpg" width="300" height="90"<br/>border="0" alt="You are LAWRENCE OBI. You are Bank Manager of Zenith Bank Lagos, Nigeria. You will share with me 30% of the $26.5 million that BARRY KELLY who died with a WILL left in your bank.  You put the money in two trunks and want me to claim the money."><br>Which Nigerian spammer are You?</a></div><br/><br/>xDD Venga, ahora a trabajar.<br/><br/><b>Actualizado</b>: Mi novia es....<br/><br/><div align="center"><a href="http://www.bbspot.com/News/2004/10/extension_quiz.php"><img<br/>src="http://www.bbspot.com/Images/News_Features/2004/10/file_extensions/jpg.jpg" width="300" height="90"<br/>border="0" alt="You are .jpg You are very colorful.  Sometimes you forget things, or distort the truth.  You like working with pictures more than words."><br>Which File Extension are You?</a><br/></div>
+Unos cuestionarios para saber cosas según tu personalidad. Lo malo es que esta en inglés.
+
+Mi extensión, según mi personalidad:
+
+[![You are .swf - You are flashy, but lack substance. You like playing, but often you are annoying. Grow up.](/images/posts/bbspot-swf.jpg)](http://www.bbspot.com/News/2004/10/extension_quiz.php)
+Which File Extension are You?
+
+Mi sistema operativo:
+
+[![You are OS2-Warp. You're plagued by feelings of abandonment and disgust for your backstabbing step-brother. Oh, what might have been.](/images/posts/bbspot-os2-warp.jpg)](http://bbspot.com/News/2003/01/os_quiz.php)
+Which OS are You?
+
+El tipo de spammer nigeriano que yo sería:
+
+[![You are LAWRENCE OBI. You are Bank Manager of Zenith Bank Lagos, Nigeria.](/images/posts/bbspot-lawrence-obi.jpg)](http://bbspot.com/News/2004/04/nigerian_quiz.php)
+Which Nigerian spammer are You?
+
+xDD Venga, ahora a trabajar.
+
+**Actualizado**: Mi novia es....
+
+[![You are .jpg You are very colorful. Sometimes you forget things, or distort the truth. You like working with pictures more than words.](/images/posts/bbspot-jpg.jpg)](http://www.bbspot.com/News/2004/10/extension_quiz.php)
+Which File Extension are You?

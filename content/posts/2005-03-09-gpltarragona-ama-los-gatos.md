@@ -5,4 +5,6 @@ tags:
 - Tonteridas Mias
 ---
 
-Y sinó os lo creeis, escuchad <a href="http://www.xaolin.com/blogpics/cabronasos.ogg">ésta</a> grabación del nuestro siempre apreciado secretario. No tiene desperdicio. ¡viva los gatos! xDD<br/><br/><div align="center"><img src="http://www.cs.rpi.edu/~chungms/image/cat.jpg" border="0" alt="gaaaaatoooss" /></div>
+Y sino os lo creeis, escuchad [esta](http://www.xaolin.com/blogpics/cabronasos.ogg) grabación del nuestro siempre apreciado secretario. No tiene desperdicio. ¡viva los gatos! xDD
+
+![gaaaaatoooss](/images/posts/cat.jpg)

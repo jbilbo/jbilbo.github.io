@@ -5,4 +5,29 @@ tags:
 - Software Libre
 ---
 
-La interfície gráfica definitiva para MySQL. Tiene licencia GNU GPL y esta hecha por la empresa MySQLAB, los propios creadores de MySQL.<br/><br/>Desde la misma interfície, es capaz de realizarse todas las tareas de administración de forma sencilla, bonita y rápidamente. He aquí una captura en funcionamiento:<br/><br/><div align="center"><a href="http://jhernandez.gpltarragona.org/varios/mysqladministrator.png"><img src="http://jhernandez.gpltarragona.org/varios/mysqladministrator-thumb.png" alt="mysql administrator" border="0" /></a></div><br/><br/>Pàgina web:<br/><a href="http://www.mysql.com/products/administrator/">http://www.mysql.com/products/administrator/</a><br/>Descarga:<br/><a href="http://dev.mysql.com/downloads/administrator/1.0.html">http://dev.mysql.com/downloads/administrator/1.0.html</a><br/><br/>Versión:	Linux (x86, glibc 2.3)	1.0.15	2.2M<br/><br/><pre>$ tar -zxvf mysql-administrator-1.0.15-linux.tar.gz<br/>$ sudo -s<br/># mv mysql-administrator /opt/<br/># apt-get install libgtkmm2.0-1c102<br/>$ cd /opt/mysql-adminstrador/bin<br/>$ ./mysql-administrator</pre><br/><br/>Para Gentoo, desde hoy mismo existe un ebuild, pero esta hard-masked. Hay que introducirlo en el fichero /etc/portage/package.mask (buscad otros posts en mi blog donde se explica).<br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/327">Artículo</a> en gpltarragona.
+La interfície gráfica definitiva para MySQL. Tiene licencia GNU GPL y esta hecha por la empresa MySQLAB, los propios creadores de MySQL.
+
+Desde la misma interfície, es capaz de realizarse todas las tareas de administración de forma sencilla, bonita y rápidamente. He aquí una captura en funcionamiento:
+
+[![mysql administrator](/images/posts/mysqladministrator-thumb.png)](/images/posts/mysqladministrator.png)
+
+Pàgina web:
+http://www.mysql.com/products/administrator/
+
+Descarga:
+http://dev.mysql.com/downloads/administrator/1.0.html
+
+Versión: Linux (x86, glibc 2.3) 1.0.15 2.2M
+
+```
+$ tar -zxvf mysql-administrator-1.0.15-linux.tar.gz
+$ sudo -s
+# mv mysql-administrator /opt/
+# apt-get install libgtkmm2.0-1c102
+$ cd /opt/mysql-adminstrador/bin
+$ ./mysql-administrator
+```
+
+Para Gentoo, desde hoy mismo existe un ebuild, pero esta hard-masked. Hay que introducirlo en el fichero /etc/portage/package.mask (buscad otros posts en mi blog donde se explica).
+
+Editado: [Artículo](http://www.gpltarragona.org/node/view/327) en gpltarragona.

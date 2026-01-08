@@ -1,0 +1,8 @@
+/* Custom styles for jbilbo.com */
+
+/* Center all images in post content */
+.post-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

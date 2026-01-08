@@ -5,4 +5,6 @@ tags:
 - Cine
 ---
 
-<a href="http://kill-bill.cz/game/index.php"><div align="center"><img src="http://www.cinemaworld.org/movies/kill-bill.jpg" alt="Juego en Flash de Kill Bill"></div></a><br/><br/>Puedes bajartelo con el tercer botón al entrar en la web, y ejecutarlo con <a href="http://www.winehq.com/">wine</a> sin ningún problema :)
+[![Juego en Flash de Kill Bill](/images/posts/kill-bill-game.jpg)](https://web.archive.org/web/20051017064936/http://kill-bill.cz/game/index.php)
+
+Puedes bajártelo con el tercer botón al entrar en la web, y ejecutarlo con [wine](http://www.winehq.com/) sin ningún problema :)

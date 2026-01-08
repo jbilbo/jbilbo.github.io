@@ -5,4 +5,23 @@ tags:
 - Software Libre
 ---
 
-¡Ya ha salido la preview de la nueva versión de Ubuntu!<br/><br/>Recordemos que muchos de nosotros la primera vez que instalamos Ubuntu fué con una preview... y no estuvo nada mal. Incluyo muchísimas mejoras, entre ellas os pego las más importantes (en inglés), aunque el plato fuerte es sin duda el ayer salido escritorio Gnome 2.10:<br/><br/><i> * GNOME 2.10 -- Very fresh... Released yesterday!<br/> * X.org 6.8.2<br/> * Kickstart compatibility for automatic installations<br/> * Several new desktop package-management tools to make it even <br/>   easier to stay up to date<br/> * An ultra-fast boot process, with optimized init process and<br/>   special optimizations for the hotplug system<br/> * Improved hardware support on a range of platforms -- laptops in<br/>   particular gain improved suspend/hibernation support and processor <br/>   frequency scaling<br/> * Unified and improved hardware detection between the install and<br/>   live CDs, which gives us live CDs on powerpc and amd64 too<br/> * A range of improvements related to internationalization,<br/>   translations, and different keyboard layouts, including a<br/>   new smart keyboard selector that guesses your keyboard based<br/>   on keypresses<br/> * A load of new Ubuntu-specific documentation, thanks to the<br/>   hard work of our community documentation team<br/> * Instant messaging, desktop publishing, office productivity,<br/>   with vorbis playback and Python 2.4 ready out of the box<br/> * Enhancements to the hardware abstraction layer to provide you with<br/>   BIOS, CPU, memory and LSB data (infrastructure for the upcoming<br/>   hardware database)<br/> * Enhanced proactive security due to privilege minimization of many <br/>   processes which previously ran as root. This work reduces the impact<br/>   of many potential security vulnerabilities.<br/> * The very best of the 100% FREE / LIBRE application software world.<br/> * Much, much more!</i><br/><br/>Como siempre se puede bajar tanto <a href="http://releases.ubuntu.com/hoary/">LiveCD como InstallCD para x86, amd64 y ppc</a>.
+¡Ya ha salido la preview de la nueva versión de Ubuntu!
+
+Recordemos que muchos de nosotros la primera vez que instalamos Ubuntu fue con una preview... y no estuvo nada mal. Incluyo muchísimas mejoras, entre ellas os pego las más importantes (en inglés), aunque el plato fuerte es sin duda el ayer salido escritorio Gnome 2.10:
+
+* *GNOME 2.10 -- Very fresh... Released yesterday!*
+* *X.org 6.8.2*
+* *Kickstart compatibility for automatic installations*
+* *Several new desktop package-management tools to make it even easier to stay up to date*
+* *An ultra-fast boot process, with optimized init process and special optimizations for the hotplug system*
+* *Improved hardware support on a range of platforms -- laptops in particular gain improved suspend/hibernation support and processor frequency scaling*
+* *Unified and improved hardware detection between the install and live CDs, which gives us live CDs on powerpc and amd64 too*
+* *A range of improvements related to internationalization, translations, and different keyboard layouts, including a new smart keyboard selector that guesses your keyboard based on keypresses*
+* *A load of new Ubuntu-specific documentation, thanks to the hard work of our community documentation team*
+* *Instant messaging, desktop publishing, office productivity, with vorbis playback and Python 2.4 ready out of the box*
+* *Enhancements to the hardware abstraction layer to provide you with BIOS, CPU, memory and LSB data (infrastructure for the upcoming hardware database)*
+* *Enhanced proactive security due to privilege minimization of many processes which previously ran as root. This work reduces the impact of many potential security vulnerabilities.*
+* *The very best of the 100% FREE / LIBRE application software world.*
+* *Much, much more!*
+
+Como siempre se puede bajar tanto [LiveCD como InstallCD para x86, amd64 y ppc](http://releases.ubuntu.com/hoary/).

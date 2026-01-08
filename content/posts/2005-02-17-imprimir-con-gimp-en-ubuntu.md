@@ -5,4 +5,18 @@ tags:
 - Software Libre
 ---
 
-Hoy he tenido que imprimir con Gimp y no me funcionaba... extraño teniendo en cuenta que me funciona con cualquier otra aplicación.<br/><br/>La solución es, en el diálogo imprimir -> Configurar impresora : Quitar el parámetro -oraw.<br/><br/>Por ejemplo, yo lo tengo (con una HP Deskjet 3650):<br/><br/><pre>lp -s -dDeskJet-3650 -oraw</pre><br/><br/>Con lo que quedaría:<br/><br/><pre>lp -s -dDeskJet-3650</pre>
+Hoy he tenido que imprimir con Gimp y no me funcionaba... extraño teniendo en cuenta que me funciona con cualquier otra aplicación.
+
+La solución es, en el diálogo imprimir -> Configurar impresora : Quitar el parámetro -oraw.
+
+Por ejemplo, yo lo tengo (con una HP Deskjet 3650):
+
+```
+lp -s -dDeskJet-3650 -oraw
+```
+
+Con lo que quedaría:
+
+```
+lp -s -dDeskJet-3650
+```

@@ -5,4 +5,8 @@ tags:
 - Software Libre
 ---
 
-Parece que un grupo de Brazil ha hecho una modificación a la web del proyecto xmule sin permiso (también conocido como deface), que utilizaba como gestor de contenidos el famoso <a href="http://phpnuke.org/">php-nuke</a>.<br/><br/>Podeis visitar la web desde <a href="http://unthesis.web.aplus.net/">aquí</a> <strike>(a estas horas todavía continúa con el mensaje)</strike>.<br/><br/>PD: De todas formas tengo un par de capturillas por si acaso :P (las pondré si es necesario).
+Parece que un grupo de Brazil ha hecho una modificación a la web del proyecto xmule sin permiso (también conocido como deface), que utilizaba como gestor de contenidos el famoso [php-nuke](http://phpnuke.org/).
+
+Podéis visitar la web desde [aquí](http://unthesis.web.aplus.net/) ~~(a estas horas todavía continúa con el mensaje)~~.
+
+PD: De todas formas tengo un par de capturillas por si acaso :P (las pondré si es necesario).

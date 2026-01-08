@@ -5,4 +5,6 @@ tags:
 - Tonteridas Mias
 ---
 
-<a title="shinjix bloc" href="http://shinjix.xaolin.com/">shinjix bloc</a><br/><br/>Tomàs (ShinjiX) se ha creado un blog :)
+[shinjix bloc](http://shinjix.xaolin.com/)
+
+Tomàs (ShinjiX) se ha creado un blog :)

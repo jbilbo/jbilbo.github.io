@@ -5,4 +5,10 @@ tags:
 - Software Libre
 ---
 
-Últimamente <a href="http://www.novell.com/">Novell</a> sólo hace que darnos buenas noticas. Primero con la <a href="http://barrapunto.com/article.pl?sid=04/03/20/0813238&mode=thread">liberación</a> bajo licencia GNU GPL de <a href="http://www.suse.com/latam/products/suse_linux/i386/yast.html">YAST</a>, la genial herramienta de administración de la distribución <a href="">SUSE</a>, y ahora con la <a href="http://barrapunto.com/article.pl?sid=04/05/11/2026253&mode=thread">liberación</a> bajo la misma licencia de <a href="http://www.novell.com/products/connector/">Ximian Connector</a>, un plugin que permite conectarse a los servidores Exchange.<br/>El <a href="http://www.novell.com/news/press/archive/2004/05/pr04034.html">anuncio oficial</a>.<br/><br/><div align="center"><br/><img src="http://www.novell.com/products/connector/img/n_xconnect.jpg" alt="Ximian Connector" border="0" /><br/></div><br/><br/>Por cierto, también comenta que saldrá <a href="http://www.novell.com/products/evolution/">Evolution 2.0</a> entre Julio y Septiembre de este año (y llevará integrado el Connector).
+Últimamente [Novell](http://www.novell.com/) sólo hace que darnos buenas noticas. Primero con la [liberación](http://barrapunto.com/article.pl?sid=04/03/20/0813238&mode=thread) bajo licencia GNU GPL de [YAST](http://www.suse.com/latam/products/suse_linux/i386/yast.html), la genial herramienta de administración de la distribución SUSE, y ahora con la [liberación](http://barrapunto.com/article.pl?sid=04/05/11/2026253&mode=thread) bajo la misma licencia de [Ximian Connector](http://www.novell.com/products/connector/), un plugin que permite conectarse a los servidores Exchange.
+
+El [anuncio oficial](http://www.novell.com/news/press/archive/2004/05/pr04034.html).
+
+![Ximian Connector](/images/posts/ximian-connector.jpg)
+
+Por cierto, también comenta que saldrá [Evolution 2.0](http://www.novell.com/products/evolution/) entre Julio y Septiembre de este año (y llevará integrado el Connector).

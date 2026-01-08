@@ -5,4 +5,10 @@ tags:
 - Software Libre
 ---
 
-Más info en <a href="http://www.ubuntu.com">la web de Ubuntu</a>.<br/>Y yo ya he notado la avalancha de updates para la RC (tened en cuenta que actualicé el dia anterior :-D):<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/hoary-rc.png" alt="Hoary RC" /></div><br/><br/>Esto seguro que pone los dientes largos a los de warty... xDD
+Más info en [la web de Ubuntu](http://www.ubuntu.com).
+
+Y yo ya he notado la avalancha de updates para la RC (tened en cuenta que actualicé el dia anterior :-D):
+
+![Hoary RC](/images/posts/hoary-rc.png)
+
+Esto seguro que pone los dientes largos a los de warty... xDD

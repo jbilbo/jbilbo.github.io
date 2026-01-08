@@ -5,4 +5,8 @@ tags:
 - Software Libre
 ---
 
-<a href="http://barrapunto.com/article.pl?sid=04/05/18/1127252&mode=thread">España votará en contra de la directiva de patentes de software</a>.<br/><br/>Además, parece que la oposición a la ley irlandesa no sólo tiene como aliada a España, sinó que también a <b>Alemania, Francia, Bélgica, Italia y Eslovenia</b>... !! Una muy buena noticia para el Software Libre, para Europa, para la informática, para la Industria, para el conocimiento y para el progreso.<br/><br/>Ahora sólo falta que se rechaze, que no quede sólo en una oposición. Esta tarde justamente lo sabremos.
+[España votará en contra de la directiva de patentes de software](http://barrapunto.com/article.pl?sid=04/05/18/1127252&mode=thread).
+
+Además, parece que la oposición a la ley irlandesa no sólo tiene como aliada a España, sino que también a **Alemania, Francia, Bélgica, Italia y Eslovenia**... !! Una muy buena noticia para el Software Libre, para Europa, para la informática, para la Industria, para el conocimiento y para el progreso.
+
+Ahora sólo falta que se rechace, que no quede sólo en una oposición. Esta tarde justamente lo sabremos.

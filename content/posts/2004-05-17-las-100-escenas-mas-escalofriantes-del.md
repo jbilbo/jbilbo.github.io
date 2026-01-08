@@ -5,4 +5,6 @@ tags:
 - Cine
 ---
 
-Discutible como todos estos rankings que se hacen, pero curioso :)<br/><br/><a href="http://www.retrocrush.com/scary/index.html">Tú mismo...</a> xDD
+Discutible como todos estos rankings que se hacen, pero curioso :)
+
+[Tú mismo...](http://www.retrocrush.com/scary/index.html) xDD

@@ -5,4 +5,27 @@ tags:
 - Software Libre
 ---
 
-Hasta ahora en gpltarragona.org, se tenía que hacer login cada vez que se cerraba el navegador. No aguantaba la sesión, y era muy molesto.<br/>Al parecer he dado con la solución, y estaba delante mio todo el rato.<br/><br/>Vamos a la raiz (root) de nuestro directorio de drupal:<br/><br/><pre><br/>vi .htaccess<br/></pre><br/><br/>Vamos a la siguiente linea:<br/><br/><pre>&#60;IfModule mod_php4.c><br/>   # If you are using Apache 2, you have to use &#60;IfModule sapi_apache2.c><br/>   # instead of &#60;IfModule mod_php4.c>.</pre><br/><br/>Lo dice muy claro en inglés, hay que cambiar el IfModule por:<br/><br/><pre>&#60;IfModule sapi_apache2.c><br/></pre><br/><br/>Y ahora todo funciona bien.
+Hasta ahora en gpltarragona.org, se tenía que hacer login cada vez que se cerraba el navegador. No aguantaba la sesión, y era muy molesto.
+Al parecer he dado con la solución, y estaba delante mio todo el rato.
+
+Vamos a la raiz (root) de nuestro directorio de drupal:
+
+```
+vi .htaccess
+```
+
+Vamos a la siguiente linea:
+
+```
+<IfModule mod_php4.c>
+   # If you are using Apache 2, you have to use <IfModule sapi_apache2.c>
+   # instead of <IfModule mod_php4.c>.
+```
+
+Lo dice muy claro en inglés, hay que cambiar el IfModule por:
+
+```
+<IfModule sapi_apache2.c>
+```
+
+Y ahora todo funciona bien.

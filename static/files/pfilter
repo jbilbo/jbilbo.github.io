@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# pfilter 1.0 by Martin Aspeli <optilude@gmx.net>
+
+# Filter for Gentoo Linux (www.gentoo.org)'s Portage system, allowing you to
+# select which packages from an emerge -p you wish to update. Takes output
+# from emerge -p as its standard input, prints list of selected packages.
+
+# Suggested use: # emerge -up world | pfilter | xargs emerge -u
+
+# This will do an emerge -up world, then allow you to deselect any of the
+# packages about to be installed (using dialog) and then do an emerge -u on
+# those packages. Note that if you deselect a package which is a dependency
+# of a selected package, it will still be installed.
+
+# read from standard input and make items suitable for passing to dialog's
+# checklist as checklist options.
+
+select_packages=1
+
+get_checklist_items () {
+  # Read input and break portage --pretend output into package and info
+  local line=""
+ 
+  # Read lines
+  while read line ; do
+
+   # ... find its parts: \1 = the status characters, \2 = name of package
+   # \3 = optionally version of installed package
+   
+   if test "${select_packages}" = "1" ; then
+     echo "${line}" | grep "^\[ebuild " | \
+      sed 's/^\[ebuild \([^]]*\)] \([^[:space:]]*\)[[:space:]]\?\(.*\)$/\2 \"\1\3\" on/'
+   else
+     echo "${line}" | grep "^\[ebuild " | \
+      sed 's/^\[ebuild \([^]]*\)] \([^[:space:]]*\)[[:space:]]\?\(.*\)$/\2 \"\1\3\" off/'   
+   fi
+  done
+}
+
+# display checklist (using dialog) of all the ebuilds given as command line
+# options (output from get_checklist_items).
+display_checklist () {
+  if test "${1}" = "" ; then
+   return 1   
+  fi
+      
+  # Display the checklist dialogue
+  eval "dialog --title 'Portage ebuild filter' --separate-output \
+            --checklist  'Select packages to install:' 0 0 0 ${@} 2>&1" || \
+      exit 1
+}
+
+# format ebuilds output by display_checklist by removing version info and
+# double quotes.
+format_ebuilds () {
+  for package in ${@} ; do
+   # print leading =
+   echo "=${package}"
+  done
+}
+
+print_help () {
+  echo "Usage: emerge -p [packages] | pfilter [options]"
+  echo
+  echo "Options:"
+  echo "  -d        Deselect packages by default"
+  echo "  -h        Display this message"
+  echo
+}
+
+init () {
+  select_packages=0
+      
+  while getopts "d" opt ; do
+   case "${opt}" in
+     d)
+      select_packages=0
+      ;;
+     *)
+      print_help && exit 1
+      ;;
+   esac
+  done
+}
+
+init ${@}
+
+# get the filtered packages from the checklist
+packages=$(display_checklist $(get_checklist_items))
+
+# if any selected, print them
+test "${packages}" != "" && format_ebuilds ${packages} || exit 1 

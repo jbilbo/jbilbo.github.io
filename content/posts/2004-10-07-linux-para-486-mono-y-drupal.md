@@ -5,4 +5,24 @@ tags:
 - Software Libre
 ---
 
-Quisiera linkar 3 artículos interesantes que tienen que ver con el Software libre, más que nada para no perderlos y por si le interesa a alguien:<br/><br/><b>Linux para 486</b><br/><br/>Un articulo de nuestros <a href="http://www.catux.org/">paisanos</a> me ha descubierto una distribución, llamada DeLi Linux, para instalar linux en un ordenador viejo (486 o similar), basada en Slackware 7.1.<br/><a href="http://catux.org/index.php?num=205">Más info</a><br/><a href="http://delilinux.berlios.de/">DeLi Linux</a><br/><br/><b>Recopilación de información sobre Mono</b><br/><br/>Un artículo de los compañeros de <a href="http://agali.org">Cádiz</a> donde se recopila mucha información sobre el proyecto Mono, desde qué es hasta aprender cómo funciona, tutoriales... etc.<br/><br/><a href="http://agali.org/node/view/247">Uy! que Mono</a><br/><br/><b>Drupal</b><br/><br/>Los <a href="http://linuxcordoba.org/">cordobeses</a> han hecho un manual de usuario del gestor de contenidos Drupal, uno de los más utilizados y el que tiene gpltarragona.<br/><br/><a href="http://linuxcordoba.org/node/view/68">Manual Drupal</a><br/><br/>Ahí queda.
+Quisiera linkar 3 artículos interesantes que tienen que ver con el Software libre, más que nada para no perderlos y por si le interesa a alguien:
+
+**Linux para 486**
+
+Un articulo de nuestros [paisanos](http://www.catux.org/) me ha descubierto una distribución, llamada DeLi Linux, para instalar linux en un ordenador viejo (486 o similar), basada en Slackware 7.1.
+[Más info](http://catux.org/index.php?num=205)
+[DeLi Linux](http://delilinux.berlios.de/)
+
+**Recopilación de información sobre Mono**
+
+Un artículo de los compañeros de [Cádiz](http://agali.org) donde se recopila mucha información sobre el proyecto Mono, desde qué es hasta aprender cómo funciona, tutoriales... etc.
+
+[Uy! que Mono](http://agali.org/node/view/247)
+
+**Drupal**
+
+Los [cordobeses](http://linuxcordoba.org/) han hecho un manual de usuario del gestor de contenidos Drupal, uno de los más utilizados y el que tiene gpltarragona.
+
+[Manual Drupal](http://linuxcordoba.org/node/view/68)
+
+Ahí queda.

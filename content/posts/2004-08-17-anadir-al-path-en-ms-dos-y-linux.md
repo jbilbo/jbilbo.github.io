@@ -5,4 +5,16 @@ tags:
 - Tonteridas Mias
 ---
 
-Siempre se me olvida cómo se hace en MS-DOS, los pongo como recordatorio que google ya me mira con mala cara :P<br/><br/>En MS-DOS, quiero añadir C:\TC\BIN al path:<br/><br/><pre>SET PATH=%PATH%;C:\TC\BIN</pre><br/><br/>En Linux, quiero añadir /home/bin al path:<br/><br/><pre>export PATH="$PATH:$HOME/bin"</pre>
+Siempre se me olvida cómo se hace en MS-DOS, los pongo como recordatorio que google ya me mira con mala cara :P
+
+En MS-DOS, quiero añadir C:\TC\BIN al path:
+
+```
+SET PATH=%PATH%;C:\TC\BIN
+```
+
+En Linux, quiero añadir /home/bin al path:
+
+```
+export PATH="$PATH:$HOME/bin"
+```

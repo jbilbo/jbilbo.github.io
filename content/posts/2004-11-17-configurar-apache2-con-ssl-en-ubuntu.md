@@ -5,4 +5,119 @@ tags:
 - Software Libre
 ---
 
-Aunque supongo que es igual que con Debian, como siempre.<br/><br/>Instalamos Apache2:<br/><br/><pre>apt-get install apache2</pre><br/><br/>Habilitamos el módulo ssl:<br/><br/><pre>a2enmod ssl</pre><br/><br/>Ejecutamos un script para crear nuestro certificado de seguridad para el servidor (estará autofirmado).<br/><br/><pre>apache2-ssl-certificate</pre><br/><br/>Nos hará una serie de preguntas...<br/><br/><pre> # apache2-ssl-certificate<br/><br/>creating selfsigned certificate<br/>replace it with one signed by a certification authority (CA)<br/><br/>enter your ServerName at the Common Name prompt<br/><br/>If you want your certificate to expire after x days call this programm<br/>with -days x<br/>Generating a 1024 bit RSA private key<br/>........++++++<br/>....................++++++<br/>writing new private key to '/etc/apache2/ssl/apache.pem'<br/>-----<br/>You are about to be asked to enter information that will be incorporated<br/>into your certificate request.<br/>What you are about to enter is what is called a Distinguished Name or a DN.<br/>There are quite a few fields but you can leave some blank<br/>For some fields there will be a default value,<br/>If you enter '.', the field will be left blank.<br/>-----<br/>Country Name (2 letter code) [GB]:ES<br/>State or Province Name (full name) [Some-State]:Catalunya<br/>Locality Name (eg, city) []:Tarragona<br/>Organization Name (eg, company; recommended) []:jhernandez<br/>Organizational Unit Name (eg, section) []:home<br/>server name (eg. ssl.domain.tld; required!!!) []:jhernandez.gpltarragona.org<br/>Email Address []:admin@jhernandez.gpltarragona.org</pre><br/><br/>Ahora crearemos la configuración de "el sitio" para el servidor seguro basándonos en la que lleva por defecto:<br/><br/><pre>cp /etc/apache2/sites-available/default /etc/apache2/sites-available/ssl<br/>ln -s /etc/apache2/sites-available/ssl /etc/apache2/sites-enabled/ssl</pre><br/><br/>/etc/apache2/sites-enabled/ssl tiene que empezar de la siguiente manera:<br/><br/><pre>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>NameVirtualHost *:443<br/>&lt;VirtualHost *:443&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/ssl.jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/ssl.jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Tendreis que cambiar lo de directory según el directorio que queráis...<br/>Ahora, /etc/apache2/sites-enabled/default también hay que configurarlo de la misma forma:<br/><br/><pre>NameVirtualHost *:80<br/>&lt;VirtualHost *:80&gt;<br/>    ServerAdmin webmaster@localhost<br/><br/>    DocumentRoot /var/www/jhernandez.gpltarragona.org/htdocs<br/>    &lt;Directory /&gt;<br/>        Options FollowSymLinks<br/>        AllowOverride None<br/>    &lt;/Directory&gt;<br/>    &lt;Directory /var/www/jhernandez.gpltarragona.org/htdocs&gt;<br/>#[...aquí sigue...]</pre><br/><br/>Ahora añade en el fichero /etc/apache2/ports.conf:<br/><br/><pre>Listen 443</pre><br/><br/>Por último, sólo basta añadir dentro del fichero "/etc/apache2/sites-enabled/ssl" en cualquier lugar (por ejemplo justo debajo de "ServerSignature On"):<br/><br/><pre>SSLEngine On<br/>SSLCertificateFile /etc/apache2/ssl/apache.pem</pre><br/><br/>Reiniciamos apache2:<br/><br/><pre>/etc/init.d/apache2 restart</pre><br/><br/>Editado: <a href="http://www.gpltarragona.org/node/view/318">Artículo</a> en gpltarragona.
+Aunque supongo que es igual que con Debian, como siempre.
+
+Instalamos Apache2:
+
+```
+apt-get install apache2
+```
+
+Habilitamos el módulo ssl:
+
+```
+a2enmod ssl
+```
+
+Ejecutamos un script para crear nuestro certificado de seguridad para el servidor (estará autofirmado).
+
+```
+apache2-ssl-certificate
+```
+
+Nos hará una serie de preguntas...
+
+```
+ # apache2-ssl-certificate
+
+creating selfsigned certificate
+replace it with one signed by a certification authority (CA)
+
+enter your ServerName at the Common Name prompt
+
+If you want your certificate to expire after x days call this programm
+with -days x
+Generating a 1024 bit RSA private key
+........++++++
+....................++++++
+writing new private key to '/etc/apache2/ssl/apache.pem'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [GB]:ES
+State or Province Name (full name) [Some-State]:Catalunya
+Locality Name (eg, city) []:Tarragona
+Organization Name (eg, company; recommended) []:jhernandez
+Organizational Unit Name (eg, section) []:home
+server name (eg. ssl.domain.tld; required!!!) []:jhernandez.gpltarragona.org
+Email Address []:admin@jhernandez.gpltarragona.org
+```
+
+Ahora crearemos la configuración de "el sitio" para el servidor seguro basándonos en la que lleva por defecto:
+
+```
+cp /etc/apache2/sites-available/default /etc/apache2/sites-available/ssl
+ln -s /etc/apache2/sites-available/ssl /etc/apache2/sites-enabled/ssl
+```
+
+/etc/apache2/sites-enabled/ssl tiene que empezar de la siguiente manera:
+
+```
+NameVirtualHost *:443
+<VirtualHost *:443>
+NameVirtualHost *:443
+<VirtualHost *:443>
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot /var/www/ssl.jhernandez.gpltarragona.org/htdocs
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory /var/www/ssl.jhernandez.gpltarragona.org/htdocs>
+#[...aquí sigue...]
+```
+
+Tendreis que cambiar lo de directory según el directorio que queráis...
+
+Ahora, /etc/apache2/sites-enabled/default también hay que configurarlo de la misma forma:
+
+```
+NameVirtualHost *:80
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot /var/www/jhernandez.gpltarragona.org/htdocs
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory /var/www/jhernandez.gpltarragona.org/htdocs>
+#[...aquí sigue...]
+```
+
+Ahora añade en el fichero /etc/apache2/ports.conf:
+
+```
+Listen 443
+```
+
+Por último, sólo basta añadir dentro del fichero "/etc/apache2/sites-enabled/ssl" en cualquier lugar (por ejemplo justo debajo de "ServerSignature On"):
+
+```
+SSLEngine On
+SSLCertificateFile /etc/apache2/ssl/apache.pem
+```
+
+Reiniciamos apache2:
+
+```
+/etc/init.d/apache2 restart
+```
+
+Editado: [Artículo](http://www.gpltarragona.org/node/view/318) en gpltarragona.

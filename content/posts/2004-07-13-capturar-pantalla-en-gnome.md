@@ -5,4 +5,5 @@ tags:
 - Software Libre
 ---
 
-En Gnome se puede capturar la pantalla del escritorio pulsando la tecla de "Print Screen" por defecto. Lo que no sabía era que es posible capturar sólo una ventana con pulsar mientras estas encima de ella la combinación de teclas <b>"Alt+Print Screen"</b>.<br/>Nada, un truquito :-)
+En Gnome se puede capturar la pantalla del escritorio pulsando la tecla de "Print Screen" por defecto. Lo que no sabía era que es posible capturar sólo una ventana con pulsar mientras estas encima de ella la combinación de teclas **"Alt+Print Screen"**.
+Nada, un truquito :-)

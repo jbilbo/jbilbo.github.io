@@ -5,4 +5,8 @@ tags:
 - Software Libre
 ---
 
-Ésto es lo que pasó cuando conecté mi tarjeta wireless PCMCIA SMC2835W en el portatil por primera vez:<br/><br/><img alt="detecta-wireless.png" src="http://jhernandez.gpltarragona.org/blog/misc/detecta-wireless.png" width="574" height="228" border="0" /><br/><br/>Acto seguido, en la siguiente pantalla, le di a configuración dhcpd automática y ya estaba lista para usarse.
+Esto es lo que pasó cuando conecté mi tarjeta wireless PCMCIA SMC2835W en el portatil por primera vez:
+
+![detecta-wireless.png](/images/posts/detecta-wireless.png)
+
+Acto seguido, en la siguiente pantalla, le di a configuración dhcpd automática y ya estaba lista para usarse.

@@ -5,4 +5,4 @@ tags:
 - Software Libre
 ---
 
-Gnome 2.6 ya esta en el portage Unstable (versión o rama inestable) de Gentoo. Así que es cuestión de días... horas... minutos... que pase a estable ;-)
+Gnome 2.6 ya está en el portage Unstable (versión o rama inestable) de Gentoo. Así que es cuestión de días... horas... minutos... que pase a estable ;-)

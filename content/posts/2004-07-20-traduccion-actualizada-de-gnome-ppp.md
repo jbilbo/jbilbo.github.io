@@ -5,4 +5,17 @@ tags:
 - Software Libre
 ---
 
-He visto que gnome-ppp tenía problemas con la traducción al español, en concreto donde debía aparecer un acento no aparecía ni la letra, así que la he actualizado y se la he enviado al autor.  A ver si en la prox. release la pone.<br/><br/>La pongo aquí, tanto el source como el binario por si alguien lo quiere utilizar mientras.<br/><br/><a href="http://jhernandez.gpltarragona.org/aplicaciones/gnome-ppp/es.po">es.po</a><br/><a href="http://jhernandez.gpltarragona.org/aplicaciones/gnome-ppp/es.mo">es.mo</a><br/><br/>Por si alguien se ha instalado el gnome-ppp y quiere utilizar la traducción, simplemente tiene que hacer lo siguiente:<br/><br/><pre>cp es.mo /usr/share/locale/es/LC_MESSAGES/gnome-ppp.mo</pre><br/><br/>Así sustituirá el binario de la traducción por el nuevo.
+He visto que gnome-ppp tenía problemas con la traducción al español, en concreto donde debía aparecer un acento no aparecía ni la letra, así que la he actualizado y se la he enviado al autor.  A ver si en la prox. release la pone.
+
+La pongo aquí, tanto el source como el binario por si alguien lo quiere utilizar mientras.
+
+[es.po](http://jhernandez.gpltarragona.org/aplicaciones/gnome-ppp/es.po)
+[es.mo](http://jhernandez.gpltarragona.org/aplicaciones/gnome-ppp/es.mo)
+
+Por si alguien se ha instalado el gnome-ppp y quiere utilizar la traducción, simplemente tiene que hacer lo siguiente:
+
+```
+cp es.mo /usr/share/locale/es/LC_MESSAGES/gnome-ppp.mo
+```
+
+Así sustituirá el binario de la traducción por el nuevo.

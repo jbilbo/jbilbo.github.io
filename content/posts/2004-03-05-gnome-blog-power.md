@@ -5,4 +5,6 @@ tags:
 - Software Libre
 ---
 
-Gracias a la ayuda de <a href="http://www.xaolin.com">sergi</a> ahora puedo escribir esta entrada desde <a href="http://www.gnome.org/~seth/gnome-blog/">gnome-blog</a>. Tiene algunos problemillas como los acentos por culpa de UTF-8 y algunas cosas que seguro me encontrar&eacute; pronto.<br/><br/>Por cierto, el problema que ten&iacute;a era que el nombre de mi blog era Jonathan Hern&aacute;ndez's Weblog... es decir, muy largo... simplemente eso :) y yo rompi&eacute;ndome la cabeza... ahora simplemente se llama Weblog. Por otra banda, tambi&eacute;n tengo que probar a ver c&oacute;mo funciona <a href="http://blogtk.sourceforge.net/">BloGTK</a>.
+Gracias a la ayuda de [sergi](http://www.xaolin.com) ahora puedo escribir esta entrada desde [gnome-blog](http://www.gnome.org/~seth/gnome-blog/). Tiene algunos problemillas como los acentos por culpa de UTF-8 y algunas cosas que seguro me encontraré pronto.
+
+Por cierto, el problema que tenía era que el nombre de mi blog era Jonathan Hernández's Weblog... es decir, muy largo... simplemente eso :) y yo rompiéndome la cabeza... ahora simplemente se llama Weblog. Por otra banda, también tengo que probar a ver cómo funciona [BloGTK](http://blogtk.sourceforge.net/).

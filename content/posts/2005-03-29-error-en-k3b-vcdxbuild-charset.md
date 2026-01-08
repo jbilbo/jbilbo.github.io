@@ -5,4 +5,16 @@ tags:
 - Software Libre
 ---
 
-Ocurre cuando intentas crear un videoCD desde un archivo mpg (MPEG1 O MPEG2). Es el primer problema que me he encontrado en Ubuntu relacionado con UTF-8. La solución la he encontrado en una <a href="http://www.ubuntuusers.de/wiki/multimedia:foto-video-cds_erstellen">web alemana</a> donde hay una captura muy esclarecedora (<b>Actualización:</b> he quitado el enlace a la captura de la web alemana porque estaba caído su servidor, así que he hecho yo un screenshot de cosecha propia)<br/>Éste bug esta relacionado con el vcdimager que es el el nombre del paquete que lleva dentro la aplicación vcdxbuild, y como éste paquete no esta en el main supongo que el arreglo del bug no es tan rápido (ni tampoco se puede reportar en el bugzilla de Ubuntu). Por suerte, así se arregla:<br/><br/><div align="center"><img src="http://jhernandez.gpltarragona.org/varios/k3b-vcdxbuild-ubuntu-peq.png" alt="Solución error k3b Ubuntu" /></div><br/><br/>Es decir, poniendo como parámetro de usuario para vcdxbuild:<br/><br/><pre>--filename-encoding=iso8859-1</pre><br/><br/>Lo he probado personalmente y funciona.
+Ocurre cuando intentas crear un videoCD desde un archivo mpg (MPEG1 O MPEG2). Es el primer problema que me he encontrado en Ubuntu relacionado con UTF-8. La solución la he encontrado en una [web alemana](http://www.ubuntuusers.de/wiki/multimedia:foto-video-cds_erstellen) donde hay una captura muy esclarecedora (**Actualización:** he quitado el enlace a la captura de la web alemana porque estaba caído su servidor, así que he hecho yo un screenshot de cosecha propia)
+
+Este bug esta relacionado con el vcdimager que es el el nombre del paquete que lleva dentro la aplicación vcdxbuild, y como este paquete no esta en el main supongo que el arreglo del bug no es tan rápido (ni tampoco se puede reportar en el bugzilla de Ubuntu). Por suerte, así se arregla:
+
+![Solución error k3b Ubuntu](/images/posts/k3b-vcdxbuild-ubuntu-peq.png)
+
+Es decir, poniendo como parámetro de usuario para vcdxbuild:
+
+```
+--filename-encoding=iso8859-1
+```
+
+Lo he probado personalmente y funciona.

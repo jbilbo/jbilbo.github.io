@@ -5,4 +5,10 @@ tags:
 - Software Libre
 ---
 
-Sí, internet es nuestro terreno, el terreno del ciudadano. Y si para la _mayoría_ el consejo europeo es una <a href="http://ue.eu.int/">banana republic</a>, si la unión europea es una <a href="http://ue.eu.int/">república bananera</a>... lo vamos a escribir, y google tomará nota.<br/><br/>En el blog de <a href="http://mnm.uib.es/gallir/">galli</a> se comenta 3 veces... davidcg se <a href="http://davidcg.sytes.net/?p=66">repite</a> más que el chorizo... todo por una <a href="http://lxer.com/module/newswire/view/32951/">causa justificada</a>. No pueden hacer lo que quieran, es cierto que todavía se tienen que ver las caras con el parlamento pero lo que han hecho no se hace, ni deberían permitirlo. Punto.<br/><br/>A todo ésto, ¿qué significa <a href="http://ue.eu.int/">república bananera</a>?<br/><br/>Menos mal que tenemos la <a href="http://es.wikipedia.org/wiki/Rep%C3%BAblica_bananera">wikipedia</a>... por ahora.
+Sí, internet es nuestro terreno, el terreno del ciudadano. Y si para la _mayoría_ el consejo europeo es una [banana republic](http://ue.eu.int/), si la unión europea es una [república bananera](http://ue.eu.int/)... lo vamos a escribir, y google tomará nota.
+
+En el blog de [galli](http://mnm.uib.es/gallir/) se comenta 3 veces... davidcg se [repite](http://davidcg.sytes.net/?p=66) más que el chorizo... todo por una [causa justificada](http://lxer.com/module/newswire/view/32951/). No pueden hacer lo que quieran, es cierto que todavía se tienen que ver las caras con el parlamento pero lo que han hecho no se hace, ni deberían permitirlo. Punto.
+
+A todo esto, ¿qué significa [república bananera](http://ue.eu.int/)?
+
+Menos mal que tenemos la [wikipedia](http://es.wikipedia.org/wiki/Rep%C3%BAblica_bananera)... por ahora.

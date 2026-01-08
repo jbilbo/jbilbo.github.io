@@ -5,4 +5,10 @@ tags:
 - Tonteridas Mias
 ---
 
-Ya que estamos de encuestas... me he permitido evaluar el nivel de "maldad" / "bondad" de este blog:<br/><br/><a href="http://homokaasu.org/gematriculator/?referer" target="_blank"><img src="http://homokaasu.org/pics/g/e30.jpg" width="175" height="80" alt="This site is certified 30% EVIL by the Gematriculator" /></a><br/><br/><a href="http://homokaasu.org/gematriculator/?referer" target="_blank"><img src="http://homokaasu.org/pics/g/g70.jpg" width="175" height="80" alt="This site is certified 70% GOOD by the Gematriculator" /></a><br/><br/>PD: El título del post es un gac de El Señor de los Anillos... lo digo pa los despistaos... ^_^U
+Ya que estamos de encuestas... me he permitido evaluar el nivel de "maldad" / "bondad" de este blog:
+
+[![This site is certified 30% EVIL by the Gematriculator](/images/posts/evil-30.jpg)](http://homokaasu.org/gematriculator/?referer)
+
+[![This site is certified 70% GOOD by the Gematriculator](/images/posts/good-70.jpg)](http://homokaasu.org/gematriculator/?referer)
+
+PD: El título del post es un gac de El Señor de los Anillos... lo digo pa los despistaos... ^_^U

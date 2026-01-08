@@ -5,4 +5,21 @@ tags:
 - Software Libre
 ---
 
-Hoy me he encontrado con esta guía en el foro de Gentoo:<br/><br/><a href="http://forums.gentoo.org/viewtopic.php?t=166984">HOWTO: Using UTF-8 on Gentoo</a><br/><br/>Así que me he puesto manos a la obra a ver si conseguía hacerlo funcionar en Gentoo. Después de no mucho tiempo tengo el sistema castellanizado pero con problemas en algunas aplicaciones y casos concretos:<br/><strike>El vim se me ven mal los acentos y tampoco los puedo poner yo, es decir, ha quedado totalmente inusable. Con el nano me salen mal los acentos de la interficie pero puedo escribir bien en el editor.<br/>Tampoco puedo poner el símbolo euro en la gnome-terminal, aunque en la terminal pura sí que puedo.</strike><br/><br/>He puesto un <a href="http://forums.gentoo.org/viewtopic.php?p=1184203#1184203">post</a> en el foro de Gentoo a ver si alguien lo ha conseguido. Mientras tanto seguiré probando.<br/><br/><b>Actualización 28-05-1004 - 3:26:</b> Ya he arreglado algunos de los problemas de la terminal en Gnome (en terminal pura sigo igual) poniendo: Terminal -> Establecer Codificación de carácteres -> Unicode (UTF-8).<br/>Ahora lo que no puedo es dejarlo "por defecto". Siempre se me pone directamente a ISO-8859-1 al arrancar la gnome-terminal.<br/>Además tengo otros problemas en la terminal: Pongo el símbolo euro y para borrarlo tengo que borrar 3 caracteres (los otros 2 los añade en modo invisible) O_o cosas raras...<br/><br/>Sigue <a href="http://jhernandez.gpltarragona.org/blog/archives/000080.html">aquí</a>
+Hoy me he encontrado con esta guía en el foro de Gentoo:
+
+[HOWTO: Using UTF-8 on Gentoo](http://forums.gentoo.org/viewtopic.php?t=166984)
+
+Así que me he puesto manos a la obra a ver si conseguía hacerlo funcionar en Gentoo. Después de no mucho tiempo tengo el sistema castellanizado pero con problemas en algunas aplicaciones y casos concretos:
+
+~~El vim se me ven mal los acentos y tampoco los puedo poner yo, es decir, ha quedado totalmente inusable. Con el nano me salen mal los acentos de la interficie pero puedo escribir bien en el editor.~~
+~~Tampoco puedo poner el símbolo euro en la gnome-terminal, aunque en la terminal pura sí que puedo.~~
+
+He puesto un [post](http://forums.gentoo.org/viewtopic.php?p=1184203#1184203) en el foro de Gentoo a ver si alguien lo ha conseguido. Mientras tanto seguiré probando.
+
+**Actualización 28-05-1004 - 3:26:** Ya he arreglado algunos de los problemas de la terminal en Gnome (en terminal pura sigo igual) poniendo: Terminal -> Establecer Codificación de carácteres -> Unicode (UTF-8).
+
+Ahora lo que no puedo es dejarlo "por defecto". Siempre se me pone directamente a ISO-8859-1 al arrancar la gnome-terminal.
+
+Además tengo otros problemas en la terminal: Pongo el símbolo euro y para borrarlo tengo que borrar 3 caracteres (los otros 2 los añade en modo invisible) O_o cosas raras...
+
+Sigue [aquí](/posts/2004-05-28-sigo-con-el-utf-8/)

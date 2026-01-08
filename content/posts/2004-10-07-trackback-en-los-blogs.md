@@ -5,4 +5,33 @@ tags:
 - Tonteridas Mias
 ---
 
-La función de Trackback es una característica muy interesante que tienen los blogs. Normalmente entre nosotros nos enlazamos muy frecuentemente y muchas veces en nuestro artículo vertimos opiniones o mejoramos el artículo al cual enlazamos.<br/><img src="http://www.bitacoras.org/gra/trackb.png" align="right" /><br/>El trackback es una manera de notificar al autor del post al cual enlazamos de que hemos hablado de él, una especie de "ping". El resultado real equivale a un comentario en el blog al que enlazamos.<br/><br/>Para ver un ejemplo, utilizaremos mi <a href="http://jhernandez.gpltarragona.org/blog/archives/000205.html">post anterior</a>. En él, hago referencia al blog de Sergio en una ocasión, al principio. Como hago servir movabletype, él mismo detecta que el blog del sergio utiliza worpress y automáticamente me pone la dirección de su "trackback" para hacerle un ping. Ésta es:<br/><br/>http://www.marblestation.com/blog/wp-trackback.php/207<br/><br/>porque su url es:<br/><br/>http://www.marblestation.com/blog/index.php?p=207<br/><br/>En caso de que no ponga automáticamente la url del trackback para el post, se tiene que poner a mano. Si tu sistema blog lo soporta debe por algo así como "url to ping" o "trackback..."...<br/><br/>Para mi blog, si la url es:<br/><br/>http://jhernandez.gpltarragona.org/blog/archives/000205.html<br/><br/>la dirección trackback la pone abajo del post siempre, equivale a:<br/><br/>http://www.gpltarragona.org/cgi-bin/movabletype/mt-tb.cgi/205<br/><br/>El resultado del trackback lo podeis ver en  el <a href="http://www.marblestation.com/blog/index.php?p=207">post</a> del sergio, mi post queda como un comentario.<br/><br/>Mas info:<br/><a href="http://www.bitacoras.org/bit.php?id=47_0_1_0_M">Campaña a favor del uso del Trackback</a><br/><a href="http://www.cruftbox.com/cruft/docs/trackback.html">How Trackback Works</a><br/><a href="http://www.blogpocket.com/tbbeginnerstrad.html">Trackback: una introducción para principiantes</a>
+La función de Trackback es una característica muy interesante que tienen los blogs. Normalmente entre nosotros nos enlazamos muy frecuentemente y muchas veces en nuestro artículo vertimos opiniones o mejoramos el artículo al cual enlazamos.
+
+![trackback](/images/posts/trackback.png)
+
+El trackback es una manera de notificar al autor del post al cual enlazamos de que hemos hablado de él, una especie de "ping". El resultado real equivale a un comentario en el blog al que enlazamos.
+
+Para ver un ejemplo, utilizaremos mi [post anterior](/posts/2004-10-07-transparencias-de-la-conferencia-y/). En él, hago referencia al blog de Sergio en una ocasión, al principio. Como hago servir movabletype, él mismo detecta que el blog del sergio utiliza worpress y automáticamente me pone la dirección de su "trackback" para hacerle un ping. Esta es:
+
+http://www.marblestation.com/blog/wp-trackback.php/207
+
+porque su url es:
+
+http://www.marblestation.com/blog/index.php?p=207
+
+En caso de que no ponga automáticamente la url del trackback para el post, se tiene que poner a mano. Si tu sistema blog lo soporta debe por algo así como "url to ping" o "trackback..."...
+
+Para mi blog, si la url es:
+
+http://jhernandez.gpltarragona.org/blog/archives/000205.html
+
+la dirección trackback la pone abajo del post siempre, equivale a:
+
+http://www.gpltarragona.org/cgi-bin/movabletype/mt-tb.cgi/205
+
+El resultado del trackback lo podeis ver en el [post](http://www.marblestation.com/blog/index.php?p=207) del sergio, mi post queda como un comentario.
+
+Mas info:
+- [Campaña a favor del uso del Trackback](http://www.bitacoras.org/bit.php?id=47_0_1_0_M)
+- [How Trackback Works](http://www.cruftbox.com/cruft/docs/trackback.html)
+- [Trackback: una introducción para principiantes](http://www.blogpocket.com/tbbeginnerstrad.html)
