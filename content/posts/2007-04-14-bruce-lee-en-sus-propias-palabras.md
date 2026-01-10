@@ -2,7 +2,8 @@
 title: 'Bruce Lee, en sus propias palabras'
 date: '2007-04-14'
 tags:
-- Cine, Tonteridas Mias
+- Cine
+- Tonteridas Mias
 ---
 
 La

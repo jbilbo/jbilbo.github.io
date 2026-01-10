@@ -2,7 +2,8 @@
 title: 'Papa, dile que me baje'
 date: '2006-11-30'
 tags:
-- Cine, Libros
+- Cine
+- Libros
 ---
 
 Inconvenientes

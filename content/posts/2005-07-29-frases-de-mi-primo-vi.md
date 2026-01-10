@@ -2,7 +2,8 @@
 title: 'Frases de mi Primo VI'
 date: '2005-07-29'
 tags:
-- Citas, Tonteridas Mias
+- Citas
+- Tonteridas Mias
 ---
 
 Se
