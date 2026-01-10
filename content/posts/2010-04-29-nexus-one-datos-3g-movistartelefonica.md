@@ -2,7 +2,7 @@
 title: Nexus One datos 3G Movistar/Telefonica
 date: '2010-04-29'
 tags:
-- android
+- Android
 ---
 
 Tengo unos datos que funcionan para conectarte al 3G de Movistar (Telefónica) en España con el Nexus One de Google (supongo que funcionarían en cualquier teléfono Android).
