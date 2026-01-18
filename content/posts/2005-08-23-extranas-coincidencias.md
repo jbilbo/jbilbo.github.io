@@ -10,4 +10,5 @@ Película muy americana, muy filosófica (excesivamente) y muy rara. Tiene algun
 La decepción de la gente era evidente al final de la película: 5-6€ gastados en vano :-P
 Lo único aceptable son los mencionados toques de humor y parte del guión que sí tiene sentido, aunque la historia en sí sea totalmente surrealista rozando la estupidez. Se podría definir como una comedia existencial, porque parte del debate filosófico trata sobre porqué estamos aquí, donde estamos y si todo esta conectado o no, somos independientes y estamos solos. ¿Las coincidencias tienen sentido?
 A la mayoría de gente no le gustará, la manera de tratar es debate es demasiado directa, así que si tienes ganas de ir a verla piénsatelo 2 veces.
-Calificación 4/10
+
+**Calificación: 4/10**

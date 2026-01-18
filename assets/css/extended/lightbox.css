@@ -39,11 +39,11 @@
   color: #ccc;
 }
 
-/* Make clickable images show pointer cursor */
-a[data-lightbox] img,
-.post-content a[href$=".jpg"] img,
-.post-content a[href$=".jpeg"] img,
-.post-content a[href$=".png"] img,
-.post-content a[href$=".gif"] img {
+/* Clickable images: zoom cursor and no underline */
+.post-content a:has(img) {
+  box-shadow: none !important;
+}
+
+.post-content a:has(img) img {
   cursor: zoom-in;
 }
