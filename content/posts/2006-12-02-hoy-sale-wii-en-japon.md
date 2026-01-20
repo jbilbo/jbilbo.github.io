@@ -14,7 +14,7 @@ conseguir una Wii los primeros dias por estos lares? Sobretodo para los
 que no tienen reserva. Ya veremos.
 ![Mando de Wii](/images/posts/wiimote.jpg)
 
-Meristation ha puesto [un artículo](http://www.meristation.com/v3/des_noticia.php?id=cw45717c4dcbd7d&pic=GEN) explicando un poco como ha ido, al parecer el panorama fue más tranquilo que cuando salió PS3.
+~~Meristation ha puesto [un artículo](http://www.meristation.com/v3/des_noticia.php?id=cw45717c4dcbd7d&pic=GEN) explicando un poco como ha ido, al parecer el panorama fue más tranquilo que cuando salió PS3.~~
 
 **Editado (3/12/2006 - 23:39)**: Mucho más fiable el [post de Kirai](http://www.kirainet.com/lanzamiento-de-la-wii-en-japon/),
 que explica con detalle cómo fue el fenómeno del lanzamiento. También

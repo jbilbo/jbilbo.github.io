@@ -1,10 +1,17 @@
 /* Custom styles for jbilbo.com */
 
-/* Center all images in post content */
+/* Center all images in post content, except those inside links */
 .post-content img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Images inside links should be inline (for video icons, linked photos, etc.) */
+.post-content a img {
+  display: inline;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Allow inline images when wrapped in .img-row */
@@ -17,3 +24,4 @@
   display: inline;
   margin: 0 0.5em;
 }
+

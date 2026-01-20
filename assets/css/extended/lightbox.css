@@ -39,11 +39,13 @@
   color: #ccc;
 }
 
-/* Clickable images: zoom cursor and no underline */
-.post-content a:has(img) {
+/* Image-only links (in centered divs or standalone): no underline */
+.post-content div[style*="text-align: center"] a,
+.post-content div[style*="display: flex"] a {
   box-shadow: none !important;
 }
 
+/* Clickable images: zoom cursor */
 .post-content a:has(img) img {
   cursor: zoom-in;
 }
