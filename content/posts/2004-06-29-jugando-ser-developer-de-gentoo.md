@@ -20,9 +20,3 @@ El domingo reporté un [bug](http://bugs.gentoo.org/show_bug.cgi?id=55332) sobre
 **Eclipse 3.0**
 
 Por fin ha salido la nueva versión de eclipse. En el portage está hard masked la versión 3.0rc3 aunque estan a punto de quitarla porque a mi me funciona muy bien con la sun-jdk estable. Por ahora paso de blackdown, da más problemas.
-
-**El juego de Ripley**
-
-Me la alquilé en DVD. Horrible. Larga, pesada, aburrida... un rollazo. Cuando no gusta no gusta... me esperaba algo más "inteligente" pero nada... :-(
-
-**Calificación 1/10**

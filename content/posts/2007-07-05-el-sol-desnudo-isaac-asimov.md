@@ -24,4 +24,4 @@ lo recomiendo a los que les gusta los libros de ciencia ficción
 robots, además de un crímen y se descubre al lector Solaria, un planeta
 con unas costumbres muy interesantes.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

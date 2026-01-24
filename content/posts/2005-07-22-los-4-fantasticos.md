@@ -16,4 +16,5 @@ En cuanto a la adaptación, en lineas generales me ha gustado y la he encontrado
 ![4 Fantásticos poster](/images/posts/4fantasticos-poster.jpg)
 
 Es una película que recomiendo sólo a los que les gusta este tipo de género: Efectos especiales, acción, adaptación de un clásico del cómic… y por supuesto a los fans de La Cosa (fuerza y cuerpo de piedra), Mr. Fantástico (elástico), La Mujer Invisible (invisibilidad y campos de fuerza), La Antorcha Humana (fuego y volar) o… el Doctor Muerte (electricidad y cuerpo de una aliación indestructible).
-**Calificación: 7/10**
+
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

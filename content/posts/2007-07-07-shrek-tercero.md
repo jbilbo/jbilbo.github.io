@@ -34,4 +34,5 @@ Ya esta programada una cuarta parte, he incluso una película sólo para
 el aclamado Gato con Botas, que fue la estrella de la segunda parte y
 también hace buen papel en esta (por cierto, le pone la voz Antonio
 Banderas).
-**Calificación: 8/10**
+
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

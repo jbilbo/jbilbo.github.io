@@ -11,4 +11,4 @@ Película protagonizada por Tom Hanks y Catherine Zeta-Jones y dirigida por Stev
 
 La película es entretenida y tiene muchos toques divertidos (que es lo mejor que tiene la película), pero no es una gran maravilla, me la esperaba mejor. Mención especial a "Enrique", el del carrito que lleva la comida, este actor se llama Diego Luna, es mejicano y estuvo de invitado un dia en el programa "Una Altra Cosa" de TV3! :)
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

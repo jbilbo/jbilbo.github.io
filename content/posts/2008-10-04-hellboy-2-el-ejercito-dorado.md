@@ -15,4 +15,4 @@ Pero vamos a los puntos negativos. El hilo. Aunque la historia es interesante y 
 
 En definitiva, una película muy bonita pero insulsa.
 
-**Calificación: 4/10**
+<p style="text-align: center;"><strong>Nota: 4/10</strong></p>

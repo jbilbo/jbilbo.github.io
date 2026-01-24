@@ -15,4 +15,4 @@ No sé encontrarle ninguna pega, sólo se me ocurre que al director le han falta
 
 En fin, resumiendo, recomendada para todos.
 
-**Calificación: 10/10**
+<p style="text-align: center;"><strong>Nota: 10/10</strong></p>

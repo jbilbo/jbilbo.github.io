@@ -13,4 +13,4 @@ Es cierto que tiene que ver con templarios, pero el libro se centra en qué pas�
 
 Como crítica sobre el libro no voy a decir mucho, únicamente que no me enganchó ni de lejos como el código da vinci. El argumento a priori parece interesante y el libro se puede leer bien, pero me esperaba más y resulta en algunos casos un poco aburrido y falto de acción o estímulo para seguir leyendo. Aún así, no es malo.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

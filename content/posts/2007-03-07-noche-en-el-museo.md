@@ -25,4 +25,4 @@ lógica, es una película divertida para pasar el rato sin pensar mucho.
 Ese es su objetivo y lo cumple bien, se agradecen películas como esta
 para ir a verla con el niño o niña y que el adulto también lo pase bien.
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

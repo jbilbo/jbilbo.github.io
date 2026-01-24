@@ -14,4 +14,4 @@ Si te han gustado las 2 anteriores en mi opinión es un "obligado ver", almenos 
 
 Frase de la película: "Bien hecho, peluche".
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

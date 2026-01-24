@@ -28,4 +28,5 @@ mejor… los que estan en español no son malos pero sí mejorables. En
 definitiva es una muy buena película, comparte algunos de los tópicos a
 los que estamos ya acostumbrados en este género pero es bastante fresca
 en otros aspectos, y el balance es claramente positivo.
-**Calificación: 8/10**
+
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

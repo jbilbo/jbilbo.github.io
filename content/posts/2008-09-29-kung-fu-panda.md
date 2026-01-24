@@ -35,4 +35,4 @@ fui a verla, arrastrado cómo no, y no salí nada decepcionado.
 
 Graciosa, divertida y aunque es generalmente infantil también la pueden disfrutar los no tan niños.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

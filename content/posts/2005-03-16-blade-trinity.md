@@ -25,4 +25,4 @@ Por último mencionar que en esta tercera parte también se ha conseguido "consa
 
 Ah, si os gustan los anteriores Blade o las pelis de acción... id a verla.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

@@ -14,6 +14,7 @@ He de decir que mis géneros preferidos son los de ciencia-ficción/fantástico�
 En "En el Blanco", un título comercial de tipo de "Muerte total" o "Disparo infernal" que son mera atracción y no tiene ningún significado profundo con la historia del libro…, se cuenta una historia que tiene que ver con virus/antivirus y seguridad biológica… mucha acción, intriga… esta parte del libro esta muy bien llevada y engancha aunque a mi parecer en global el libro es bastante insípido y poco original.
 
 Es un buen libro, entretenido, pero hay muchos mejores que leer.
-**Calificación 6/10**
+
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>
 
 PD: Ken Follet esta trabajando en la segunda parte de Los Pilares de la Tierra, su mayor best-seller. Transcurrirá 200 años después del anterior libro y los protagonistas serán los descendentes de los anteriores… no se sabe más, sólo que el libro tardará aún un par de años en llegar.

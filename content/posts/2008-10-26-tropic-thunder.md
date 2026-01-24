@@ -14,4 +14,5 @@ papeles, grande. [Robert Downey](http://www.imdb.com/name/nm0000375/) magnífico
 buenísimo, desternillante en el papel de un actor enganchado a las
 drogas… pero mención especial merece Tom Cruise, en ninguna otra
 película jamás ha soltado más tacos por segundo.
-**Calificación: 7/10**
+
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

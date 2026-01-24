@@ -9,4 +9,4 @@ Vi esta película hace ya bastante, 3-4 semanas quizás, pero quiero comentar to
 
 Si no te gustó la primera no vayas a esta, si por el contrario disfrutaste de la primera parte, también te gustara esta en algunos momentos, así que es recomendable. Y si no has visto la primera... olvida esta y ves a verla :-)
 
-**Calificación 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

@@ -65,4 +65,4 @@ Frase de la película:
 
 -"Posiblemente en los 70″.*
 
-**Calificación: 9/10**
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

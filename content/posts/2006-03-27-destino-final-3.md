@@ -11,4 +11,4 @@ Si la primera y la segunda te gustaron, esta te entretendrá. No defrauda porque
 
 La frase de la película: *"Ohhh no, ¡me he dejado el iPod!"*
 
-**Calificación: 5/10**
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>

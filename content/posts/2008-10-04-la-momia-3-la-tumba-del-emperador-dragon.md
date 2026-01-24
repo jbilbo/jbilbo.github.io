@@ -9,4 +9,4 @@ Muchas veces voy al cine a desconectar con una buena película de acción, que n
 
 La saga de la Momia, además, siempre ha tenido un toque de humor así que no esperaba menos de esta parte. ¿Resultado? Poco humor, historia aunque en principio interesante poco aprovechada, diálogos (guión) nefastos… ¿Entretiene? Sí, lo justo, porque afortunadamente no es una película larga y no llega a hacerse pesada. Pero, aún así, el declive de la Momia continúa…
 
-**Calificación: 5/10**
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>

@@ -13,4 +13,5 @@ tristeza. ¡Y yo iba a ver una comedia! (un fallo lo tiene cualquiera
 :-P)
 
 Triste con algún toque (no mucho) de humor y bastante “bonita”… de ese “bonita” famoso made in USA.
-**Calificación: 4/10**
+
+<p style="text-align: center;"><strong>Nota: 4/10</strong></p>

@@ -36,4 +36,4 @@ diálogo y tampoco es rápido (hay una escena en que la luz brillante de
 un fuego impide ver parte del subtítulo… única pega). Por el resto…
 acción, violencia, muy sufrida… y sencilla.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

@@ -13,4 +13,4 @@ Mención especial al "malo de la peli", que ha dejado 3 frases para la historia 
 > - ¿Que si estoy passando por un túnil? (mientras está sentado en el sofá hablando por tel.)
 > - Ess como mi culebrín favorrito.
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

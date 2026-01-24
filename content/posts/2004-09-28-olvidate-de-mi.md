@@ -13,4 +13,4 @@ Como punto negativo... no sabría decir ninguno claro... si te gusta el género 
 
 Lo que me hizo gracia al salir del cine fue un comentario de un chico que decía: *"Joé, esperas ver una peli de risa y ves esto..."* Me arrancó una sonrisa, mira. Hoy en dia los actores no buscan encasillarse en géneros, Jim Carrey es un buen ejemplo.
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

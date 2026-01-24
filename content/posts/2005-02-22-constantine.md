@@ -15,4 +15,4 @@ El resultado es muy bueno: una película realmente impactante, rápida, con much
 
 Un par de curiosidades para los que vayan a ver la película: El tabaco (ya vereis porqué) y el traje del Diablo... creo que nunca hemos visto al diablo de ese color ;-) muy original, ¿quizás con doble sentido? Cuando la veais hablamos...
 
-**Calificación: 9/10**
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

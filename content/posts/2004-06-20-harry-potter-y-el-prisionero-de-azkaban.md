@@ -9,10 +9,4 @@ Grata sorpresa la de esta "película infantil" que con cada parte menos infantil
 
 Para haberme perdido el mejor partido de la Eurocopa (Rep. Checa vs Holanda, 3-2), no me arrepiento de haber visto esta peli. Recomendada. ¿Mejor que las anteriores? Almenos a mí me lo ha parecido.
 
-**Calificación: 7/10**
-
-**Love Actually**
-
-Me alquilé en DVD esta peli. Es del tipo romántica pero no "tonta". Cuentan varias historias en paralelo y la banda sonora es muy buena. Bastante divertida y recomendable a los que les gustan este tipo de películas.
-
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

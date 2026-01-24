@@ -15,4 +15,4 @@ El protagonista de Thai Dragon, [Toni Jaa](http://www.imdb.com/name/nm1388074/),
 
 Especial mención a la gran escena que va subiendo por una escalera en espiral, una obra de arte del director, realmente cuidada y espectacular.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

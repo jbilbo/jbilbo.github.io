@@ -22,4 +22,4 @@ por si existe algún guiño para los lectores del libro.
 
 Lo dicho, un clásico de la Scifi que merece su lectura.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

@@ -25,4 +25,4 @@ Concluyendo y dejando de banda el debate político, si no te gustan las películ
 
 Frase de la película: *El pueblo no debería temerle a sus gobiernos. Los gobiernos deberían temerle al pueblo.*
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

@@ -25,4 +25,5 @@ acuerdas de qué pasaba… “Fun with Dick y Jane” (título original, que
 por cierto hay un poco de cachondeo en USA porque podría pasar por el
 de una peli X) aunque tiene algo de moral, es más bien del segundo
 grupo que hablo.
-**Calificación: 6/10**
+
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

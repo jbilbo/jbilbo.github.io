@@ -31,4 +31,5 @@ anteriores para entender esta, son películas bastante independientes.
 Muy recomendable si te gustan alguna de las anteriores o las películas
 de robo de guante blanco… saltarse sistemas de seguridad, ingenio… todo
 de la forma más elegante posible y con un toque de buen humor.
-**Calificación: 8/10**
+
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

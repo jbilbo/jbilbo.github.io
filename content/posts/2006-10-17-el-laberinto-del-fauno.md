@@ -36,4 +36,5 @@ diferencia quizás sea Guillermo del Toro, un director que se ha ganado
 mi confianza, así que también iré a ver su próxima película (con toque
 español también) llamada “El Orfanato”. Lo dicho, si podeis id a verla…
 pero sin niños.
-**Calificación: 9/10**
+
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

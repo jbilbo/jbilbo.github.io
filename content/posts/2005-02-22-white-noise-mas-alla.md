@@ -9,4 +9,4 @@ Película del género terror que persigue durante toda la misma asustar a base d
 
 Resumiendo, bastante pobre... una película del género de terror para entretener sin más.
 
-**Calificación: 5/10**
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>

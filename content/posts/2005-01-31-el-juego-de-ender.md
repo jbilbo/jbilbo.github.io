@@ -31,4 +31,4 @@ Otra cosa es la **película del Juego de Ender** que esta en desarrollo. Sí sí
 
 En definitiva, si no sabeis qué libro leer dadle una oportunidad a este clásico atemporal de la ciencia-ficción que supuso un boom en su década y que 2 después aún sigue muy vivo.
 
-**Calificación: 9/10**
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

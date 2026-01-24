@@ -41,4 +41,4 @@ primera parte podía llegar a “desenganchar” en algún pasaje del libro,
 Por lo tanto, yo lo situaría un escalón por encima, y además, esperaré
 con ánsia el tercer libro que espero que publique algún dia.
 
-**Calificación: 10/10**
+<p style="text-align: center;"><strong>Nota: 10/10</strong></p>

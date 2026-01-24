@@ -13,4 +13,4 @@ Lo que pasa que de la historia interminable tampoco oí hablar nunca de su segun
 
 El infantilismo es normal en una película como esta, destinada principalmente a niños, pero en esta parte se ve claramento forzada toda la historia, los personajes hacen cosas sin sentido, como no aparecer hasta que se les encuentra… (que suyos son) y en general tiene momentos que llegan a aburrir (la duración tampoco juega a su favor).
 
-**Valoración: 5/10**
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>

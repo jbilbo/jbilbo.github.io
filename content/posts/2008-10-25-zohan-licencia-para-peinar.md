@@ -13,4 +13,4 @@ En cambio, si es que sí, esta película os gustará mucho pues se trata de una 
 
 No hace falta que diga que cada film tiene una nota dentro de su género, por tanto comparar esta película con, por ejemplo, [El caballero oscuro](/posts/2008-10-02-el-caballero-oscuro/), esta fuera de lugar… cada pieza en su sitio, y entre el género de este tipo de películas, Zohan sin duda destaca.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

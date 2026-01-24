@@ -14,6 +14,6 @@ Personajes que enganchan, situaciones que impresionan, relatos que te dejan pega
 Como puntos negativos, el principio del libro es un poco lento y por esto en ciertos capítulos se hace aburrido, como al principio y tirando casi al final. No he encontrado otra objeción. Hay bastante religión en el libro, al fin y al cabo se basa en la construcción de una catedral, el dato curioso es que en la misma introducción del libro el autor se autodenomina ateo :-)
 Tengo que advertir que es un libro para adultos, ocurren cosas bastante crueles y explícitas.
 
-**Calificación: 9/10**
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>
 
 PD: El autor comenta, además, que algún dia hará una segunda parte.

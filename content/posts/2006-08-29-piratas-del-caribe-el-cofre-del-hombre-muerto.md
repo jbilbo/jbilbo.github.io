@@ -52,4 +52,4 @@ verla y al resto le gustó así que me quedé un poco confuso… es por eso
 que al final le he puesto esa nota, aunque yo en principio le quería
 poner un punto menos... pero me jugaba el cuello ;-)
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

@@ -28,4 +28,5 @@ En definitiva es un cuento corto, y aunque esta claro que hoy en día
 no supone la novedad, la impresión o impacto que causó en su momento,
 es un clásico alabado por la crítica (que sí entiende) y merece su
 lectura.
-**Calificación: 6/10**
+
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

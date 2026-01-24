@@ -11,4 +11,4 @@ Lo único destacable es la forma de presentar escenas, la dinámica de la pelíc
 
 En conclusión, salvo que tengas vocación al cine o te pueda resultar interesante el estilo del director, esta película no llena... mejor dicho decepciona mucho. Aunque todo depende a las expectativas que tenías antes de entrar claro...
 
-**Calificación 3/10**
+<p style="text-align: center;"><strong>Nota: 3/10</strong></p>

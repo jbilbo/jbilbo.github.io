@@ -15,4 +15,4 @@ En general la película es entretenida, no cabe duda que el mayor reclamo es com
 
 Esto me recuerda lo que pasó en su día con el fenómeno cae-una-piedra-y-el-mundo-estalla, que salió [Deep Impact](http://www.imdb.com/title/tt0120647/) y después la superproducción [Armaggedon](http://www.imdb.com/title/tt0120591/)... Quedaos con la que más os guste, a mi desde luego me gustó más la segunda, pero para gustos las [distribuciones](http://www.distrowatch.com).
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

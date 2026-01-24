@@ -15,4 +15,4 @@ No hace falta decir que la película es espectacular, muy cuidada. El argumento 
 
 En definitiva una película recomendable, espectacular, con algunas escenas fuertes (pero por lo que se intuye más que por lo que se ve, que es mínimo) y bastante acción (realmente al trio protagonista le pasa de todo...).
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

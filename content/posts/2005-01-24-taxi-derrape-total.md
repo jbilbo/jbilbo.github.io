@@ -9,4 +9,4 @@ Bajo este título ridículo (a qué clase de distribuidoras se le ocurre estos t
 
 Destacables unos cuantos gags buenos, el cierto carisma la pareja protagonista y el humor, que no decae en ningún momento de la película y no te deja mal sabor al salir del cine.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

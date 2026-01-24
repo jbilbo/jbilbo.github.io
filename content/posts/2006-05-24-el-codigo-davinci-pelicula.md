@@ -33,4 +33,5 @@ antes de leerlo le quitará todo el intriga.
 Un par de detalles curiosos: Salen Gandalf y Octopus (a ver si los
 reconoceis, es fácil), y según un amigo (David!) en vez de Tom Hanks
 como Richard Langdon tenía que haber sido Harrison Ford :-) ahí queda eso, aunque yo creo que Tom Hanks ha estado bien en el papel.
-**Calificación: 6/10**
+
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

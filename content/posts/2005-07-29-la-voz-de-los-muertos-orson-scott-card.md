@@ -12,4 +12,5 @@ Me decidí a hacerme con este libro después de que me gustara mucho "El Juego d
 ![La Voz de los Muertos](/images/posts/la-voz-de-los-muertos.jpg)
 
 Es un libro que recomiendo a todos los que les gustó el Juego de Ender y se quedaron con ganas de más… a mi no me ha decepcionado y lo he leído muy a gusto. Es cierto que no engancha tanto como el primero, pero la historia bien merece la pena. Yo, si puedo… quizás me haga con la tercera parte a ver :-D. Ahora toca "Ender, el Xenocida".
-**Calificación: 7/10**
+
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

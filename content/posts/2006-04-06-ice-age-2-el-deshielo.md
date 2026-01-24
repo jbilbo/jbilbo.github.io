@@ -15,4 +15,4 @@ Infantil, situaciones divertidas, risas... una muy buena película para ver en f
 
 Nota: ¡no vayais a la sesiones de tarde! Para algo estan las de 22:30 para arriba :)
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

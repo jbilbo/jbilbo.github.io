@@ -18,4 +18,4 @@ Frases de la película: *- Es sólo una anécdota.
 
 *- Si te llaman caballo, llámales tu idiota. Si te vuelven a llamar caballo, diles imbécil. Pero si te vuelven a llamar caballo, ves a comprarte una silla.*
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

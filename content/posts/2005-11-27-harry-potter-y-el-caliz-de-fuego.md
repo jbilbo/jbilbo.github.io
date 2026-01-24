@@ -28,4 +28,5 @@ es más infantil que la anterior…
 Creo que a esta película le quedaba 1 mes más para pulirla, entre
 rodaje de nuevas tomas, enlazar bien según que escenas/diálogos sin
 sentido y darles más tiempo o exigir más calidad a los que doblan.
-**Calificación 5/10**
+
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>

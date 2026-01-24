@@ -31,4 +31,4 @@ totalmente impredecible.
 
 Estamos hablando de una obra maestra. Recomendada a todos… los mayores de 13 :-D
 
-**Calificación: 10/10**
+<p style="text-align: center;"><strong>Nota: 10/10</strong></p>

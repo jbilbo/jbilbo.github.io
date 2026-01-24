@@ -11,4 +11,4 @@ La segunda parte de Kill Bill en el cine! Esta película es muchísimo menos san
 
 Lo que sí merece mención son algunas escenas y situaciones, realmente ingeniosas xD. Genial la claustrofóbia!, divertidísimo lo del pez!, igual con lo del vaso de agua!. Sin duda no entenderéis nada de lo que digo si no veis la película, pero esta hecho a propósito, soy contrario a desvelar escenas... sólo lo entenderéis una vez las hayas visto, y ni 1 segundo antes ;-)
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

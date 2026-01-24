@@ -33,4 +33,4 @@ se las da de líder y chilla cual cerdo en el día de San Martín.
 aún viendo la segunda (la primera no cuenta) y sentís curiosidad por
 como acaba la historia. No esperéis mucha cosa tampoco.
 
-**Calificación: 4/10**
+<p style="text-align: center;"><strong>Nota: 4/10</strong></p>

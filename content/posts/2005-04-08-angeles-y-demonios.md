@@ -17,4 +17,4 @@ En fin, un libro recomendado para los que les gustó ECD. Si no te gustó ECD, s
 
 Ángeles y Demonios cumple bien su rol de libro que necesita la gente después de leer ECD y quedarse con más ganas.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

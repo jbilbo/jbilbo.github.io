@@ -36,4 +36,5 @@ había visto un León tan bien hecho como el de la película, un 10 en ese
 sentido. Fijaos con qué naturalidad se mueve el pelo, parece real.
 
 Conclusión, una película recomendada para todos los públicos. Si no os echan atrás las películas algo infantiles, os gustará.
-**Calificación: 9/10**
+
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

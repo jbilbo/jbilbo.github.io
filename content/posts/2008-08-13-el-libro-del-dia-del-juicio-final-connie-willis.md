@@ -32,4 +32,4 @@ Aún con ese detalle totalmente subjetivo (que no desvelo por no
 desvelar nada de la trama), es un gran libro que merece su lectura
 sobretodo por las reflexiones que comento al principio.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

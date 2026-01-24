@@ -41,4 +41,4 @@ y es algo lenta. Pero creo que es suficientemente buena como para darle
 una oportunidad y acercarte al cine. A no ser que tengas que elegir
 entre Clerks 2 y ésta… yo por eso he ido a verla antes del viernes ;-).
 
-**Calificación: 7/10**
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

@@ -14,4 +14,4 @@ En fin, que es un género bastante amplio no bien definido, que engloba las típ
 
 ¿Vale la pena esta película? En mi opinión sí. Es original, un elemento difícil de conseguir... te hace reir en ocasiones, la historia se aguanta bastante bien, los personajes son todos muy buenos, especial mención al raro de Kelly. La actriz tiene lo que tiene que tener para representar el papel, los amigos molan... en fin, una película recomendable para pasárselo bien en compañía, a ser posible con tu pareja.
 
-**Calificación: 9/10**
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

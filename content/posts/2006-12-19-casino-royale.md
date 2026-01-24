@@ -34,4 +34,4 @@ Por otro lado, me ha gustado que se atrevan a cambiar un poco el
 cambiar y se agradecen nuevos aires), que Bond sea 007 novato y que
 tenga algunos toques graciosos entremedio :-)
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

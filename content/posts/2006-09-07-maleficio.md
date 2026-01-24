@@ -23,4 +23,4 @@ del montón de películas de terror que salen al año. No es muy fuerte y
 los sustos se aguantan bien, la parte de suspense es quizás la que sale
 mejor parada.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

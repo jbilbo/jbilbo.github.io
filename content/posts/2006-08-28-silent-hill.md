@@ -23,4 +23,4 @@ muchos sustos pero hay alguna situación de bastante tensión. Apta para
 los que les gusta el videojuego o fans de las películas de terror con
 líquido rojo de por medio.
 
-**Calificación: 6/10**
+<p style="text-align: center;"><strong>Nota: 6/10</strong></p>

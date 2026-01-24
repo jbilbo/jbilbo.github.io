@@ -43,4 +43,4 @@ Smallville ha sido el perro que tienen en la granja Kent.
 
 Frase de la película: *"¿No habían 2 perros?"*
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

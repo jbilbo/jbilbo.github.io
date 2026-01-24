@@ -28,4 +28,5 @@ La considero la mejor de las 3 primeras de la saga (Episodios I,II y III). ¿Y d
 No es una película que haga falta recomendar a la gente, porque la saga es un clásico de visita obligada al cine…aunque toda saga tiene detractores o gente que sencillamente las ignora. Al resto, id a verla porque merece la pena y cierra una magnífica historia que gracias a su carisma revolucionó la industria del cine generando por primera vez y de forma explosiva el boom del merchandising.
 
 Y si teneis preguntas sobre algo del argumento… aprovechad que estan abiertos los comentarios =)
-**Calificación 9/10**
+
+<p style="text-align: center;"><strong>Nota: 9/10</strong></p>

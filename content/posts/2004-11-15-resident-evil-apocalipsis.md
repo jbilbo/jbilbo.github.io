@@ -13,4 +13,4 @@ Es una película que te gustará si te gustó la primera o este tipo de género.
 
 Ahora sólo tocará esperar a la tercera parte, que esta en camino pero... no sé esta vez de dónde van a sacar el argumento, pero seguramente no tenga ya mucho que ver con el videojuego.
 
-**Calificación: 8/10**
+<p style="text-align: center;"><strong>Nota: 8/10</strong></p>

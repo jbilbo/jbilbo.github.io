@@ -26,4 +26,5 @@ En definitiva, una película recomendable. Puede que algo
 instrascendente, pero con algún toque de originalidad al género y con
 la suficiente calidad para disfrutar durante un par de horas con unas
 buenas palomitas tamaño grande (para dos ;-)) y coca-cola pequeña.
-**Calificación: 7/10**
+
+<p style="text-align: center;"><strong>Nota: 7/10</strong></p>

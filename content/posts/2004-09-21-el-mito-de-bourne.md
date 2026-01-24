@@ -9,4 +9,4 @@ Mala señal que se me haya olvidado comentar la película que vi el sábado. Se 
 
 En general es bastante aburrida, pero tiene momentos interesantes como cuando se escapa, siempre de manera inteligente y verosímil pero creíble, eso es lo que le da algunos puntos. No quiero decir que es una película mala, porque no lo es... pero a los que han visto la primera parte ya no les sorprenderá porque es básicamente lo mismo. Para hacerse una idea, a la primera le hubiera puesto un 7.
 
-**Calificación: 5/10**
+<p style="text-align: center;"><strong>Nota: 5/10</strong></p>
